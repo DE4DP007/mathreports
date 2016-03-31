@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Об Отделе", 
+		"about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сотрудники", 
+		"scientist/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"НИР", 
+		"scientific-work/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Публикации", 
+		"publications/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

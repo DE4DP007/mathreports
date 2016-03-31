@@ -1,0 +1,265 @@
+2016-03-02 15:32:28 -  - exec CUpdateClient::GetUpdatesList
+2016-03-02 15:32:28 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:32:28 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=14.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=15.5.2&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:32:28 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:32:28 -  - TIME GetUpdatesList(request) 0.628 sec
+2016-03-02 15:32:28 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:32:32 -  - exec CUpdateClient::GetUpdatesList
+2016-03-02 15:32:32 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:32:32 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=14.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=15.5.2&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:32:32 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:32:32 -  - TIME GetUpdatesList(request) 0.323 sec
+2016-03-02 15:32:32 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:32:54 -  - exec CUpdateClient::GetUpdatesList
+2016-03-02 15:32:54 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:32:54 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=14.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=15.5.2&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:32:54 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:32:54 -  - TIME GetUpdatesList(request) 0.534 sec
+2016-03-02 15:32:54 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:33:05 -  - exec CUpdateClient::GetUpdatesList
+2016-03-02 15:33:05 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:33:05 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=14.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=15.5.2&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:33:05 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:33:06 -  - TIME GetUpdatesList(request) 0.224 sec
+2016-03-02 15:33:06 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:42 -  - exec CUpdateClient::GetUpdatesList
+2016-03-02 15:34:42 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:42 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=14.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=15.5.2&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:42 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:42 -  - TIME GetUpdatesList(request) 0.474 sec
+2016-03-02 15:34:42 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:45 -  - exec CUpdateClient::GetUpdatesList
+2016-03-02 15:34:45 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:45 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=14.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=15.5.2&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:45 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:45 -  - TIME GetUpdatesList(request) 0.315 sec
+2016-03-02 15:34:45 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:51 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:51 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:51 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=14.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=15.5.2&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:51 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:51 -  - TIME LoadModulesUpdates(request) 0.24 sec
+2016-03-02 15:34:51 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:51 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:51 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:51 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:51 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:51 - DOWNLOAD - Time - 0.22913789749146 sec
+2016-03-02 15:34:51 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:51 -  - TIME UnGzipArchive 0.001 sec
+2016-03-02 15:34:51 -  - TIME UpdateStepModules 0.001 sec
+2016-03-02 15:34:51 - UPD_SUCCESS - Updated: compression (16.0.0)<br><li>Улучшена совместимость с php 5.6. 
+2016-03-02 15:34:51 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:51 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:51 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=16.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=15.5.2&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:51 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:52 -  - TIME LoadModulesUpdates(request) 0.196 sec
+2016-03-02 15:34:52 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:52 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:52 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:52 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:52 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:53 - DOWNLOAD - Time - 0.56197094917297 sec
+2016-03-02 15:34:53 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:53 -  - TIME UnGzipArchive 0.019 sec
+2016-03-02 15:34:53 - CSURUS1 - Run updater '/bitrix/updates/update_m1456922093/fileman/updater16.0.0.php'
+2016-03-02 15:34:53 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1456922093/fileman/updater16.0.0.php': CopyFiles(install/js, js)
+2016-03-02 15:34:53 -  - TIME UpdateStepModules 0.023 sec
+2016-03-02 15:34:53 - UPD_SUCCESS - Updated: fileman (16.0.0)<br><li>Исправление ошибок в интерфейсах модуля. 
+2016-03-02 15:34:53 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:53 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:53 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=16.0.0&bitm_clouds=15.5.1&bitm_search=15.5.1&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=16.0.0&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:53 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:53 -  - TIME LoadModulesUpdates(request) 0.244 sec
+2016-03-02 15:34:53 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:53 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:53 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:53 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:53 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:54 - DOWNLOAD - Time - 0.28517699241638 sec
+2016-03-02 15:34:54 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:54 -  - TIME UnGzipArchive 0.003 sec
+2016-03-02 15:34:54 - CSURUS1 - Run updater '/bitrix/updates/update_m1456922094/search/updater16.0.0.php'
+2016-03-02 15:34:54 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1456922094/search/updater16.0.0.php': CopyFiles(install/components, components)
+2016-03-02 15:34:54 -  - TIME UpdateStepModules 0.004 sec
+2016-03-02 15:34:54 - UPD_SUCCESS - Updated: search (16.0.0)<br><li>Исправлена настройка количества тегов в облаке на Sphinx. <li>Исправлена индексация кода страницы с тегами в Sphinx. <li>Исправления стемминга некоторых слов. 
+2016-03-02 15:34:54 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:54 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:54 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=16.0.0&bitm_clouds=15.5.1&bitm_search=16.0.0&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=15.5.1&bitm_fileman=16.0.0&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:54 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:54 -  - TIME LoadModulesUpdates(request) 0.245 sec
+2016-03-02 15:34:54 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:54 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:54 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:54 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:54 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:54 - DOWNLOAD - Time - 0.28477120399475 sec
+2016-03-02 15:34:54 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:54 -  - TIME UnGzipArchive 0.003 sec
+2016-03-02 15:34:54 -  - TIME UpdateStepModules 0.003 sec
+2016-03-02 15:34:54 - UPD_SUCCESS - Updated: perfmon (16.0.0)<br><li>Исправлена ошибка при добавлении записи в таблицу. <li>Улучшена диагностика opcache. <li>Исправлено тестирование конфигурации PHP. 
+2016-03-02 15:34:54 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:54 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:54 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=16.0.0&bitm_clouds=15.5.1&bitm_search=16.0.0&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.5&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:54 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:55 -  - TIME LoadModulesUpdates(request) 0.225 sec
+2016-03-02 15:34:55 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:55 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:55 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:55 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:55 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:55 - DOWNLOAD - Time - 0.2406210899353 sec
+2016-03-02 15:34:55 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:55 -  - TIME UnGzipArchive 0.002 sec
+2016-03-02 15:34:55 - CSURUS1 - Run updater '/bitrix/updates/update_m1456922095/seo/updater15.5.6.php'
+2016-03-02 15:34:55 - CRUPDCDF2 - Run updater '/bitrix/updates/update_m1456922095/seo/updater15.5.6.php': Query(UPDATE b_seo_search_engine SET CLIENT_ID='868942902147-qrrd6ce1ajfkpse8ieq4gkpdeanvtnno.apps.googleusercontent.com', CLIENT_SECRET='EItMlJpZLC2WRPKB6QsA5bV9' WHERE CODE='google', )
+2016-03-02 15:34:55 -  - TIME UpdateStepModules 0.004 sec
+2016-03-02 15:34:55 - UPD_SUCCESS - Updated: seo (15.5.6)<br><li>Переход на новую версию Google Site Verification API и Google Search Console API. <li>Исправлена ошибка автообновления карты сайта при деактивации элементов. 
+2016-03-02 15:34:55 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:55 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:55 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=16.0.0&bitm_clouds=15.5.1&bitm_search=16.0.0&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:55 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:55 -  - TIME LoadModulesUpdates(request) 0.229 sec
+2016-03-02 15:34:55 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:55 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:55 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:55 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:55 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:56 - DOWNLOAD - Time - 0.20792698860168 sec
+2016-03-02 15:34:56 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:56 -  - TIME UnGzipArchive 0.001 sec
+2016-03-02 15:34:56 -  - TIME UpdateStepModules 0.002 sec
+2016-03-02 15:34:56 - UPD_SUCCESS - Updated: clouds (16.0.0)<br><li>Фильтр по расширениям теперь учитывает не только физические расширения файлов, но и расширение оригинального имени. 
+2016-03-02 15:34:56 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:56 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:56 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=16.0.0&bitm_clouds=16.0.0&bitm_search=16.0.0&bitm_bitrixcloud=15.5.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:56 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:56 -  - TIME LoadModulesUpdates(request) 0.278 sec
+2016-03-02 15:34:56 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:56 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:56 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:56 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:56 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:56 - DOWNLOAD - Time - 0.24548101425171 sec
+2016-03-02 15:34:56 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:56 -  - TIME UnGzipArchive 0.002 sec
+2016-03-02 15:34:56 - CSURUS1 - Run updater '/bitrix/updates/update_m1456922096/bitrixcloud/updater16.0.0.php'
+2016-03-02 15:34:56 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1456922096/bitrixcloud/updater16.0.0.php': CopyFiles(install/components, components)
+2016-03-02 15:34:56 -  - TIME UpdateStepModules 0.005 sec
+2016-03-02 15:34:56 - UPD_SUCCESS - Updated: bitrixcloud (16.0.0)<br><li>Исправлена ошибка подмены ссылок на страницах просмотра исходного кода. 
+2016-03-02 15:34:56 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:56 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:56 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=15.5.0&bitm_compression=16.0.0&bitm_clouds=16.0.0&bitm_search=16.0.0&bitm_bitrixcloud=16.0.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:56 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:57 -  - TIME LoadModulesUpdates(request) 0.226 sec
+2016-03-02 15:34:57 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:57 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:57 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:57 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:57 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:57 - DOWNLOAD - Time - 0.29667901992798 sec
+2016-03-02 15:34:57 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:57 -  - TIME UnGzipArchive 0.002 sec
+2016-03-02 15:34:57 -  - TIME UpdateStepModules 0.002 sec
+2016-03-02 15:34:57 - UPD_SUCCESS - Updated: highloadblock (16.0.0)<br><li>Исправлен ряд ошибок.
+2016-03-02 15:34:57 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:57 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:57 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=16.0.0&bitm_compression=16.0.0&bitm_clouds=16.0.0&bitm_search=16.0.0&bitm_bitrixcloud=16.0.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:57 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:57 -  - TIME LoadModulesUpdates(request) 0.222 sec
+2016-03-02 15:34:57 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:57 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:57 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:57 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:57 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:58 - DOWNLOAD - Time - 0.35495591163635 sec
+2016-03-02 15:34:58 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:58 -  - TIME UnGzipArchive 0.01 sec
+2016-03-02 15:34:58 -  - TIME UpdateStepModules 0.013 sec
+2016-03-02 15:34:58 - UPD_SUCCESS - Updated: scale ()
+2016-03-02 15:34:58 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:58 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:58 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=16.0.0&bitm_compression=16.0.0&bitm_clouds=16.0.0&bitm_search=16.0.0&bitm_scale=14.5.0&bitm_bitrixcloud=16.0.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:58 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:58 -  - TIME LoadModulesUpdates(request) 0.225 sec
+2016-03-02 15:34:58 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:58 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:58 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:58 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:58 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:58 - DOWNLOAD - Time - 0.28892111778259 sec
+2016-03-02 15:34:58 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:58 -  - TIME UnGzipArchive 0.008 sec
+2016-03-02 15:34:58 - CSURUS1 - Run updater '/bitrix/updates/update_m1456922098/scale/updater14.5.1.php'
+2016-03-02 15:34:58 -  - TIME UpdateStepModules 0.01 sec
+2016-03-02 15:34:58 - UPD_SUCCESS - Updated: scale (14.5.1)<br><li>Добавлена проверка типа базы. <li>Добавлена возможность выводить время до окончания действия. <li>Добавлена роль Apache. <li>Добавлена возможность двухшаговой генерации действий. <li>Добавлена возможность модифицировать действия, запрашивать параметры у пользователя в случае необходимости. <li>Добавлено окно подтверждения при действиях с БД, если есть базы, кроме базы текущего сайта. <li>Добавлена роль Sphinx. <li>Добавлено предупреждение, если в данный момент уже есть запущеное действие. <li>Исправлены незначительные ошибки. 
+2016-03-02 15:34:58 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:58 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:58 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=16.0.0&bitm_compression=16.0.0&bitm_clouds=16.0.0&bitm_search=16.0.0&bitm_scale=14.5.1&bitm_bitrixcloud=16.0.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:58 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:59 -  - TIME LoadModulesUpdates(request) 0.277 sec
+2016-03-02 15:34:59 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:59 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:59 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:59 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:59 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:59 - DOWNLOAD - Time - 0.25671100616455 sec
+2016-03-02 15:34:59 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:34:59 -  - TIME UnGzipArchive 0.009 sec
+2016-03-02 15:34:59 - CSURUS1 - Run updater '/bitrix/updates/update_m1456922099/scale/updater14.5.2.php'
+2016-03-02 15:34:59 -  - TIME UpdateStepModules 0.01 sec
+2016-03-02 15:34:59 - UPD_SUCCESS - Updated: scale (14.5.2)<br><li>Добавлена возможность работы с провайдерами VPS. <li>Добавлены графики, градусники для ролей memcached, sphinx. <li>Исправлены незначительные ошибки.
+2016-03-02 15:34:59 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:59 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:59 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=16.0.0&bitm_compression=16.0.0&bitm_clouds=16.0.0&bitm_search=16.0.0&bitm_scale=14.5.2&bitm_bitrixcloud=16.0.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:34:59 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:34:59 -  - TIME LoadModulesUpdates(request) 0.217 sec
+2016-03-02 15:34:59 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:34:59 - LMU01 - LoadModulesUpdates-Step
+2016-03-02 15:34:59 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:34:59 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:34:59 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:35:00 - DOWNLOAD - Time - 0.28760385513306 sec
+2016-03-02 15:35:00 -  - exec CUpdateClient::UnGzipArchive
+2016-03-02 15:35:00 -  - TIME UnGzipArchive 0.007 sec
+2016-03-02 15:35:00 - CSURUS1 - Run updater '/bitrix/updates/update_m1456922100/scale/updater16.0.0.php'
+2016-03-02 15:35:00 -  - TIME UpdateStepModules 0.008 sec
+2016-03-02 15:35:00 - UPD_SUCCESS - Updated: scale (16.0.0)<br><li>Добавлены переводы на украинский язык. <li>Исправлена ошибка, при которой не работала настройка почты для сайта. <li>Исправлена ошибка, при которой не создавался дополнительный сайт. 
+2016-03-02 15:35:00 -  - exec CUpdateClient::LoadModulesUpdates
+2016-03-02 15:35:00 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:35:00 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=16.0.0&bitm_compression=16.0.0&bitm_clouds=16.0.0&bitm_search=16.0.0&bitm_scale=16.0.0&bitm_bitrixcloud=16.0.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&requested_modules=compression%2Cfileman%2Csearch%2Cperfmon%2Cseo%2Cclouds%2Cbitrixcloud%2Chighloadblock%2Cscale&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:35:00 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:35:00 -  - TIME LoadModulesUpdates(request) 0.249 sec
+2016-03-02 15:35:00 -  - exec CUpdateClient::ParseServerData
+2016-03-02 15:35:00 - STEP - Finish - NOUPDATES
+2016-03-02 15:35:00 - STEP - Finish - NOUPDATES
+2016-03-02 15:35:09 -  - exec CUpdateClient::GetUpdatesList
+2016-03-02 15:35:09 -  - exec CUpdateClient::CollectRequestData
+2016-03-02 15:35:09 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&CHHB=16874.b2728.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.41&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_translate=14.0.0&bitm_highloadblock=16.0.0&bitm_compression=16.0.0&bitm_clouds=16.0.0&bitm_search=16.0.0&bitm_scale=16.0.0&bitm_bitrixcloud=16.0.0&bitm_iblock=15.5.11&bitm_socialservices=15.5.3&bitm_perfmon=16.0.0&bitm_fileman=16.0.0&bitm_seo=15.5.6&bitl_ru=&bitl_en=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-02 15:35:09 -  - exec CUpdateClient::GetHTTPPage
+2016-03-02 15:35:10 -  - TIME GetUpdatesList(request) 0.382 sec
+2016-03-02 15:35:10 -  - exec CUpdateClient::ParseServerData
+2016-03-17 11:38:17 -  - exec CUpdateClient::GetUpdatesList
+2016-03-17 11:38:17 -  - exec CUpdateClient::CollectRequestData
+2016-03-17 11:38:17 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16948.b2209.dhpage.net&CHHB=16948.b2209.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.45&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_clouds=16.0.0&bitm_fileman=16.0.0&bitm_search=16.0.0&bitm_seo=15.5.6&bitm_highloadblock=16.0.0&bitm_perfmon=16.0.0&bitm_socialservices=15.5.3&bitm_translate=14.0.0&bitm_iblock=15.5.11&bitm_scale=16.0.0&bitm_compression=16.0.0&bitm_bitrixcloud=16.0.0&bitl_en=&bitl_ru=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-17 11:38:17 -  - exec CUpdateClient::GetHTTPPage
+2016-03-17 11:38:17 -  - TIME GetUpdatesList(request) 0.334 sec
+2016-03-17 11:38:17 -  - exec CUpdateClient::ParseServerData
+2016-03-17 11:38:21 -  - exec CUpdateClient::GetUpdatesList
+2016-03-17 11:38:21 -  - exec CUpdateClient::CollectRequestData
+2016-03-17 11:38:21 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16948.b2209.dhpage.net&CHHB=16948.b2209.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.45&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_clouds=16.0.0&bitm_fileman=16.0.0&bitm_search=16.0.0&bitm_seo=15.5.6&bitm_highloadblock=16.0.0&bitm_perfmon=16.0.0&bitm_socialservices=15.5.3&bitm_translate=14.0.0&bitm_iblock=15.5.11&bitm_scale=16.0.0&bitm_compression=16.0.0&bitm_bitrixcloud=16.0.0&bitl_en=&bitl_ru=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-17 11:38:21 -  - exec CUpdateClient::GetHTTPPage
+2016-03-17 11:38:21 -  - TIME GetUpdatesList(request) 0.307 sec
+2016-03-17 11:38:21 -  - exec CUpdateClient::ParseServerData
+2016-03-17 11:38:26 -  - exec CUpdateClient::GetUpdatesList
+2016-03-17 11:38:26 -  - exec CUpdateClient::CollectRequestData
+2016-03-17 11:38:26 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16948.b2209.dhpage.net&CHHB=16948.b2209.dhpage.net&CSAB=127.0.0.9&CANGZIP=Y&CLIENT_PHPVER=5.4.45&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_clouds=16.0.0&bitm_fileman=16.0.0&bitm_search=16.0.0&bitm_seo=15.5.6&bitm_highloadblock=16.0.0&bitm_perfmon=16.0.0&bitm_socialservices=15.5.3&bitm_translate=14.0.0&bitm_iblock=15.5.11&bitm_scale=16.0.0&bitm_compression=16.0.0&bitm_bitrixcloud=16.0.0&bitl_en=&bitl_ru=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-17 11:38:26 -  - exec CUpdateClient::GetHTTPPage
+2016-03-17 11:38:26 -  - TIME GetUpdatesList(request) 0.343 sec
+2016-03-17 11:38:26 -  - exec CUpdateClient::ParseServerData
+2016-03-31 13:25:02 -  - exec CUpdateClient::GetUpdatesList
+2016-03-31 13:25:02 -  - exec CUpdateClient::CollectRequestData
+2016-03-31 13:25:02 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=15.5.1&VERSION=15.5.10&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=2&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=172.16.0.154&CHHB=172.16.0.154%3A80&CSAB=127.0.0.1&CANGZIP=Y&CLIENT_PHPVER=5.6.15&stable=Y&rerere=Y&bitm_main=15.5.10&bitm_bitrixcloud=16.0.0&bitm_clouds=16.0.0&bitm_compression=16.0.0&bitm_fileman=16.0.0&bitm_highloadblock=16.0.0&bitm_iblock=15.5.11&bitm_perfmon=16.0.0&bitm_scale=16.0.0&bitm_search=16.0.0&bitm_seo=15.5.6&bitm_socialservices=15.5.3&bitm_translate=14.0.0&bitl_en=&bitl_ru=&bith_ru=&bith_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-03-31 13:25:02 -  - exec CUpdateClient::GetHTTPPage
+2016-03-31 13:25:03 -  - TIME GetUpdatesList(request) 0.878 sec
+2016-03-31 13:25:03 -  - exec CUpdateClient::ParseServerData

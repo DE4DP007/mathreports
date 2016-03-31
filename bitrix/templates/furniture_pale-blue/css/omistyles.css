@@ -1,0 +1,28 @@
+#omilogo{   padding-top: 5px;  }
+
+#omi-logo {height:40px; width:auto; float:left; }
+
+#contactform { float:none; margin:0 auto;}
+
+
+
+.panel-default>.panel-heading { background-color:#3980b5 !important; color:#f5f5f5 !important; }
+
+/*.navbar-inverse   { background-color:#3980b5 !important; }*/
+.navbar-inverse   { background-color: #285a80 !important; }
+.navbar-inverse a { color: #dcf2f4 !important; }
+.navbar-inverse a:hover { color: #ffffff !important; }
+
+.navbar-inverse .dropdown-menu a        { color:#337ab7 !important; }
+.navbar-inverse .dropdown-menu a:hover  { color: #1d4568 !important; }
+
+.page-header { color:#337ab7 !important; }
+
+
+.btn-default { background-color: #4bad28 !important; color:#f5f5f5 !important; }
+.btn-default:hover { background-color:#31721b !important; color:#ffffff !important; } /*7cb47c*/
+
+
+.well { background-color: rgba(78, 179, 251, 0.15) !important; }
+
+/*#nirnapr .panel { min-height: 330px !important; }*/

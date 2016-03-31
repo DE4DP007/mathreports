@@ -1,0 +1,6 @@
+2016-03-02 15:35:20 -  - exec CUpdateClientPartner::GetUpdatesList
+2016-03-02 15:35:20 -  - exec CUpdateClientPartner::__CollectRequestData
+2016-03-02 15:35:20 -  - utf=Y&lang=ru&stable=Y&CANGZIP=Y&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=16874.b2728.dhpage.net&LICENSE_KEY=X&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&TYPENC=D&CLIENT_PHPVER=5.4.41&dbv=5.6.26&instm=main%2C15.5.10%2CY%3Btranslate%2C14.0.0%2CN%3Bhighloadblock%2C16.0.0%2CN%3Bcompression%2C16.0.0%2CN%3Bclouds%2C16.0.0%2CN%3Bsearch%2C16.0.0%2CN%3Bscale%2C16.0.0%2CN%3Bbitrixcloud%2C16.0.0%2CN%3Bbitrix.sitecorporate%2C15.0.0%2CN%3Biblock%2C15.5.11%2CN%3Bsocialservices%2C15.5.3%2CN%3Bperfmon%2C16.0.0%2CN%3Bfileman%2C16.0.0%2CN%3Bseo%2C15.5.6%2CN&reqm=bitrix.sitecorporate&fullmoduleinfo=Y&SUPD_SRS=RU&SUPD_CMP=N
+2016-03-02 15:35:20 -  - exec CUpdateClientPartner::GetHTTPPage
+2016-03-02 15:35:20 -  - TIME GetUpdatesList(request) 0.441 sec
+2016-03-02 15:35:20 -  - exec CUpdateClientPartner::ParseServerData
