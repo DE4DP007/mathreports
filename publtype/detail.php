@@ -6,9 +6,9 @@ $APPLICATION->SetTitle("Типы публикаций детально");
 <br>
 <br>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail",
-	"",
-	Array(
+	"bitrix:news.detail", 
+	".default", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -32,7 +32,10 @@ $APPLICATION->SetTitle("Типы публикаций детально");
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_CODE" => $_REQUEST["ELEMENT_CODE"],
 		"ELEMENT_ID" => $_REQUEST["ELEMENT_ID"],
-		"FIELD_CODE" => array("",""),
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"IBLOCK_ID" => "10",
 		"IBLOCK_TYPE" => "biblio",
 		"IBLOCK_URL" => "",
@@ -44,7 +47,10 @@ $APPLICATION->SetTitle("Типы публикаций детально");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array("",""),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -55,7 +61,8 @@ $APPLICATION->SetTitle("Типы публикаций детально");
 		"SHOW_404" => "N",
 		"USE_PERMISSIONS" => "N",
 		"USE_SHARE" => "N"
-	)
+	),
+	false
 );?>
 
 	<br>

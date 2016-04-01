@@ -23,7 +23,7 @@ $APPLICATION->SetTitle("Журналы");
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"COMPONENT_TEMPLATE" => ".default",
-		"DETAIL_URL" => "detail.php?ELEMENT_CODE=#ELEMENT_CODE#",
+		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
