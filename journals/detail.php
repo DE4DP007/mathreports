@@ -89,13 +89,16 @@ $APPLICATION->SetTitle("Издания детально");
 <?
 $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL");
 $arFilter = Array("IBLOCK_ID"=>9, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y", "PROPERTY_JOURNAL" => getCurrentID(11, $_REQUEST["ELEMENT_CODE"]));
-$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
+$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
+$res->NavStart(10);
+echo $res->NavPrint("Журналы"), "<br>";
 while($ob = $res->GetNextElement())
 {
 	$arFields = $ob->GetFields();
 	echo "<a href='",$arFields['DETAIL_PAGE_URL'], "'>", $arFields['NAME'], "</a>";
 	echo "<br>";
 }
+echo $res->NavPrint("Журналы");
 ?>
 <br>
 <p>
