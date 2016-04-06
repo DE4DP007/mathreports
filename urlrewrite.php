@@ -1,12 +1,6 @@
 <?
 $arUrlRewrite = array(
 	array(
-		"CONDITION" => "#^/publtype/([a-zA-Z0-9\\.\\-_]+)/?.*#",
-		"RULE" => "ELEMENT_CODE=\$1",
-		"ID" => "bitrix:news.detail",
-		"PATH" => "/publtype/detail.php",
-	),
-	array(
 		"CONDITION" => "#^/position/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
@@ -17,6 +11,12 @@ $arUrlRewrite = array(
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
 		"PATH" => "/journals/detail.php",
+	),
+	array(
+		"CONDITION" => "#^/publtype/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"RULE" => "ELEMENT_CODE=\$1",
+		"ID" => "bitrix:news.detail",
+		"PATH" => "/publtype/detail.php",
 	),
 	array(
 		"CONDITION" => "#^/degree/([a-zA-Z0-9\\.\\-_]+)/?.*#",
@@ -43,12 +43,6 @@ $arUrlRewrite = array(
 		"PATH" => "/kandidat-fiziko-matematicheskikh-nauk.php",
 	),
 	array(
-		"CONDITION" => "#^/POSITION/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/dolzhnost.php",
-	),
-	array(
 		"CONDITION" => "#^/services/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
@@ -59,6 +53,12 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/products/index.php",
+	),
+	array(
+		"CONDITION" => "#^/POSITION/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/dolzhnost.php",
 	),
 	array(
 		"CONDITION" => "#^/DEGREE/#",
