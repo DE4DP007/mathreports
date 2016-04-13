@@ -1,12 +1,12 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Типы публикаций детально");
+$APPLICATION->SetTitle("Должность детально");
 ?>
 <br>
 <br>
 <br>
 <br>
-<?$APPLICATION->IncludeComponent(
+ <?$APPLICATION->IncludeComponent(
 	"bitrix:news.detail", 
 	".default", 
 	array(
@@ -37,7 +37,7 @@ $APPLICATION->SetTitle("Типы публикаций детально");
 			0 => "",
 			1 => "",
 		),
-		"IBLOCK_ID" => "10",
+		"IBLOCK_ID" => "12",
 		"IBLOCK_TYPE" => "biblio",
 		"IBLOCK_URL" => "",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
@@ -49,8 +49,14 @@ $APPLICATION->SetTitle("Типы публикаций детально");
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
 		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "SURNAME",
+			1 => "NAME",
+			2 => "PATRONIM",
+			3 => "ENSURNAME",
+			4 => "ENNAME",
+			5 => "ENPATRONIM",
+			6 => "Description",
+			7 => "",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
@@ -65,26 +71,25 @@ $APPLICATION->SetTitle("Типы публикаций детально");
 	),
 	false
 );?>
-
 	<br>
 	<h4>Список публикаций</h4>
 <?
 $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL");
-$arFilter = Array("IBLOCK_ID"=>9, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y", "PROPERTY_PUBLTYPE" => getCurrentID(10, $_REQUEST["ELEMENT_CODE"]));
+$arFilter = Array("IBLOCK_ID"=>9, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y", "PROPERTY_AUTHORS" => getCurrentID(12, $_REQUEST["ELEMENT_CODE"]));
 $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
 $res->NavStart(10);
-echo $res->NavPrint("Публикации"), "<br>";
+echo $res->NavPrint("Должности"), "<br>";
 while($ob = $res->GetNextElement())
 {
 	$arFields = $ob->GetFields();
 	echo "<a href='",$arFields['DETAIL_PAGE_URL'], "'>", $arFields['NAME'], "</a>";
 	echo "<br>";
 }
-echo $res->NavPrint("Публикации");
+echo $res->NavPrint("Должности");
 ?>
 	<br>
 	<p>
-		<a href="/publtype/">&larr; К типам публикаций</a>
+		<a href="/authors/">&larr; К авторам</a>
 	</p>
 <?
 function getCurrentID($iblock_id, $code)

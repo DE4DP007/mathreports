@@ -13,6 +13,12 @@ $arUrlRewrite = array(
 		"PATH" => "/journals/detail.php",
 	),
 	array(
+		"CONDITION" => "#^/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"RULE" => "ELEMENT_CODE=\$1",
+		"ID" => "bitrix:news.detail",
+		"PATH" => "/authors/detail.php",
+	),
+	array(
 		"CONDITION" => "#^/publtype/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
