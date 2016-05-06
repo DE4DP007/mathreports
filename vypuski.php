@@ -8,9 +8,9 @@ $arrFilter = Array('PROPERTY_JOURNAL' => 74);
 <h1 style="text-align: right;">Архив журнала</h1>
 <hr>
  <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	".default",
-	Array(
+	"bitrix:news.list", 
+	".default", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -31,10 +31,13 @@ $arrFilter = Array('PROPERTY_JOURNAL' => 74);
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(0=>"",1=>"",),
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "9",
+		"IBLOCK_ID" => "11",
 		"IBLOCK_TYPE" => "biblio",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"INCLUDE_SUBSECTIONS" => "Y",
@@ -50,7 +53,40 @@ $arrFilter = Array('PROPERTY_JOURNAL' => 74);
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(0=>"TITLE",1=>"ENTITLE",2=>"ANNOTATION",3=>"ENANNOTATION",4=>"BIBLIODATA",5=>"BIBLIODATAEN",6=>"isOMI",7=>"FULLTEXT",8=>"UDK",9=>"PUBLDATE",10=>"",),
+		"PROPERTY_CODE" => array(
+			0 => "ENTitle",
+			1 => "Title",
+			2 => "ENDescription",
+			3 => "Description",
+			4 => "LINK",
+			5 => "EMAIL",
+			6 => "ISBN",
+			7 => "ISSN",
+			8 => "ADRESS",
+			9 => "VAK",
+			10 => "PUBLISHER",
+			11 => "IF_Scopus",
+			12 => "IF_WoS",
+			13 => "IF_RINC",
+			14 => "SCOPUS_LINK",
+			15 => "WOS_LINK",
+			16 => "zbMATH_LINK",
+			17 => "RINC_LINK",
+			18 => "Country",
+			19 => "PHONE",
+			20 => "FAX",
+			21 => "TITLE",
+			22 => "ENTITLE",
+			23 => "ANNOTATION",
+			24 => "ENANNOTATION",
+			25 => "BIBLIODATA",
+			26 => "BIBLIODATAEN",
+			27 => "isOMI",
+			28 => "FULLTEXT",
+			29 => "UDK",
+			30 => "PUBLDATE",
+			31 => "",
+		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
@@ -62,5 +98,6 @@ $arrFilter = Array('PROPERTY_JOURNAL' => 74);
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC"
-	)
+	),
+	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
