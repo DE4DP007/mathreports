@@ -1,31 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Выпуски");
-?><br>
- <br>
- <br>
- <br>
- <?
+?><?
 global $arrFilter;
 $arrFilter = Array('PROPERTY_JOURNAL' => 74);
-?> <?$APPLICATION->IncludeComponent(
-	"bitrix:menu",
-	"blue_tabs",
-	Array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"COMPONENT_TEMPLATE" => "blue_tabs",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "1",
-		"MENU_CACHE_GET_VARS" => array(),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"MENU_THEME" => "site",
-		"ROOT_MENU_TYPE" => "left",
-		"USE_EXT" => "N"
-	)
-);?> <br>
+?>
 <h1 style="text-align: right;">Архив журнала</h1>
 <hr>
  <?$APPLICATION->IncludeComponent(

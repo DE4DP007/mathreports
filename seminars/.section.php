@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Семинары";
+$arDirProperties = Array(
+
+);
+?>

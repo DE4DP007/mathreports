@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"О журнале", 
-		"/demi/", 
+		"/", 
 		Array(), 
 		Array(), 
 		"" 

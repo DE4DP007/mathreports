@@ -1,0 +1,79 @@
+* {
+    font-family: 'PT Sans Narrow';
+}
+body{
+    background:#dfeefd;
+}
+
+a:focus, a:visited {background-color: transparent !important;}
+
+
+#bighat{
+    background: url("../images/demiTop.jpg") no-repeat;
+    height:200px;
+}
+
+#leftlogo{
+    margin-left: -15px; padding-left:0px;
+}
+#rightlogo{
+    right:0;
+}
+
+
+#mmenu{
+    background: url("../images/dm_10.jpg") repeat-x;
+}
+
+#mmenu .navbar-inverse {
+    background: transparent;
+    border: 0px;    border-radius: 0px;
+    margin-bottom:4px;
+}
+
+#mmenu .navbar { min-height: 30px; }
+
+#mmenu .navbar-inverse li a {
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #f5fffa;
+}
+
+#mmenu .navbar-inverse li.active a, #mmenu .navbar-inverse li.active a:hover {
+    color: #628bb3;
+    background: #b9dbee;
+}
+
+#mmenu .navbar-inverse li a:hover {
+    color: #fff;
+    background: #78abdc;
+}
+
+#mainblock {
+    min-height:500px;
+    background: #fff;
+}
+
+#footer{
+    background: #4a688a url("../images/dm_191.jpg") repeat-x;
+    min-height: 90px;
+}
+
+#book{margin:5px 15px 0px -15px;}
+#booker {margin-top: 15px; color:#fff;}
+
+.navbar-inverse a.navbar-brand {color: #fff; padding: 7px;}
+.navbar-inverse a.navbar-brand:hover
+{color: #e9f8ff;}
+.navbar-inverse .navbar-toggle {border: 1px solid #71a1ba !important; margin-top: 1px;}
+.navbar-inverse .navbar-toggle:hover
+{ background-color: #6cb7d7; }
+
+
+.navbar-collapse { border:0 !important;}
+
+@media screen and (max-width: 768px) {
+    #mmenu .navbar-inverse li a { color:#628bb3; }
+}
+
