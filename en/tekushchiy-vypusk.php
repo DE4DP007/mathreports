@@ -1,9 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Текущий выпуск");
-?><h1 style="text-align: right;"><span style="font-size: 20pt;">Текущий выпуск</span></h1>
+$APPLICATION->SetTitle("Current Issue");
+?><h1 style="text-align: right;"><span style="font-size: 20pt; color: #2f4f4f;">Current Issue</span></h1>
 <hr>
- <?$APPLICATION->IncludeComponent(
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	".default",
 	Array(
@@ -30,8 +30,8 @@ $APPLICATION->SetTitle("Текущий выпуск");
 		"FIELD_CODE" => array(0=>"",1=>"",),
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "16",
-		"IBLOCK_TYPE" => "issues",
+		"IBLOCK_ID" => "15",
+		"IBLOCK_TYPE" => "issues_en",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"MESSAGE_404" => "",
@@ -62,7 +62,7 @@ $APPLICATION->SetTitle("Текущий выпуск");
 );?>
 <?
 $arFilter = Array(
-	"IBLOCK_ID"=>IntVal(16),
+	"IBLOCK_ID"=>IntVal(15),
 	//">DATE_ACTIVE_FROM"=>date($DB->DateFormatToPHP(CLang::GetDateFormat("SHORT")), time()),
 	"ACTIVE"=>"Y",
 );
@@ -76,10 +76,10 @@ if($ar_fields = $res->GetNext())
 function GetPublications($id)
 {
 	$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
-	$arFilter = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => $id);
+	$arFilter = Array("IBLOCK_ID"=>14, "PROPERTY_JOURNAL" => $id);
 	$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
 	if(getSize($id) > 0) {
-		echo "<br><h4>Содержание</h4>";
+		echo "<br><h4>Table of contents</h4>";
 		$res->NavStart(10);
 		echo $res->NavPrint("Публикации"), "<br>";
 		while($ob = $res->GetNextElement())
@@ -88,7 +88,7 @@ function GetPublications($id)
 			$arProp = $ob->GetProperties();
 			echo "<a href='",$arFields['DETAIL_PAGE_URL'], "'>", $arFields['NAME'], "</a>";
 			echo " ", $arProp['START_PAGE']["VALUE"], " - ", $arProp['END_PAGE']["VALUE"];
-			echo "<br> Авторы: ";
+			echo "<br> Authors: ";
 			foreach($arProp['AUTHORS']["VALUE"] as $value){
 				$arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
 				$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
@@ -96,7 +96,7 @@ function GetPublications($id)
 				{
 					$arPropA = $obA->GetProperties();
 					$arFieldsA = $obA->GetFields();
-					echo "<a href='", $arFieldsA["DETAIL_PAGE_URL"], "'>", $arPropA["FNAME"]["VALUE"], " </a>";
+					echo "<a href='", $arFieldsA["DETAIL_PAGE_URL"], "'>", $arPropA["FNAME_EN"]["VALUE"], " </a>";
 				}
 			}
 			echo "<br>";
@@ -108,6 +108,6 @@ function GetPublications($id)
 <?
 function getSize($id)
 {
-	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => 17, "PROPERTY_JOURNAL" => $id), array(), false, array('ID', 'NAME'));
+	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => 14, "PROPERTY_JOURNAL" => $id), array(), false, array('ID', 'NAME'));
 }
 ?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -15,6 +15,7 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +44,8 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");
         <img src="/bitrix/templates/demi/images/demilogo.jpg" alt="Дагестанские электронные математические известия">
     </div>
     <div id="rightlogo" class="col-lg-6 col-md-6 col-sm-12 col-xs-12  text-center">
-        <img src="/bitrix/templates/demi/images/demilogo2.png" alt="Дагестанские электронные математические известия">
+        <!--<img src="/bitrix/templates/demi/images/demilogo2.png" alt="Дагестанские электронные математические известия">-->
+		<?echo GetMessage("HEADER_TITLE")?>
     </div>
 </div>
 

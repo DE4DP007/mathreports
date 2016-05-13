@@ -15,9 +15,7 @@ IncludeTemplateLangFile(__FILE__);
     <div class="col-sm-6 col-xs-12" id="booker">
         <img src="/bitrix/templates/demi/images/b00k.png" alt="Дагестанские электронные математические известия" class="img-responsive pull-left" id="book">
         <p>
-© 2013-2016. Дагестанские электронные математические известия. <br>
-Издание Учреждения Российской академии наук<br>
-            Дагестанского научного центра.
+            <?echo GetMessage("FOOTER_DESCRIPTION")?>
         </p>
     </div>
     <div class="col-sm-6 col-xs-12">

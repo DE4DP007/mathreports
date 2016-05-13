@@ -1,8 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Должность детально");
-?>
- <?$APPLICATION->IncludeComponent(
+$APPLICATION->SetTitle("Издания детально");
+?><br>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news.detail", 
 	".default", 
 	array(
@@ -33,8 +33,8 @@ $APPLICATION->SetTitle("Должность детально");
 			0 => "",
 			1 => "",
 		),
-		"IBLOCK_ID" => "21",
-		"IBLOCK_TYPE" => "commonblock",
+		"IBLOCK_ID" => "14",
+		"IBLOCK_TYPE" => "issues_en",
 		"IBLOCK_URL" => "",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"MESSAGE_404" => "",
@@ -45,16 +45,34 @@ $APPLICATION->SetTitle("Должность детально");
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
 		"PROPERTY_CODE" => array(
-			0 => "FNAME",
-			1 => "FNAME_EN",
-			2 => "SURNAME",
-			3 => "NAME",
-			4 => "PATRONIM",
-			5 => "ENSURNAME",
-			6 => "ENNAME",
-			7 => "ENPATRONIM",
-			8 => "Description",
-			9 => "",
+			0 => "TITLE",
+			1 => "ANNOTATION",
+			2 => "STARTPAGE",
+			3 => "ENDPAGE",
+			4 => "START_PAGE",
+			5 => "END_PAGE",
+			6 => "ENTitle",
+			7 => "Title",
+			8 => "ENDescription",
+			9 => "Description",
+			10 => "LINK",
+			11 => "EMAIL",
+			12 => "ISBN",
+			13 => "ISSN",
+			14 => "ADRESS",
+			15 => "VAK",
+			16 => "PUBLISHER",
+			17 => "IF_Scopus",
+			18 => "IF_WoS",
+			19 => "IF_RINC",
+			20 => "SCOPUS_LINK",
+			21 => "WOS_LINK",
+			22 => "zbMATH_LINK",
+			23 => "RINC_LINK",
+			24 => "Country",
+			25 => "PHONE",
+			26 => "FAX",
+			27 => "",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
@@ -68,5 +86,4 @@ $APPLICATION->SetTitle("Должность детально");
 		"USE_SHARE" => "N"
 	),
 	false
-);?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>&nbsp;<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

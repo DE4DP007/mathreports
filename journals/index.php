@@ -1,15 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Журналы");
-?>
-<br>
-<br>
-<br>
-<br>
- <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	".default", 
-	array(
+?><?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	".default",
+	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -30,10 +25,7 @@ $APPLICATION->SetTitle("Журналы");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FIELD_CODE" => array(0=>"",1=>"",),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "11",
@@ -52,13 +44,7 @@ $APPLICATION->SetTitle("Журналы");
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "ENTitle",
-			1 => "Title",
-			2 => "ENDescription",
-			3 => "Description",
-			4 => "",
-		),
+		"PROPERTY_CODE" => array(0=>"ENTitle",1=>"Title",2=>"ENDescription",3=>"Description",4=>"",),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
@@ -70,8 +56,7 @@ $APPLICATION->SetTitle("Журналы");
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC"
-	),
-	false
+	)
 );?> <br>
 <?CModule::IncludeModule('iblock');
 $arFilter = array('IBLOCK_ID' => 11);

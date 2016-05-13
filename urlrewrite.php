@@ -1,16 +1,22 @@
 <?
 $arUrlRewrite = array(
 	array(
-		"CONDITION" => "#^/position/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"CONDITION" => "#^/en/articles/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
-		"PATH" => "/position/detail.php",
+		"PATH" => "/en/articles/detail.php",
 	),
 	array(
-		"CONDITION" => "#^/journals/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"CONDITION" => "#^/articles/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
-		"PATH" => "/journals/detail.php",
+		"PATH" => "/articles/detail.php",
+	),
+	array(
+		"CONDITION" => "#^/en/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"RULE" => "ELEMENT_CODE=\$1",
+		"ID" => "bitrix:news.detail",
+		"PATH" => "/authors/detail.php",
 	),
 	array(
 		"CONDITION" => "#^/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
@@ -19,64 +25,22 @@ $arUrlRewrite = array(
 		"PATH" => "/authors/detail.php",
 	),
 	array(
-		"CONDITION" => "#^/publtype/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"CONDITION" => "#^/en/issues/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
-		"PATH" => "/publtype/detail.php",
+		"PATH" => "/en/issues/detail.php",
 	),
 	array(
-		"CONDITION" => "#^/degree/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"CONDITION" => "#^/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
-		"PATH" => "/degree/detail.php",
+		"PATH" => "/authors/detail.php",
 	),
 	array(
-		"CONDITION" => "#^/publications/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/publikatsii.php",
-	),
-	array(
-		"CONDITION" => "#^/scientist/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/scientist/index.php",
-	),
-	array(
-		"CONDITION" => "#^/scientist/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/kandidat-fiziko-matematicheskikh-nauk.php",
-	),
-	array(
-		"CONDITION" => "#^/services/#",
-		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/services/index.php",
-	),
-	array(
-		"CONDITION" => "#^/products/#",
-		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/products/index.php",
-	),
-	array(
-		"CONDITION" => "#^/POSITION/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/dolzhnost.php",
-	),
-	array(
-		"CONDITION" => "#^/DEGREE/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/uchenaya-stepen.php",
-	),
-	array(
-		"CONDITION" => "#^/news/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/news/index.php",
+		"CONDITION" => "#^/issues/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"RULE" => "ELEMENT_CODE=\$1",
+		"ID" => "bitrix:news.detail",
+		"PATH" => "/issues/detail.php",
 	),
 );
 

@@ -1,10 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Выпуски");
-?><? global $arrFilter;
-$arrFilter = Array('PROPERTY_JOURNAL' => 74);
-?>
-<h1 style="text-align: right;"><span style="font-size: 20pt;">Архив журнала</span></h1>
+?><h1 style="text-align: right;"><span style="font-size: 20pt; color: #2f4f4f;">Journal Archive</span></h1>
+<span style="color: #2f4f4f;"> </span>
 <hr>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
@@ -33,8 +31,8 @@ $arrFilter = Array('PROPERTY_JOURNAL' => 74);
 		"FIELD_CODE" => array(0=>"",1=>"",),
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "16",
-		"IBLOCK_TYPE" => "issues",
+		"IBLOCK_ID" => "15",
+		"IBLOCK_TYPE" => "issues_en",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"MESSAGE_404" => "",
