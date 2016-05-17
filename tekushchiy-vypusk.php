@@ -88,7 +88,15 @@ function GetPublications($id)
 			$arProp = $ob->GetProperties();
 			echo "<a href='",$arFields['DETAIL_PAGE_URL'], "'>", $arFields['NAME'], "</a>";
 			echo " ", $arProp['START_PAGE']["VALUE"], " - ", $arProp['END_PAGE']["VALUE"];
-			echo "<br> Авторы: ";
+			$count = 0;
+			foreach($arProp['AUTHORS']["VALUE"] as $value){
+				$count++;
+			}
+			if ($count == 1) {
+				echo "<br>Автор: ";
+			} else {
+				echo "<br>Авторы: ";
+			}
 			foreach($arProp['AUTHORS']["VALUE"] as $value){
 				$arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
 				$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));

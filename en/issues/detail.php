@@ -67,7 +67,15 @@ if(getSize(getCurrentID(15, $_REQUEST["ELEMENT_CODE"])) > 0) {
 		$arProp = $ob->GetProperties();
 		echo "<a href='", $arFields['DETAIL_PAGE_URL'], "'>", $arFields['NAME'], "</a>";
 		echo " ", $arProp['START_PAGE']["VALUE"], " - ", $arProp['END_PAGE']["VALUE"];
-		echo "<br> Authors: ";
+		$count = 0;
+			foreach($arProp['AUTHORS']["VALUE"] as $value){
+				$count++;
+			}
+			if ($count == 1) {
+				echo "<br>Author: ";
+			} else {
+				echo "<br>Authors: ";
+			}
 		foreach($arProp['AUTHORS']["VALUE"] as $value){
 			$arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
 			$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));

@@ -49,7 +49,7 @@ $APPLICATION->SetTitle("Издания детально");
 			1 => "ANNOTATION",
 			2 => "START_PAGE",
 			3 => "END_PAGE",
-			4 => "",
+			4 => "FULL_TEXT",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
@@ -94,6 +94,14 @@ if(getSize(17, getCurrentID(17, $_REQUEST["ELEMENT_CODE"])) > 0){
 			}
 		}
 		echo "</p>";
+		echo "<br>";
+		$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
+		$resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
+		while($obJ = $resJ->GetNextElement())
+		{
+			$arFieldsJ = $obJ->GetFields();
+			echo "<a href='", $arFieldsJ["DETAIL_PAGE_URL"], "'>", "← К выпуску</a>";
+		}
 	}
 }
 ?>

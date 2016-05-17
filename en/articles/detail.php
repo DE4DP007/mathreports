@@ -47,32 +47,9 @@ $APPLICATION->SetTitle("Издания детально");
 		"PROPERTY_CODE" => array(
 			0 => "TITLE",
 			1 => "ANNOTATION",
-			2 => "STARTPAGE",
-			3 => "ENDPAGE",
-			4 => "START_PAGE",
-			5 => "END_PAGE",
-			6 => "ENTitle",
-			7 => "Title",
-			8 => "ENDescription",
-			9 => "Description",
-			10 => "LINK",
-			11 => "EMAIL",
-			12 => "ISBN",
-			13 => "ISSN",
-			14 => "ADRESS",
-			15 => "VAK",
-			16 => "PUBLISHER",
-			17 => "IF_Scopus",
-			18 => "IF_WoS",
-			19 => "IF_RINC",
-			20 => "SCOPUS_LINK",
-			21 => "WOS_LINK",
-			22 => "zbMATH_LINK",
-			23 => "RINC_LINK",
-			24 => "Country",
-			25 => "PHONE",
-			26 => "FAX",
-			27 => "",
+			2 => "START_PAGE",
+			3 => "END_PAGE",
+			4 => "FULL_TEXT",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
@@ -88,7 +65,7 @@ $APPLICATION->SetTitle("Издания детально");
 	false
 );?>
 <?
-$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_SECTION");
+$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_SECTION", "PROPERTY_FULL_TEXT");
 $arFilter = Array("IBLOCK_ID"=>14, "ID" => getCurrentID(14, $_REQUEST["ELEMENT_CODE"]));
 $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
 if(getSize(14, getCurrentID(14, $_REQUEST["ELEMENT_CODE"])) > 0){
@@ -117,6 +94,14 @@ if(getSize(14, getCurrentID(14, $_REQUEST["ELEMENT_CODE"])) > 0){
 			}
 		}
 		echo "</p>";
+		echo "<br>";
+		$arFilterJ = Array("IBLOCK_ID"=>15, "ID"=>$arProp['JOURNAL']['VALUE']);
+		$resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
+		while($obJ = $resJ->GetNextElement())
+		{
+			$arFieldsJ = $obJ->GetFields();
+			echo "<a href='", $arFieldsJ["DETAIL_PAGE_URL"], "'>", "← To issue</a>";
+		}
 	}
 }
 ?>
