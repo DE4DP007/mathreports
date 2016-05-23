@@ -19,7 +19,19 @@ IncludeTemplateLangFile(__FILE__);
         </p>
     </div>
     <div class="col-sm-6 col-xs-12">
-
+		<h4 style="font-weight: bold; color: whitesmoke; text-align: right">
+            <?
+            if(SITE_ID == "s1") {
+                echo "<a href='", $APPLICATION->GetCurUri(), "' style=\"color: whitesmoke\">RU</a>";
+                echo " | ";
+                echo "<a href='/en/", substr($APPLICATION->GetCurUri(), 1), "' style=\"color: whitesmoke\">EN</a>";
+            } else {
+                echo "<a href='", substr($APPLICATION->GetCurUri(), 3), "' style=\"color: whitesmoke\">RU</a>";
+                echo " | ";
+                echo "<a href='", $APPLICATION->GetCurUri(), "' style=\"color: whitesmoke\">EN</a>";
+            }
+            ?>
+        </h4>
     </div>
 </div>
 

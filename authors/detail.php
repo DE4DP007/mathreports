@@ -5,7 +5,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 if (SITE_ID == "s1") {
 	$fname = "FNAME";
 	$add_info = "ADD_INFO";
-	$work = "WORK";
 	echo "<h1 style=\"text-align: right;\"><span style=\"font-size: 20pt; color: #2f4f4f;\">Сведения об авторе</span></h1>
 	<span style=\"color: #2f4f4f;\"> </span>
 	<hr>";
@@ -13,7 +12,6 @@ if (SITE_ID == "s1") {
 } else {
 	$fname = "FNAME_EN";
 	$add_info = "ADD_INFO_EN";
-	$work = "WORK_EN";
 	echo "<h1 style=\"text-align: right;\"><span style=\"font-size: 20pt; color: #2f4f4f;\">About the author</span></h1>
 	<span style=\"color: #2f4f4f;\"> </span>
 	<hr>";
@@ -64,7 +62,7 @@ if (SITE_ID == "s1") {
 		"PROPERTY_CODE" => array(
 			0 => $fname,
 			1 => $add_info,
-			2 => $work,
+			2 => "",
 			3 => "",
 			4 => "",
 			5 => "",
@@ -87,16 +85,18 @@ if (SITE_ID == "s1") {
 );?>
 <?
 if (SITE_ID == "s1") {
+	getWork("Место работы", "TITLE");
 	getArticles(17, "Статьи:", "стр.");
 } else {
-	getArticles(14, "Article:", "pages");
+	getWork("Work", "TITLE_EN");
+	getArticles(14, "Articles:", "pages");
 }
 ?>
 <?
 function getArticles($block_id, $article_string, $pages_string) {
 	$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE", "PROPERTY_JOURNAL");
 	$arFilter = Array("IBLOCK_ID"=>$block_id, "PROPERTY_AUTHORS" => getCurrentID(21, $_REQUEST["ELEMENT_CODE"]));
-	if(getSize($block_id, getCurrentID(21, $_REQUEST["ELEMENT_CODE"])) > 0) {
+	if(getSize($block_id, getCurrentID(21, $_REQUEST["ELEMENT_CODE"]), "PROPERTY_AUTHORS") > 0) {
 		echo "<br><p>", $article_string," </p>";
 		$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
 		while ($ob = $res->GetNextElement()) {
@@ -114,6 +114,26 @@ function getArticles($block_id, $article_string, $pages_string) {
 }
 ?>
 <?
+function getWork($valueSt, $value) {
+	$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL");
+	$arFilterA = Array("IBLOCK_ID"=>21, "ID" => getCurrentID(21, $_REQUEST["ELEMENT_CODE"]));
+	$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10), $arSelect);
+	while ($obA = $resA->GetNextElement()) {
+		$arPropA = $obA->GetProperties();
+		$arFilter = Array("IBLOCK_ID"=>22, "ID" =>  $arPropA["WORK"]["VALUE"]);
+		if($arPropA["WORK"]["VALUE"] != null && getSize(22,  $arPropA["WORK"]["VALUE"], "ID") > 0) {
+			$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
+			while ($ob = $res->GetNextElement()) {
+				$arFields = $ob->GetFields();
+				$arProp = $ob->GetProperties();
+				echo "<p>", $valueSt, ": <a href='", $arFields['DETAIL_PAGE_URL'], "'>", $arProp[$value]['VALUE'], "</a></p>";
+			}
+		}
+	}
+
+}
+?>
+<?
 function getCurrentID($iblock_id, $code)
 {
 	if(CModule::IncludeModule("iblock"))
@@ -127,9 +147,9 @@ function getCurrentID($iblock_id, $code)
 }
 ?>
 <?
-function getSize($block_id, $id)
+function getSize($block_id, $id, $property)
 {
-	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block_id, "PROPERTY_AUTHORS" => $id), array(), false, array('ID', 'NAME'));
+	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block_id, $property => $id), array(), false, array('ID', 'NAME'));
 }
 ?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

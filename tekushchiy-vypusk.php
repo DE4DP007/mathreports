@@ -61,6 +61,7 @@ $APPLICATION->SetTitle("Текущий выпуск");
 	)
 );?>
 <?
+CModule::IncludeModule("iblock");
 $arFilter = Array(
 	"IBLOCK_ID"=>IntVal(16),
 	//">DATE_ACTIVE_FROM"=>date($DB->DateFormatToPHP(CLang::GetDateFormat("SHORT")), time()),

@@ -93,9 +93,15 @@ if(getSize(17, getCurrentID(17, $_REQUEST["ELEMENT_CODE"])) > 0){
 				echo "<a href='", $arFieldsA["DETAIL_PAGE_URL"], "'>", $arPropA["FNAME"]["VALUE"], " </a>";
 			}
 		}
-		echo "</p>";
 		echo "<br>";
 		$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
+		$resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
+		while($obJ = $resJ->GetNextElement())
+		{
+			$arPropJ = $obJ->GetProperties();
+			echo "Выпуск: ", $arPropJ['TITLE']['VALUE'];
+		}
+		echo "</p>";
 		$resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
 		while($obJ = $resJ->GetNextElement())
 		{
