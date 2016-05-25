@@ -41,7 +41,7 @@ $APPLICATION->SetTitle("Издания детально");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array(0=>"TITLE",1=>"DESCRIPTION",2=>"ARTICLE_COUNT",3=>"PAGES",4=>"ENTitle",5=>"Title",6=>"ENDescription",7=>"Description",8=>"LINK",9=>"EMAIL",10=>"ISBN",11=>"ISSN",12=>"ADRESS",13=>"VAK",14=>"PUBLISHER",15=>"IF_Scopus",16=>"IF_WoS",17=>"IF_RINC",18=>"SCOPUS_LINK",19=>"WOS_LINK",20=>"zbMATH_LINK",21=>"RINC_LINK",22=>"Country",23=>"PHONE",24=>"FAX",25=>"",),
+		"PROPERTY_CODE" => array(0=>"TITLE",1=>"DESCRIPTION",2=>""),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -54,11 +54,24 @@ $APPLICATION->SetTitle("Издания детально");
 		"USE_SHARE" => "N"
 	)
 );?>
- <?
+<?
+//Определение количества статей и страниц в тестовом режиме
 $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
 $arFilter = Array("IBLOCK_ID"=>14, "PROPERTY_JOURNAL" => getCurrentID(15, $_REQUEST["ELEMENT_CODE"]));
 $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
-if(getSize(getCurrentID(15, $_REQUEST["ELEMENT_CODE"])) > 0) {
+echo "Article Count: ", getSize(14, "PROPERTY_JOURNAL", getCurrentID(15, $_REQUEST["ELEMENT_CODE"])), "<br>";
+$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);
+if(getSize(14, "PROPERTY_JOURNAL", getCurrentID(15, $_REQUEST["ELEMENT_CODE"])) > 0) {
+	while ($ob = $res->GetNextElement()) {
+		$arProp = $ob->GetProperties();
+		echo "Total Pages: ", $arProp['END_PAGE']["VALUE"];
+		echo "<br>";
+	}
+}
+?>
+ <?
+$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
+if(getSize(14, "PROPERTY_JOURNAL", getCurrentID(15, $_REQUEST["ELEMENT_CODE"])) > 0) {
 	$res->NavStart(10);
 	echo "<br><h4>List of articles</h4>";
 	echo $res->NavPrint("Articles"), "<br>";
@@ -108,9 +121,9 @@ function getCurrentID($iblock_id, $code)
 }
 ?>
 <?
-function getSize($id)
+function getSize($block, $property, $id)
 {
-	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => 14, "PROPERTY_JOURNAL" => $id), array(), false, array('ID', 'NAME'));
+	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
 }
 ?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

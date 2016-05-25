@@ -11,7 +11,7 @@ $arFilter = Array("IBLOCK_ID"=>15);
 $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPageSize"=>10), $arSelect);
 while ($ob = $res->GetNextElement()) {
 	$arFields = $ob->GetFields();
-	echo "<p>", "<a href='", $arFields["DETAIL_PAGE_URL"], "'>", $arFields['NAME'], "</a><br>";
+	echo "<p><b>", "<a href='", $arFields["DETAIL_PAGE_URL"], "'>", $arFields['NAME'], "</a></b><br>";
 	$arFilterI = Array("IBLOCK_ID"=>14, "PROPERTY_JOURNAL" => $arFields['ID']);
 	$resI = CIBlockElement::GetList(Array(), $arFilterI, false, Array("nPageSize"=>10));
 	echo "Article Count: ", getSize(14, "PROPERTY_JOURNAL", $arFields['ID']), "<br>";

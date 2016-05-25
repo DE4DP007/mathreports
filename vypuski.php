@@ -13,7 +13,7 @@ $arFilter = Array("IBLOCK_ID"=>16);
 $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPageSize"=>10), $arSelect);
 while ($ob = $res->GetNextElement()) {
 	$arFields = $ob->GetFields();
-	echo "<p>", "<a href='", $arFields["DETAIL_PAGE_URL"], "'>", $arFields['NAME'], "</a><br>";
+	echo "<p><b>", "<a href='", $arFields["DETAIL_PAGE_URL"], "'>", $arFields['NAME'], "</a></b><br>";
 	$arFilterI = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => $arFields['ID']);
 	$resI = CIBlockElement::GetList(Array(), $arFilterI, false, Array("nPageSize"=>10));
 	echo "Количество статей: ", getSize(17, "PROPERTY_JOURNAL", $arFields['ID']), "<br>";
