@@ -9,28 +9,28 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Редколлегия", 
-		"/redkollegiya.php", 
+		"/redkollegiya/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Для авторов", 
-		"/dlya-avtorov.php", 
+		"/dlya-avtorov/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Выпуски", 
-		"/vypuski.php", 
+		"/vypuski/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Текущий выпуск", 
-		"/tekushchiy-vypusk.php", 
+		"/tekushchiy-vypusk/", 
 		Array(), 
 		Array(), 
 		"" 

@@ -5,6 +5,8 @@ body{
     background:#dfeefd;
 }
 
+a:hover { text-decoration: none; }
+
 a:focus, a:visited {background-color: transparent !important;}
 
 
@@ -134,4 +136,26 @@ a:focus, a:visited {background-color: transparent !important;}
 }
 .btn-large{
     font-size: 16pt;
+}
+
+
+.lefttexter {
+    font-size:14pt;
+}
+
+.righttexter {
+    font-size:14pt;
+    background-color: #e6f1ff;
+}
+.leftside {
+    padding-left: 0px;
+}
+.arttitle {
+    margin:0px !important;
+}
+.greeners {
+    color: #557d3e;/*#3b562b;*/
+}
+.greeners:hover {
+    color:#82bd5f;
 }
