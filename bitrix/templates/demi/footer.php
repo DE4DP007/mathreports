@@ -1,12 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-IncludeTemplateLangFile(__FILE__);
-/**
- * Created by PhpStorm.
- * User: Salikh
- * Date: 05.05.2016
- * Time: 12:03
- */
-?>
+IncludeTemplateLangFile(__FILE__);?>
+<br><br><br><br>
 </div>
 
 
@@ -17,21 +11,6 @@ IncludeTemplateLangFile(__FILE__);
         <p>
             <?echo GetMessage("FOOTER_DESCRIPTION")?>
         </p>
-    </div>
-    <div class="col-sm-6 col-xs-12">
-		<h4 style="font-weight: bold; color: whitesmoke; text-align: right">
-            <?
-            if(SITE_ID == "s1") {
-                echo "<a href='", $APPLICATION->GetCurUri(), "' style=\"color: whitesmoke\">RU</a>";
-                echo " | ";
-                echo "<a href='/en/", substr($APPLICATION->GetCurUri(), 1), "' style=\"color: whitesmoke\">EN</a>";
-            } else {
-                echo "<a href='", substr($APPLICATION->GetCurUri(), 3), "' style=\"color: whitesmoke\">RU</a>";
-                echo " | ";
-                echo "<a href='", $APPLICATION->GetCurUri(), "' style=\"color: whitesmoke\">EN</a>";
-            }
-            ?>
-        </h4>
     </div>
 </div>
 

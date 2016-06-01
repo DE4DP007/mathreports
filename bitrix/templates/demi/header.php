@@ -4,16 +4,9 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/bootstrap.css");
 $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/bootstrap.min.css");
 $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/bootstrap-theme.css");
 $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/bootstrap-theme.min.css");
-$APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");
-/**
- * Created by PhpStorm.
- * User: Salikh
- * Date: 05.05.2016
- * Time: 12:05
- */
-?>
+$APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
@@ -38,13 +31,26 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");
     <!-- My Styles -->
     <link href="css/mathrep.css" rel="stylesheet">
 </head>
+
 <body>
 <?$APPLICATION->ShowPanel();?>
+
 <div class="container" id="bighat">
     <div id="leftlogo" class="col-lg-6 col-md-6 hidden-sm visible-md visible-lg">
         <img src="/bitrix/templates/demi/images/demilogo.jpg" alt="Дагестанские электронные математические известия">
     </div>
     <div id="rightlogo" class="col-lg-6 col-md-6 col-sm-12 col-xs-12  text-center">
+        <h4 class="langswitch pull-right">
+            <?if(SITE_ID == "s1") {
+                echo "RU";
+                echo " | ";
+                echo "<a href='/en/", substr($APPLICATION->GetCurUri(), 1), "' class=\"switcher\">EN</a>";
+            } else {
+                echo "<a href='", substr($APPLICATION->GetCurUri(), 3), "' class=\"switcher\">RU</a>";
+                echo " | ";
+                echo "EN";
+            }?>
+        </h4><div class="clearfix"></div>
         <!--<img src="/bitrix/templates/demi/images/demilogo2.png" alt="Дагестанские электронные математические известия">-->
 		<?echo GetMessage("HEADER_TITLE")?>
     </div>
@@ -73,7 +79,6 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");
     );?>
 
     <!--
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -94,7 +99,6 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");
             </div>
         </div>
     </nav>
-
     -->
 </div>
 
