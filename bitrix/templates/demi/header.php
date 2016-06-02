@@ -44,9 +44,9 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");?>
             <?if(SITE_ID == "s1") {
                 echo "RU";
                 echo " | ";
-                echo "<a href='/en/", substr($APPLICATION->GetCurUri(), 1), "' class=\"switcher\">EN</a>";
+                echo "<a href='/en/", substr($APPLICATION->GetCurPage(false), 1), "' class=\"switcher\">EN</a>";
             } else {
-                echo "<a href='", substr($APPLICATION->GetCurUri(), 3), "' class=\"switcher\">RU</a>";
+                echo "<a href='", substr($APPLICATION->GetCurPage(false), 3), "' class=\"switcher\">RU</a>";
                 echo " | ";
                 echo "EN";
             }?>

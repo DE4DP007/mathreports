@@ -66,6 +66,22 @@ $arUrlRewrite = array(
 		"CONDITION" => "#^/en/work/index.php?.*#",
 		"PATH" => "/work/index.php",
 	),
+	array(
+		"CONDITION" => "#^/en/redkollegiya/#",
+		"PATH" => "/en/redkollegiya.php",
+	),
+	array(
+		"CONDITION" => "#^/en/dlya-avtorov/#",
+		"PATH" => "/en/dlya-avtorov.php",
+	),
+	array(
+		"CONDITION" => "#^/en/vypuski/#",
+		"PATH" => "/en/vypuski.php",
+	),
+	array(
+		"CONDITION" => "#^/en/tekushchiy-vypusk/#",
+		"PATH" => "/en/tekushchiy-vypusk.php",
+	),
 );
 
 ?>

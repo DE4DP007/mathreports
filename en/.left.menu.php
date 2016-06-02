@@ -9,28 +9,28 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Editorial board", 
-		"/en/redkollegiya.php", 
+		"/en/redkollegiya/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Submit a paper", 
-		"/en/dlya-avtorov.php", 
+		"/en/dlya-avtorov/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Issues", 
-		"/en/vypuski.php", 
+		"/en/vypuski/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Current Issue", 
-		"/en/tekushchiy-vypusk.php", 
+		"/en/tekushchiy-vypusk/", 
 		Array(), 
 		Array(), 
 		"" 
