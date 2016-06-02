@@ -2,11 +2,35 @@
 $APPLICATION->SetTitle("Текущий выпуск ДЭМИ");?>
 
 
-<h1 class="journhead text-right">Текущий выпуск</h1><hr>
+<?CModule::IncludeModule("iblock");
+$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL");
+$arFilter = Array("IBLOCK_ID"=>16);
+$res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPageSize"=>1), $arSelect);?>
+<?  $ob = $res->GetNextElement(); $arFields = $ob->GetFields();?>
+
+<h1 class="journhead text-right">
+     Текущий выпуск: <?=$arFields['NAME']?>
+</h1><hr>
+
+
+<h4 class="col-md-6 text-left arttitle">
+    <?$arFilterI = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => $arFields['ID']);
+    $resI = CIBlockElement::GetList(Array(), $arFilterI, false, Array("nPageSize"=>10));?>
+    Количество статей: <?=getSize(17, "PROPERTY_JOURNAL", $arFields['ID'])?>
+</h4>
+<h4 class="col-md-6 text-right">
+    <?$resI = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilterI, false, Array("nPageSize"=>1), $arSelect);
+    if(getSize(17, "PROPERTY_JOURNAL", $arFields['ID']) > 0) {
+        $obI = $resI->GetNextElement();
+        $arPropI = $obI->GetProperties();?>
+        Всего страниц: <?=$arPropI['END_PAGE']["VALUE"]?>
+        <br>
+    <?}?>
+</h4>
 
 
 
-<div class="col-md-10 col-sm-12 lefttexter">
+<div class="col-md-12 lefttexter">
     <?CModule::IncludeModule("iblock");
     $arFilter = Array(
         "IBLOCK_ID"=>IntVal(16),
@@ -25,7 +49,7 @@ $APPLICATION->SetTitle("Текущий выпуск ДЭМИ");?>
         $arFilter = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => $id);
         $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
         if(getSize(17, "PROPERTY_JOURNAL", $id) > 0) {?>
-            <h2>Содержание</h2>
+            <h2 class="text-center">Содержание</h2>
             <?$res->NavStart(10);
             echo $res->NavPrint("Публикации"), "<br>";
             while($ob = $res->GetNextElement()) {
@@ -36,27 +60,26 @@ $APPLICATION->SetTitle("Текущий выпуск ДЭМИ");?>
                     <h3 class="arttitle">
                         <a href="<?=$arFields['DETAIL_PAGE_URL']?>"><?=$arFields['NAME']?></a>
                     </h3>
-                    <?$count = 0;
-                    foreach($arProp['AUTHORS']["VALUE"] as $value){
-                       $count++;
-                    }
+                    <?$count = count($arProp['AUTHORS']["VALUE"]);
+
                     if ($count == 1) {
-                        echo "Автор: ";
+                        echo "<b>Автор:</b> ";
                     } else {
-                        echo "Авторы: ";
+                        echo "<b>Авторы:</b> ";
                     }
                     foreach($arProp['AUTHORS']["VALUE"] as $value){
                         $arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
                         $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
-                        while($obA = $resA->GetNextElement())
-                        {
+                        $ii = 1;
+                        while($obA = $resA->GetNextElement()) {
                             $arPropA = $obA->GetProperties();
-                            $arFieldsA = $obA->GetFields();?>
-                            <a class="greeners" href="<?=$arFieldsA["DETAIL_PAGE_URL"]?>"><?=$arPropA["FNAME"]["VALUE"]?></a>,
-                        <?}
+                            $arFieldsA = $obA->GetFields();
+                            echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($ii < $count ? "," : "");
+                            $ii++;
+                        }
                     }?>
                 </div>
-                <div class="col-md-2 text-center">
+                <div class="col-md-2 text-right">
                     <b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;<?=$arProp['END_PAGE']["VALUE"]?></b>
                 </div>
                 <div class="clearfix"></div><hr>
@@ -67,27 +90,14 @@ $APPLICATION->SetTitle("Текущий выпуск ДЭМИ");?>
 </div>
 
 
-<div class="col-md-2 col-sm-12 righttexter">
-    <?CModule::IncludeModule("iblock");
-    $arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL");
-    $arFilter = Array("IBLOCK_ID"=>16);
-    $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPageSize"=>1), $arSelect);?>
-    <?while ($ob = $res->GetNextElement()) {
-        $arFields = $ob->GetFields();?>
-        <p><b><a href="<?=$arFields["DETAIL_PAGE_URL"]?>"><?=$arFields['NAME']?></a></b><br>
-            <?$arFilterI = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => $arFields['ID']);
-            $resI = CIBlockElement::GetList(Array(), $arFilterI, false, Array("nPageSize"=>10));?>
-            Количество статей: <?=getSize(17, "PROPERTY_JOURNAL", $arFields['ID'])?><br>
-            <?$resI = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilterI, false, Array("nPageSize"=>1), $arSelect);
-            if(getSize(17, "PROPERTY_JOURNAL", $arFields['ID']) > 0) {
-                $obI = $resI->GetNextElement();
-                $arPropI = $obI->GetProperties();?>
-                Всего страниц: <?=$arPropI['END_PAGE']["VALUE"]?>
-                <br>
-            <?}?>
-        </p>
-    <?}?>
-</div>
+<div class="clearfix"></div>
+<br><br><br>
+
+<p class="text-left">
+    <a href="<?=SITE_DIR?>vypuski/" class="btn btn-lg btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> В список выпусков
+    </a>
+</p>
 
 
 

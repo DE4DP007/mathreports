@@ -1,9 +1,8 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Выпуски(EN)");
-?><?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	".default",
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Выпуски(EN)");?>
+
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", "demiIssue",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -58,8 +57,12 @@ $APPLICATION->SetTitle("Выпуски(EN)");
 		"SORT_ORDER2" => "ASC"
 	)
 );?>
+
 <?CModule::IncludeModule('iblock');
 $arFilter = array('IBLOCK_ID' => 16);
 $res = CIBlockElement::GetList(false, $arFilter, array('IBLOCK_ID'));
 if ($el = $res->Fetch())
-	echo 'Количество изданий: '.$el['CNT'];?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+	echo 'Количество изданий: '.$el['CNT'];?>
+
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -1,10 +1,8 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Издания детально");
-?><br>
- <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail", 
-	".default", 
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Выпуск детально");?>
+
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.detail", "demiIssues",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -19,7 +17,6 @@ $APPLICATION->SetTitle("Издания детально");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -62,63 +59,66 @@ $APPLICATION->SetTitle("Издания детально");
 	),
 	false
 );?>
-<?
-//Определение количества статей и страниц в тестовом режиме
-$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
-$arFilter = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => getCurrentID(16, $_REQUEST["ELEMENT_CODE"]));
-$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
-echo "Количество статей: ", getSize(17, "PROPERTY_JOURNAL", getCurrentID(16, $_REQUEST["ELEMENT_CODE"])), "<br>";
-$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);
-if(getSize(17, "PROPERTY_JOURNAL", getCurrentID(16, $_REQUEST["ELEMENT_CODE"])) > 0) {
-	while ($ob = $res->GetNextElement()) {
-		$arProp = $ob->GetProperties();
-		echo "Всего страниц: ", $arProp['END_PAGE']["VALUE"];
-		echo "<br>";
-	}
-}
-?>
- <?
-$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
-	if(getSize(17, "PROPERTY_JOURNAL", getCurrentID(16, $_REQUEST["ELEMENT_CODE"])) > 0){
-		echo "<br><h4>Список статей</h4>";
-		echo $res->NavPrint("Статьи"), "<br>";
-		while($ob = $res->GetNextElement())
-		{
-			$arFields = $ob->GetFields();
-			$arProp = $ob->GetProperties();
-			echo "<a href='",$arFields['DETAIL_PAGE_URL'], "'>", $arFields['NAME'], "</a>";
-			echo " ", $arProp['START_PAGE']["VALUE"], " - ", $arProp['END_PAGE']["VALUE"];
-			$count = 0;
-			foreach($arProp['AUTHORS']["VALUE"] as $value){
-				$count++;
-			}
-			if ($count == 1) {
-				echo "<br>Автор: ";
-			} else {
-				echo "<br>Авторы: ";
-			}
-			foreach($arProp['AUTHORS']["VALUE"] as $value){
-				$arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
-				$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
-				while($obA = $resA->GetNextElement())
-				{
-					$arPropA = $obA->GetProperties();
-					$arFieldsA = $obA->GetFields();
-					echo "<a href='", $arFieldsA["DETAIL_PAGE_URL"], "'>", $arPropA["FNAME"]["VALUE"], " </a>";
-				}
-			}
-			echo "<br>";
-		}
-		echo $res->NavPrint("Статьи");
-		$res->NavStart(10);
-	}
-?>
-<br>
-<p>
-	<a href="/vypuski.php/">← К выпускам</a>
+<div class="clearfix"></div>
+
+
+<div class="col-md-12 lefttexter">
+
+    <h2 class="text-center">Содержание</h2>
+
+    <?$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
+    $arFilter = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => getCurrentID(16, $_REQUEST["ELEMENT_CODE"]));
+    $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
+        if(getSize(17, "PROPERTY_JOURNAL", getCurrentID(16, $_REQUEST["ELEMENT_CODE"])) > 0){ ?>
+            <?echo $res->NavPrint("Статьи"), "<br>";
+            while($ob = $res->GetNextElement()) {
+                $arFields = $ob->GetFields();
+                $arProp = $ob->GetProperties();?>
+                <div class="col-md-10 leftside">
+                    <h3 class="arttitle">
+                        <a href="<?=$arFields['DETAIL_PAGE_URL']?>"><?=$arFields['NAME']?></a>
+                    </h3>
+
+                    <?$count = count($arProp['AUTHORS']["VALUE"]);
+
+                    if ($count == 1) {
+                        echo "<b>Автор:</b> ";
+                    } else {
+                        echo "<b>Авторы:</b> ";
+                    }
+                    $ii = 1;
+                    foreach($arProp['AUTHORS']["VALUE"] as $value){
+                        $arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
+                        $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
+                        while($obA = $resA->GetNextElement()) {
+                            $arPropA = $obA->GetProperties();
+                            $arFieldsA = $obA->GetFields();
+                            echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($ii < $count ? "," : "");
+                            $ii++;
+                        }
+                    }?>
+                </div>
+
+                <div class="col-md-2 text-right">
+                    <b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;<?=$arProp['END_PAGE']["VALUE"]?></b>
+                </div>
+                <div class="clearfix"></div><hr>
+            <?}
+            echo $res->NavPrint("Статьи");
+            $res->NavStart(10);
+        }
+    ?>
+
+</div>
+<div class="clearfix"></div>
+<br><br><br>
+
+<p class="text-left">
+    <a href="<?=SITE_DIR?>vypuski/" class="btn btn-lg btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> В список выпусков
+    </a>
 </p>
-<?
-function getCurrentID($iblock_id, $code)
+<?function getCurrentID($iblock_id, $code)
 {
 	if(CModule::IncludeModule("iblock"))
 	{
@@ -128,12 +128,10 @@ function getCurrentID($iblock_id, $code)
 		if($res->SelectedRowsCount() != 1) return '<p>Элемент не найден</p>';
 		else return $element['ID'];
 	}
-}
-?>
-<?
-function getSize($block, $property, $id)
+}?>
+<?function getSize($block, $property, $id)
 {
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
-}
-?>
+}?>
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
