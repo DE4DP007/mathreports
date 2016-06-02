@@ -33,8 +33,6 @@ $this->setFrameMode(true);?>
     <?=$arResult['NAME']?>
 </h1><hr>
 
-
-
 <div class="clearfix"></div>
 
 <?//Определение количества статей и страниц в тестовом режиме
