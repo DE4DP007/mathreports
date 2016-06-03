@@ -12,8 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
 
-
-<div class="col-md-6 no-left-pads">
+<div class="col-md-6">
     <h3 class="journhead text-left">
         <?$arFilterT = Array("IBLOCK_ID"=>20, "ID"=>$arResult["PROPERTIES"]['SECTION']["VALUE"]);
         $resT = CIBlockElement::GetList(Array(), $arFilterT, false, Array("nPageSize"=>10));
@@ -25,11 +24,11 @@ $this->setFrameMode(true);?>
     </h3>
 </div>
 
-<div class="col-md-6 no-right-pads">
+<div class="col-md-6">
     <h3 class="journhead text-right">
         <?$arFilterR = Array("IBLOCK_ID"=>16, "ID"=>$arResult["PROPERTIES"]['JOURNAL']['VALUE']);
         $resR = CIBlockElement::GetList(Array(), $arFilterR, false, Array("nPageSize"=>10));
-        if(count($resT) > 0){
+        if(count($resR) > 0){
             $obR = $resR->GetNextElement();
             $arPropR = $obR->GetProperties();
             echo $arPropR['TITLE']['VALUE'];
@@ -38,9 +37,11 @@ $this->setFrameMode(true);?>
 </div>
 <div class="clearfix"></div><hr>
 
-<h1 class="journhead text-center">
-    <?=$arResult['NAME']?>
-</h1>
+<div class="col-md-12">
+    <h1 class="journhead text-center">
+        <?=$arResult['NAME']?>
+    </h1>
+</div>
 
 <div class="col-md-2 hidden-sm spacer"></div>
 <div class="col-md-8 col-sm-12 text-center authholder">
@@ -52,7 +53,7 @@ $this->setFrameMode(true);?>
         $obA = $resA->GetNextElement();
         $arPropA = $obA->GetProperties();
         $arFieldsA = $obA->GetFields();
-        echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($iii < $ccount ? "," : "");
+        echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($iii < $ccount ? ", " : "");
         $iii++;
     }?>
 </div>
@@ -60,7 +61,7 @@ $this->setFrameMode(true);?>
 <div class="clearfix"></div>
 
 
-<div class="col-md-6 no-left-pads">
+<div class="col-md-6">
     <h3 class="journhead text-left">
         <?if (isset($arResult["PROPERTIES"]["UDK"]) && ($arResult["PROPERTIES"]["UDK"]["VALUE"] != "")) {
             echo "УДК: ".$arResult["PROPERTIES"]["UDK"]["VALUE"];
@@ -68,7 +69,7 @@ $this->setFrameMode(true);?>
     </h3>
 </div>
 
-<div class="col-md-6 no-right-pads">
+<div class="col-md-6">
     <h3 class="journhead text-right">
         Страницы: <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> -<?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
     </h3>

@@ -60,27 +60,28 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
                     <h3 class="arttitle">
                         <a href="<?=$arFields['DETAIL_PAGE_URL']?>"><?=$arFields['NAME']?></a>
                     </h3>
-                    <?$count = count($arProp['AUTHORS']["VALUE"]);
+                    <?$kount = count($arProp['AUTHORS']["VALUE"]);
 
-                    if ($count == 1) {
+                    if ($kount == 1) {
                         echo "<b>Автор:</b> ";
                     } else {
                         echo "<b>Авторы:</b> ";
                     }
-                    foreach($arProp['AUTHORS']["VALUE"] as $value){
+                    foreach($arProp['AUTHORS']['VALUE'] as $value){
                         $arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
                         $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
-                        $ii = 1;
+                        $ji = 0;
                         while($obA = $resA->GetNextElement()) {
                             $arPropA = $obA->GetProperties();
                             $arFieldsA = $obA->GetFields();
-                            echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($ii < $count ? "," : "");
-                            $ii++;
+                            $ji++;
+                            echo '<a class="greeners" href="'.$arFieldsA['DETAIL_PAGE_URL'].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($ji < $kount ? ", " : "");
                         }
                     }?>
                 </div>
                 <div class="col-md-2 text-right">
-                    <b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;<?=$arProp['END_PAGE']["VALUE"]?></b>
+                    <b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;
+                        <?=$arProp['END_PAGE']["VALUE"]?></b>
                 </div>
                 <div class="clearfix"></div><hr>
             <?}
@@ -100,9 +101,8 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
 </p>
 
 
-
 <?function getSize($block, $property, $id){
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
-}
-?>
+}?>
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

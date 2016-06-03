@@ -3,7 +3,7 @@ $APPLICATION->SetTitle("Статьи (EN)");?>
 
 
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", ".default",
+	"bitrix:news.list", "demiArticles",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -17,7 +17,6 @@ $APPLICATION->SetTitle("Статьи (EN)");?>
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",

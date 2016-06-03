@@ -126,6 +126,9 @@ h3.journhead {
     margin-top: 5px;
     margin-bottom: 0px;
 }
+.margtop15{
+    margin-top:15px !important;
+}
 
 .langswitch {
     height:30px; width:80px;
@@ -181,4 +184,13 @@ h3.journhead {
 }
 .authholder, .annot {
     font-size:14pt;
+}
+
+.artlist {
+    font-size:14pt;
+    margin-bottom: 18px;
+}
+
+.text-center {
+    white-space: normal !important;
 }

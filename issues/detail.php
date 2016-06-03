@@ -80,7 +80,6 @@ $APPLICATION->SetTitle("Выпуск детально");?>
                     </h3>
 
                     <?$count = count($arProp['AUTHORS']["VALUE"]);
-
                     if ($count == 1) {
                         echo "<b>Автор:</b> ";
                     } else {
