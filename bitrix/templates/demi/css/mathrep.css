@@ -120,6 +120,13 @@ a:focus, a:visited {background-color: transparent !important;}
     font-weight: bold;
     color:#1a638f;
 }
+h3.journhead {
+    font-size: 14pt;
+    color: #4b6d37;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
 .langswitch {
     height:30px; width:80px;
     padding: 5px 10px;
@@ -158,4 +165,20 @@ a:focus, a:visited {background-color: transparent !important;}
 }
 .greeners:hover {
     color:#82bd5f;
+}
+.no-left-pads {
+    padding-left: 0 !important;
+}
+.no-right-pads {
+    padding-right: 0 !important;
+}
+.no-pads {
+    padding: 0 !important;
+}
+.spacer {
+    min-height:10px;
+    min-width:10px;
+}
+.authholder {
+    font-size:14pt;
 }

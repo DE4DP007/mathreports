@@ -1,10 +1,8 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Издания детально");
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Подробнее о статье");
 ?><br>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail", 
-	".default", 
+	"bitrix:news.detail",  "demiArticle",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -19,7 +17,6 @@ $APPLICATION->SetTitle("Издания детально");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -64,14 +61,12 @@ $APPLICATION->SetTitle("Издания детально");
 	),
 	false
 );?>
-<?
-$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_SECTION");
+<?$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_SECTION");
 $arFilter = Array("IBLOCK_ID"=>17, "ID" => getCurrentID(17, $_REQUEST["ELEMENT_CODE"]));
 $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
 if(getSize(17, getCurrentID(17, $_REQUEST["ELEMENT_CODE"])) > 0){
-	while($ob = $res->GetNextElement())
-	{
-		$arProp = $ob->GetProperties();
+	$ob = $res->GetNextElement();
+	$arProp = $ob->GetProperties();
 		$arFilterT = Array("IBLOCK_ID"=>20, "ID"=>$arProp['SECTION']["VALUE"]);
 		$resT = CIBlockElement::GetList(Array(), $arFilterT, false, Array("nPageSize"=>10));
 		if(getSize(20, $arProp['SECTION']["VALUE"]) > 0){
@@ -108,14 +103,26 @@ if(getSize(17, getCurrentID(17, $_REQUEST["ELEMENT_CODE"])) > 0){
 			$arFieldsJ = $obJ->GetFields();
 			echo "<a href='", $arFieldsJ["DETAIL_PAGE_URL"], "'>", "← К выпуску</a>";
 		}
-	}
-}
-?>
-<?
-function getCurrentID($iblock_id, $code)
-{
-	if(CModule::IncludeModule("iblock"))
-	{
+}?>
+
+
+
+<p class="text-left">
+    <a href="
+        <?$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
+        $resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
+        $obJ = $resJ->GetNextElement();
+        $arFieldsJ = $obJ->GetFields();
+        echo $arFieldsJ["DETAIL_PAGE_URL"];?>
+    "
+       class="btn btn-lg btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> В список выпусков
+    </a>
+</p>
+
+
+<?function getCurrentID($iblock_id, $code) {
+	if(CModule::IncludeModule("iblock")) {
 		$arFilter = array("IBLOCK_ID"=>$iblock_id, "CODE" => $code);
 		$res = CIBlockElement::GetList(array(), $arFilter, false, array("nPageSize"=>1), array('ID'));
 		$element = $res->Fetch();
@@ -124,10 +131,10 @@ function getCurrentID($iblock_id, $code)
 	}
 }
 ?>
-<?
-function getSize($block_id, $id)
-{
+<?function getSize($block_id, $id) {
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block_id, "ID" => $id), array(), false, array('ID', 'NAME'));
 }
 ?>
+
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

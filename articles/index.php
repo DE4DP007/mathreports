@@ -1,9 +1,9 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Статьи(EN)");
-?><?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	".default", 
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Статьи (EN)");?>
+
+
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", ".default",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -68,4 +68,7 @@ $APPLICATION->SetTitle("Статьи(EN)");
 		"SORT_ORDER2" => "ASC"
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
