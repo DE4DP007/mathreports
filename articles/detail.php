@@ -1,6 +1,9 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Подробнее о статье");
 ?><br>
+
+
+
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.detail",  "demiArticle",
 	array(
@@ -61,64 +64,7 @@ $APPLICATION->SetTitle("Подробнее о статье");
 	),
 	false
 );?>
-<?$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_SECTION");
-$arFilter = Array("IBLOCK_ID"=>17, "ID" => getCurrentID(17, $_REQUEST["ELEMENT_CODE"]));
-$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
-if(getSize(17, getCurrentID(17, $_REQUEST["ELEMENT_CODE"])) > 0){
-	$ob = $res->GetNextElement();
-	$arProp = $ob->GetProperties();
-		$arFilterT = Array("IBLOCK_ID"=>20, "ID"=>$arProp['SECTION']["VALUE"]);
-		$resT = CIBlockElement::GetList(Array(), $arFilterT, false, Array("nPageSize"=>10));
-		if(getSize(20, $arProp['SECTION']["VALUE"]) > 0){
-			while($obT = $resT->GetNextElement())
-			{
-				$arPropT = $obT->GetProperties();
-				echo "Раздел журнала: ", $arPropT["TITLE"]["VALUE"];
-			}
-		}
-		echo "<br>";
-		echo "<p>Авторы: ";
-		foreach($arProp['AUTHORS']['VALUE'] as $value) {
-			$arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
-			$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
-			while($obA = $resA->GetNextElement())
-			{
-				$arPropA = $obA->GetProperties();
-				$arFieldsA = $obA->GetFields();
-				echo "<a href='", $arFieldsA["DETAIL_PAGE_URL"], "'>", $arPropA["FNAME"]["VALUE"], " </a>";
-			}
-		}
-		echo "<br>";
-		$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
-		$resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
-		while($obJ = $resJ->GetNextElement())
-		{
-			$arPropJ = $obJ->GetProperties();
-			echo "Выпуск: ", $arPropJ['TITLE']['VALUE'];
-		}
-		echo "</p>";
-		$resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
-		while($obJ = $resJ->GetNextElement())
-		{
-			$arFieldsJ = $obJ->GetFields();
-			echo "<a href='", $arFieldsJ["DETAIL_PAGE_URL"], "'>", "← К выпуску</a>";
-		}
-}?>
 
-
-
-<p class="text-left">
-    <a href="
-        <?$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
-        $resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
-        $obJ = $resJ->GetNextElement();
-        $arFieldsJ = $obJ->GetFields();
-        echo $arFieldsJ["DETAIL_PAGE_URL"];?>
-    "
-       class="btn btn-lg btn-primary">
-        <span class="glyphicon glyphicon-arrow-left"></span> В список выпусков
-    </a>
-</p>
 
 
 <?function getCurrentID($iblock_id, $code) {

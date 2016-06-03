@@ -59,81 +59,56 @@ $this->setFrameMode(true);?>
 <div class="col-md-2 hidden-sm spacer"></div>
 <div class="clearfix"></div>
 
-	<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
-		<img
-			class="detail_picture"
-			border="0"
-			src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
-			width="<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>"
-			height="<?=$arResult["DETAIL_PICTURE"]["HEIGHT"]?>"
-			alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
-			title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
-			/>
-	<?endif?>
-	<?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
-		<span class="news-date-time"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></span>
-	<?endif;?>
-	<?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
-		<h3><?=$arResult["NAME"]?></h3>
-	<?endif;?>
-	<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arResult["FIELDS"]["PREVIEW_TEXT"]):?>
-		<p><?=$arResult["FIELDS"]["PREVIEW_TEXT"];unset($arResult["FIELDS"]["PREVIEW_TEXT"]);?></p>
-	<?endif;?>
-	<?if($arResult["NAV_RESULT"]):?>
-		<?if($arParams["DISPLAY_TOP_PAGER"]):?><?=$arResult["NAV_STRING"]?><br /><?endif;?>
-		<?echo $arResult["NAV_TEXT"];?>
-		<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?><br /><?=$arResult["NAV_STRING"]?><?endif;?>
-	<?elseif(strlen($arResult["DETAIL_TEXT"])>0):?>
-		<?echo $arResult["DETAIL_TEXT"];?>
-	<?else:?>
-		<?echo $arResult["PREVIEW_TEXT"];?>
-	<?endif?>
-	<div class="clearfix"></div><br />
+
+<div class="col-md-6 no-left-pads">
+    <h3 class="journhead text-left">
+        <?if (isset($arResult["PROPERTIES"]["UDK"]) && ($arResult["PROPERTIES"]["UDK"]["VALUE"] != "")) {
+            echo "УДК: ".$arResult["PROPERTIES"]["UDK"]["VALUE"];
+        }?>
+    </h3>
+</div>
+
+<div class="col-md-6 no-right-pads">
+    <h3 class="journhead text-right">
+        Страницы: <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> -<?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
+    </h3>
+</div>
+<div class="clearfix"></div><br/>
+
+<div class="col-md-12 annot">
+    <?=$arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]?>
+</div>
+<div class="clearfix"></div><br><br><br>
 
 
 
-	<?foreach($arResult["FIELDS"] as $code=>$value):
-		if ('PREVIEW_PICTURE' == $code || 'DETAIL_PICTURE' == $code)
-		{
-			?><?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?
-			if (!empty($value) && is_array($value))
-			{
-				?><img border="0" src="<?=$value["SRC"]?>" width="<?=$value["WIDTH"]?>" height="<?=$value["HEIGHT"]?>"><?
-			}
-		}
-		else
-		{
-			?><?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?=$value;?><?
-		}
-		?><br />
-	<?endforeach;?>
-	<?foreach($arResult["DISPLAY_PROPERTIES"] as $pid=>$arProperty):?>
 
-		<?=$arProperty["NAME"]?>:&nbsp;
-		<?if(is_array($arProperty["DISPLAY_VALUE"])):?>
-			<?=implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);?>
-		<?else:?>
-			<?=$arProperty["DISPLAY_VALUE"];?>
-		<?endif?>
-		<br />
-	<?endforeach;?>
-	<?if(array_key_exists("USE_SHARE", $arParams) && $arParams["USE_SHARE"] == "Y"){
-		?>
-		<div class="news-detail-share">
-			<noindex>
-			<?
-			$APPLICATION->IncludeComponent("bitrix:main.share", "", array(
-					"HANDLERS" => $arParams["SHARE_HANDLERS"],
-					"PAGE_URL" => $arResult["~DETAIL_PAGE_URL"],
-					"PAGE_TITLE" => $arResult["~NAME"],
-					"SHORTEN_URL_LOGIN" => $arParams["SHARE_SHORTEN_URL_LOGIN"],
-					"SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
-					"HIDE" => $arParams["SHARE_HIDE"],
-				),
-				$component,
-				array("HIDE_ICONS" => "Y")
-			);
-			?>
-			</noindex>
-		</div>
+<p class="col-md-6 col-xs-12 text-right">
+    <a href="
+        <?$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
+    $resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
+    $obJ = $resJ->GetNextElement();
+    $arFieldsJ = $obJ->GetFields();
+    echo $arFieldsJ["DETAIL_PAGE_URL"];?>
+    "
+       class="btn btn-lg btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> В список выпусков
+    </a>
+</p>
+
+
+<p class="col-md-6 col-xs-12 text-left">
+    <?if (isset($arResult["PROPERTIES"]["FULL_TEXT"]) && ($arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"] != "")) {?>
+        <a href="<?=$arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"]?>" class="btn btn-success btn-lg">
+            Скачать полный текст
+            <span class="glyphicon glyphicon-book"></span>
+        </a>
+    <?} else {?>
+        <a href="#" class="btn btn-warning btn-lg">
+            Полный текст недоступен
+            <span class="glyphicon glyphicon-remove"></span>
+        </a>
     <?}?>
+</p>
+
+<br><br>
