@@ -9,7 +9,9 @@ a:hover { text-decoration: none; }
 
 a:focus, a:visited {background-color: transparent !important;}
 
-
+#booker p {
+    font-size: 10pt;
+}
 #bighat{
     background: url("../images/demiTop.jpg") no-repeat;
     height:200px;
@@ -22,6 +24,9 @@ a:focus, a:visited {background-color: transparent !important;}
     right:0;
 }
 
+p {
+    font-size: 14pt;
+}
 
 #mmenu{
     background: url("../images/dm_10.jpg") repeat-x;

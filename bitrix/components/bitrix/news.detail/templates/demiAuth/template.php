@@ -32,21 +32,38 @@ $this->setFrameMode(true);
     <h4>
         <?(SITE_ID == "s1" ? getWork("Место работы", "TITLE") : getWork("Workplace", "TITLE_EN"));?>
     </h4>
+</div><div class="clearfix"></div>
+<div class="row">
+    <?if (isset($arResult["DETAIL_PICTURE"])) {?>
+    <p class="col-md-4">
+        <img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
+             title="<?=(SITE_ID == "s1" ? $arResult['PROPERTIES']['TITLE']['VALUE'] : $arResult['PROPERTIES']['TITLE_EN']['VALUE'])?>"
+             alt="<?=(SITE_ID == "s1" ? $arResult['PROPERTIES']['TITLE']['VALUE'] : $arResult['PROPERTIES']['TITLE_EN']['VALUE'])?>"
+             class="img-responsive img-thumbnail">
+    </p>
+    <p class="col-md-8">
+        <?} else {?>
+    <p class="col-md-12">
+        <?}?>
+        <?if (SITE_ID == "s1") {
+            if (isset($arResult["PREVIEW_TEXT"]) && ($arResult["PREVIEW_TEXT"] != "")) {
+                echo $arResult["PREVIEW_TEXT"];
+            } else
+            { }
+        } else {
+            if (isset($arResult["DETAIL_TEXT"]) && ($arResult["DETAIL_TEXT"] != "")) {
+                echo $arResult["DETAIL_TEXT"];
+            }
+        }?>
+    </p>
 </div>
 
-<p>
-    <?if (isset($arResult["DETAIL_TEXT"]) && ($arResult["DETAIL_TEXT"] != "")) {
-        echo $arResult["DETAIL_TEXT"];
-    } elseif (isset($arResult["PREVIEW_TEXT"]) && ($arResult["PREVIEW_TEXT"] != "")) {
-        echo $arResult["PREVIEW_TEXT"];
-    }?>
-</p>
 <br><br>
 <hr>
 <div class="col-md-12">
-    <h2 class="text-left">
+    <h3 class="text-left">
         <?=(SITE_ID == "s1" ? "Статьи автора в Журнале" : "Articles of author in Journal");?>
-    </h2><br>
+    </h3><br>
 
 
     <?if (SITE_ID == "s1") {

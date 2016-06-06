@@ -117,10 +117,8 @@ $APPLICATION->SetTitle("Выпуск детально");?>
         <span class="glyphicon glyphicon-arrow-left"></span> В список выпусков
     </a>
 </p>
-<?function getCurrentID($iblock_id, $code)
-{
-	if(CModule::IncludeModule("iblock"))
-	{
+<?function getCurrentID($iblock_id, $code) {
+	if(CModule::IncludeModule("iblock")) {
 		$arFilter = array("IBLOCK_ID"=>$iblock_id, "CODE" => $code);
 		$res = CIBlockElement::GetList(array(), $arFilter, false, array("nPageSize"=>1), array('ID'));
 		$element = $res->Fetch();
@@ -128,8 +126,7 @@ $APPLICATION->SetTitle("Выпуск детально");?>
 		else return $element['ID'];
 	}
 }?>
-<?function getSize($block, $property, $id)
-{
+<?function getSize($block, $property, $id) {
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
 }?>
 

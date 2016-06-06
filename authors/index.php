@@ -1,14 +1,20 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Авторы");
-?>
-<br>
-<br>
-<br>
-<br>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Авторы ДЭМИ");?>
+
+
+<?if (SITE_ID == "s1") {
+	$work = "TITLE";
+	echo "<h3 class='journhead margtop15 text-right'>Наши авторы</h3><hr>";
+	$APPLICATION->SetTitle("ДЭМИ: Наши авторы");
+} else {
+	$work = "TITLE_EN";
+	echo "<h3 class='journhead margtop15 text-right'>Out Authors</h3><hr>";
+	$APPLICATION->SetTitle("DEMI: Authors");
+}?>
+
+
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	".default", 
+	"bitrix:news.list", "demiAuthors",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -22,7 +28,6 @@ $APPLICATION->SetTitle("Авторы");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -79,4 +84,7 @@ $APPLICATION->SetTitle("Авторы");
 	),
 	false
 );?>
+
+
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

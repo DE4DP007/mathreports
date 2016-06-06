@@ -1,24 +1,22 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-?>
-<?
-if (SITE_ID == "s1") {
-	$work = "TITLE";
-	echo "<h1 style=\"text-align: right;\"><span style=\"font-size: 20pt; color: #2f4f4f;\">Организации</span></h1>
-	<span style=\"color: #2f4f4f;\"> </span>
-	<hr>";
-	$APPLICATION->SetTitle("Место работы");
-	getSizes("Общее количество авторов", "TITLE", 17, "Общее количество статей");
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+
+<?if (SITE_ID == "s1") {
+    $work = "TITLE";
+    echo "<h3 class='journhead margtop15 text-right'>Организации</h3><hr>";
+    $APPLICATION->SetTitle("ДЭМИ: Организации");
+    getSizes("Общее количество авторов", "TITLE", 17, "Общее количество статей");
 } else {
-	$work = "TITLE_EN";
-	echo "<h1 style=\"text-align: right;\"><span style=\"font-size: 20pt; color: #2f4f4f;\">Organizations</span></h1>
-	<span style=\"color: #2f4f4f;\"> </span>
-	<hr>";
-	$APPLICATION->SetTitle("Work");
-	getSizes("Total number of authors", "TITLE_EN", 14, "Total number of articles");
+    $work = "TITLE_EN";
+    echo "<h3 class='journhead margtop15 text-right'>Organizations</h3><hr>";
+    $APPLICATION->SetTitle("DEMI: Workplaces");
+    getSizes("Total number of authors", "TITLE_EN", 14, "Total number of articles");
 }?>
-<?
-function getSizes($authors, $title, $block, $arText) {
+
+
+
+
+
+<?function getSizes($authors, $title, $block, $arText) {
 	CModule::IncludeModule("iblock");
 	$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL");
 	$arFilter = Array("IBLOCK_ID"=>22);
@@ -27,7 +25,7 @@ function getSizes($authors, $title, $block, $arText) {
 		$arID = array();
 		$arFields = $ob->GetFields();
 		$arProp = $ob->GetProperties();
-		echo "<p><b>", "<a href='", $arFields["DETAIL_PAGE_URL"], "'>", $arProp[$title]['VALUE'], "</a></b><br>";
+		echo "<div class='col-md-6'><p class='thumbnail text-center'><b>", "<a href='", $arFields["DETAIL_PAGE_URL"], "'>", $arProp[$title]['VALUE'], "</a></b><br>";
 		echo $authors, ": ", getSize(21, "PROPERTY_WORK", $arFields['ID']), "<br>";
 		$arFilterA = Array("IBLOCK_ID"=>21, "PROPERTY_WORK"=>$arFields['ID']);
 		$resA = CIBlockElement::GetList(array(), $arFilterA, false, Array("nPageSize"=>10), array('ID', 'NAME'));
@@ -36,12 +34,11 @@ function getSizes($authors, $title, $block, $arText) {
 			$arID[] = $arFieldsA['ID'];
 		}
 		echo $arText, ": ", getArticles($arID, $block);
-		echo "</p>";
+		echo "</p></div>";
 	}
 }
 ?>
-<?
-function getArticles($authsID, $block_id) {
+<?function getArticles($authsID, $block_id) {
 	$inputArr = array();
 	foreach($authsID as $value){
 		$arFilter = Array("IBLOCK_ID"=>$block_id, "PROPERTY_AUTHORS" => $value);
@@ -56,10 +53,8 @@ function getArticles($authsID, $block_id) {
 	}
 	$resultArr = unique_multidim_array($inputArr, "DPURL");
 	return count($resultArr);
-}
-?>
-<?
-function unique_multidim_array($array, $key) {
+}?>
+<?function unique_multidim_array($array, $key) {
 	$temp_array = array();
 	$i = 0;
 	$key_array = array();
@@ -72,10 +67,9 @@ function unique_multidim_array($array, $key) {
 		$i++;
 	}
 	return $temp_array;
-}
-?>
-<?
-function getSize($block, $property, $id)
+}?>
+
+<?function getSize($block, $property, $id)
 {
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
 }
