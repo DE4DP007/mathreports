@@ -19,14 +19,14 @@ $this->setFrameMode(true);?>
         if(count($resT) > 0){
             $obT = $resT->GetNextElement();
             $arPropT = $obT->GetProperties();
-            echo $arPropT["TITLE"]["VALUE"];
+            echo $arPropT[GetMessage("TITLE")]["VALUE"];
         }?>
     </h3>
 </div>
 
 <div class="col-md-6">
     <h3 class="journhead text-right">
-        <?$arFilterR = Array("IBLOCK_ID"=>16, "ID"=>$arResult["PROPERTIES"]['JOURNAL']['VALUE']);
+        <?$arFilterR = Array("IBLOCK_ID"=>GetMessage("ID"), "ID"=>$arResult["PROPERTIES"]['JOURNAL']['VALUE']);
         $resR = CIBlockElement::GetList(Array(), $arFilterR, false, Array("nPageSize"=>10));
         if(count($resR) > 0){
             $obR = $resR->GetNextElement();
@@ -53,7 +53,7 @@ $this->setFrameMode(true);?>
         $obA = $resA->GetNextElement();
         $arPropA = $obA->GetProperties();
         $arFieldsA = $obA->GetFields();
-        echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($iii < $ccount ? ", " : "");
+        echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA[GetMessage("FNAME")]["VALUE"].'</a>'.($iii < $ccount ? ", " : "");
         $iii++;
     }?>
 </div>
@@ -64,14 +64,14 @@ $this->setFrameMode(true);?>
 <div class="col-md-6">
     <h3 class="journhead text-left">
         <?if (isset($arResult["PROPERTIES"]["UDK"]) && ($arResult["PROPERTIES"]["UDK"]["VALUE"] != "")) {
-            echo "УДК: ".$arResult["PROPERTIES"]["UDK"]["VALUE"];
+            echo GetMessage("UDK"), ": ".$arResult["PROPERTIES"]["UDK"]["VALUE"];
         }?>
     </h3>
 </div>
 
 <div class="col-md-6">
     <h3 class="journhead text-right">
-        Страницы: <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> -<?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
+        <?echo GetMessage("PAGES_STR");?> <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> -<?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
     </h3>
 </div>
 <div class="clearfix"></div><br/>
@@ -93,7 +93,7 @@ $this->setFrameMode(true);?>
     echo $arFieldsJ["DETAIL_PAGE_URL"];?>
     "
        class="btn btn-lg btn-primary">
-        <span class="glyphicon glyphicon-arrow-left"></span> В список выпусков
+        <span class="glyphicon glyphicon-arrow-left"></span> <?echo GetMessage("TO_ISSUE")?>
     </a>
 </p>
 
@@ -101,12 +101,12 @@ $this->setFrameMode(true);?>
 <p class="col-md-6 col-xs-12 text-left">
     <?if (isset($arResult["PROPERTIES"]["FULL_TEXT"]) && ($arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"] != "")) {?>
         <a href="<?=$arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"]?>" class="btn btn-success btn-lg">
-            Скачать полный текст
+            <?echo GetMessage("DOWNLOAD")?>
             <span class="glyphicon glyphicon-book"></span>
         </a>
     <?} else {?>
         <a href="#" class="btn btn-warning btn-lg">
-            Полный текст недоступен
+            <?echo GetMessage("NO_FILE")?>
             <span class="glyphicon glyphicon-remove"></span>
         </a>
     <?}?>

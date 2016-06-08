@@ -3,9 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Издания детально");
 ?><br>
  <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail",
-	".default",
-	Array(
+	"bitrix:news.detail", 
+	"demiIssues", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -19,7 +19,7 @@ $APPLICATION->SetTitle("Издания детально");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "demiIssues",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -29,7 +29,10 @@ $APPLICATION->SetTitle("Издания детально");
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_CODE" => $_REQUEST["ELEMENT_CODE"],
 		"ELEMENT_ID" => $_REQUEST["ELEMENT_ID"],
-		"FIELD_CODE" => array(0=>"",1=>"",),
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"IBLOCK_ID" => "15",
 		"IBLOCK_TYPE" => "issues_en",
 		"IBLOCK_URL" => "",
@@ -41,7 +44,11 @@ $APPLICATION->SetTitle("Издания детально");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array(0=>"TITLE",1=>"DESCRIPTION",2=>""),
+		"PROPERTY_CODE" => array(
+			0 => "TITLE",
+			1 => "DESCRIPTION",
+			2 => "",
+		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -52,78 +59,74 @@ $APPLICATION->SetTitle("Издания детально");
 		"SHOW_404" => "N",
 		"USE_PERMISSIONS" => "N",
 		"USE_SHARE" => "N"
-	)
+	),
+	false
 );?>
-<?
-//Определение количества статей и страниц в тестовом режиме
-$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
-$arFilter = Array("IBLOCK_ID"=>14, "PROPERTY_JOURNAL" => getCurrentID(15, $_REQUEST["ELEMENT_CODE"]));
-$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
-echo "Article Count: ", getSize(14, "PROPERTY_JOURNAL", getCurrentID(15, $_REQUEST["ELEMENT_CODE"])), "<br>";
-$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);
-if(getSize(14, "PROPERTY_JOURNAL", getCurrentID(15, $_REQUEST["ELEMENT_CODE"])) > 0) {
-	while ($ob = $res->GetNextElement()) {
-		$arProp = $ob->GetProperties();
-		echo "Total Pages: ", $arProp['END_PAGE']["VALUE"];
-		echo "<br>";
-	}
-}
-?>
- <?
-$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
-if(getSize(14, "PROPERTY_JOURNAL", getCurrentID(15, $_REQUEST["ELEMENT_CODE"])) > 0) {
-	$res->NavStart(10);
-	echo "<br><h4>List of articles</h4>";
-	echo $res->NavPrint("Articles"), "<br>";
-	while ($ob = $res->GetNextElement()) {
-		$arFields = $ob->GetFields();
-		$arProp = $ob->GetProperties();
-		echo "<a href='", $arFields['DETAIL_PAGE_URL'], "'>", $arFields['NAME'], "</a>";
-		echo " ", $arProp['START_PAGE']["VALUE"], " - ", $arProp['END_PAGE']["VALUE"];
-		$count = 0;
-			foreach($arProp['AUTHORS']["VALUE"] as $value){
-				$count++;
-			}
-			if ($count == 1) {
-				echo "<br>Author: ";
-			} else {
-				echo "<br>Authors: ";
-			}
-		foreach($arProp['AUTHORS']["VALUE"] as $value){
-			$arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
-			$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
-			while($obA = $resA->GetNextElement())
-			{
-				$arPropA = $obA->GetProperties();
-				$arFieldsA = $obA->GetFields();
-				echo "<a href='", $arFieldsA["DETAIL_PAGE_URL"], "'>", $arPropA["FNAME_EN"]["VALUE"], " </a>";
-			}
-		}
-		echo "<br>";
-	}
-	echo $res->NavPrint("Articles");
-}
-?> <br>
-<p>
- <a href="/en/vypuski.php/">← To issues</a>
+<div class="col-md-12 lefttexter">
+
+    <h2 class="text-center">List of articles</h2>
+
+    <?$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
+    $arFilter = Array("IBLOCK_ID"=>14, "PROPERTY_JOURNAL" => getCurrentID(15, $_REQUEST["ELEMENT_CODE"]));
+    $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
+        if(getSize(14, "PROPERTY_JOURNAL", getCurrentID(15, $_REQUEST["ELEMENT_CODE"])) > 0){ ?>
+            <?echo $res->NavPrint("Статьи"), "<br>";
+            while($ob = $res->GetNextElement()) {
+                $arFields = $ob->GetFields();
+                $arProp = $ob->GetProperties();?>
+                <div class="col-md-10 leftside">
+                    <h3 class="arttitle">
+                        <a href="<?=$arFields['DETAIL_PAGE_URL']?>"><?=$arFields['NAME']?></a>
+                    </h3>
+
+                    <?$count = count($arProp['AUTHORS']["VALUE"]);
+                    if ($count == 1) {
+                        echo "<b>Author:</b> ";
+                    } else {
+                        echo "<b>Authors:</b> ";
+                    }
+                    $ii = 1;
+                    foreach($arProp['AUTHORS']["VALUE"] as $value){
+                        $arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
+                        $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
+                        while($obA = $resA->GetNextElement()) {
+                            $arPropA = $obA->GetProperties();
+                            $arFieldsA = $obA->GetFields();
+                            echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME_EN"]["VALUE"].'</a>'.($ii < $count ? "," : "");
+                            $ii++;
+                        }
+                    }?>
+                </div>
+
+                <div class="col-md-2 text-right">
+                    <b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;<?=$arProp['END_PAGE']["VALUE"]?></b>
+                </div>
+                <div class="clearfix"></div><hr>
+            <?}
+            echo $res->NavPrint("Articles");
+            $res->NavStart(10);
+        }
+    ?>
+
+</div>
+<div class="clearfix"></div>
+<br><br><br>
+
+<p class="text-left">
+    <a href="<?=SITE_DIR?>vypuski/" class="btn btn-lg btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> To issues
+    </a>
 </p>
-<?
-function getCurrentID($iblock_id, $code)
-{
-	if(CModule::IncludeModule("iblock"))
-	{
+<?function getCurrentID($iblock_id, $code) {
+	if(CModule::IncludeModule("iblock")) {
 		$arFilter = array("IBLOCK_ID"=>$iblock_id, "CODE" => $code);
 		$res = CIBlockElement::GetList(array(), $arFilter, false, array("nPageSize"=>1), array('ID'));
 		$element = $res->Fetch();
 		if($res->SelectedRowsCount() != 1) return '<p>Элемент не найден</p>';
 		else return $element['ID'];
 	}
-}
-?>
-<?
-function getSize($block, $property, $id)
-{
+}?>
+<?function getSize($block, $property, $id) {
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
-}
-?>
+}?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

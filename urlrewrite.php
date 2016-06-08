@@ -1,25 +1,7 @@
 <?
 $arUrlRewrite = array(
 	array(
-		"CONDITION" => "#^/en/articles/([a-zA-Z0-9\\.\\-_]+)/?.*#",
-		"RULE" => "ELEMENT_CODE=\$1",
-		"ID" => "bitrix:news.detail",
-		"PATH" => "/en/articles/detail.php",
-	),
-	array(
-		"CONDITION" => "#^/articles/([a-zA-Z0-9\\.\\-_]+)/?.*#",
-		"RULE" => "ELEMENT_CODE=\$1",
-		"ID" => "bitrix:news.detail",
-		"PATH" => "/articles/detail.php",
-	),
-	array(
 		"CONDITION" => "#^/en/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
-		"RULE" => "ELEMENT_CODE=\$1",
-		"ID" => "bitrix:news.detail",
-		"PATH" => "/authors/detail.php",
-	),
-	array(
-		"CONDITION" => "#^/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
 		"PATH" => "/authors/detail.php",
@@ -31,10 +13,28 @@ $arUrlRewrite = array(
 		"PATH" => "/en/issues/detail.php",
 	),
 	array(
+		"CONDITION" => "#^/articles/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"RULE" => "ELEMENT_CODE=\$1",
+		"ID" => "bitrix:news.detail",
+		"PATH" => "/articles/detail.php",
+	),
+	array(
+		"CONDITION" => "#^/en/articles/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"RULE" => "ELEMENT_CODE=\$1",
+		"ID" => "bitrix:news.detail",
+		"PATH" => "/en/articles/detail.php",
+	),
+	array(
 		"CONDITION" => "#^/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
 		"PATH" => "/authors/detail.php",
+	),
+	array(
+		"CONDITION" => "#^/en/work/([a-zA-Z0-9\\.\\-_]+)/?.*#",
+		"RULE" => "ELEMENT_CODE=\$1",
+		"ID" => "bitrix:news.detail",
+		"PATH" => "/work/detail.php",
 	),
 	array(
 		"CONDITION" => "#^/issues/([a-zA-Z0-9\\.\\-_]+)/?.*#",
@@ -49,18 +49,8 @@ $arUrlRewrite = array(
 		"PATH" => "/work/detail.php",
 	),
 	array(
-		"CONDITION" => "#^/en/work/index.php?.*#",
-		"PATH" => "/work/index.php",
-	),
-	array(
-		"CONDITION" => "#^/en/work/([a-zA-Z0-9\\.\\-_]+)/?.*#",
-		"RULE" => "ELEMENT_CODE=\$1",
-		"ID" => "bitrix:news.detail",
-		"PATH" => "/work/detail.php",
-	),
-	array(
-		"CONDITION" => "#^/en/work/#",
-		"PATH" => "/work/index.php",
+		"CONDITION" => "#^/en/tekushchiy-vypusk/#",
+		"PATH" => "/en/tekushchiy-vypusk.php",
 	),
 	array(
 		"CONDITION" => "#^/en/work/index.php?.*#",
@@ -79,8 +69,8 @@ $arUrlRewrite = array(
 		"PATH" => "/en/vypuski.php",
 	),
 	array(
-		"CONDITION" => "#^/en/tekushchiy-vypusk/#",
-		"PATH" => "/en/tekushchiy-vypusk.php",
+		"CONDITION" => "#^/en/work/#",
+		"PATH" => "/work/index.php",
 	),
 );
 
