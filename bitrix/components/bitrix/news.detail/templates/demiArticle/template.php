@@ -76,14 +76,14 @@ $this->setFrameMode(true);?>
 </div>
 <div class="clearfix"></div><br/>
 
-<div class="col-md-12 annot">
+<div class="col-md-12 annot text-justify">
     <?= latexTohtml($arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]);?>
 </div>
 <div class="clearfix"></div><br><br>
 
 <?if (isset($arResult["PROPERTIES"]["KEYWORDS"]["VALUE"]) && ($arResult["PROPERTIES"]["KEYWORDS"]["VALUE"] != "")) {?>
     <div class="col-md-12 keywords">
-        <p>
+        <p class="text-justify">
             <b><?echo (SITE_ID == "s1" ? "Ключевые слова: " : "Keywords: ");?></b>
             <?=$arResult["PROPERTIES"]["KEYWORDS"]["VALUE"]?>.
         </p>
@@ -95,12 +95,11 @@ $this->setFrameMode(true);?>
 
 
 <p class="col-md-6 col-xs-12 text-right">
-    <a href="
-            <?$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
-            $resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
-            $obJ = $resJ->GetNextElement();
-            $arFieldsJ = $obJ->GetFields();
-            echo $arFieldsJ["DETAIL_PAGE_URL"];?>"
+    <?$issuesBlock = (SITE_ID == "s1" ? 16 : 15)?>
+    <?$arFiltJ = Array("IBLOCK_ID"=>$issuesBlock, "ID"=>$arResult['PROPERTIES']['JOURNAL']['VALUE']);
+    $rsJ = CIBlockElement::GetList(Array(), $arFiltJ, false, Array("nPageSize"=>10));
+    $aJ = $rsJ->GetNext();?>
+    <a href="<?= $aJ["DETAIL_PAGE_URL"];?>"
        class="btn btn-lg btn-primary">
             <span class="glyphicon glyphicon-arrow-left"></span>
             <?echo (SITE_ID == "s1" ? "В содержание выпуска" : "To issue content")?>

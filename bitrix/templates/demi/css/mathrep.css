@@ -156,7 +156,8 @@ h3.journhead {
 .btn-large{
     font-size: 16pt;
 }
-
+.btn-primary:focus
+{ background:linear-gradient(to bottom,#337ab7 0,#265a88 100%) }
 
 .lefttexter {
     font-size:14pt;
