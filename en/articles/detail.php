@@ -3,8 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Издания детально");
 ?><br>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail", 
-	"demiArticle", 
+	"bitrix:news.detail", "demiArticle",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",

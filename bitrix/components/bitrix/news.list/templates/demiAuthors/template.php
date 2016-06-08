@@ -37,7 +37,7 @@ $this->setFrameMode(true);?>
                 echo "<small><i>",$arItem["PROPERTIES"]["ADD_INFO"]["VALUE"],"</i></small><br>";
             }?>
         <?} else {?>
-            <b><?=$arItem["PROPERTIES"]["FNAME_EN"]["VALUE"]?></b><br />
+            <b><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["PROPERTIES"]["FNAME_EN"]["VALUE"]?></b></a><br />
 
             <?if (isset($arItem["PROPERTIES"]["WORK"]["VALUE"])) {
                 $arSelect = Array("ID", "NAME", "PROPERTY_TITLE_EN", "DETAIL_PAGE_URL");

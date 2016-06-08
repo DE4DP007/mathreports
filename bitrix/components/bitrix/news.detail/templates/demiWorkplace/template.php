@@ -101,13 +101,13 @@ $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>5),
             while ($ob = $res->GetNextElement()) {
                 $arFields = $ob->GetFields();
                 $arProp = $ob->GetProperties();
-                array_push($inputArr, array("DPURL" => $arFields['DETAIL_PAGE_URL'], "TITLE" => $arProp["TITLE"]["VALUE"]));
+                array_push($inputArr, array("DPURL" => $arFields['DETAIL_PAGE_URL'], "TITLE" => $arProp["TITLE"]["VALUE"], "JOURNAL" => $arProp["JOURNAL"]["VALUE"]));
             }
         }
     }
     $resultArr = unique_multidim_array($inputArr, "DPURL");
     foreach($resultArr as $value) {
-        echo "<p class='col-md-12 text-left'><a href='", $value["DPURL"], "'>", $value["TITLE"], "</a></p>";
+        echo "<p class='col-md-12 text-left'><a href='", $value["DPURL"], "'>", $value["TITLE"], $value["JOURNAL"], "</a></p>";
     }
 }?>
 

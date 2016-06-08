@@ -76,6 +76,15 @@ $this->setFrameMode(true);
 
 
 
+<p class="col-md-12 text-left">
+    <a href="<?=SITE_DIR?>authors/" class="btn btn-lg btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        <?echo (SITE_ID == "s1" ? "В список авторов" : "To authors list")?>
+    </a>
+</p>
+
+
+
 <?function getArticles($block_id, $pages_string) {
     $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE", "PROPERTY_JOURNAL");
     $arFilter = Array("IBLOCK_ID"=>$block_id, "PROPERTY_AUTHORS" => getCurrentID(21, $_REQUEST["ELEMENT_CODE"]));
@@ -96,7 +105,6 @@ $this->setFrameMode(true);
     }
 }?>
 
-
 <?function getWork($valueSt, $value) {
     $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL");
     $arFilterA = Array("IBLOCK_ID"=>21, "ID" => getCurrentID(21, $_REQUEST["ELEMENT_CODE"]));
@@ -115,8 +123,6 @@ $this->setFrameMode(true);
     }
 }?>
 
-
-
 <?function getCurrentID($iblock_id, $code) {
     if(CModule::IncludeModule("iblock")) {
         $arFilter = array("IBLOCK_ID"=>$iblock_id, "CODE" => $code);
@@ -126,8 +132,6 @@ $this->setFrameMode(true);
         else return $element['ID'];
     }
 }?>
-
-
 
 <?function getSize($block_id, $id, $property){
     return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block_id, $property => $id), array(), false, array('ID', 'NAME'));

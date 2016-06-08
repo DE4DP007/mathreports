@@ -13,6 +13,23 @@ function test_dump($v) {
     }
 }
 
+
+function latexTohtml($str) {
+    $sts = explode("$", $str);
+    $link = "http://chart.apis.google.com/chart?cht=tx&chl=";
+    $st = "";
+    for ($i = 0; $i < sizeof($sts); $i++) {
+        if ($i % 2 == 0) {
+            $st = $st . $sts[$i];
+        } else {
+            $st = $st . "<img src='" . $link . $sts[$i] . "' alt='" . $sts[$i] . "' title='" . $sts[$i] . "' />";
+        }
+    }
+    return $st;
+}
+
+
+
 define("TRACE_FILENAME",$_SERVER["DOCUMENT_ROOT"]."/log/trace_".date("Ymd").".log");
 
 function Trace($object)

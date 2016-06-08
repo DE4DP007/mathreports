@@ -77,7 +77,7 @@ $this->setFrameMode(true);?>
 <div class="clearfix"></div><br/>
 
 <div class="col-md-12 annot">
-    <?=$arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]?>
+    <?= latexTohtml($arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]);?>
 </div>
 <div class="clearfix"></div><br><br><br>
 
@@ -86,14 +86,14 @@ $this->setFrameMode(true);?>
 
 <p class="col-md-6 col-xs-12 text-right">
     <a href="
-        <?$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
-    $resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
-    $obJ = $resJ->GetNextElement();
-    $arFieldsJ = $obJ->GetFields();
-    echo $arFieldsJ["DETAIL_PAGE_URL"];?>
-    "
+            <?$arFilterJ = Array("IBLOCK_ID"=>16, "ID"=>$arProp['JOURNAL']['VALUE']);
+            $resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>10));
+            $obJ = $resJ->GetNextElement();
+            $arFieldsJ = $obJ->GetFields();
+            echo $arFieldsJ["DETAIL_PAGE_URL"];?>"
        class="btn btn-lg btn-primary">
-        <span class="glyphicon glyphicon-arrow-left"></span> <?echo GetMessage("TO_ISSUE")?>
+            <span class="glyphicon glyphicon-arrow-left"></span>
+            <?echo (SITE_ID == "s1" ? "В содержание выпуска" : "To issue content")?>
     </a>
 </p>
 
@@ -113,3 +113,5 @@ $this->setFrameMode(true);?>
 </p>
 
 <br><br>
+
+
