@@ -79,8 +79,18 @@ $this->setFrameMode(true);?>
 <div class="col-md-12 annot">
     <?= latexTohtml($arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]);?>
 </div>
-<div class="clearfix"></div><br><br><br>
+<div class="clearfix"></div><br><br>
 
+<?if (isset($arResult["PROPERTIES"]["KEYWORDS"]["VALUE"]) && ($arResult["PROPERTIES"]["KEYWORDS"]["VALUE"] != "")) {?>
+    <div class="col-md-12 keywords">
+        <p>
+            <b><?echo (SITE_ID == "s1" ? "Ключевые слова: " : "Keywords: ");?></b>
+            <?=$arResult["PROPERTIES"]["KEYWORDS"]["VALUE"]?>.
+        </p>
+    </div>
+    <div class="clearfix"></div><br><br>
+<?}?>
+<br>
 
 
 

@@ -51,7 +51,7 @@ $this->setFrameMode(true);?>
 
 
 <?// AUTHORS
-$arSelect = Array("ID", "PROPERTY_FNAME", "PROPERTY_FNAME_EN", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL");
+$arSelect = Array("ID", "PROPERTY_FNAME", "PROPERTY_FNAME_EN", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "NAME");
 $arFilter = Array("IBLOCK_ID"=>21, "PROPERTY_WORK" => getCurrentID(22, $_REQUEST["ELEMENT_CODE"]));
 $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>5), $arSelect);?>
 
@@ -101,13 +101,33 @@ $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>5),
             while ($ob = $res->GetNextElement()) {
                 $arFields = $ob->GetFields();
                 $arProp = $ob->GetProperties();
-                array_push($inputArr, array("DPURL" => $arFields['DETAIL_PAGE_URL'], "TITLE" => $arProp["TITLE"]["VALUE"], "JOURNAL" => $arProp["JOURNAL"]["VALUE"]));
+			array_push($inputArr, array("DPURL" => $arFields['DETAIL_PAGE_URL'], "TITLE" => $arProp["TITLE"]["VALUE"], "JOURNAL" => $arProp["JOURNAL"]["VALUE"], "AUTHORS" => $arProp["AUTHORS"]["VALUE"]));
             }
         }
     }
     $resultArr = unique_multidim_array($inputArr, "DPURL");
     foreach($resultArr as $value) {
-        echo "<p class='col-md-12 text-left'><a href='", $value["DPURL"], "'>", $value["TITLE"], $value["JOURNAL"], "</a></p>";
+		(SITE_ID == "s1" ? $journal_block = 16 : $journal_block = 15);
+		$arFilterJ = Array("IBLOCK_ID"=>$journal_block, "ID" => $value["JOURNAL"]);
+        $resJ = CIBlockElement::GetList(Array(), $arFilterJ, false, Array("nPageSize"=>5), $arSelect);
+        //echo "<p class='col-md-12 text-left'><a href='", $value["DPURL"], "'>", $value["TITLE"], "</a></p>";
+		while($obJ = $resJ->GetNextElement())
+        {
+            $arFieldsJ = $obJ->GetFields();
+			echo "<p class='col-md-12 text-left'><a href='", $value["DPURL"], "'>", $value["TITLE"], "</a><br>";
+			foreach($value["AUTHORS"] as $item)
+			{
+				$arFilterA = Array("IBLOCK_ID"=>21, "ID" => $item);
+				$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>5));
+				while($obA = $resA->GetNextElement())
+				{
+					$arFieldsA = $obA->GetProperties();
+					(SITE_ID == "s1" ? $name = "FNAME" : $name = "FNAME_EN");
+					echo $arFieldsA[$name]["VALUE"], " ";
+				}
+			}
+			echo "<br>", $arFieldsJ["NAME"], "</p>";
+		}
     }
 }?>
 
