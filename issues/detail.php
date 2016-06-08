@@ -92,7 +92,7 @@ $APPLICATION->SetTitle("Выпуск детально");?>
                         while($obA = $resA->GetNextElement()) {
                             $arPropA = $obA->GetProperties();
                             $arFieldsA = $obA->GetFields();
-                            echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($ii < $count ? "," : "");
+                            echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($ii < $count ? ", " : "");
                             $ii++;
                         }
                     }?>

@@ -47,10 +47,14 @@ p {
     color: #f5fffa;
 }
 
-#mmenu .navbar-inverse li.active a, #mmenu .navbar-inverse li.active a:hover {
-    color: #628bb3;
-    background: #b9dbee;
+
+
+#mmenu .navbar-inverse li.active a, #mmenu .navbar-inverse li.active a:hover{
+    color: #628bb3 !important;
+    background: #b9dbee !important;
 }
+
+
 
 #mmenu .navbar-inverse li a:hover {
     color: #fff;
