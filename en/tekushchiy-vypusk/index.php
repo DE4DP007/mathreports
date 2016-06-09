@@ -67,16 +67,16 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
                     } else {
                         echo "<b>Authors:</b> ";
                     }
+                    $ji = 1;
                     foreach($arProp['AUTHORS']['VALUE'] as $value){
                         $arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
                         $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
-                        $ji = 0;
-                        while($obA = $resA->GetNextElement()) {
-                            $arPropA = $obA->GetProperties();
-                            $arFieldsA = $obA->GetFields();
-                            $ji++;
-                            echo '<a class="greeners" href="'.$arFieldsA['DETAIL_PAGE_URL'].'">'.$arPropA["FNAME_EN"]["VALUE"].'</a>'.($ji < $kount ? ", " : "");
-                        }
+
+                        $obA = $resA->GetNextElement();
+                        $arPropA = $obA->GetProperties();
+                        $arFieldsA = $obA->GetFields();
+                        echo '<a class="greeners" href="'.$arFieldsA['DETAIL_PAGE_URL'].'">'.$arPropA["FNAME_EN"]["VALUE"].'</a>'.($ji == $kount ? "" : ", ");
+                        $ji++;
                     }?>
                 </div>
                 <div class="col-md-2 text-right">
