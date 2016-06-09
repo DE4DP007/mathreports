@@ -1,5 +1,4 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Выпуски журнала ДЭМИ");?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
 
 <? global $arrFilter;
 $arrFilter = Array('PROPERTY_JOURNAL' => 74);?>
@@ -118,4 +117,6 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
 }?>
 
 
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?
+$APPLICATION->SetTitle("Issues");
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

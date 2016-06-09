@@ -1,6 +1,5 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Выпуски(EN)");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -62,4 +61,8 @@ $APPLICATION->SetTitle("Выпуски(EN)");
 $arFilter = array('IBLOCK_ID' => 15);
 $res = CIBlockElement::GetList(false, $arFilter, array('IBLOCK_ID'));
 if ($el = $res->Fetch())
-	echo 'Количество изданий: '.$el['CNT'];?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+	echo 'Количество изданий: '.$el['CNT'];?>
+
+<?
+$APPLICATION->SetTitle("Issues");
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

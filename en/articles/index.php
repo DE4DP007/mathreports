@@ -1,6 +1,5 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Статьи(EN)");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"demiArticles",
@@ -57,4 +56,7 @@ $APPLICATION->SetTitle("Статьи(EN)");
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC"
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+<?
+$APPLICATION->SetTitle("Articles");
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
