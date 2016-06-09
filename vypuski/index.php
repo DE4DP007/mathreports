@@ -103,10 +103,8 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "SORT",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "rand",
-		"SORT_ORDER2" => "ASC",
+		"SORT_BY1" => "RAND", 
+		"SORT_ORDER1" => "ASC",
 		"COMPONENT_TEMPLATE" => "demiAuthPartial"
 	),
 	false

@@ -158,6 +158,10 @@ h3.journhead {
 }
 .btn-primary:focus
 { background:linear-gradient(to bottom,#337ab7 0,#265a88 100%) }
+.btn-success:focus
+{ background:linear-gradient(to bottom,#5cb85c 0,#419641 100%) }
+.btn-warning:focus
+{ background:linear-gradient(to bottom,#f0ad4e 0,#eb9316 100%) }
 
 .lefttexter {
     font-size:14pt;
