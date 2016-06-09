@@ -208,3 +208,8 @@ h3.journhead {
 .text-center {
     white-space: normal !important;
 }
+
+.pageholder {
+    box-shadow:0 0 17px -6px #000000;
+    padding:0;
+}

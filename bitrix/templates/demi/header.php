@@ -35,6 +35,8 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");?>
 <body>
 <?$APPLICATION->ShowPanel();?>
 
+<div class="pageholder container">
+
 <div class="container" id="bighat">
     <div id="leftlogo" class="col-lg-6 col-md-6 hidden-sm visible-md visible-lg">
         <img src="/bitrix/templates/demi/images/demilogo.jpg" alt="Дагестанские электронные математические известия">
