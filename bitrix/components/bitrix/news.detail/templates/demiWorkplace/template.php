@@ -101,7 +101,11 @@ $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>5),
             while ($ob = $res->GetNextElement()) {
                 $arFields = $ob->GetFields();
                 $arProp = $ob->GetProperties();
-			array_push($inputArr, array("DPURL" => $arFields['DETAIL_PAGE_URL'], "TITLE" => $arProp["TITLE"]["VALUE"], "JOURNAL" => $arProp["JOURNAL"]["VALUE"], "AUTHORS" => $arProp["AUTHORS"]["VALUE"]));
+			    array_push($inputArr,
+                    array("DPURL" => $arFields['DETAIL_PAGE_URL'],
+                        "TITLE" => $arProp["TITLE"]["VALUE"],
+                        "JOURNAL" => $arProp["JOURNAL"]["VALUE"],
+                        "AUTHORS" => $arProp["AUTHORS"]["VALUE"]));
             }
         }
     }
@@ -114,19 +118,38 @@ $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>5),
 		while($obJ = $resJ->GetNextElement())
         {
             $arFieldsJ = $obJ->GetFields();
-			echo "<p class='col-md-12 text-left'><a href='", $value["DPURL"], "'>", $value["TITLE"], "</a><br>";
-			foreach($value["AUTHORS"] as $item)
-			{
-				$arFilterA = Array("IBLOCK_ID"=>21, "ID" => $item);
-				$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>5));
-				while($obA = $resA->GetNextElement())
-				{
-					$arFieldsA = $obA->GetProperties();
-					(SITE_ID == "s1" ? $name = "FNAME" : $name = "FNAME_EN");
-					echo $arFieldsA[$name]["VALUE"], " ";
-				}
-			}
-			echo "<br>", $arFieldsJ["NAME"], "</p>";
+			echo "<p class='col-md-12 text-left'><a href='", $value["DPURL"], "'>", "<span class='glyphicon glyphicon-book'></span> ",$value["TITLE"], "</a>
+            // <a href='",$arFieldsJ["DETAIL_PAGE_URL"],"'>", $arFieldsJ["NAME"],"</a><br>";
+
+            if (SITE_ID == "s1") {//? $name = "FNAME" : $name = "FNAME_EN");
+                $nk = sizeof($value["AUTHORS"]);
+                echo ($nk == 1 ? "<b>Автор:</b> " : "<b>Авторы:</b> ");
+                $k = 1;
+                foreach ($value["AUTHORS"] as $item) {
+                    $arFilteraA = Array("IBLOCK_ID" => 21, "ID" => $item);
+                    $resaA = CIBlockElement::GetList(Array(), $arFilteraA, false, Array("nPageSize" => 5));
+                    $objctA = $resaA->GetNextElement();
+                    $authProps = $objctA->GetProperties();
+                    $authFields = $objctA->GetFields();
+                    echo "<a class='greeners' href='",$authFields['DETAIL_PAGE_URL'],"'>",$authProps['FNAME']['VALUE'], ($k == $nk ? " " : ", "),"</a>";
+                    $k++;
+                }
+                echo "<br></p>";
+            } else {
+                $nk = sizeof($value["AUTHORS"]);
+                echo ($nk == 1 ? "<b>Author:</b> " : "<b>Authors:</b> ");
+                $k = 1;
+                foreach ($value["AUTHORS"] as $item) {
+                    $arFilteraA = Array("IBLOCK_ID" => 21, "ID" => $item);
+                    $resaA = CIBlockElement::GetList(Array(), $arFilteraA, false, Array("nPageSize" => 5));
+                    $objctA = $resaA->GetNextElement();
+                    $authProps = $objctA->GetProperties();
+                    $authFields = $objctA->GetFields();
+                    echo "<a class='greeners' href='",$authFields['DETAIL_PAGE_URL'],"'>",$authProps['FNAME_EN']['VALUE'], ($k == $nk ? " " : ", "),"</a>";
+                    $k++;
+                }
+                echo "<br></p>";
+            }
 		}
     }
 }?>

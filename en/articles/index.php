@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Статьи(EN)");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
-	"",
+	"demiArticles",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -44,7 +44,7 @@ $APPLICATION->SetTitle("Статьи(EN)");
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array("TITLE","ANNOTATION","START_PAGE","END_PAGE",""),
+		"PROPERTY_CODE" => array("TITLE","ANNOTATION","START_PAGE","END_PAGE","SECTION"),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",

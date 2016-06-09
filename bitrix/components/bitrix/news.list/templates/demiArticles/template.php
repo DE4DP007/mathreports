@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 ?>
 
 <h1 class="journhead text-right">
-    Полный перечень статей ДЭМИ
+    <?echo GetMessage("HEAD");?>
 </h1><hr>
 
 <?if($arParams["DISPLAY_TOP_PAGER"]):?>
@@ -36,9 +36,9 @@ $this->setFrameMode(true);
         <h4>
             <?$count = count($arItem['PROPERTIES']['AUTHORS']["VALUE"]);
             if ($count == 1) {
-                echo "<b>Автор:</b> ";
+                echo "<b>", GetMessage("AUTHOR_STR"), ":</b> ";
             } else {
-                echo "<b>Авторы:</b> ";
+                echo "<b>", GetMessage("AUTHORS_STR"), ":</b> ";
             }
             $ii = 1;
             foreach($arItem['PROPERTIES']['AUTHORS']["VALUE"] as $value){
@@ -47,13 +47,13 @@ $this->setFrameMode(true);
                 while($obA = $resA->GetNextElement()) {
                     $arPropA = $obA->GetProperties();
                     $arFieldsA = $obA->GetFields();
-                    echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME"]["VALUE"].'</a>'.($ii < $count ? ", " : "");
+                    echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA[GetMessage("FNAME")]["VALUE"].'</a>'.($ii < $count ? ", " : "");
                     $ii++;
                 }
             }?>
         </h4>
-        <h4><b>Выпуск:</b>
-            <?$arFilterR = Array("IBLOCK_ID"=>16, "ID"=>$arResult["PROPERTIES"]['JOURNAL']['VALUE']);
+        <h4><b><?echo GetMessage("JOURNAL_STR");?>:</b>
+            <?$arFilterR = Array("IBLOCK_ID"=>GetMessage("JOURNAL_BLOCK"), "ID"=>$arResult["PROPERTIES"]['JOURNAL']['VALUE']);
             $resR = CIBlockElement::GetList(Array(), $arFilterR, false, Array("nPageSize"=>10));
             if(count($resR) > 0) {
                 $obR = $resR->GetNextElement();
@@ -62,13 +62,13 @@ $this->setFrameMode(true);
                 echo "<a href='".$flds['DETAIL_PAGE_URL']."'>".$arPropR['TITLE']['VALUE']."</a>";
             }?>
         </h4>
-        <h4><b>Раздел:</b>
+        <h4><b><?echo GetMessage("SECTION_STR")?>:</b>
             <?$arFilterT = Array("IBLOCK_ID"=>20, "ID"=>$arResult["PROPERTIES"]['SECTION']["VALUE"]);
             $resT = CIBlockElement::GetList(Array(), $arFilterT, false, Array("nPageSize"=>10));
             if(count($resT) > 0) {
                 $obT = $resT->GetNextElement();
                 $arPropT = $obT->GetProperties();
-                echo $arPropT["TITLE"]["VALUE"];
+                echo $arPropT[GetMessage("SECTION_TITLE")]["VALUE"];
             }?>
         </h4>
     </div>

@@ -97,19 +97,22 @@ $this->setFrameMode(true);
             $resI = CIBlockElement::GetList(Array(), $arFilterI, false, Array("nPageSize" => 10));
             while ($obI = $resI->GetNextElement()) {
                 $arPropI = $obI->GetProperties();
-                echo "<h4 class='artlist'><a href='", $arFields['DETAIL_PAGE_URL'], "'>
-                <span class='glyphicon glyphicon-book'></span> ", $arFields['NAME'];
-				echo " // ", $arPropI["TITLE"]["VALUE"], ", ", $pages_string," ", $arProp['START_PAGE']["VALUE"], " - ", $arProp['END_PAGE']["VALUE"], "</a></h4>";
-				foreach($arProp["AUTHORS"]["VALUE"] as $value)
-				{
+                echo "<h4 class='artlist'><a href='", $arFields['DETAIL_PAGE_URL'], "'>","<span class='glyphicon glyphicon-book'></span> ";
+
+                $n = sizeof($arProp["AUTHORS"]["VALUE"]);
+                $k = 1;
+                foreach($arProp["AUTHORS"]["VALUE"] as $value) {
 					$arFilterA = Array("BLOCK_ID" => 21, "ID" => $value);
 					$resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize" => 10));
-					while($obA = $resA -> GetNextElement())
-					{
-						$arPropA = $obA -> GetProperties();
-						echo $arPropA[GetMessage("FNAME")]["VALUE"], " ";
-					}
+					$obA = $resA -> GetNextElement();
+                    $arPropA = $obA -> GetProperties();
+                    echo $arPropA[GetMessage("FNAME")]["VALUE"];
+                    echo ($k == $n ? ". " : ", ");
+                    $k++;
 				}
+                echo $arFields['NAME'], " // ",
+                $arPropI["TITLE"]["VALUE"], ", ", $pages_string," ", $arProp['START_PAGE']["VALUE"], " - ", $arProp['END_PAGE']["VALUE"], "</a></h4>";
+
             }
         }
     }
