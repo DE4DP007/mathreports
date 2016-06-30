@@ -61,7 +61,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $arFilter = array('IBLOCK_ID' => 15);
 $res = CIBlockElement::GetList(false, $arFilter, array('IBLOCK_ID'));
 if ($el = $res->Fetch())
-	echo 'Количество изданий: '.$el['CNT'];?>
+	echo 'Number of publications: '.$el['CNT'];?>
 
 <?
 $APPLICATION->SetTitle("Issues");

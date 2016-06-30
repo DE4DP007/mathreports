@@ -55,6 +55,7 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");?>
         </h4><div class="clearfix"></div>
         <!--<img src="/bitrix/templates/demi/images/demilogo2.png" alt="Дагестанские электронные математические известия">-->
 		<?echo GetMessage("HEADER_TITLE")?>
+		<p class="text-center logotext-3">ISSN: 2500-3240</p>
     </div>
 </div>
 
