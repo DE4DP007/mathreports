@@ -1,0 +1,468 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts,amssymb,mathrsfs,amscd}
+\usepackage{dsfont}
+\sloppy
+%для подключения графики используются стандартные команды, но кроме файла *.eps
+%необходимо наличие в текущей директории соответствующего файла *.pdf
+%-------------------------------------------------
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[LE,RO]{\thepage}
+%\fancyhead[CO]{текст-центр-нечетные}
+%\fancyhead[LO]{текст-слева-нечетные}
+%\fancyhead[CE]{текст-центр-четные}
+%\fancyfoot{}
+
+\usepackage[hyper]{msb-a}
+\Volume10
+
+%\JournalName{Дагестанские электронные математические известия}
+\JournalName{Дагестанские Электронные Математические Известия}
+%\JournalName{}
+%Пустой аргумент приводит к исчезновению всех атрибутов журнала "Математический
+%сборник", файл можно представить в любой другой журнал
+%-------------------------------------------------
+\numberwithin{equation}{section}
+%-------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}[section]
+\newtheorem{propos}{Предложение}
+\newtheorem{corollary}{Следствие}
+\newtheorem{cond}{Условие}
+%-------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{proof}{Доказательство}\def\theproof{}
+\newtheorem{remark}{Замечание}
+%-------------------------------------------------
+\def\Re{\operatorname{Re}}
+\def\Im{\operatorname{Im}}
+\def\const{\operatorname{const}}
+\def\RR{\mathbb R}
+\def\CC{\mathbb C}
+\def\NN{\mathbb N}
+\def\RS{\mathfrak R}
+\def\bz{\mathbf z}
+\def\sH{\mathscr H}
+\def\HH{\mathscr H}
+\def\mro{\widehat\rho}
+%-------------------------------------------------
+
+\setcounter{page}{38}
+
+\begin{document}
+
+\title{Оценка полиномиальных приближений ограниченных функций с весом}
+%{Estimate of polynomial approximations of bounded functions with weight}
+
+\author[A.-R.\,K.~Ramazanov]{А.-Р.\,К. Рамазанов}
+\address{Дагестанский научный центр РАН}
+
+
+\email{ar-ramazanov@rambler.ru}
+%второй автор
+
+
+
+\date{18.11.2014}
+\udk{517.51}
+
+\maketitle
+
+\begin{fulltext}
+
+\begin{abstract}
+
+Решена открытая задача о структурной характеристике ограниченных функций
+для оценки их наилучших полиномиальных приближений в метрике произвольного ограниченного
+знакочувствительного веса.
+
+Библиография: 4  названия.
+$$ $$
+
+ The open problem about the structural characteristic of bounded functions is
+ solved for  estimate of their best polynomial approximations in the
+metric of bounded sign-sensitive weight.
+
+Bibliography: 4 items.
+
+\end{abstract}
+
+
+\begin{keywords}
+знакочувствительный вес, полиномиальные приближения, ограниченные функции.
+
+{\bf Keywords:} signsensitive weight, polynomial approximations, bounded functions.
+\end{keywords}
+
+\markright{Оценка полиномиальных приближений ограниченных функций}
+
+%\footnotetext[0]{}
+
+\section*{Введение}
+
+
+С использованием метода малого параметра построена новая структурная характеристика
+(аналог модуля непрерывности) ограниченных на отрезке \linebreak функций для оценки их наилучших
+полиномиальных приближений в несимметричной метрике относительно пары ограниченных
+на этом отрезке весовых функций. В этой метрике через построенную характеристику
+получена точная по порядку оценка наилучших полиномиальных приближений ограниченных
+на отрезке функций.
+
+
+Следуя Е.П. Долженко, знакочувствительным весом на множестве \linebreak$E\subset (-\infty,+\infty)$
+называется упорядоченная пара $p(x)=(p_-(x), p_+(x))$ определенных и неотрицательных на $E$
+функций $p_-(x)$ и $p_+(x)$.
+
+Будем считать множество $E$ некоторым отрезком $\Delta=[a,b]$, а компоненты веса
+$p_-(x)$ и $p_+(x)$ ограниченными на $\Delta$ функциями. Тогда $p$--нормой
+ограниченной на отрезке $\Delta$
+функции $f(x)$  называется следующая величина:
+$$
+|f|_p=|f|_{p,\Delta}=\sup\{f^+(x)p_+(x)+f^-(x)p_-(x):\,\,x\in \Delta\};
+$$
+здесь, как обычно, $f^+(x)=\max\{f(x), 0\}$ и $f^-(x)=(-f(x))^+$ --- срезки функции
+$f(x)$.
+
+Очевидно, для ограниченных на $\Delta$ функций $f(x)$, $g(x)$ и веса \linebreak $p(x)=(p_-(x), p_+(x))$
+имеем:
+
+1) $|f|_p\geqslant 0;$
+
+2) $|tf|_p=t|f|_p$ при $t\geqslant 0;$
+
+3) $|f+g|_p\leqslant |f|_p+|g|_p.$
+
+
+Следовательно, $p$--норма является сублинейным функционалом на множестве
+ограниченных на данном отрезке функций. Если вес $p(x)=(p_-(x), p_+(x))$
+таков, что $|f|_p=0$ лишь при $f(x)\equiv 0$, то $p$--норма является масштабной функцией
+или функционалом Минковского.
+
+Функционалы Минковского  в качестве несимметричных норм рассматривали М.Г. Крейн
+и А.А. Нудельман. Такие нормы соответствуют случаю $p$--нормы, когда компоненты
+веса $p_-(x)$ и $p_+(x)$ непрерывны и строго положительны на $\Delta$. Однако в этом случае
+изучение вопросов приближения функций в $p$--норме принципиально мало чем отличается
+от их изучения в обычной равномерной норме
+$$
+\|f\|=\|f\|_\Delta=\sup\{|f(x)|: \,\, x\in \Delta\},
+$$
+которая совпадает с $p$--нормой $|f|_{p, \Delta}$ при $p(x)=(1,1)$.
+
+В общем же случае, когда допускаются разрывы или обращение в нуль компонент веса, многие вопросы теории
+приближения имеют нестандартные ответы и требуют другой методики исследований.
+
+Систематическому изучению вопросов приближения функций в $p$--норме относительно
+произвольного знакочувствительного веса начало положили работы Е.П. Долженко и Е.А. Севастьянова.
+
+Полученные ими в этом направлении основные результаты изложены в двух
+работах (\cite{dol1} и \cite{dol2}).
+
+В частности, ими изучены вопросы существования, единственности и устойчивости элемента наилучшего приближения,
+введены и исследованы важные характеристики: свобода и жесткость системы <<Вес --- Аппарат приближения>>,
+которые играют существенную роль и в обратных теоремах теории приближения в $p$--норме.
+
+Следующая задача о прямых теоремах теории приближения в $p$--норме также поставлена
+Е.П. Долженко.
+
+Найти структурную характеристику (аналог модуля непрерывности) ограниченных
+ функций $f(x)$ ($x\in \Delta)$ для оценки их наилучших полиномиальных приближений в
+$p$--норме относительно ограниченного на $\Delta$ веса $p(x)=(p_-(x), p_+(x))$, т.е.
+величины
+$$
+E_n(f, p, \Delta)= \inf \{ |Q-f|_{p, \Delta}: Q \in  {\cal P}_n \}\quad (n=0,1,\dots).
+$$
+
+\section{Оценки  полиномиальных приближений непрерывных функций со знакочувствительным весом}
+
+Пусть сначала функция $f(x)$ и вес $p(x)=(p_-(x), p_+(x))$ непрерывны на отрезке
+$\Delta=[a,b]$.
+
+Определим аналог модуля непрерывности $f(x)$ относительно знакочувствительного
+веса как обычно, взяв $p$--норму приращения функции, т.е. равенством
+$$
+\omega(\delta, f, p)=\sup_{|h|\leqslant \delta} |f_h-f|_{p, \Delta}
+\quad (f_h(x)=f(x+h); \delta \geqslant 0).
+$$
+Будем придерживаться также обозначений
+$$
+\omega(\delta, f)=\sup_{|h|\leqslant \delta}\|f_h-f\|_\Delta, \quad \omega (\delta, p)=\max \{\omega(\delta, p_-),
+\omega(\delta, p_+)\}.
+$$
+
+Тогда имеет место
+
+\begin{theorem}\label{theorem1} При $n=1,2,\dots$ имеет место неравенство
+\begin{equation}\label{1}
+E_n (f, p, \Delta)\leqslant 6 \omega \left(\frac{b-a} n, f, p\right)+8 \omega \left(\frac{b-a} n, f\right)
+\omega \left(\frac{b-a}n, p\right).
+\end{equation}
+\end{theorem}
+
+Доказательство теоремы \ref{theorem1} дано в работе \cite{ram1}. Приведем некоторые замечания относительно
+оценки  \eqref{1}.
+
+\begin{remark}\label{remark1}
+По порядку малости (при $n\to \infty)$ слагаемые в правой части неравенства  \eqref{1}
+могут вести себя по--разному для различных функций $f(x)$ и весов $p(x)$. Например,
+для функции $f(x)=\sqrt x$ $(x\in [0,1])$ и веса $p(x)=(1,1)$ имеем:
+
+$$\omega(\delta, f, p)=\sqrt{\delta}\quad
+(\delta \geqslant 0),\quad \omega(\delta, p)\equiv 0.
+$$
+
+Для функции $f(x)=x^\alpha$ $(x\in [0,1],\,\,0<\alpha<1)$ и веса $p(x)=(p_-(x), p_+(x))$
+с $p_-(x)=p_+(x)=0$ при $0\leqslant x \leqslant \dfrac 12$ и
+$p_-(x)=p_+(x)=(x-0,5)^\beta$ при $\dfrac 12<x\leqslant 1$ $(0<\beta<1$) в случае
+$\alpha+\beta\leqslant 1$ имеем: $\omega(\delta, f, p)\leqslant 2^{1-\alpha-\beta}\delta$,
+$\omega (\delta, f)=\delta^\alpha$,
+$\omega(\delta, p)=\delta^\beta$.
+\end{remark}
+
+\begin{remark}\label{remark2} Оценка  \eqref{1} является точной на классах непрерывных функций и весов
+с заданными модулями непрерывности, согласованными соотношениями вида
+$$
+\omega(2\delta, f, p)\leqslant 2 \left(\omega(\delta, f, p)+\omega(\delta, f)\omega(\delta, p)\right),
+$$
+$$
+\omega(\delta, f, p)=\underset{=}{O}(\omega(\delta, f))\quad (\delta\to 0).
+$$
+\end{remark}
+
+\begin{remark}\label{remark3}
+Для разрывных функций и весов оценка типа  \eqref{1} является грубой. Так, существуют
+разрывные функции $f(x)$  и веса $p(x)$, для которых $\omega(\delta, f, p)\not \to 0$
+при $\delta \to 0$ (для них, очевидно, $\omega(\delta, f) \not \to 0$ и $\omega(\delta, p)\not \to 0$
+при $\delta \to 0$) и при этом $E_n(f, p, \Delta)\to 0$ при $n\to \infty$.
+В качестве примера можно взять $f(x)=\text{sign}\, x$
+$(x\in [-1,1]$), $p_-(x)=1$ при $x\in [-1,0]$ и $p_-(x)=0$ при $x\in (0,1]$,
+$p_+(x)=0$ при $x\in[-1,0)$ и $p_+(x)=1$ при $x\in [0,1]$.
+\end{remark}
+
+Значит, в случае разрывных функций $f(x)$ и весов $p(x)$ условие для аналога модуля непрерывности
+$\omega(\delta, f, p)\to 0$ $(\delta \to 0$) не является даже критерием полиномиальной аппроксимируемости
+функций в $p$--норме.
+
+Другими словами, для адекватных оценок полиномиальных приближений ограниченных функций
+ в $p$--норме структурную
+характеристку функций следует определить по--другому. Ниже предлагается решение
+этой задачи с использованием малого параметра \cite{ram2}.
+
+\section{Оценки  полиномиальных приближений ограниченных функций со знакочувствительным весом}
+
+
+
+Пусть функция $f(x)$ и вес  $p(x)=(p_-(x), p_+(x))$ ограничены на некотором отрезке $\Delta=[a,b]$.
+
+При $\varepsilon >0$ положим
+$$
+\Delta(p_\pm \geqslant \varepsilon)=\{x \in \Delta | p_\pm (x) \geqslant \varepsilon\}.
+$$
+
+Если $\Delta(p_\pm \geqslant \varepsilon)\not =\varnothing$, то обозначим также
+$$
+d=\inf \{ |x-y|: x\in \Delta(p_- \geqslant \varepsilon), y\in \Delta(p_+ \geqslant \varepsilon)\}.
+$$
+
+
+Промодуль непрерывности функции $f(x)$ относительно веса $p(x)$ определим сначала для
+$\varepsilon >0$ с $\Delta(p_\pm \geqslant \varepsilon)\not =\varnothing$ при заданном
+$\delta \geqslant 0$ равенством
+$$
+\overline \Omega_\varepsilon (f, p, \delta)=\sup [f(x)-f(y)]^+,
+$$
+где супремум берется по всем $x\in \Delta(p_- \geqslant \varepsilon)$
+и $ y\in \Delta(p_+ \geqslant \varepsilon)$, для которых $|x-y|\leqslant \delta$.
+
+Заметим, что если $p_-(x)\equiv p_+ (x)\equiv 1$, то при всех \linebreak $0< \varepsilon\leqslant 1$
+имеем $\Delta(p_- \geqslant \varepsilon)=\Delta(p_+ \geqslant \varepsilon)=\Delta$. Поэтому
+для веса $p(x)=(1,1)$ промодуль непрерывности $\overline \Omega_\varepsilon (f, p, \delta)$ превращается
+в обычный модуль непрерывности $\omega (f, \delta)$ функции $f(x)$ на отрезке $\Delta$.
+
+Если при заданном $\varepsilon >0$ хотя бы одно из множеств \newline
+$\Delta(p_\pm \geqslant \varepsilon)$ пусто, то при всех $\delta\geqslant 0$
+считаем $\overline \Omega_\varepsilon (f, p, \delta)=0$.
+
+Если между множествами $\Delta(p_-\geqslant \varepsilon)$ и $\Delta(p_+\geqslant \varepsilon)$
+расстояние $d>0$, то при $0\leqslant \delta <d$ (и для этого $\varepsilon$)  считаем также
+ $\overline \Omega_\varepsilon (f, p, \delta)=0$.
+
+Модуль непрерывности функции $f(x)$  относительно веса $p(x)$ определим при
+$\varepsilon >0$ и $\delta \geqslant 0$ равенством
+$$
+ \Omega_\varepsilon (f, p, \delta)=\overline{\lim_{h \to \delta}} \,\,\overline \Omega_\varepsilon (f, p, h).
+$$
+
+При фиксированном $\varepsilon>0$ функция $\Omega_\varepsilon (f, p, \delta)$ относительно
+ $\delta \geqslant 0$ является неотрицательной, неубывающей и полунепрерывной  сверху (может
+ быть разрывной, а также может быть $\Omega_\varepsilon (f, p, 0)>0$); при фиксированном
+$\delta \geqslant 0$ функция $\Omega_\varepsilon (f, p, \delta)$ относительно $\varepsilon>0$
+является невозрастающей.
+
+
+
+При этом можно доказать, что для ограниченных на некотором отрезке $\Delta=[a,b]$ функций $f(x)$
+и весов  $p(x)=(p_-(x), p_+(x))$ следующие два утверждения эквивалентны между собой:
+
+1) $E_n(f,p, \Delta)\to 0$ при $n \to \infty$;
+
+2) $\Omega_\varepsilon(f, p,0)=0$  при всех достаточно малых  $\varepsilon >0$.
+
+
+Более того, имеет место
+
+\begin{theorem}\label{theorem2} При $n=1,2,\dots$ выполняется неравенство
+\begin{equation}\label{2}
+E_n(f, p,\Delta)\leqslant 2 \inf_{\varepsilon >0} \left\{
+\Omega (f, \Delta)\cdot \varepsilon +\|p\|_\Delta \Omega_\varepsilon
+\left(f, p, \frac{b-a}n\right)\right\},
+\end{equation}
+где $$\Omega(f, \Delta)=\sup\{f(x)-f(y): \,\,x,y\in \Delta\},$$
+$$
+\|p\|_\Delta =\max\{\|p_-\|_\Delta, \|p_+\|_\Delta\}.
+$$
+\end{theorem}
+
+\begin{proof}
+
+Пусть функция $f(x)$ и вес $p(x)=(p_-(x), p_+(x))$ ограничены на отрезке $\Delta=[a,b]$ и выполнено условие
+$\Omega_\varepsilon (f, p, 0)=0$ при всех д.м. $\varepsilon>0$ (для существования последовательности полиномов $Q_n(x)$ с $|Q_n-f|_\Delta \to 0$
+$(n\to \infty)$).
+
+Пусть сначала $\varepsilon>0$ --- любое фиксированное число с
+\newline $\Delta(p_\pm \geqslant \varepsilon)\not =\varnothing$.
+
+Для краткости обозначим $\Omega(\delta)=\Omega_\varepsilon (f, p, \delta)$
+($\delta \geqslant 0$) и построим \linebreak кусочно--линейную и непрерывную функцию
+$g(t)$ такую, что:
+
+1) $g(t)=\Omega(t)$ при $t=0$ и $t=b-a$;
+
+2) $g\left(\dfrac {b-a}n\right)=\sup\left\{ \Omega (t) \,\bigr\vert t\in \left(\dfrac{b-a}n, \dfrac {b-a}{n-1}\right)\right\}$ при $n=2,3,\dots$;
+
+3) $g(t)$ линейна на отрезках $\left[\dfrac{b-a}n, \dfrac {b-a}{n-1}\right]$
+($n=2,3,\dots$).
+
+Тогда при $n=2,3,\dots$ и $\dfrac{b-a}{n+1}\leqslant t\leqslant \dfrac {b-a}{n}$ выполняются неравенства
+$$
+\Omega(t)\leqslant g(t) \leqslant\Omega \left(\dfrac{b-a}{n-1}\right).
+$$
+
+При $x\in \overline{\Delta(p_-\geqslant \varepsilon)}$ определим полунепрерывную
+сверху функцию
+$$
+M_-(x, \varepsilon)=\lim_{\delta \to +0} \sup \{ f(t): t\in [x-\delta, x+\delta]
+\cap \Delta (p_-\geqslant \varepsilon)\}.
+$$
+
+Тогда функция
+$$
+\varphi (x)=\sup \{M_-(t, \varepsilon)-g(|x-t|) \,|\, t\in \overline{\Delta(p_-\geqslant \varepsilon)}\}
+$$
+будет непрерывной на отрезке $\Delta=[a,b]$, причем при всех \newline $x,y\in \Delta$
+выполняется неравенство
+$$
+|\varphi(x)-\varphi (y) |\leqslant g(|x-y|).
+$$
+
+
+Из результата Н.П. Корнейчука об оценке наилучших приближений непрерывных
+$2\pi$--периодических функций тригонометрическими полиномами с помощью замены переменной
+\newline $x=\dfrac {b-a} 2\cos t+\dfrac{b+a}2$ легко следует, что существует алгебраический
+полином $Q_n(x)$ степени не выше $n$ $(n=1,2,\dots)$ такой, что
+$$
+\|Q_n-\varphi\|_\Delta \leqslant \omega \left(\varphi, \frac{b-a}2\cdot \frac \pi{n+1}\right)\leqslant 2
+\omega\left(\varphi, \frac{b-a}{n+1}\right).
+$$
+
+Значит, с учетом свойств построенных функций $\varphi(x)$ и $g(t)$
+при $n=1,2,\dots$ получим
+$$
+\|Q_n-\varphi\|_\Delta \leqslant  2\, g\left( \frac{b-a}{n+1}\right)\leqslant  2\, \Omega\left( \frac{b-a}n\right).
+$$
+
+Если через $\Omega(f, \Delta)$ обозначить полное колебание (ограниченной)
+функции $f(x)$ на отрезке $\Delta$, то можно доказать, что при рассматриваемом $\varepsilon>0$ выполняется неравенство
+$$
+|\varphi-f|_\Delta \leqslant 2 \, \Omega (f, \Delta)\varepsilon.
+$$
+
+C использованием  последних двух оценок получим
+$$
+|Q_n-f|_\Delta \leqslant |\varphi-f|_\Delta +|Q_n-\varphi|_\Delta \leqslant
+$$
+$$
+\leqslant 2\, \Omega (f, \Delta)\,\varepsilon+\|p\|_\Delta\cdot \|Q_n -\varphi\|_\Delta \leqslant
+$$
+$$
+\leqslant 2\, \Omega (f, \Delta)\,\varepsilon +2\, \|p\|_\Delta \,\Omega\left(\frac{b-a}n\right).
+$$
+
+Следовательно, при любом $\varepsilon >0$ с $\Delta(p_\pm \geqslant \varepsilon)\not =\varnothing$ и \linebreak  $n=1,2,\dots$ имеем
+$$
+|Q_n -f|_\Delta \leqslant 2 \,\Omega(f, \Delta)\varepsilon +2 \,\|p\|_\Delta\, \Omega_\varepsilon \left(f, p, \frac {b-a}n\right).
+$$
+
+Пусть теперь при заданном $\varepsilon>0$ хотя бы одно из множеств $\Delta(p_\pm \geqslant \varepsilon)$ пусто, а значит,
+$\Omega_\varepsilon (f, p, \delta)=0$ при всех $\delta \geqslant 0$.
+Пусть, например,  $\Delta(p_+ \geqslant \varepsilon) =\varnothing$, т.е.
+$p_+(x)< \varepsilon$ при всех  $x\in \Delta$. Возьмем для всех $n=1,2,\dots$ в качестве полинома $Q_n(x)$ степени не выше $n$ постоянную
+$$
+Q_n(x)=\sup\{ f(x)| x\in \Delta\}.
+$$
+
+Тогда, очевидно, при всех $x\in \Delta$ имеем
+$$
+[Q_n(x)-f(x)]^+ \leqslant \Omega(f, \Delta),\quad [Q_n(x)-f(x)]^-=0,
+$$
+а поэтому
+$$
+|Q_n -f|_\Delta =\sup_{x\in \Delta} \left([Q_n(x)-f(x)]^+p_+(x)+
+[Q_n(x)-f(x)]^-p_-(x)\right)\leqslant
+$$
+$$
+\leqslant \Omega (f, \Delta)\varepsilon.
+$$
+
+ Итак, при любом $\varepsilon>0$ существует полином $Q_n(x)$ степени не выше $n$ $(n=1,2,\dots)$, для которого выполняется неравенство
+$$
+|Q_n-f|_\Delta \leqslant 2\,\Omega (f, \Delta)
+\,\varepsilon +2\, \|p\|_\Delta \,\Omega_\varepsilon \left(f, p, \frac {b-a}n\right),
+$$
+а значит, при всех $\varepsilon>0$  и $n=1,2,\dots$ выполняется неравенство
+$$
+E_n (f, p, \Delta) \leqslant 2\,\Omega (f, \Delta)\,
+\varepsilon +2 \,\|p\|_\Delta \Omega_\varepsilon \left(f, p, \frac {b-a}n\right).
+$$
+
+Чтобы получить неравенство \eqref{2}, остается перейти в правой части
+к инфимуму по всем $\varepsilon>0$.
+\end{proof}
+
+\end{fulltext}
+\begin{thebibliography}{1}
+
+\bibitem{dol1}{Долженко Е.П., Севастьянов Е.А.}{ Аппроксимации со знакочувствительным весом
+(теоремы существования и единственности) //~Изв.~РАН. Сер. матем. 1998. Т.~62. \No~6. С.~59--102.}
+
+\bibitem{dol2}{Долженко Е.П., Севастьянов Е.А. }{ Аппроксимации со знакочувствительным весом (устойчивость,
+приложения к теории ужей и хаусдорфовым аппроксимациям) //~ Изв. РАН. Сер. матем. 1999. Т.63. \No~3. С.~77--118.}
+
+\bibitem{ram1}{Рамазанов А.-Р.К. }{ О прямых и обратных теоремах теории аппроксимации
+в метрике знакочувствительного веса //~Analysis Mathematica. 1995. T.21. \No~4. С.~191--212.}
+
+\bibitem{ram2}{Рамазанов А.-Р.К.}{ Метод малого параметра для знакочувствительных
+аппроксимаций // Analysis Mathematica. 2002. Т.28. С.~205--230.}
+
+
+\end{thebibliography}
+
+
+\end{document}

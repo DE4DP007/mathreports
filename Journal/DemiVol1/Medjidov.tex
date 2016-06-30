@@ -1,0 +1,533 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts,amssymb,mathrsfs,amscd}
+%для подключения графики используются стандартные команды, но кроме файла *.eps
+%необходимо наличие в текущей директории соответствующего файла *.pdf
+%-------------------------------------------------
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[LE,RO]{\thepage}
+%\fancyhead[CO]{текст-центр-нечетные}
+%\fancyhead[LO]{текст-слева-нечетные}
+%\fancyhead[CE]{текст-центр-четные}
+%\fancyfoot{}
+
+\usepackage[hyper]{msb-a}
+\Volume10
+
+\setcounter{page}{56}
+%\JournalName{Дагестанские электронные математические известия}
+\JournalName{Дагестанские Электронные Математические Известия}
+%\JournalName{}
+%Пустой аргумент приводит к исчезновению всех атрибутов журнала "Математический
+%сборник", файл можно представить в любой другой журнал
+%-------------------------------------------------
+\numberwithin{equation}{section}
+%-------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}%[section] %для двойной нумерации
+\newtheorem{propos}{Предложение}
+\newtheorem{corollary}{Следствие}
+%-------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{proof}{Доказательство}\def\theproof{}
+\newtheorem{remark}{Замечание}
+%-------------------------------------------------
+\def\Re{\operatorname{Re}}
+\def\Im{\operatorname{Im}}
+\def\const{\operatorname{const}}
+\def\RR{\mathbb R}
+\def\CC{\mathbb C}
+\def\NN{\mathbb N}
+\def\RS{\mathfrak R}
+\def\bz{\mathbf z}
+\def\sH{\mathscr H}
+\def\HH{\mathscr H}
+\def\mro{\widehat\rho}
+%-------------------------------------------------
+\setcounter{page}{56}
+
+\begin{document}
+
+\title{Обращение лучевого преобразования симметричных тензорных полей и преобразования Радона дифференциальных форм по неполным данным}
+
+\author[Z.\,G.~Medzhidov]{З.\,Г.~Меджидов}
+\address{Дагестанский научный центр РАН}
+
+\email{Z.Medjidov@mail.ru}
+%второй автор
+
+\date{25.10.2013}
+\udk{517.4}
+
+\maketitle
+
+\begin{fulltext}
+
+\begin{abstract}
+
+Симметричное тензорное поле в евклидовом пространстве произвольной размерности ${{\mathbb R}}^n$ восстанавливается по его интегралам вдоль прямых, образующих n-мерное многообразие. Получены новые формулы, восстанавливающие соленоидальную часть полей, когда лучевое преобразование известно на комплексах прямых, пересекающих данную кривую, а также бесконечно удаленную кривую. Введено новое семейство двумерных плоскостей в ${{\mathbb R}}^n$ и получена формула обращения для дифференциальных форм степени 2 по заданным интегралам вдоль плоскостей этого семейства.
+
+Библиография: 8 названий.
+$$ $$
+
+%A symmetric tensor field in Euclidian space of arbitrary dimension ${{\mathbb R}}^n$ \linebreak reconstructed from its line integrals known on n-dimensional lines family. A new reconstruction formulae for the solenoidal part of the fields is obtained when a ray transform is known only for the family of lines intersecting a given curve, as well as a curve belonging to infinity. A new family of two-dimensional planes introduced and the inversion formula is obtained for the case of \linebreak differential forms of degree 2 according to the given integrals along the planes of this family.
+%
+%Bibliography: 8 items.
+
+A symmetric tensor field in Euclidian space of any dimension ${{\mathbb R}}^n$ \linebreak can be reconstracted from its line integrals along straight lines %line segments
+which form n-manifold. A new reconstruction formula for the solenoidal part of the fields is obtained when a ray transform is known only for the complex lines intersecting a given curve, as well as a curve belonging to infinity. A new family of two-dimensional planes introduced and the inversion formula is obtained for the case of differential forms of degree 2 on the given integrals along the planes of this family.
+
+Bibliography: 8 items.
+\end{abstract}
+
+
+\begin{keywords}
+симметричное тензорное поле, лучевое преобразование, восстановление, комплекс прямых, соленоидальная часть, преобразование Радона дифференциальных форм.
+
+{\bf Keywords:} symmetric tensor field, ray transform, reconstruction, complex of lines, solenoidal part, Radon transform of differential forms.
+\end{keywords}
+
+\markright{Обращение лучевого преобразования тензорных полей}
+
+%\footnotetext[0]{}
+
+
+
+
+
+%\section{ Введение и обозначения}
+\section*{Введение}
+
+%\textbf{1. Введение и обозначения}
+
+В евклидовом пространстве ${{\mathbb R}}^n$ через $S^m\left(T^*{{\mathbb R}}^n\right)$ обозначим расслоение ковариантных симметричных тензоров порядка $m$, $m\ge 0$. Значение тензора $f\in S^m\left(T^*{{\mathbb R}}^n\right)$ на векторах ${\xi }_1,\ {\xi }_2,\dots ,{\xi }_m$ обозначим через $f\left({\xi }_1,\ {\xi }_2,\dots ,{\xi }_m\right)$; в координатах: $f\left({\xi }_1,\ {\xi }_2,\dots ,{\xi }_m\right)=f_{i_1\dots i_m}{{\xi }_1}^{i_1}\ {{\xi }_2}^{i_2}\dots {{\xi }_m}^{i_m}$. Лучевое преобразование поля $f\in C^{\infty }_0\left(S^m\right)$ определим формулой
+
+$$If\left(l\right)\equiv If\left(x,\theta \right)=\int\limits^{\infty }_{-\infty }{f_{i_1i_2\dots i_m}\left(x+t\theta \right){\theta }^{i_1}{\theta }^{i_2}\dots {\theta }^{i_m}dt}\equiv $$
+
+\begin{equation}\label{meq1}\int\limits^{\infty }_{-\infty }{f\left(x+t\theta ;\theta ,\dots ,\theta \right)dt}\equiv \int\limits^{\infty }_{-\infty }{f\left(x+t\theta ;{\theta }^m\right)dt,}\end{equation} где $l=\left\{x+t\theta \left|t\in {\mathbb R}\right.\right\}$ -- ориентированная прямая; по повторяющемуся индексу предполагается суммирование от 1 до n.
+
+Задача состоит в восстановлении поля $f$ по известной функции $g=If$.
+
+Преобразование \eqref{meq1} и различные его обобщения возникают и применяются как в самой математике, так и в других областях науки, требующих приложения математических методов. Так, при $m=1$ интегралы \eqref{meq1} моделируют измерения в задачах визуализации движущихся сред, в частности, течений жидкостей и газов. Задачи восстановления $f$ возникают в медицине при визуализации течения крови в человеческом теле путем измерений ультразвукового сигнала Доплера, оптике, физике плазмы и т.д. (соответствующие ссылки можно найти в работах [1]-[3]).\textit{}
+
+Заметим, что поле $f$ зависит от $n$ переменных, в то время как $If$ зависит от $2n-2$ независимых переменных, и при $n\ge 3$ задача обращения является переопределенной. Поэтому возникает задача реконструкции поля $f$ по данным на $n$ -- мерном многообразии (комплексе) прямых. Примером комплекса прямых в ${{\mathbb R}}^3$ является множество прямых, пересекающих данную кривую. Задачу реконструкции мы решаем при условии, что кривая удовлетворяет некоторому условию полноты. Семейство прямых, каждая из которых параллельна одной из трех (или двух) данных пересекающихся плоскостей, также имеет размерность 3. Алгоритм восстановления векторных и тензорных полей по данным линейных интегралов вдоль прямых этого семейства получен В. Шарафутдиновым в [3]. В п. \ref{sec3} мы показываем, что одной плоскости достаточно, если известны производные функции $g$.
+
+Другие примеры комплексов прямых:
+
+1. Множество прямых, пересекающих данную кривую, удовлетворяющую некоторому условию полноты. Восстановлению $f$ по заданным интегралам вдоль прямых этого комплекса посвящены работы Л.Б. Вертгейма ([4]), А. Денисюка ([1]), В.П. Паламодова ([2]).
+
+2. Множество прямых, направляющие векторы которых являются \linebreak радиус-векторами точек кривой, принадлежащей единичной сфере. Говорят, что прямые пересекают бесконечно удаленную кривую.
+
+Введем обозначения для дифференциальных операций над тензорными полями в ${{\mathbb R}}^n$ (см. [1], [5]):
+
+$d:C^{\infty }\left(S^m\right)\to C^{\infty }\left(S^{m+1}\right)$ -- оператор внутреннего дифференцирования,
+
+\[{\left(df\right)}_{i_1\cdots i_{m+1}}=\sigma \left(i_1\cdots i_{m+1}\right)\frac{\partial }{\partial x^{i_{m+1}}}f_{i_1\cdots i_m};\]
+
+где $\sigma \left(i_1\cdots i_k\right)$ -- оператор симметрирования:
+
+\[{\left(\sigma \left(i_1\cdots i_k\right)f\right)}_{i_1\cdots i_l}=\frac{1}{k!}\sum_{\pi \in {\Pi }_k}{f_{i_{\pi 1}\cdots i_{\pi k}i_{k+1}\cdots i_l}},\]
+
+${\Pi }_k$ -- соответствующая группа перестановок,
+
+$\delta :C^{\infty }\left(S^m\right)\to C^{\infty }\left(S^{m-1}\right),$ -- дивергенция;
+
+\[{\left(\delta f\right)}_{i_1\dots i_{m-1}}=\frac{\partial }{\partial x^i}f_{i_1\dots i_{m-1}i};\]
+
+$W:C^{\infty }\left(S^m\right)\to C^{\infty }\left(S^m\left({\wedge }^2T^*{{\mathbb R}}^3\right)\right),$ -- оператор Сен-Венана,
+
+\[{\left(Wf\left(x\right)\right)}_{i_1j_1\cdots i_mj_m}=\alpha \left(i_1j_1\right)\cdots \alpha \left(i_mj_m\right)\frac{\partial f_{i_{1\cdots }i_m}\left(x\right)}{\partial x^{j_1}\cdots \partial x^{j_m}},\]
+
+где $\alpha \left(i_kj_k\right)$ -- оператор альтернирования:
+
+\[{\left(\alpha \left(i_ki_l\right)g\right)}_{i_1{\dots i}_p}=\frac{1}{2}\left(g_{i_1\dots i_k\dots i_l\dots i_p}-g_{i_1\dots i_l\dots i_k\dots i_p}\right).\]
+
+При $m=1$ оператор $W$ совпадает с оператором внешнего дифференцирования.
+
+Через $\mathfrak{S}\left(S^m\right)$ обозначим пространство Шварца бесконечно дифференцируемых быстро убывающих полей. Мы пишем $f\in \mathfrak{S}\left(S^m\right)$, если каждая координатная функция $f_{i_1\cdots i_m}\in C^{\infty }\left({{\mathbb R}}^3\right)$ и удовлетворяет условию $\left|{\partial }^{\alpha }f_{i_1\cdots i_m}\left(x\right)\right|\le C_{\alpha ,k}{\left(1+\left|x\right|\right)}^{-k}$ для любого мультииндекса $\alpha $ и целого $k\ge 0$. Преобразование \eqref{meq1} подробно изучено в книге [5] В. Шарафутдинова. Мы напомним сначала теорему, описывающую структуру ядра оператора $I$.
+
+\begin{theorem}\label{th1} ([5]). \textit{Для финитного поля }$f\in C^{\infty }_0\left(S^m\right)$\textit{ следующие утверждения эквивалентны: 1) }$If\left(x,\xi \right)=0$\textit{; 2) существует гладкое поле }$v\in C^{\infty }_0\left(S^{m-1}\right)$\textit{ такое, что }$f=dv$\textit{; 3) }$Wf$\textit{ обращается в нуль в }${{\mathbb R}}^3$\textit{ тождественно.}
+\end{theorem}
+
+Следующая теорема обобщает известную теорему Гельмгольца о разложении векторного поля на соленоидальную и потенциальную части на случай тензорного поля.
+
+\begin{theorem}\label{th2}([5]). \textit{Для любого поля }$f\in \mathfrak{S}\left(S^m\right)$\textit{ существуют такие однозначно определенные поля }$f^{\left(s\right)}\in \mathfrak{S}\left(S^m\right)$\textit{ и }$v\in C^{\infty }\left(S^{m-1}\right)$\textit{, что }
+
+\[f=f^{\left(s\right)}+dv,\ \ \delta f^{\left(s\right)}=0,\ \ f^{\left(s\right)}\longrightarrow 0,\ \ v\left(x\right)\longrightarrow 0\ при\ x\longrightarrow \infty ,\]
+
+\[f^{\left(s\right)},\ dv\in L^2\left(S^m\right).\]
+
+\textit{Поле }$f^{\left(s\right)}$\textit{ называется соленоидальной частью }$f$.\textit{}
+\end{theorem}
+
+Из этих теорем следует, что по заданной функции $If$ однозначно можно определить лишь поле $f^{\left(s\right)}$. Поэтому под формулой обращения мы понимаем формулу, выражающую $f^{\left(s\right)}$ через $If$.
+
+Вертгейм Л.В. ([4]) получил формулу обращения в ${{\mathbb R}}^n$ в предположении, что $If$ задана на комплексе прямых, пересекающих данную кривую $\Gamma $, обладающую свойством: любая плоскость, пересекающая носитель $f$, пересекает $\Gamma $ в $C^m_{n+m-1}$ точках. Денисюк А.С. [1] получил формулу обращения преобразования
+
+\[h\left(x,\theta \right)=\int\limits^{\infty }_0{f\left(x+t\theta ;{\theta }^2\right)dt}\]
+
+поля $f\in \mathfrak{S}\left(S^2\right)$ в предположении, что любая плоскость, пересекающая носитель $f$, пересекает $\Gamma $ в $C^m_{n+m-2}$ точках (условие Кириллова-Туя). Он предложил по заданной на указанном комплексе прямых функции $h\left(x,\theta \right)$ восстановить сначала оператор Сен-Венана $Wf$, а затем соленоидальную часть $f^{\left(s\right)}$. Наш результат (п. \ref{sec2}) состоит в том, что даже одной точки пересечения $\Gamma $ произвольной плоскостью достаточно, если известны первые производные функции $h\left(x,\theta \right)$. Для восстановления поля $Wf$ мы пользуемся методом дифференцирования по направлению векторов с последующим интегрированием по частям. Этот метод был применен В.П. Паламодовым в работе [2] при восстановлении дифференциальных форм. Идею найти сначала (покоординатное) преобразование Радона $R\left(Wf\right)$ (или производные $R\left(Wf\right)$) функции $Wf$, а затем с помощью формулы обращения найти $Wf$ в скалярном случае ($m=0$) была реализована в работе [6]. Напомним, что скалярную функцию $f\left(x\right)$ по известному ее преобразованию Радона $Rf=g$ можно найти с помощью следующей формулы обращения (см. [7])
+
+$$f\left(x\right)=\frac{1}{2}{\left(2\pi \right)}^{1-n}\left\{ \begin{array}{c}
+{\left(-1\right)}^{\left(n-2\right)/2}\int_{{{\mathbb S}}^{n-1}}{Hg^{\left(n-1\right)}\left(x\cdot \theta ,\theta \right)d\theta }\text{ при четном }n, \\
+{\left(-1\right)}^{\left(n-1\right)/2}\int_{{{\mathbb S}}^{n-1}}{g^{\left(n-1\right)}\left(x\cdot \theta ,\theta \right)d\theta }\text{ при нечетном }n, \end{array}
+\right.$$
+
+где $Hg\left(s\right)=\frac{1}{\pi }\int^{\infty }_{-\infty }{\frac{g\left(t\right)}{s-t}dt}$ -- оператор Гильберта, ${{\mathbb S}}^{n-1}$ -- единичная сфера.
+
+Задачи обращения лучевого преобразования векторного поля для различных комплексов прямых решены в работе [8]. В частности, получена формула обращения, когда не все плоскости, проходящие через точки восстановления, пересекают кривую $\Gamma $.
+
+В п. \ref{sec3} получена формула обращения для случая комплекса прямых, каждая из которых параллельна хотя бы одному вектору из множества направлений $\Gamma \in {{\mathbb S}}^{n-1}$. Множество $\Gamma $ обладает свойством: каждая гиперплоскость, проходящая через точки восстановления, параллельна, по крайней мере, одному вектору из $\Gamma $. Результаты этого пункта в п. \ref{sec4} перенесены на случай дифференциальных форм степени 2, заданных на \textit{n}-мерном семействе двумерных плоскостей.
+
+
+\section{Обращение лучевого преобразования симметричных тензорных полей с источниками на кривой }\label{sec2}
+
+Введем обозначения, необходимые для формулировки основного результата:
+
+$f_{\xi }=\left(\xi ,{\nabla }_x\right)f$ -- производная поля $f$ по направлению вектора $\xi $;
+
+$h_{\xi }\left(x;\theta \right)=\left(\xi ,{\nabla }_x\right)h\left(x;\theta \right)$ -- производная поля $h$, как функции $x$, по направлению вектора $\xi $;\textit{}
+
+${\partial }_{\omega }h\left(x;\theta \right)=\left(\omega ,{\nabla }_{\theta }\right)h\left(x;\theta \right)$ -- производная поля $h$, как функции $\theta $, по направлению вектора $\omega $.
+
+В этих обозначениях оператор Сен-Венана запишется в виде
+
+$$Wf\left({\xi }_1,{\eta }_1,\dots ,{\xi }_m,{\eta }_m\right)=\alpha \left({\xi }_1,{\eta }_1\right)\cdots \alpha \left({\xi }_m,{\eta }_m\right)f_{{\xi }_1\dots {\xi }_m}\left(x;{\eta }_1,\dots ,{\eta }_m\right)=$$
+
+\begin{equation}\label{meq2}={\xi }^{i_1}_1\cdots {\xi }^{i_m}_m\frac{{\partial }^mf_{j_1\cdots j_m}}{\partial x^{i_1\cdots i_m}}{\eta }^{j_1}_1\cdots {\eta }^{j_m}_m.\end{equation}
+
+\begin{theorem}\label{th3}\textit{Пусть }$f\in \mathfrak{S}\left(S^m\right)$\textit{, }$\Gamma $\textit{ -- множество в }${{\mathbb R}}^n$\textit{, обладающее свойством: всякая гиперплоскость }$H$\textit{, пересекающая носитель поля }$f$\textit{, имеет хотя бы одну общую точку с }$\Gamma $\textit{. Тогда поле }$Wf$\textit{ может быть восстановлена по заданной функции }$h\left(x,\theta \right)$\textit{ и ее первым производным для лучей }$l=l\left(x,\theta \right)$\textit{, где }$x\in \Gamma $\textit{. Если число }$m+n-2$\textit{ нечетное, поле }$Wf$\textit{ можно восстановить по заданной функции }$g\left(l\right)$\textit{.}
+\end{theorem}
+
+Докажем сначала несколько вспомогательных лемм.
+
+\begin{lemma}\label{lem4}\textit{ Для любых }${\eta }_1,\dots ,{\eta }_m\bot щ$\textit{ справедлива формула}
+
+\begin{equation}\label{meq3}\int^{\ }_{H_{\omega ,p}}{Wf\left(y;\omega ,{\eta }_1,\dots ,\omega ,{\eta }_m\right)dH}=\frac{1}{2^m}\int^{\ }_{H_{\omega ,p}}{f^{\left(m\right)}_{\omega }\left(y;{\eta }_1,\dots ,{\eta }_m\right)dH.}\end{equation}
+\end{lemma}
+Для доказательства достаточно проинтегрировать равенство \eqref{meq2}, положив в нем ${\xi }_1=\dots {\xi }_m=\omega $ и заметить, что интеграл от функции $f_{{\xi }_1\dots {\xi }_m}$ по ${H=H}_{\omega ,p}$, где хотя бы один из векторов ${\xi }_1,\dots ,{\xi }_m$ параллелен $H$, равен нулю. В этом можно убедиться интегрированием по частям.
+
+
+Во избежание громоздких выражений, в следующих леммах предполагается $n=3$. В общем случае рассуждения проводятся аналогично.
+
+\begin{lemma}\label{lem5} \textit{Для любых векторов }$x,\ \theta ,\ \omega \in {{\mathbb R}}^3$\textit{ имеет место равенство}
+
+\begin{equation}\label{meq4}{\partial }^{m+1}_{\omega }h\left(x;\theta \right)=\sum^m_{l=0}{{\alpha }^l_{m+1}\int^{\infty }_{0\ }{f^{\left(m+1-l\right)}_{\omega }\left(x+t\theta ,\ {\omega }^l,{\theta }^{m-l}\right)t^{m+1-l}dt}}, \end{equation} \textit{где} ${\alpha }^l_{k+1}=C^l_{k+1}\cdot A^l_k$, $C^l_k=\frac{k!}{l!\left(k-l\right)!}$, $A^l_k=C^l_k\cdot l!$, ${\alpha }^0_{k+1}=1$, ${\alpha }^k_{k+1}=\left(k+1\right)!$.
+\end{lemma}
+
+\begin{proof} Индукцией по $k$ можно доказать равенство
+$${\partial }^k_{\omega }h\left(x;\theta \right)=\sum^k_{l=0}{{\alpha }^l_{m+1}\int^{\infty }_{0\ }{f^{\left(k-l\right)}_{\omega }\left(x+t\theta ,\ {\omega }^l,{\theta }^{m-l}\right)t^{k-l}dt}},\ k\le m.$$
+
+Действительно, легко заметить следующее рекуррентное соотношение между коэффициентами ${\alpha }^l_k$: ${\alpha }^0_1=1$, ${\alpha }^1_1=m$, ${\alpha }^l_{k+1}={\alpha }^{l-1}_k\left(m-l+1\right)+{\alpha }^l_k$. Поэтому если предположить, что ${\alpha }^l_k=C^l_k\cdot A^l_m$ для всех $l\le k$, то
+
+\[{\alpha }^l_{k+1}=C^{l-1}_k\cdot A^{l-1}_m\cdot \left(m-l+1\right)+C^l_k\cdot A^l_m=A^l_m\left(C^{l-1}_k+C^l_k\right)=C^l_{k+1}\cdot A^l_m.\]
+
+Отсутствие в формуле \eqref{meq4} слагаемого, соответствующего $l=m+1$, объясняется тем, что производная последнего слагаемого в выражении ${\partial }^m_{\omega }h\left(x;\theta \right)$ содержит всего одно слагаемое:
+
+\[{\partial }_{\omega }{\alpha }^m_m\int^{\infty }_0{f\left(x+t\theta ,\ {\omega }^m\right)dt}=m!\int^{\infty }_0{f_{\omega }\left(x+t\theta ,{\omega }^m\right)tdt},\]
+
+в то время как (при $l<m$) производные остальных членов содержат по два слагаемых:
+
+\[{\partial }_{\omega }{\alpha }^l_m\int^{\infty }_{0\ }{f^{\left(m-l\right)}_{\omega }\left(x+t\theta ,\ {\omega }^l,{\theta }^{m-l}\right)t^{m-l}dt}=\]
+
+$${\alpha }^l_m\left(\int^{\infty }_{0\ }{f^{\left(m+1-l\right)}_{\omega }\left(x+t\theta ,\ {\omega }^l,{\theta }^{m-l}\right)t^{m+1-l}dt}\right)+$$ $$\int^{\infty }_{0\ }{f^{\left(m-l\right)}_{\omega }\left(x+t\theta ,\ {\omega }^{l+1},{\theta }^{m-l-1}\right)t^{m-l}dt}.$$
+\end{proof}
+
+\begin{lemma}\label{lem6}\textit{ Для любого вектора }$x\in H_{\omega ,p}$\textit{ и любых векторов }${\xi }_1,\dots ,{\xi }_m\bot \omega $\textit{, }$\theta \bot \omega $\textit{, }$\left|\theta \right|=1$\textit{, справедлива формула}
+
+\begin{equation}\label{meq5}\int^{\ }_{{\mathbb S}}{{\partial }^{m+1}_{\omega }h_{{\xi }_1\dots {\xi }_m}\left(x;\theta \right)dS}={\left(-1\right)}^mm!\int^{\ }_{H_{\omega ,p}\ }{f^{\left(m+1\right)}_{\omega }\left(y;{\xi }_1\dots {\xi }_m\right)dH}, \end{equation} \textit{где }${\mathbb S}$\textit{ -- единичная окружность в плоскости }${\omega }^{\bot }=\left\{x\in {{\mathbb R}}^3:x\cdot \omega =0\right\}$\textit{.}
+\end{lemma}
+
+\begin{proof}Продифференцируем равенство \eqref{meq4} по направлению векторов ${\xi }_1,\dots ,{\xi }_m$:
+
+$${\partial }^{m+1}_{\omega }h_{{\xi }_1\dots {\xi }_m}\left(x;\theta \right)=\int^{\infty }_{0\ }{{\left(f^{\left(m+1\right)}_{\omega }\right)}_{{\xi }_1\dots {\xi }_m}\left(x+t\theta ;\ {\theta }^m\right)t^{m+1}dt} $$
+
+\begin{equation}\label{meq6}+\sum^m_{l=1}{{\alpha }^l_{m+1}\int^{\infty }_{-\infty \ }{{\left(f^{\left(m+1-l\right)}_{\omega }\right)}_{{\xi }_1\dots {\xi }_m}\left(x+t\theta ;\ {\omega }^l,{\theta }^{m-l}\right)t^{m+1-l}dt}}.\end{equation}        Пусть $e_1,\ e_2$ -- ортогональный базис в плоскости\textit{ }${\omega }^{\bot }$ и $\theta ={\sigma }_1e_1+{\sigma }_2e_2$. Тогда в силу линейности функций $f^{\left(k\right)}_{\omega }$, $k=1,\cdots ,m+1$, по аргументам $\theta $, имеем
+
+$$f^{\left(m+1-l\right)}_{\omega }\left(y;{\omega }^l,{\theta }^{m-l}\right)=f^{\left(m+1-l\right)}_{\omega }\left(y;{\omega }^l,e_{i_1},\cdots ,e_{i_{m-l}}\right){\sigma }^{i_1}\cdots {\sigma }^{i_{m-l}}.$$
+(суммирование по индексам $i_1,\cdots ,i_{m-l}$ от 1 до 2). Введем обозначения: $y^i={\sigma }^it$. Проинтегрируем равенство \eqref{meq6} вдоль единичной окружности ${\mathbb S}\subset H$, заметив, что $tdtd\sigma =dH$ и \textit{}
+
+$$\int^{\ }_{{\mathbb S}}{\int^{\infty }_{-\infty }{{\left(f^{\left(k\right)}_{\omega }\right)}_{{\xi }_1\dots {\xi }_m}\left(x+t\theta ;\ {\omega }^l,e_{i_1},\cdots ,e_{i_{m-l}}\right){y^{i_1}\cdots y^{i_{m-l}}t}^{\ }dt}d\sigma }=$$ $$\int^{\ }_{H_{\omega ,p}\ }{{\left(f^{\left(k\right)}_{\omega }\right)}_{{\xi }_1\dots {\xi }_m}\left(x+t\theta ;\ {\omega }^l,e_{i_1},\cdots ,e_{i_{m-l}}\right)y^{i_1}\cdots y^{i_{m-l}}dH}.$$
+
+В результате получим
+
+$$\int^{\ }_{{\mathbb S}}{{\partial }^{m+1}_{\omega }h_{{\xi }_1\dots {\xi }_m}\left(x;\theta \right)d\sigma }=$$ $$\int^{\ }_{H_{\omega ,p}\ }{{\left(f^{\left(m+1\right)}_{\omega }\right)}_{{\xi }_1\dots {\xi }_m}\left(x+t\theta ;e_{i_1},\cdots ,e_{i_m}\right)y^{i_1}\cdots y^{i_m}dH}\ $$
+
+$$+\sum^m_{l=1}{{\alpha }^l_{m+1}\int^{\ }_{H_{\omega ,p}\ }{{\left(f^{\left(m+1-l\right)}_{\omega }\right)}_{{\xi }_1\dots {\xi }_m}\left(x+t\theta ;\ {\omega }^l,e_{i_1},\cdots ,e_{i_{m-l}}\right)y^{i_1}\cdots y^{i_{m-l}}dH}}.$$
+
+Интегрированием по частям во всех слагаемых перебросим производные по направлениям ${\xi }_1,\dots ,{\xi }_m$ с функции $f$ на другие сомножители. Все интегралы во второй сумме обратятся в нуль, поскольку ${\partial }_{{\xi }_1\dots {\xi }_m}\left(y^{i_1}\cdots y^{i_k}\right)=0$ при $k<m$ для всех $i_1,\cdots ,i_k$, равных 1 или 2.
+
+Интегрирование по частям по направлению вектора ${\xi }_1$ в первом слагаемом даст интеграл
+
+$$-\int^{\ }_{H_{\omega ,p}\ }\left[{\left(f^{\left(m+1\right)}_{\omega }\right)}_{{\xi }_2\dots {\xi }_m}\left(x+t\theta ;{{\partial }_{{\xi }_1}\left(y^{i_1}\right)e}_{i_1},\cdots ,e_{i_m}\right)y^{i_2}\cdots y^{i_m}+\cdots\right.$$
+$$+\left.{\left(f^{\left(m+1\right)}_{\omega }\right)}_{{\xi }_2\dots {\xi }_m}\left(x+t\theta ;e_{i_1},\cdots ,{\partial }_{{\xi }_1}\left(y^{i_m}\right)e_{i_m}\right)y^{i_1}\cdots y^{i_{m-1}}dH\right]=$$
+$$-\int^{\ }_{H_{\omega ,p}\ }\left[{\left(f^{\left(m+1\right)}_{\omega }\right)}_{{\xi }_2\dots {\xi }_m}\left(x+t\theta ;{\xi }_1,\cdots ,e_{i_m}\right)y^{i_2}\cdots y^{i_m}+\cdots\right.$$
+$$+\left.\left(f^{\left(m+1\right)}_{\omega }\right)_{{\xi }_2\dots {\xi }_m}\left(x+t\theta ;e_{i_1},\cdots ,{\xi }_1\right)y^{i_1}\cdots y^{i_{m-1}}dH\right]$$
+$$=-m\int^{\ }_{H_{\omega ,p}\ }{{\left(f^{\left(m+1\right)}_{\omega }\right)}_{{\xi }_2\dots {\xi }_m}\left(x+t\theta ;{\xi }_1,\cdots ,e_{i_m}\right)y^{i_2}\cdots y^{i_m}dH}.$$
+
+Аналогично, интегрируя по частям по направлению вектора ${\xi }_2$, получим
+
+$$m\left(m-1\right)\int^{\ }_{H_{\omega ,p}\ }{{\left(f^{\left(m+1\right)}_{\omega }\right)}_{{\xi }_3\dots {\xi }_m}\left(x+t\theta ;{\xi }_1,{\xi }_2,\cdots ,e_{i_m}\right)y^{i_3}\cdots y^{i_m}dH}.$$
+
+Продолжая процесс интегрирования, получим формулу \eqref{meq5}.
+\end{proof}
+
+\begin{lemma}\label{lem7}\textit{Пусть }$f\in \mathfrak{S}\left(S^m\right)$\textit{, }${H=H}_{\omega ,p}$\textit{ -- произвольная плоскость. Тогда для любой точки }$x\in H_{\omega ,p}$\textit{ и любых векторов }${\xi }_1,\dots ,{\xi }_m\bot \omega $\textit{ имеет место формула}
+
+\begin{equation}\label{meq7}\ \frac{\partial }{\partial p}\int^{\ }_H{Wf\left(y;\omega ,{\xi }_1,\cdots ,\omega ,{\xi }_m\right)dH}=\frac{{\left(-1\right)}^m}{2^m\cdot m!}\int^{\ }_{{\mathbb S}}{{\partial }^{m+1}_{\omega }h_{{\xi }_1\dots {\xi }_m}\left(x;\theta \right)dS}\left(\theta \right).\end{equation}
+\end{lemma}
+
+\begin{proof} Продифференцируем равенство \eqref{meq3} по переменной $p$ и воспользуемся формулой \eqref{meq5}:
+
+$$\frac{\partial }{\partial p}\int^{\ }_H{Wf\left(y;\omega ,{\xi }_1,\cdots ,\omega ,{\xi }_m\right)dH}=\frac{1}{2^m}\int^{\ }_{H\ }{f^{\left(m+1\right)}_{\omega }\left(y;{\xi }_1\dots {\xi }_m\right)dH}$$
+$$=\frac{{\left(-1\right)}^m}{2^m\cdot m!}\int^{\ }_{{\mathbb S}}{{\partial }^{m+1}_{\omega }h_{{\xi }_1\dots {\xi }_m}\left(x;\theta \right)dS}\left(\theta \right).$$
+
+Здесь мы воспользовались известным свойством преобразования Радона
+
+\[\frac{\partial }{\partial p}\int^{\ }_{H_{\omega ,p}}{h\left(y\right)dH}=\int^{\ }_{H_{\omega ,p}}{h_{\omega }\left(y\right)dH}.\]
+
+В случае произвольного $n$ формула \eqref{meq7} имеет вид:{\small
+\begin{equation}\label{meq8}\frac{{\partial }^{n-2}}{\partial p^{n-2}}\int^{\ }_H{Wf\left(y;\omega ,{\xi }_1,\cdots ,\omega ,{\xi }_m\right)dH}=\frac{{\left(-1\right)}^m}{2^m\cdot m!}\int^{\ }_{{{\mathbb S}}^{n-2}}{{\partial }^{m+n-2}_{\omega }h_{{\xi }_1\dots {\xi }_m}\left(x;\theta \right)dS}\left(\theta \right),\end{equation} }
+где ${{\mathbb S}}^{n-2}$ -- единичная сфера в гиперплоскости ${\omega }^{\bot }=\left\{x\in {{\mathbb R}}^n:x\cdot \omega =0\right\}$. В случае, когда число $m+n-2$ нечетно, мы получаем аналогичную формулу с функцией $g=If$ вместо $h$ и произвольной полусферой ${{\mathbb S}}^{n-2}_+$ вместо сферы ${{\mathbb S}}^{n-2}$:
+
+$$\frac{{\partial }^{n-2}}{\partial p^{n-2}}\int^{\ }_H{Wf\left(y;\omega ,{\xi }_1,\cdots ,\omega ,{\xi }_m\right)dH}=\frac{{\left(-1\right)}^m}{2^m\cdot m!}\int^{\ }_{{{\mathbb S}}^{n-2}_+}{{\partial }^{m+n-2}_{\omega }g_{{\xi }_1\dots {\xi }_m}\left(x;\theta \right)dS}\left(\theta \right),$$
+
+Это следует из соотношения ${\partial }^k_{\omega }h\left(x;\theta \right)+{\partial }^k_{\omega }h\left(x;-\theta \right){=\partial }^k_{\omega }g\left(x;\theta \right)$, связывающего функции $g$ и $h$ при нечетном $k$.
+\end{proof}
+
+Теперь перейдем к доказательству теоремы \ref{th3}.
+
+\begin{proof} Для произвольных векторов ${\xi }_1,{\eta }_1,\dots ,{\xi }_m,{\eta }_m$ и плоскости $H\in {{\mathbb R}}^n$ рассмотрим величину
+
+\begin{equation}\label{meq9}I_H\left({\xi }_1,{\eta }_1,\dots ,{\xi }_m,{\eta }_m\right)=\frac{{\partial }^{n-2}}{\partial p^{n-2}}\int^{\ }_H{Wf\left(y;{\xi }_1,{\eta }_1,\dots ,{\xi }_m,{\eta }_m\right)dH\left(y\right)}.\end{equation}
+Это -- $2m$-линейная функция своих аргументов, симметричная по одноименным переменным (по ${\xi }_1,\dots ,{\xi }_m$, а также по ${\eta }_1,\dots ,{\eta }_m$) и кососимметричная по разноименным переменным, т.е. меняет знак при перестановке аргументов ${\xi }_i$ и ${\eta }_j$.
+
+Разложим каждый из векторов ${\xi }_i$, ${\eta }_j$ в сумму
+
+$$\xi_i=a_i\omega +\xi'_i,\quad \eta_j=b_j\omega +\eta'_j,$$
+
+где векторы $\xi'_i$ и $\eta'_j$ ортогональны $\omega $. В силу линейности величина $\ I_H$ представляется в виде линейной комбинации членов вида $I_H\left({\alpha }_1,{\beta }_1,\dots ,{\alpha }_m,{\beta }_m\right)$, где каждый из аргументов ${\alpha }_i$ есть либо $\omega $, либо $\xi'_i$, а $\beta_j$ -- либо $\omega $, либо $\eta'_j$. Если в какой-либо паре $\left(\alpha_i,beta_i\right)$ оба аргумента совпадают (равны $\omega $), то член $I_H\left({\alpha }_1,{\beta }_1,\dots ,{\alpha }_m,{\beta }_m\right)$ равен нулю в силу кососимметричности. Если для некоторого $i$ $\alpha_i=\xi'_i$, $\beta_i=\eta'_i$, то интегрирование по частям в интеграле \linebreak $\int^{\ }_H{Wf\left(y;\alpha_1,\beta_1,\dots ,\alpha_m,\beta_m\right)dH}$ снова приводит к равенству нулю соответствующего члена. Остаются члены, в каждой паре аргументов $\left(\alpha_i,\beta_i\right)$ которых один вектор равен $\omega $, а другой ортогонален $\omega $. Все такие члены с точностью до знака совпадают с интегралом, вычисленным по формуле \eqref{meq8}, если в ней в качестве точки $x$ взять существующую по условию теоремы общую точку плоскости $H$ и множества $\Gamma $
+
+Таким образом, величина \eqref{meq9} оказывается вычисленной для всех значений аргументов. Сам оператор $Wf$ может быть теперь восстановлен с помощью формулы обращения преобразования Радона.
+
+Теорема доказана.
+\end{proof}
+
+\textbf{Примеры. }Предположим, что носитель поля $f$ лежит в единичном шаре в ${{\mathbb R}}^{{\rm 3}}$. Свойством, описывающим множество $\Gamma $ из теоремы \ref{th3}, обладают следующие множества:
+
+1. Полуокружности взаимно перпендикулярных больших окружностей, лежащие на разных полусферах концентрического шара достаточно большого радиуса (большего, чем $\sqrt{2}$).
+
+2. Любые три прямые, проходящие через центр единичного шара с линейно независимыми направляющими векторами (например, взаимно перпендикулярные).
+
+Восстановление соленоидальной части $f^{\left(s\right)}$ по построенному полю $Wf$ мы проведем по схеме, предложенной в работе [1]. С этой целью определим дивергенцию по четным индексам:
+
+$${\delta }_l:C^{\infty }\left(S^{k-1}{\bigotimes }^sS^{m-k+1}\left({\bigwedge }^2\left(T^*{\mathbb R}\right)\right)\right)\longrightarrow C^{\infty }\left(S^k{\bigotimes }^sS^{m-k}\left({\bigwedge }^2\left(T^*{\mathbb R}\right)\right)\right),$$
+
+$${\left({\delta }_lf\right)}_{i_1\dots i_ki_{k+1}j_{k+1}\dots i_mj_m}\left(x\right)=\frac{\partial }{\partial x_{j_k}}f_{i_1\dots i_{k-1}i_kj_k\dots i_mj_m}\left(x\right).$$
+Оператор ${\delta }_l$ является формально двойственным к $-\alpha \left(i_k,j_k\right){\partial }/{\left(\partial x^{j_k}\right)}$, \linebreak $k=1,\dots ,m$, а ${\delta }^m_l$ -- двойственным к оператору ${\left(-1\right)}^mW$.
+
+\begin{theorem}\label{th8} [1]. \textit{Для любого поля }$f\in \mathfrak{S}\left(S^m\right)$\textit{ справедливо соотношение}
+
+\[{\Delta }^mf^{\left(s\right)}=2^m{\delta }^m_lWf,\]
+
+\textit{где }$\Delta =\frac{\partial }{\partial x^1}+\frac{\partial }{\partial x^2}+\frac{\partial }{\partial x^3}$\textit{ -- оператор Лапласа.}
+\end{theorem}
+
+Остается заметить, что в пространстве быстро убывающих функций уравнение Пуассона имеет единственное решение.
+
+\begin{remark} Требование бесконечной дифференцируемости поля $f$ можно ослабить, предположив существование непрерывных производных до порядка $n+2m-2$, а ее поведение на бесконечности можно уточнить так: функция $f$ и все ее производные до порядка $n+m-2$ убывают быстрее, чем $\frac{1}{{\left|x\right|}^n}$.
+\end{remark}
+
+\section{Обращение по данным на комплексе прямых, пересекающих бесконечно удаленную кривую}\label{sec3}
+
+\begin{theorem}\label{th9}Пусть $f\in \mathfrak{S}\left(S^m\right),\ \ \Gamma \subset {{\mathbb S}}^{n-1}$\textit{ -- множество направлений, обладающее свойством: для любой гиперплоскости }$H\subset {{\mathbb R}}^n$\textit{, пересекающей носитель поля }$f$\textit{, существует хотя бы одно направление }$\theta \in \Gamma $\textit{, параллельное }$H$\textit{. Тогда поле }$Wf$\textit{ может быть восстановлено по заданной функции }$g\left(x,\theta \right)$\textit{ и ее первым производным для прямых }$l=l\left(x,\theta \right)$\textit{, где }$\theta \in \Gamma $\textit{.}
+\end{theorem}
+
+ \begin{proof} Возьмем произвольную гиперплоскость $H=H_{\omega ,p}$ и зафиксируем вектор $\theta \in \Gamma $, параллельный $H$. В этой гиперплоскости рассмотрим семейство прямых, параллельных $\theta $. Как следует из доказательства теоремы \ref{th3}, достаточно доказать, что величину \linebreak $J_H\left({\xi }_1,{\xi }_2,\dots ,{\xi }_m\right)=\int^{\ }_H{Wf\left(y;\omega ,{\xi }_1,\dots ,\omega ,{\xi }_m\right)dy}$ можно вычислить для всех векторов ${\xi }_1,{\xi }_2,\dots ,{\xi }_m\in {\omega }^{\bot }$ по известным интегралам $f$ вдоль прямых этого семейства.
+
+Рассмотрим сначала случай, когда все векторы ${\xi }_1,{\xi }_2,\dots ,{\xi }_m$ совпадают с $\omega $. По лемме \ref{lem4} и теореме Фубини
+{\small
+$$\int^{\ }_{{\theta }^{\bot }\cap H}{\frac{{\partial }^m}{\partial s^m}{\left.g\left(x+s\omega ,\theta \right)\right|}_{s=0}dx}=\int^{\ }_H{f^{\left(m\right)}_{\omega }\left(y;{\theta }^m\right)dH}=2^m\int^{\ }_H{Wf\left(y;\omega ,\theta ,\dots ,\omega ,\theta \right)dH},$$}
+
+откуда следует равенство
+
+\begin{equation}\label{meq10}J_H\left({\theta }^m\right)=\frac{1}{2^m}\int^{\ }_{{\theta }^{\bot }\cap H}{\frac{{\partial }^m}{\partial s^m}{\left.g\left(x+s\omega ,\theta \right)\right|}_{s=0}dx}.\end{equation}
+Предположим теперь, некоторые $k$ векторов системы ${\xi }_1,{\xi }_2,\dots ,{\xi }_m$, скажем \linebreak${\xi }_1,{\xi }_2,\dots ,{\xi }_k$, ортогональны $\theta $, а остальные -- совпадают с $\theta $. Найдем производные
+
+$$\frac{\partial }{\partial q^1}\dots \frac{\partial }{\partial q^k}\frac{{\partial }^m}{\partial s^m}{\left.g\left(x+s\omega ,\theta +q^1{\xi }_1+\dots +q^k{\xi }_k\right)\right|}_{ \begin{array}{c}
+s=0 \\
+q^1=\dots =q^k=0 \end{array}
+}$$
+$$=\int^{\infty \ }_{-\infty }{{\left(f^{\left(m\right)}_{\omega }\right)}_{{\xi }_1{\xi }_2\dots {\xi }_k}\left(x+t\theta ;{\theta }^m\right)t^kdt}+\int^{\ \infty }_{-\infty }{f^{\left(m\right)}_{\omega }\left(x+t\theta ;{{\xi }_1,{\xi }_2,\dots ,{\xi }_k,\ \theta }^{m-k}\right)dt}.$$
+
+В гиперплоскости ${\omega }^{\bot }$ выберем ортонормированный базис $e_1,\ e_2,\dots ,e_{n-1}$, где $e_1=\theta $, а $e_2,\dots ,e_{n-1}\bot \theta $. Тогда любой вектор $y=x+t\theta \in H$ имеет однозначное разложение по этому базису: $y=y^1e_1+y^2e_2+\dots +y^{n-1}e_{n-1}$, где $y^1=\left(y,\theta \right)=\left(x+t\theta ,\theta \right)=t$. Проинтегрируем последнее равенство вдоль $\left(n-2\right)$-мерной плоскости ${\theta }^{\bot }\cap H$, ортогональному прямым нашего семейства:
+
+$$\int^{\ }_{{\theta }^{\bot }\cap H}{\frac{\partial }{\partial q^1}\dots \frac{\partial }{\partial q^k}\frac{{\partial }^m}{\partial s^m}{\left.g\left(x+s\omega ,\theta +q^1{\xi }_1+\dots +q^k{\xi }_k\right)\right|}_{ \begin{array}{c}
+s=0 \\
+q^1=\dots =q^k=0 \end{array}
+}dx}$$
+$$=\int^{\infty \ }_{-\infty }{{\left(f^{\left(m\right)}_{\omega }\right)}_{{\xi }_1{\xi }_2\dots {\xi }_k}\left(x+t\theta ;e^m_1\right)y^m_1dH}$$
+$$+2^m\int^{\ }_H{Wf\left(y;\omega ,{\xi }_1,\dots ,\omega ,{\xi }_k,\ \omega ,\theta ,\dots ,\omega ,\theta \right)dH}.$$
+
+Первый интеграл в правой части обращается в нуль после интегрирования по частям, поскольку ${\partial }_{{\xi }_1}\left(y^m_1\right)=0$ в силу того, что первая координата вектора ${\xi }_1$ в базисе $e_1,\ e_2,\dots ,e_{n-1}$ равна нулю.
+
+Таким образом, нами доказана формула
+
+$$J_H\left({\xi }_1,{\xi }_2,\dots ,{\xi }_k,{\theta }^{m-k}\right)=\int^{\ }_H{Wf\left(y;\omega ,{\xi }_1,\dots ,\omega ,{\xi }_k,\ \omega ,\theta ,\dots ,\omega ,\theta \right)dH}$$
+{\small
+\begin{equation}\label{meq11}=\frac{1}{2^m}\int^{\ }_{{\theta }^{\bot }\cap H}{\frac{\partial }{\partial q^1}\dots \frac{\partial }{\partial q^k}\frac{{\partial }^m}{\partial s^m}{\left.g\left(x+s\omega ,\theta +q^1{\xi }_1+\dots +q^k{\xi }_k\right)\right|}_{ \begin{array}{c}
+s=0 \\
+q^1=\dots =q^k=0 \end{array}
+}dx}.\end{equation}}
+
+Вычислим теперь значение функции $J_H\left({\xi }_1,{\xi }_2,\dots ,{\xi }_m\right)$ для любых аргументов ${\xi }_1,{\xi }_2,\dots ,{\xi }_m\in {{\mathbb R}}^n$. Каждый вектор однозначно разлагается в сумму
+
+$$\xi_i=a_i\theta +\xi'_i,$$
+
+где $\xi'_i\in \theta^\bot$, и симметричная линейная функция $J_H$ представляется в виде линейной комбинации членов вида $J_H\left(\xi'_1,\xi'_2,\dots ,\xi'_k,{\theta }^{m-k}\right)$, которые для любого индекса $k=0$ или $1\le k\le m$ можно вычислить по формулам \eqref{meq10} или \eqref{meq11}.
+
+Теорема доказана.
+\end{proof}
+
+
+\textbf{Пример.} В евклидовом пространстве ${{\mathbb R}}^3$ роль множества $\Gamma $ играет любая большая окружность единичной сферы (бесконечно удаленная прямая).
+
+\begin{corollary} \textit{Пусть} $H\subset {{\mathbb R}}^3$\textit{ -- произвольная плоскость, }${\Sigma }_H$\textit{ -- комплекс прямых, параллельных }$H$\textit{. Соленоидальная часть поля }$f\in \mathfrak{S}\left(S^m\right)$\textit{ для любого }$m\ge 1$\textit{ может быть восстановлена по заданной функции }$g\left(x,\theta \right)$\textit{ и ее первым производным для прямых }$l\in {\Sigma }_H$.
+\end{corollary}
+
+
+Для доказательства достаточно в качестве множества $\Gamma $ в теореме \ref{th9} взять большую окружность единичной сферы, параллельную $H$\textit{.}
+
+\begin{remark}Напомним, что в работе В. Шарафутдинова ([3]) для обращения лучевого преобразования векторного поля ($m=1$) требуется задание функции $g$ на комплексе ${\Sigma }_{H_1}\cup {\Sigma }_{H_2}$, где $H_1$\textit{, }$H_2$ -- пересекающиеся плоскости, а в случае $m=2$ наименьшим является комплекс прямых ${\Sigma }_{H_1}\cup {\Sigma }_{H_2}\cup {\Sigma }_{H_3}$, где $H_1$\textit{, }$H_2$\textit{, }$H_3$ -- плоскости с линейно независимыми нормальными векторами.
+\end{remark}
+
+\section{Восстановление дифференциальных форм степени 2}\label{sec4}
+Пусть $f=\sum{f_{i_1,\dots ,i_k}\left(x\right)dx_{i_1}\dots dx_{i_k}}$ -- дифференциальная форма степени $k$ в евклидовом пространстве ${{\mathbb R}}^n$, где $1\le k\le n$\textit{; }$f_{i_1,\dots ,i_k}\left(x\right)$ -- кососимметричная по индексам $i_1,\dots ,i_k$ функция. Значение $f$ на векторах ${\theta }_1,\dots ,{\theta }_k\in {{\mathbb R}}^n\ $ определяется формулой
+
+$$f\left(x;{\theta }_1,\dots ,{\theta }_k\right)=\frac{1}{k!}\sum^{\ }_{i_1<\dots <i_k}{f_{i_1,\dots ,i_k}\sum^{\ }_{\pi \in {\Pi }_k}{{\left(-1\right)}^{\left|\pi \ \right|}}}{\theta }_{i_{\pi \left(1\right)}}\cdot \dots \cdot {\theta }_{i_{\pi \left(k\right)}},$$
+
+где ${\Pi }_k$ -- группа перестановок индексов $i_1,\dots ,i_k$, во внутренней сумме производится альтернирование по этим индексам, $\left|\pi \ \right|$ -- четность перестановки. Преобразованием Радона формы $f$ называется функция
+
+$$g\left(A\right)=\int^{\ }_A{f},$$
+
+определенная на многообразии $k$ -- мерных аффинных подпространств в ${{\mathbb R}}^n$. В этом пункте мы будем рассматривать дифференциальные формы степени 2.
+
+По интегралам $g\left(A\right)$ 2-форму $f$ можно восстановить однозначно с точностью до слагаемого, являющегося точной формой, поэтому ставится задача определения внешнего дифференциала $df=\sum{df_{ij}\wedge dx_i\wedge dx_j}$ по заданным интегралам $g\left(A\right)$ для двумерных плоскостей $A\subset {{\mathbb R}}^n$.
+
+Если обозначить через $A^2\left({{\mathbb R}}^n\right)$ многообразие двумерных аффинных подпространств в ${{\mathbb R}}^n$, то ${dim A^2\left({{\mathbb R}}^n\right)\ }=3n-6$, и задача обращения является переопределенной по размерности при $n\ge 4$. Как и в случае лучевого преобразования тензорных полей возникает задача нахождения таких -мерных подмногообразий, что известных значений интегралов от формы $f$ на этих подмногообразиях достаточно, чтобы определить $df$. В качестве такого подмногообразия мы рассматриваем аналог семейства прямых из п. \ref{sec3}, т.е. семейство двумерных плоскостей в ${{\mathbb R}}^n$, каждая из которых параллельна паре векторов из множества $\Gamma \subset {{\mathbb S}}^{n-1}$, где $\Gamma $ обладает некоторым свойством полноты. Аналог многообразия прямых из п. \ref{sec2} рассмотрен в работе [5]. Роль множества $\Gamma $ играет множество прямых в пространстве ${{\mathbb R}}^n$. Даны лишь интегралы по плоскостям, проходящим через прямые множества $\Gamma $, а само множество $\Gamma $ обладает следующим свойством: любая гиперплоскость, проходящая через носитель формы $f$, содержит, по крайней мере, $n-2$ прямые из $\Gamma $ с линейно независимыми направляющими векторами.
+
+Мы вычисляем покомпонентное преобразование Радона формы $df$, т.е. интегралы по $(n-1)$-мерным гиперплоскостям, с тем, чтобы потом воспользоваться формулой обращения. Напомним, прежде всего, что всякую двумерную плоскость $A$ можно задать точкой $x$ и парой неколлинеарных векторов $\eta $\textit{ }и $\theta $, а интегралы $g\left(A\right)$ рассматривать как функцию
+
+
+$$g\left(x;\eta ,\theta \right)=\int^{\infty }_{-\infty }{\int^{\infty }_{-\infty }{f\left(x+s\eta +t\theta ;\eta ,\theta \right)dsdt}},$$
+определенную на множестве ${{\mathbb R}}^n\times {\wedge }^2{{\mathbb S}}^{n-1}$.
+
+\begin{theorem}\label{th10}Пусть $\Gamma \subset {{\mathbb S}}^{n-1}$\textit{, }$n\ge 4$\textit{, -- множество направлений, обладающее свойством: для любой гиперплоскости }$H_{p,\omega }$\textit{ в }${{\mathbb R}}^n,$\textit{ пересекающей носитель }$f$\textit{, существуют }$n-2$\textit{ линейно независимых направления }${\eta }_1,{\eta }_2,\dots ,{\eta }_{n-2}\in \Gamma $\textit{, параллельные }$H_{p,\omega }$\textit{. Тогда для любой 2-формы }$f$\textit{, внешний дифференциал }$df$\textit{ может быть восстановлен по заданным первым производным функции }$g$\textit{, вычисленным по двумерным плоскостям, каждая из которых параллельна паре линейно независимых векторов }$\eta ,\theta \in \Gamma $\textit{.}
+\end{theorem}
+
+Доказательству предпошлем несколько лемм. Пусть $H=H_{\omega ,p}$ -- произвольная гиперплоскость. Рассмотрим величину $I_H\left(\lambda ,\xi ,\eta \right)=\ \int^{\ }_H{df\left(y;\lambda ,\xi ,\eta \right)}$. Как и в предыдущих пунктах, будем доказывать, что в условиях теоремы эта величина определена для всех значений своих аргументов $\lambda ,\xi ,\eta \in {{\mathbb R}}^n$. Обозначим семейство двумерных плоскостей из условия теоремы через $A^2(\Gamma )$.
+
+\begin{lemma}\label{lem11}\textit{Пусть} ${\lambda }_1,\ {\lambda }_2\in \Gamma $\textit{. Тогда }
+
+\begin{equation}\label{meq12}I_H\left({\lambda }_1,\ {\lambda }_2,\omega \right)=\int^{\ }_{{\left\{{\lambda }_1,\ {\lambda }_2\right\}}^{\bot }\cap H}{\frac{\partial }{\partial s}{\left.g\left(x+s\omega ;{\lambda }_1,\ {\lambda }_2\right)\right|}_{s=0}dx,}\end{equation}\textit{где }${\left\{{\lambda }_1,\ {\lambda }_2\right\}}^{\bot }$\textit{ -- }$\left(n-2\right)$\textit{-мерное подпространство векторов, перпендикулярных векторам }${\lambda }_1,\ {\lambda }_2$\textit{.}
+\end{lemma}
+
+Доказательство сразу следует из теоремы Фубини, если воспользоваться формулой $\int^{\ }_H{f_{\omega }\left(y;\lambda ,\xi \right)dH}=\int^{\ }_H{df\left(y;\lambda ,\xi ,\omega \right)dH}$.
+
+Зафиксируем $\lambda \in \Gamma $ и рассмотрим произвольный вектор $\xi \in {{\mathbb R}}^n$. Если $\xi $ параллелен какой-нибудь плоскости нашего семейства $A^2(\Gamma )$, параллельной $\lambda $, то в силу линейности функции $df\left(y;\lambda ,\xi ,\omega \right)$ по третьей переменной и кососимметричности по аргументам $\lambda ,\xi $ интеграл от формы $df$ сводится к вычислению величины вида \eqref{meq12}.
+
+\begin{lemma}\label{lem12}\textit{Пусть} $\lambda ,\ \theta \in \Gamma $\textit{, }$\xi \in {\left\{\lambda ,\ \theta ,\omega \right\}}^{\bot }$\textit{. Тогда}
+
+\begin{equation}\label{meq13}I_H\left(\lambda ,\ \xi ,\omega \right)=\int^{\ }_{{\left\{\lambda ,\ \theta \right\}}^{\bot }\cap H}{\frac{\partial }{\partial r}\frac{\partial }{\partial q}{\left.g\left(x+r\omega ;\lambda ,\theta +q\xi \right)\right|}_{r=q=0}dx}.\end{equation}
+\end{lemma}
+\begin{proof} Рассмотрим производные функции $g$:
+
+$$\frac{\partial }{\partial r}\frac{\partial }{\partial q}{\left.g\left(x+r\omega ;\lambda ,\theta +q\xi \right)\right|}_{r=q=0}=\int^{\infty }_{-\infty }{\int^{\infty }_{-\infty }{{\left(f_{\omega }\right)}_{\xi }\left(x+s\lambda +t\theta ;\lambda ,\theta \right)tdsdt}}$$
+\begin{equation}\label{meq14}+\int^{\infty }_{-\infty }{\int^{\infty }_{-\infty }{f_{\omega }\left(x+\lambda s+t\theta ;\lambda ,\xi \right)dsdt}}.\end{equation}
+Выберем в подпространстве ${\omega }^{\bot }$ ортонормированный базис $e_1,\ e_2,\dots ,e_{n-1}$, в котором $e_1=\theta $, а $\ e_2\in {{\rm Lin} \left\{\lambda ,\ \theta \right\}\ }$, где ${{\rm Lin} \left\{\lambda ,\ \theta \right\}\ }\in A^2(\Gamma )$ -- линейная оболочка векторов $\lambda ,\ \theta $. Пусть $\lambda ={\sigma }^1e_1+{\sigma }^2e_2$, ${уo}^2\ne 0$. Произвольный вектор $y=x+\lambda s+t\theta \in H$ можно однозначно разложить по этому базису: $y=y^1e_1+y^2e_2+\dots +y^{n-1}e_{n-1}$. Имеем $y^1=\left(y,e_1\right)={\sigma }^1s+t$, $y^2=\left(y,e_2\right)=s{\sigma }^2$, откуда находим $t=y^1-\frac{{\sigma }^1}{{\sigma }^2}y^2$. Проинтегрируем обе части равенства \eqref{meq14} вдоль $\left(n-2\right)$-мерного аффинного подпространства ${\left\{\lambda ,\theta \right\}}^{\bot }\cap H$:
+{\small
+$$\int^{\ }_{{\left\{\lambda ,\theta \right\}}^{\bot }\cap H}{\frac{\partial }{\partial r}\frac{\partial }{\partial q}{\left.g\left(x+r\omega ;\lambda ,\theta +q\xi \right)\right|}_{r=q=0}dx}=\int^{\ }_H{{\left(f_{\omega }\right)}_{\xi }\left(y;e_2,e_1\right)\left({{\sigma }^2y}^1-{\sigma }^1y^2\right)dH}$$}
+
+$$+\int^{\ }_H{f_{\omega }\left(y;\lambda ,\xi \right)dH}.$$
+
+
+В первом интеграле в правой части произведем интегрирование по частям в направлении вектора $\xi $. В результате он обратится в нуль, поскольку\linebreak ${\partial }_{\xi }\left({{\sigma }^2y}^1-{\sigma }^1y^2\right)=0$, и мы получаем формулу \eqref{meq13}.
+\end{proof}
+
+Далее будем рассуждать по схеме, предложенной в работе [2]. Следствием формул \eqref{meq12}, \eqref{meq13} является следующая
+
+\begin{lemma}\label{lem13}\textit{Пусть} $\lambda \in \Gamma $\textit{, }$\lambda \bot \omega $\textit{. Тогда для любых векторов }$\eta ,\ \xi \in {{\mathbb R}}^n$\textit{ величина }$I_H\left(\lambda ,\ \eta ,\ \xi \right)$\textit{ может быть вычислена по заданным функции и ее первым производным, определенным на плоскостях семейства }$A^2(\Gamma )$.
+\end{lemma}
+
+\begin{proof} Пусть $\eta $ и $\xi $ параллельны $H$. Проинтегрировав равенство
+
+$$df\left(y;\lambda , \eta , \xi \right)=f_{\lambda }\left(y;\eta ,\xi \right)-f_{\eta }\left(y;\lambda ,\xi \right)+f_{\xi }\left(y;\lambda ,\eta \right)$$
+
+вдоль гиперплоскости $H$ и совершив интегрирования по частям в полученных интегралах, можно убедиться в том, что $I_H\left(\lambda ,\ \eta ,\ \xi \right)=0$.
+
+Предположим, что один из векторов, скажем $\xi$, не параллелен $H$. Тогда вектор $\eta'=\eta -c\xi $ будет параллелен $H\ $ при $c=\frac{\left(\eta ,\omega \right)}{\left(\xi ,\omega \right)}$ и $df\left(y;\lambda , \eta ,\ \xi \right)=df\left(y;\lambda , \eta', \xi \right)$. Пусть $\xi'$ -- ортогональная проекция вектора $\xi$ на направление вектора $\omega$, а $\eta''$ -- проекция $\eta'$ на подпространство $\lambda^\bot$. Тогда $I_H\left(\lambda , \eta , \xi \right)=I_H\left(\lambda , \eta'', \xi'\right)$, а последняя величина вычисляется по формуле \eqref{meq13}.
+\end{proof}
+
+Перейдем к доказательству самой теоремы \ref{th10}.
+
+\begin{proof} В условиях теоремы лемма \ref{lem13} позволяет вычислить величины $I_H\left({\lambda }_k,\eta ,\xi \right), k=1,2,\dots ,n-2$, для любой гиперплоскости $H$ и некоторых линейно независимых векторов $\lambda_1,\ \lambda_2,\dots ,\lambda_{n-2}$, параллельных $H$. Остается доказать, что величину $I_H\left(\theta , \eta , \xi \right)$ можно вычислить для любой тройки векторов $\theta , \eta , \xi \in {\mathbb R}^n$. Если все три вектора параллельны $H$, то $I_H\left(\theta , \eta , \xi \right)=0$. Предположим, что один из векторов, скажем, $\xi$, не параллелен $H$. Тогда найдутся числа $a$ и $b$ такие, что векторы $\theta'=\theta-a\xi$ и $\eta'=\eta -b\xi $ будут параллельны $H$, и тогда $I_H\left(\theta , \eta , \xi \right)=I_H\left(\theta', \eta', \xi \right)$.
+
+Если один из векторов $\theta'$ и $\eta'$, скажем, $\theta'$, принадлежит линейной оболочке $Lin\left\{\lambda_1, \lambda_2,\dots , \lambda_{n-2}\right\}$, т.е. $\theta'=\sum^{n-2}_{i=1}{c_i\lambda_i}$, то справедливо равенство
+
+$$I_H\left(\theta', \eta', \xi \right)=\sum^{n-2}_{i=1}c_i I_H\left(\lambda_i,\eta', \xi \right),$$
+
+в правой части которого все слагаемые известны в силу леммы \ref{lem13}. В противном случае существует такое $d\in {\mathbb R}$, что вектор $\eta''=\eta'-d\theta'$ принадлежит ${{\rm Lin} \left\{\lambda_1, \lambda_2,\dots , \lambda_{n-2}\right\} }$, и мы имеем равенство $I_H\left(\theta', \eta', \xi \right)=-I_H\left(\eta'',\theta', \xi \right)$, в котором правая часть снова известна в силу леммы \ref{lem13}.
+
+Теорема доказана.
+\end{proof}
+
+\textbf{Пример}. В пространстве ${{\mathbb R}}^4$ примером множества $\Gamma $ из теоремы \ref{th10} служит множество радиус-векторов точек двух пересекающихся больших окружностей единичной сферы ${{\mathbb S}}^3$.
+\end{fulltext}
+\begin{thebibliography}{40}
+
+\bibitem{1} Denisjuk A. Inversion of the X-ray transform for 3D symmetric tensor fields with sources on a curve // Inverse problems. 2006. 22. Pp. 399-411
+
+
+\bibitem{2} Palamodov V. P. Reconstruction of a differential form from Doppler transform // SIAM J. Math. Anal. 2009. №41. Pp. 1713-1720.
+
+
+\bibitem{3}	Sharafutdinov V.A. Slice-by-slice reconstruction algorithm for vector tomography with incomplete data // Inverse problems. 2007. № 23. Pp. 2603-2627.
+
+\bibitem{4} Vertgeim L.B. Integral geometry problems for symmetric tensor fields with incomplete data. 2000. J. Inverse III-Posed Probl. 8(3). Pp. 355-364.
+
+
+\bibitem{5} Sharafutdinov V.A. Integral Geometry of Tensor Fields. 1994. (Utrech: VSP).
+
+\bibitem{6}	Grangeat P. Mathematical framework of cone-beam 3D-reconstruction via the first derivative of the Radon transform // Lecture Notes in Math. 1990. 1497. Pp. 66-97.
+
+\bibitem{7}	Наттерер Ф. Математические аспекты компьютерной томографии. М.: Мир. 1990.
+
+\bibitem{8}	Меджидов З.Г. Восстановление векторного поля по данным его лучевого преобразования на трехмерных многообразиях прямых. Вестник ДГУ. Вып 6. 2012. С. 159-166.
+
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

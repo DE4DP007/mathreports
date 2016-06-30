@@ -1,0 +1,3044 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts,amssymb,mathrsfs,amscd}
+%для подключения графики используются стандартные команды, но кроме файла *.eps
+%необходимо наличие в текущей директории соответствующего файла *.pdf
+%-------------------------------------------------
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[LE,RO]{\thepage}
+%\fancyhead[CO]{текст-центр-нечетные}
+%\fancyhead[LO]{текст-слева-нечетные}
+%\fancyhead[CE]{текст-центр-четные}
+%\fancyfoot{}
+
+\usepackage[hyper]{msb-a}
+\Volume10
+
+%\JournalName{Дагестанские электронные математические известия}
+\JournalName{Дагестанские Электронные Математические Известия}
+%\JournalName{}
+%Пустой аргумент приводит к исчезновению всех атрибутов журнала "Математический
+%сборник", файл можно представить в любой другой журнал
+%-------------------------------------------------
+\numberwithin{equation}{section}
+%-------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}%[section]
+\newtheorem{propos}{Предложение}
+%-------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{proof}{Доказательство}\def\theproof{}
+\newtheorem{remark}{Замечание}
+\newtheorem{corollary}{Следствие}
+%-------------------------------------------------
+\def\Re{\operatorname{Re}}
+\def\Im{\operatorname{Im}}
+\def\const{\operatorname{const}}
+\def\RR{\mathbb R}
+\def\CC{\mathbb C}
+\def\NN{\mathbb N}
+\def\RS{\mathfrak R}
+\def\bz{\mathbf z}
+\def\sH{\mathscr H}
+\def\HH{\mathscr H}
+\def\mro{\widehat\rho}
+%-------------------------------------------------
+
+
+\begin{document}
+
+\title{Полиномы, ортогональные на сетках из единичной окружности и числовой оси}
+
+\author[I.\,I.~Sharapudinov]{И.\,И.~Шарапудинов}
+\address{Дагестанский научный центр РАН,\\ Владикавказский научный центр РАН}
+
+
+\email{sharapud@mail.ru}
+%второй автор
+
+\date{25.10.2013}
+\udk{517.538}
+
+\maketitle
+
+\begin{fulltext}
+
+\begin{abstract}
+
+Исследованы асимптотические свойства полиномов, ортогональных на
+произвольных (не обязательно равномерных) сетках единичной
+окружности и отрезка $[-1,1]$. В случае, когда сетка узлов
+\linebreak$\Omega_N^T=\left\{e^{i\theta_0},e^{i\theta_1},
+\ldots,e^{i\theta_{N-1}}\right\}$ расположена на единичной
+окружности $|w|=1$, рассматриваются полиномы $\varphi_{0,N}(w),\varphi_{1,N}(w),\ldots,\varphi_{N-1,N}(w),$
+образующие ортонормированную систему в следующем мысле:
+$$
+\frac1{2\pi}\int\limits_{-\pi}^\pi
+\varphi_{n,N}(e^{i\theta})\overline{\varphi_{m,N}(e^{i\theta})}\,d\sigma_N(\theta)=
+$$
+$$
+\frac1{2\pi}\sum\limits^{N-1}_{j=0}
+\varphi_{n,N}(e^{i\theta_j})\overline{\varphi_{m,N}(e^{i\theta_j})}
+\Delta\sigma_N(\theta_j)=\delta_{nm},
+$$
+ где $\Delta\sigma_N(\theta_j)=\sigma_N(\theta_{j+1})-\sigma_N(\theta_j),
+j=0,\ldots,N-1$, для которых установлены асимптотические формулы в
+том случае, когда
+$\Delta\sigma_N(\theta_j)=h(\theta_j)\Delta\theta_j$, которые, в
+свою очередь используются для изучения асимптотичеcких свойств
+полиномов, ортогональных на сетках отрезка $[-1,1]$.
+
+Библиография: 39 названий.
+$$ $$
+
+%{ Polynomials, orthogonal on grids from unit circle and number axis} are considered in present paper. An asymptotics of polynomial, orthogonal on arbitrary grids of unit circle are investigated.
+%In case, when the grid  of knots  $\Omega_N^T=\left\{e^{i\theta_0},e^{i\theta_1},
+%\ldots,e^{i\theta_{N-1}}\right\}$ belong to unit circle $|w|=1$   we consider polynomials
+%$\varphi_{0,N}(w),\varphi_{1,N}(w),\ldots,\varphi_{N-1,N}(w),$
+%orthogonal  in the following \linebreak sense
+%$$
+%\frac1{2\pi}\int\limits_{-\pi}^\pi
+%\varphi_{n,N}(e^{i\theta})\overline{\varphi_{m,N}(e^{i\theta})}\,d\sigma_N(\theta)=
+%$$
+%$$
+%\frac1{2\pi}\sum\limits^{N-1}_{j=0}
+%\varphi_{n,N}(e^{i\theta_j})\overline{\varphi_{m,N}(e^{i\theta_j})}
+%\Delta\sigma_N(\theta_j)=\delta_{nm},
+%$$
+% where $\Delta\sigma_N(\theta_j)=\sigma_N(\theta_{j+1})-\sigma_N(\theta_j),
+%j=0,\ldots,N-1$. In case when  $\Delta\sigma_N(\theta_j)=h(\theta_j)\Delta\theta_j$  for $\varphi_{n,N}(w)$
+% the asymptotic formula is established. Similar results are obtained for polynomials, orthogonal on grids from a number axis
+%
+%Bibliography:39 items.
+
+{ Polynomials, orthogonal on grids from unit circle and number axis} are considered in present paper. An asymptotics of polynomial, orthogonal on arbitrary grids of unit circle are investigated.
+In case, when the grid  of knots  $\Omega_N^T=\left\{e^{i\theta_0},e^{i\theta_1},
+\ldots,e^{i\theta_{N-1}}\right\}$ belong to unit circle $|w|=1$   we consider polynomials
+$\varphi_{0,N}(w),\varphi_{1,N}(w),\ldots,\varphi_{N-1,N}(w),$
+orthogonal  in the following \linebreak sense
+$$
+\frac1{2\pi}\int\limits_{-\pi}^\pi
+\varphi_{n,N}(e^{i\theta})\overline{\varphi_{m,N}(e^{i\theta})}\,d\sigma_N(\theta)=
+$$
+$$
+\frac1{2\pi}\sum\limits^{N-1}_{j=0}
+\varphi_{n,N}(e^{i\theta_j})\overline{\varphi_{m,N}(e^{i\theta_j})}
+\Delta\sigma_N(\theta_j)=\delta_{nm},
+$$
+ where $\Delta\sigma_N(\theta_j)=\sigma_N(\theta_{j+1})-\sigma_N(\theta_j),
+j=0,\ldots,N-1$. In case when  $\Delta\sigma_N(\theta_j)=h(\theta_j)\Delta\theta_j$  for $\varphi_{n,N}(w)$
+ the asymptotic formula is established. Similar results are obtained for polynomials, orthogonal on grids from a number axis
+
+Bibliography:39 items.
+
+\end{abstract}
+
+
+\begin{keywords}
+единичная окружность, числовая ось, полиномы, ортогональные на сетках, асимптотические формулы.
+
+{\bf Keywords:} unit circle, number axis, polynomials orthogonal on grids, asymptotics.
+\end{keywords}
+
+\markright{Полиномы, ортогональные на сетках из единичной окружности }
+
+%\footnotetext[0]{Работа выполнена при поддержке РФФИ (грант
+%\No~10-01-00191) }
+
+
+
+
+
+\section*{Введение}
+
+
+Полиномы, ортогональные на конечных сетках числовой оси впервые были
+рассмотрены в целом ряде работ П.Л.Чебышева  в связи задачами
+математической статистики. Им были установлены трехчленные
+рекуррентные формулы для этих полиномов и получены некоторые важные
+следствия из них такие, как формула Кристоффеля-Дарбу и выражения
+для коэффициентов разложения дискретной функции по базису
+ полиномов, ортогональных на рассматриваемой сетке. Особенно подробно
+ П.Л.Чебышев исследовал \cite{1}  свойства полиномов,
+ ортогональных на конечных равномерных сетках с некоторыми,
+ как теперь говорят, классическими весами.
+В этом случае им была разработана разностная теория рассматриваемых
+полиномов, вполне аналогичная дифференциальной теории классических
+полиномов Лежандра и Якоби. В частности, в работе \cite{1}  для
+полиномов, ортогональных на равномерных сетках с классическими
+весами, получены аналоги формулы Родрига для полиномов Лежандра и
+обобщенной формулы Родрига для полиномов Якоби.  Дальнейшее развитие
+теории и приложений этих полиномов связано с именами Шарлье
+\cite{2},  Кравчука \cite{3}, Мейкснера \cite{4}, Хана \cite{5},
+Вебер и Эрдейи \cite{6}, Карлина и МоГригора \cite{7}. В
+шестидесятые и семидесятые годы прошлого века  наметился новый
+всплеск интереса к теории полиномов, ортогональных на дискретных
+сетках с классическими весами и он со временем  не ослабевает
+(см.\cite{8} -- \cite{33}). Были найдены многочисленные новые
+приложения этих полиномов в таких областях, как квантовая механика
+\cite{12}, \cite{15}  теория кодирования \cite{8},
+\cite{13},\cite{17} теория вероятностей \cite{25}, \cite{29}, теория
+дискретных систем автоматического регулирования и управления
+\cite{29}, теория случайных матриц \cite{33}, обработка и сжатие
+изображений \cite{32}, некоторые проблемы вычислительной математики
+\cite{16},\cite{29}  и других. Некоторые вопросы теории полиномов,
+ортогональных на сетках изложены в таких широко известных
+монографиях, как \cite{34} -- \cite{36}. Стали появляться
+специальные монографии, посвященные теории и приложениям этих
+полиномов (см.,например, \cite{15},\cite{29} ).  Подавляющее
+большинство указанных приложений полиномов, ортогональных на сетках
+связано с тем, что в каждом конкретном приложении возникает
+пространство векторов достаточно большой размерности $N$, которых
+можно истолковывать, как дискретные функции $f=f(x)$ , заданные на
+рассматриваемой сетке $\Omega_N=\{x_j\}_{j=0}^{N-1}$. Множество всех
+таких функций можно рассматривать как $N$ -- мерное пространство над
+полем действительных чисел. Одним из базисов этого пространства
+является конечная система степеней $1,x,\ldots, x^{N-1}$
+и,следовательно, каждую функцию $f=f(x)$, заданную на
+$\Omega_N=\{x_j\}_{j=0}^{N-1}$ можно представить в виде
+\begin{equation}\label{eq1.1}
+f(x)=\sum_{k=0}^{N-1}a_kx^k,\quad x\in \Omega_N,
+\end{equation}
+
+Но для приложений более удобными являются базисы, получаемые путем
+ортогонализации системы $1,x,\ldots, x^{N-1}$. С этой целью
+рассматривается скалярное произведение вида
+\begin{equation}\label{eq1.2}
+<f,g>_\rho=\sum_{j=0}^{N-1}f(x_j)g(x_j)\rho(x_j),
+\end{equation}
+где весовая функция $\rho=\rho(x)>0$ выбирается из тех или иных
+соображений, к обсуждению которых мы еще вернемся ниже.
+Ортогонализуя указанную систему степеней по методу Грамма-Шмидта, мы
+придем к конечной системе полиномов $\{P_{n,N}(x)\}_{n=0}^{N-1}$,
+образующих ортонормированную систему относительно скалярного
+произведения \eqref{eq1.2}, т.е. ($\rho_j=\rho(x_j)$)
+\begin{equation}\label{eq1.3}
+\sum\limits_{j=0}^{N-1}P_{n,N}(x_j)P_{m,N}(x_j)\rho_j=\delta_{nm}.
+\end{equation}
+Обозначим через $l_\rho^2(\Omega_N)$ пространство дискретных функций
+$f=f(x)$, заданных на сетке $\Omega_N$, в котором определено
+скалярное произведение \eqref{eq1.2}. Система $\{P_{n,N}(x)\}_{n=0}^{N-1}$
+является полной в $l_\rho^2(\Omega_N)$ и поэтому произвольная
+функция $f\in l_\rho^2(\Omega_N)$ допускает представление
+\begin{equation}\label{eq1.4}
+f(x)=\sum_{k=0}^{N-1}\hat f_kP_{k,N}(x),\quad x\in
+\Omega_N,
+\end{equation}
+где в силу ортонормированности системы $\{P_{n,N}(x)\}_{n=0}^{N-1}$
+\begin{equation}\label{eq1.5}
+\hat
+f_k=\sum\limits_{j=0}^{N-1}f(x_j)P_{k,N}(x_j)(x_j)\rho_j
+\end{equation}
+представляют собой $k$ -- тый коэффициент Фурье элемента $f\in
+l_\rho^2(\Omega_N)$ по системе $\{P_{n,N}(x)\}_{n=0}^{N-1}$. Одной
+из причин того, что на практике предпочтение отдается базису
+$\{P_{n,N}(x)\}_{n=0}^{N-1}$ перед \\
+ $\{1,x,\ldots, x^{N-1}\}$
+является то, что коэффициенты в разложении \eqref{eq1.4} выражаются явными и
+простыми формулами \eqref{eq1.5}, в то время, как нахождение коэффициентов
+$a_k$ в разложении \eqref{eq1.1} весьма проблематично как формально, так и
+численно. Чтобы убедиться в этом достаточно рассмотреть разложение
+по базису $\{1,x,\ldots, x^{N-1}\}$ функции
+ $$f(x)=\cos((N-1)\arccos
+x)=
+$$
+\begin{equation}\label{eq1.6}
+{N-1\over2}\sum_{m=0}^{[(N-1)/2]}{(-1)^m2^{N-1-2m}(N-m-2)!\over
+m!(N-1-2m)!}x^{N-1-2m}.
+\end{equation}
+Коэффициенты
+$$a_{N-1-2m}={(-1)^m2^{N-1-2m}(N-m-2)!\over
+m!(N-1-2m)!}{N-1\over2}
+$$
+ в разложении \eqref{eq1.6}, чередуясь по знаку,
+при $N\to\infty$ растут по абсолютной величине с скоростью
+$2^{N-1-2m}\left({N\over m}\right)^m$. Это означает, что пользуясь
+формулой \eqref{eq1.6} не возможно найти численные значения функции
+$f(x)=\cos((N-1)\arccos x)$ (счет является неустойчивым). В то же
+время для коэффициентов $\hat f_k$ в разложении \eqref{eq1.4} имеет место
+равенство Парсеваля
+$$
+\sum_{j=0}^{N-1}f^2(x_j)\rho_j=\sum_{k=0}^{N-1}(\hat f_k)^2,
+$$
+поэтому  все коэффициенты $\hat f_k$ $(0\le k\le N-1)$ равномерно
+ограничены сверху нормой $\|f\|=\sqrt{<f,f>_\rho}$.
+
+И тем не менее, вопрос об устойчивости счета по формуле \eqref{eq1.4} нельзя
+считать решенным, так как эта формула содержит ортогональные
+полиномы  $P_{n,N}(x)(0\le n\le N-1)$, значения которых требуется
+вычислять как при нахождении коэффициентов $\hat f_k$ по формуле
+\eqref{eq1.5}, так и при численной реализации правой части \eqref{eq1.4}. Этот
+вопрос непосредственно приводит к задаче об исследовании
+асимптотических свойств полиномов $P_{n,N}(x)$ при $N,n\to\infty$.
+Другая важная причина, которая приводит к вопросу об асимптотических
+свойствах полиномов $P_{n,N}(x)$ при $N,n\to\infty$ в связи с
+разложением \eqref{eq1.4} заключается в следующем. Дело в том, что в
+приложениях редко пользуются полным разложением \eqref{eq1.4}, а заменяют
+его приближенным равенством
+\begin{equation}\label{eq1.7}
+f(x)\approx\sum_{k=0}^n\hat f_kP_{k,N}(x)=S_n(f,x),
+\end{equation}
+где $S_n(f,x)$ -- частичная сумма порядка $n$ от правой части
+равенства \eqref{eq1.4}. Тогда непосредственно возникает задача об оценке
+погрешности $|f(x)-S_n(f,x)|$. Хорошо известно \cite{29}, \cite{34}
+-- \cite{37} что эта задача, в свою очередь, тесно связана с
+асимптотическим поведением полиномов $P_{n,N}(x)$ при
+$N,n\to\infty$.   Более подробное обсуждение некоторых дальнейших
+вопросов численного анализа, которые непосредственно приводят к
+задаче об асимптотических свойствах полиномов, ортогональных на
+сетках мы отложим до заключительной части настоящей статьи (см. пункт \ref{sec5}).
+
+ В случае, когда  $P_{n,N}(x)(0\le n\le N-1)$  представляет собой
+ систему полиномов, ортогональных на равномерной сетке с одним из
+классических весов, задача об их асимптотических свойствах детально
+исследована (см.цитированную литературу, в частности, монографию
+\cite{29}). Были разработаны методы, с помощью которых исследованы
+асимптотические свойства классических полиномов  Чебышева (Хана),
+Кравчука, Мейкснера, Шарлье. При этом доказательства асимптотических
+формул существенно опирается на специфических свойствах именно
+классических полиномов, ортогональных на равномерных сетках
+(производящие функции, разностные уравнения, разностные формулы типа
+Родрига, формула суммирования Эйлера-Маклорена и т.д.). Поэтому эти
+методы не могут быть непосредственно перенесены на случай полиномов,
+ортогональных на неравномерных сетках.
+
+В настоящей работе  найдены некоторые подходы, которые позволяют
+продвинуться в решении поставленной задачи в случае, когда
+рассматриваемая сетка узлов $\Omega_N=\{x_j\}_{j=0}^{N-1}$ и весовая
+функция $\rho(x)$ связаны между собой определенным образом, а
+именно, мы рассматриваем здесь весовые функции вида
+$\rho(x_j)=h(x_j)\Delta t_j$, где $-1=t_0<t_1<\ldots<t_{N-1}<t_N=1$,
+$t_j\le x_j\le t_{j+1}$ $(j=0,\ldots,N-1)$, $h(x)$ --  положительная
+непрерывная функция, заданная на $[-1,1]$. Как и следовало ожидать,
+в этой ситуации асимптотическая формула для $P_{n,N}(x)$ имеют вид
+
+\begin{equation}\label{eq1.8}
+P_{n,N}(x)=P_n(x)+v_{n,N}(x),
+\end{equation}
+где $P_n(x)$ $(n=0,1,\dots)$ -- последовательность полиномов,
+образующих ортонормированную систему на $[-1,1]$  с весом $h(x)$,
+т.е.
+\begin{equation}\label{eq1.9}
+\int\limits_{-1}^1P_n(x)P_k(x)h(x)dx=\delta_{nk}.
+\end{equation}
+
+Основная задача, которая ставится в связи с формулой \eqref{eq1.8} состоит в
+том, чтобы при $N\to\infty$ найти условия на рост степени $n=n(N)$
+полинома $P_{n,N}(x)$, при соблюдении которых равенство \eqref{eq1.8} будет
+представлять собой асимптотическую формулу, главная часть которой
+совпадает с $P_n(x)$. Эта задача для классических полиномов Чебышева
+$\tau_{n,N}(x)$, образующих ортонормированную систему на равномерной
+сетке $\Omega_N=\{-1+{2j\over N-1}\}_{j=0}^{N-1}$ с весом
+$\rho(x)={2\over N}$ была окончательно решена в  работах \cite{24},
+\cite{26}(см.также \cite{29}). Было показано, что ограничение
+$n=O(N^{1/2})$ является своего рода водоразделом для
+асимптотического поведения полиномов $\tau_{n,N}(x)$ в том смысле,
+что  имеет место асимптотическая формула $\tau_{n,N}(x)=\hat
+P_n(x)+V_{n,N}(x)$, в которой $\hat P_n(x)$ -- нормированные
+полиномы Лежандра, а  для остаточного члена $V_{n,N}(x)$ установлена
+весовая оценка, которая показывает, что при $n=O(N^{1/2})$
+асимптотическое поведение полиномов $\tau_{n,N}(x)$  в определенном
+смысле совпадает с асимптотическим поведением полиномов Лежандра
+$\hat P_n(x)$.  В частности, при $n=O(N^{1/2})$ имеет место оценка
+$\max\limits_{-1\le x\le 1}|\tau_{n,N}(x)|n^{-1/2}\asymp1$. Такая же
+оценка верна для нормированных полиномов Лежандра:
+$\max\limits_{-1\le x\le 1}|\hat P_n(x)|n^{-1/2}\asymp1$. Если же
+условие $n=O(N^{1/2})$ не соблюдено, т.е. ${n^2\over N}\to\infty$,
+то  $\max\limits_{-1\le x\le 1}|\tau_{n,N}(x)|n^{-1/2}\ge
+c_1\exp{(c_2{n^2\over N})}$, где $c_1$ и $c_2$ положительные
+постоянные. Этот результат может послужит своего рода ориентиром при
+рассмотрении вопроса о нахождении минимальных ограничений на рост степени $n=n(N)$
+ вместе с ростом $N$, при соблюдении которых
+равенство \eqref{eq1.8} будет являться асимптотической формулой для
+$P_{n,N}(x)$ с главной частью $P_n(x)$ и остаточным членом
+$v_{n,N}(x)$.
+
+Основная идея, которая используется в настоящей работе для решения
+поставленных задач заключается в следующем. Предварительно ставятся
+и решаются аналогичные задачи для полиномов $\varphi_{n,N}(z)$,
+ортогональных на произвольных(не обязательно равномерных)  конечных
+сетках из единичной окружности. Установливается связь между
+полиномами $\varphi_{n,N}(z)$  и $P_{n,N}(x)$. После этого
+асимптотические формулы для полиномов $P_{n,N}(x)$ выводятся из
+соответствующих формул для $\varphi_{n,N}(z)$.
+
+
+\section{Полиномы, ортогональные на сетках из
+единичной окружности   и их общие свойства }\label{sec2}
+
+  Пусть $\mathbb{D}$~--- единичный круг в
+комплексной плоскости $\mathbb{C}$,
+$\{w:|w|=1\}=\mathfrak{d}\mathbb{D}$~--- его граница (единичная
+окружность) в $\mathbb{C}$. Мы параметризуем
+$\mathfrak{d}\mathbb{D}$, полагая $w=e^{i\theta}$
+$(\theta\in[-\pi,\pi))$. Через $\sigma=\sigma(\theta)$ обозначим
+неубывающую непрерывную слева функцию, заданную на $[-\pi,\pi]$.
+Функция $\sigma(\theta)$ порождает на $[-\pi,\pi]$ меру
+Лебега-Стилтьеса $\mu$ такую, что для $-\pi\le a\le b\le\pi$ ${}$
+$\mu((a,b])=\sigma(b+0)-\sigma(a+0)$,
+$\mu((a,b))=\sigma(b)-\sigma(a+0)$,
+$\mu([a,b])=\sigma(b+0)-\sigma(a)$,
+$\mu([a,b))=\sigma(b)-\sigma(a)$. Пространство
+$L_\sigma^2(\mathfrak{d}\mathbb{D})$ состоит из $\mu$-измеримых
+функций $f:\mathfrak{d}\mathbb{D}\to\mathbb{C}$ таких, что
+$\frac1{2\pi}\int_{-\pi}^\pi|f(e^{i\theta})|^2d\sigma(\theta)<\infty.$
+Скалярное произведение двух функций $f,g\in L^2_\sigma
+(\mathfrak{d}\mathbb{D})$ определяется равенством
+\begin{equation}\label{eq2.1}<f,g>=\frac1{2\pi}\int\limits_{-\pi}^\pi f(e^{i\theta})
+\overline{g(e^{i\theta})}\,d\sigma(\theta). \end{equation} Размерность
+пространства $L^2_\sigma (\mathfrak{d}\mathbb{D})$ зависит от
+мощности множества точек роста функции $\sigma(\theta)$ на
+$[-\pi,\pi]$. ($\theta_0\in [-\pi,\pi]$ называется точкой роста
+функции $\sigma(\theta)$), если
+$\limsup_{\Delta\theta\to0}{\sigma(\theta_0+\Delta\theta)-
+\sigma(\theta_0-\Delta\theta)\over\Delta\theta}=\gamma>0$).
+Если множество точек роста функции $\sigma(\theta)$ на $[-\pi,\pi]$
+бесконечно, то пространство $L^2_\sigma (\mathfrak{d}\mathbb{D})$
+бесконечномерно, если же функция $\sigma(\theta)$ имеет конечное
+число точек роста
+$0\le\theta_0<\theta_1<\ldots<\theta_{N-1}\le2\pi$, то размерность
+пространства $L^2_\sigma (\mathfrak{d}\mathbb{D})$ равна $N$.
+
+Если пространство $L^2_\sigma (\mathfrak{d}\mathbb{D})$
+бесконечномерно, то система степеней $\{w^n\}_{n=0}^\infty$ в нем
+линейно независима и тогда путем ее ортогонализации мы получим
+последовательность алгебраических полиномов
+$\{\varphi_n(w)\}_{n=0}^\infty$, образующих ортонормированную
+систему в $L^2_\sigma (\mathfrak{d}\mathbb{D})$, т.е.
+\begin{equation}\label{eq2.2}\frac1{2\pi}\int\limits_{-\pi}^\pi
+\varphi_n(e^{i\theta})\overline{\varphi_m(e^{i\theta})}
+\,d\sigma(\theta)=\delta_{nm}=\begin{cases}0,&\text{если
+$n \neq m$;}\\1,&\text{если $n=m$.}\end{cases} \end{equation}
+
+Принято говорить, что система $\{\varphi_n(w)\}_{n=0}^\infty$
+ортонормирована на окружности $\mathfrak{d}\mathbb{D}=\{w:|w|=1\}$
+относительно меры $\mu$ или, если функция $\sigma(\theta)$ абсолютно
+непрерывна, то система $\{\varphi_n(w)\}_{n=0}^\infty$
+ортонормирована на окружности с весом $h(\theta)=\sigma'(\theta)$,
+т.е.
+\begin{equation}\label{eq2.3}\frac1{2\pi}\int\limits_{-\pi}^\pi
+\varphi_n(e^{i\theta})\overline{\varphi_m(e^{i\theta})}h(\theta)\,d\theta=\delta_{nm}.\end{equation}
+
+Если функция $\sigma=\sigma_N=\sigma_N(\theta)$ имеет всего конечное
+число $N$ точек роста
+\begin{equation}\label{eq2.4}-\pi\le\theta_0<\theta_1<\ldots<\theta_{N-2}<\theta_{N-1}\le\pi,\end{equation} то мы положим
+$\Omega_N^T=\left\{e^{i\theta_0},e^{i\theta_1},\ldots,e^{i\theta_{N-1}}\right\},\,\,
+l^2_{\sigma_N}(\Omega^T_N)=L^2_{\sigma_N}(\mathfrak{d}\mathbb{D})$.
+В конечномерном пространстве $l^2_{\sigma_N}(\Omega^T_N)$
+линейно-независимую систему образуют функции $1,w$,
+$\ldots,w^{N-1}$. Применяя к системе $\{w^k\}_{n=0}^{N-1}$ процесс
+ортогонализации Грама-Шмидта, мы получим ортонормированную систему
+полиномов
+\begin{equation}\label{eq2.5}
+\varphi_{0,N}(w),\varphi_{1,N}(w),\ldots,\varphi_{N-1,N}(w),
+\end{equation}
+т.е. $(0\le n,m\le N-1)$
+$$
+\frac1{2\pi}\int\limits_{-\pi}^\pi
+\varphi_{n,N}(e^{i\theta})\overline{\varphi_{m,N}(e^{i\theta})}\,d\sigma_N(\theta)
+=
+$$
+\begin{equation}\label{eq2.6}
+\frac1{2\pi}\sum\limits^{N-1}_{j=0}
+\varphi_{n,N}(e^{i\theta_j})\overline{\varphi_{m,N}(e^{i\theta_j})}
+\Delta\sigma_N(\theta_j)=\delta_{nm},\end{equation}
+ где $\theta_N=\pi,\,\,
+\Delta\sigma_N(\theta_j)=\sigma_N(\theta_{j+1})-\sigma_N(\theta_j),\,\,
+j=0,\ldots,N-1$. Рассматривая для каждого $N=1,2,\ldots$ конечное
+число полиномов \eqref{eq2.5}, мы получим треугольную матрицу
+
+ \begin{equation}\label{eq2.7}\begin{matrix}
+\varphi_{0,1}(w) & & &\\
+\varphi_{0,2}(w)& \varphi_{1,2}(w) & &\\
+\hdotsfor{4}\\
+\varphi_{0,N}(w)& \varphi_{1,N}(w)&\ldots &\varphi_{N-1,N}(w)&&\\
+\hdotsfor{4}
+\end{matrix} \end{equation}
+
+
+ Мы положим
+$\varphi_{n,N}(z)=\kappa_nz^n+\alpha_{n-1}z^{n-1}+\cdots+\alpha_0$ и
+будем считать, что старший коэффициент $\kappa_n=\kappa_n^{n,N}>0$.
+Если $\psi_n(z)=\alpha_nz^n+\alpha_{n-1}z^{n-1} +\cdots+\alpha_0$,
+то мы полагаем
+$\overline{\psi}_n(z)=\overline{\alpha}_nz^n+\overline{\alpha}_{n-1}z^{n-1}
+ +\cdots+\overline{\alpha}_0$. Рассмотрим некоторые алгебраические свойства полиномов
+$\varphi_{n,N}(z)$, необходимые для дальнейшего. Следует  отметить,
+что основные идеи доказательств, приводимых ниже свойств A -- C для
+$\varphi_{n,N}(z)$ $(0\le n\le N-1)$, за исключением равенств \eqref{eq2.15}
+-- \eqref{eq2.19}, нами заимствованы из монографии \cite{37},  в которой
+аналогичные свойства доказаны для полиномов $\varphi_n(z)$ $(0\le n<
+\infty)$, образующим ортонормированную систему на окружности
+относительно скалярного произведения \eqref{eq2.2} в том случае, когда
+функция $\sigma(\theta)$ имеет имеет на $[-\pi,\pi]$ бесконечно
+много точек роста.
+
+{\bf A. \it Имеют место равенства}
+
+\begin{equation}\label{eq2.8}
+\kappa_n\varphi_{n+1,N}(z)=\kappa_{n+1}z\varphi_{n,N}(z)
++\varphi_{n+1,N}(0)\varphi_{n,N}^*(z),
+\end{equation}
+
+\begin{equation}\label{eq2.9}
+\kappa_n\varphi_{n+1,N}^*(z)=\kappa_{n+1}\varphi_{n,N}^*(z)
++\overline{\varphi_{n+1,N}(0)}z\varphi_{n,N}(z),
+\end{equation}
+где
+\begin{equation}\label{eq2.10}
+\varphi_{n,N}^*(z)=z^n\overline{\varphi}_{n,N}\left(\frac1z\right),
+\quad\varphi_{n,N}^*(0)=\kappa_n.
+\end{equation}
+
+Рассмотрим равенство
+$$
+{\varphi_{n,N}(z)-\kappa_nz^n\over
+z^{n-1}}=\sum_{l=0}^{n-1}\mu_l^n\overline{\varphi}_{l,N}\left(\frac1z\right),
+$$
+где $\mu_l^n$ $(l=0,1,\ldots,n-1)$ -- коэффициенты разложения.
+Умножим это равенство на $\varphi_{k,N}(z)$, положим
+$z=e^{i\theta_j}$ и суммируем обе части полученного равенства. Это
+дает для $k=0,1,\ldots,n-1$
+\begin{equation}\label{eq2.11}
+\frac1{2\pi}\sum_{j=0}^{N-1} \varphi_{n,N}(e^{i\theta_j})
+{\varphi_{k,N}(e^{i\theta_j})\over
+e^{i(n-1)\theta_j}}\Delta\sigma_N(\theta_j)-{\kappa_n\over2\pi}\sum_{j=0}^{N-1}
+\varphi_{k,N}(e^{i\theta_j})e^{i\theta_j}\Delta\sigma_N(\theta_j)=\mu_k^n.
+\end{equation}
+Положим
+\begin{equation}\label{eq2.12}
+\lambda_k={1\over2\pi}\sum_{j=0}^{N-1}
+\varphi_{k,N}(e^{i\theta_j})e^{i\theta_j}\Delta\sigma_N(\theta_j)\quad
+(k=0,1,\ldots,N-1),
+\end{equation}
+ тогда из \eqref{eq2.11} имеем $\mu_k^n=-\kappa_n\lambda_k$, поэтому
+$$
+{\varphi_{n,N}(z)\over\kappa_n}=z^n-z^{n-1}
+\sum_{k=0}^{n-1}\lambda_k\overline{\varphi}_{k,N}\left(\frac1z\right),
+$$
+отсюда
+\begin{equation}\label{eq2.13}
+{\varphi_{n+1,N}(z)\over\kappa_{n+1}}-{z\varphi_{n,N}(z)\over\kappa_n}=-\lambda_n\varphi_{n,N}^*(z).
+\end{equation}
+Чтобы найти $\lambda_n$ положим $z=0$:
+\begin{equation}\label{eq2.14}
+{\varphi_{n+1,N}(0)\over\kappa_{n+1}}=-\lambda_n\kappa_n, \quad
+\lambda_n=-{\varphi_{n+1,N}(0)\over\kappa_n\kappa_{n+1}}.
+\end{equation}
+Сопоставляя \eqref{eq2.3} и \eqref{eq2.14}, приходим к утверждению \eqref{eq2.8}. Что
+касается утверждения \eqref{eq2.9}, то оно получается из \eqref{eq2.8}, заменяя в
+нем $z$ на $\frac1z$ и переходя к сопряженным величинам.
+
+Введем в рассмотрение полиномы
+$\phi_{n,N}(z)={\varphi_{n,N}(z)\over\kappa_n}$
+$(n=0,1,\ldots,N-1)$. Тогда равенство \eqref{eq2.8}
+ приобретает следующий вид
+\begin{equation}\label{eq2.15}
+\phi_{n+1,N}(z)=z\phi_{n,N}(z)+\phi_{n+1,N}(0)\phi_{n,N}^*(z),
+\end{equation}
+где
+\begin{equation}\label{eq2.16}
+\phi_{n,N}^*(z)=z^n\overline{\phi}_{n,N}\left(\frac1z\right).
+\end{equation}
+Чтобы найти значение $\phi_{n+1,N}(0)$ положим $z=e^{i\theta}$ и
+умножим обе части равенства \eqref{eq2.15} скалярно на
+$\phi_{n,N}(e^{i\theta})$, тогда
+$$
+0=\frac1{2\pi}\sum_{j=0}^{N-1}e^{i\theta_j}|\phi_{n,N}(e^{i\theta_j})|^2
+\Delta\sigma(\theta_j)+\phi_{n+1,N}(0)\frac1{2\pi}
+\sum_{j=0}^{N-1}e^{in\theta_j}\overline{\phi_{n,N}^2(e^{i\theta_j})}
+\Delta\sigma(\theta_j),
+$$
+отсюда
+\begin{equation}\label{eq2.17}
+a_n=a_{n,N}=\phi_{n+1,N}(0)=-{\sum_{j=0}^{N-1}e^{i\theta_j}|\phi_{n,N}(e^{i\theta_j})|^2\Delta\sigma(\theta_j)\over
+\sum_{j=0}^{N-1}e^{in\theta_j}
+\overline{\phi_{n,N}^2(e^{i\theta_j})}\Delta\sigma(\theta_j)}.
+\end{equation}
+Отметим, что равенства \eqref{eq2.15} и \eqref{eq2.17} позволяют найти численные
+значения полиномов $\phi_{n,N}(z)$ при  $n=1,2,\ldots,N-1$
+рекуррентно, а именно,
+\begin{equation}\label{eq2.18}
+\phi_{0,N}(z)\equiv1,\quad \phi_{1,N}(z)= z+ a_0,\quad\ldots,\quad
+\phi_{n+1,N}(z)=z\phi_{n,N}(z)+a_n\phi_{n,N}^*(z), \quad\ldots.
+\end{equation}
+Поскольку, очевидно,
+\begin{equation}\label{eq2.19}
+\kappa_n={1\over \sqrt{\frac1{2\pi}
+\sum_{j=0}^{N-1}|\phi_{n,N}(e^{i\theta_j})|^2\Delta\sigma(\theta_j)}},
+\end{equation}
+то тем самым мы получаем численный метод для нахождения значений
+полиномов $\varphi_{n,N}(z)=\kappa_n\phi_{n,N}(z)$
+$(n=0,1,\ldots,N-1)$.
+
+{\bf B. \it Имеет место формула Кристоффеля-Дарбу}
+\begin{equation}\label{eq2.20}
+{\cal
+K}_{n,N}(x,y)=\sum_{k=0}^n\varphi_{k,N}(x)\overline{\varphi_{k,N}(y)}=
+{\varphi^*_{n,N}(x)\overline{\varphi^*_{n,N}(y)}-
+x\overline y\varphi_{n,N}(x)\overline{\varphi_{n,N}(y)}\over
+1-x\overline y}.
+\end{equation}
+Доказательство этой формулы легко следует из рекуррентной формулы
+\eqref{eq2.8}(см. \cite{37}).
+
+{\bf C. \it Имеют место равенства}
+\begin{equation}\label{eq2.21}
+\kappa_n^{n,N}\varphi^*_{n,N}(z)={\cal
+K}_{n,N}(z,0)=\sum_{k=0}^n\varphi_{k,N}(z)\overline{\varphi_{k,N}(0)},
+\end{equation}
+в частности,
+\begin{equation}\label{eq2.22}
+\left(\kappa_n^{n,N}\right)^2={\cal
+K}_{n,N}(0,0)=\sum_{k=0}^n|\varphi_{k,N}(0)|^2.
+\end{equation}
+Доказательство непосредственно вытекает из \eqref{eq2.20}, если положить
+$x=z$, $y=0$.
+
+
+
+
+\section{ Полиномы, ортогональные на конечных сетках отрезка
+$[-1,1]$ и их связь с полиномами $\varphi_{n,N}(z)$}\label{sec3}
+
+Пусть $-1<x_0<x_1<\ldots<x_{N-2}<x_{N-1}<x_N=1$,
+$\Omega_N^A=\{x_j\}_{j=0}^{N-1}$ и
+$$\rho:\Omega_N^A\to(0;\infty),\,\,\rho_j=\rho(x_j)>0,\,\,j=0,\ldots,N-1.$$
+Для определенности будем считать, что
+\begin{equation}\label{eq3.0}\sum\limits_{j=0}^{N-1}\rho_j=1. \end{equation}
+Мы напомним здесь некоторые обозначения из введения. Через
+$l^2_\rho(\Omega_N^A)$ обозначим $N$-мерное евклидово пространство
+функций $f:\Omega_N^A\to\mathbb{R}$, в котором скалярное
+произведение для $f,g\in l^2_\rho(\Omega_N^A)$ определено равенством
+\begin{equation}\label{eq3.1}<f,g>=\sum\limits_{j=0}^{N-1}f(x_j)g(x_j)\rho_j. \end{equation}
+
+Система степеней $\{x^k\}^{N-1}_{k=0}$ линейно независима в
+$l^2_\rho(\Omega_N^A)$ и поэтому к ней можно применить процесс
+ортогонализации Грама-Шмидта. В результате мы получим систему
+полиномов $\{P_{n,N}(x)\}^{N-1}_{n=0}$, ортонормированную на
+$\Omega_N^A$ с весом $\rho$, т.е.
+\begin{equation}\label{eq3.2}\sum\limits_{j=0}^{N-1}P_{n,N}(x_j)P_{m,N}(x_j)\rho_j=\delta_{nm}. \end{equation}
+
+
+Определим на отрезке [-1,1] ступенчатую неубывающую функцию
+$\alpha(x)$ следующим образом
+\begin{equation}\label{eq3.3}
+\alpha(x)= \sum\limits_{x_{j}<x}{\rho(x_{j})}
+\end{equation}
+
+Из \eqref{eq3.3} непосредственно имеем
+$$
+\rho_{j}=\rho(x_j)=\alpha(x_{j+1})-\alpha(x_{j})=\Delta\alpha(x_{j}),
+$$
+поэтому соотношение ортонормированности \eqref{eq3.2} принимает вид
+\begin{equation}\label{eq3.4}
+\sum\limits_{j=0}^{N-1}P_{n,N}(x_{j})P_{m,N}(x_{j})
+\Delta\alpha(x_{j})=\int\limits_{-1}^{1}P_{n,N}(x)P_{m,N}(x)\,
+d\alpha(x)=\delta_{nm}.
+\end{equation}
+
+Отобразим комплексную плоскость $w$ в комплексную плоскость $z=x+iy$
+с помощью формулы
+\begin{equation}\label{eq3.5}
+z=\frac{1}{2}\left(w+\frac1w\right).  \end{equation}
+ Тогда, полагая
+$w=e^{i\theta}$, получим $z=x=\cos\theta$. Пусть
+\begin{equation}\label{eq3.6}
+\theta_{2N-1-j}=\arccos x_j,\quad \theta_j=-\theta_{2N-1-j}, \quad 0
+\le j \le N-1,
+\end{equation}
+\begin{equation}\label{eq3.7}
+\Omega_{2N}^{T}=\left\{e^{i\theta_{j}}\right\}_{j=0}^{2N-1}.
+\end{equation}
+
+Нетрудно заметить, что точки $\theta_{j}\,\,(0\leq j \leq 2N-1)$
+расположены симметрично относительно нуля на отрезке $[-\pi,\pi]$,
+т.е.
+\begin{equation}\label{eq3.8}
+\theta_j=-\theta_{2N-1-j}\quad\quad(0\leq j\leq 2N-1).
+\end{equation}
+
+Далее, положим
+\begin{equation}\label{eq3.9}
+\tau_{N+j}=\pi\rho_{N-1-j},\quad\tau_j=\tau_{2N-1-j}\quad (0\leq
+j\leq N-1)
+\end{equation}
+
+Из \eqref{eq3.8} и \eqref{eq3.9} нетрудно заметить, что если функция $\psi(\theta)$
+нечетная, то
+\begin{equation}\label{eq3.10}
+\sum\limits_{j=0}^{2N-1}\psi(\theta_j)\tau_j=0.
+\end{equation}
+
+В самом деле, имеем
+$$
+\sum\limits_{j=0}^{2N-1}\psi(\theta_j)\tau_j=(\sum\limits_{j=0}^{N-1}
++\sum\limits_{j=N}^{2N-1})\psi(\theta_j)\tau_j=\sum\limits_{j=0}^{N-1}\psi(\theta_j)\tau_j+
+\sum\limits_{j=0}^{N-1}\psi(\theta_{N+j})\tau_{N+j}=
+$$
+$$
+=\sum\limits_{j=0}^{N-1}\psi(\theta_j)\tau_j+\sum\limits_{j=0}^{N-1}\psi(\theta_{2N-j-1})
+\tau_{2N-j-1}=\sum\limits_{j=0}^{N-1}[\psi(\theta_j)-\psi(\theta_j)]\tau_j=0.
+$$
+
+Введем теперь ступенчатую неубывающую на $[-\pi,\pi]$ функцию
+$\sigma_{2N}(\theta)$ следующим образом:
+\begin{equation}\label{eq3.11}
+\sigma_{2N}(\theta)= \sum\limits_{\theta_j<\theta}\tau_j.
+\end{equation}
+
+Из \eqref{eq3.0}, \eqref{eq3.9} и \eqref{eq3.11} следует, что $\sigma_{2N}(\pi)=2\pi$,
+$\sigma_{2N}(-\pi)=0$,
+$\mu([-\pi,\pi])=\sigma_{2N}(\pi)-\sigma_{2N}(-\pi)=2\pi$.
+
+Рассмотрим полиномы $\varphi_{n,2N}(w)\,(0\le n\le 2N-1)$,
+образующие ОНС в $l^2_{\sigma_{2N}}(\Omega_{2N}^{T})$, т.е.
+$$\frac1{2\pi}\int\limits_{-\pi}^\pi\varphi_{n,2N}(e^{i\theta})
+\overline{\varphi_{m,2N}(e^{i\theta})}\,d\sigma_{2N}(\theta)
+$$
+$$
+=\frac1{2\pi}\sum\limits_{j=0}^{2N-1}\varphi_{n,2N}(e^{i\theta_j})
+\overline{\varphi_{m,2N}(e^{i\theta_j})}\Delta\sigma_{2N}(\theta_j)=$$
+\begin{equation}\label{eq3.12}\frac1{2\pi}\sum\limits_{j=0}^{2N-1}\varphi_{n,2N}(e^{i\theta_j})\overline{\varphi_{m,2N}
+(e^{i\theta_j})}\tau_j=\delta_{nm}, \end{equation} где
+$\theta_{2N}=\pi$. Нам понадобятся некоторые свойства полиномов
+$\varphi_{n,2N}(w)\,(0\le n\le 2N-1)$. С этой целью введем моменты
+$$c_n=c_{n,2N}=\frac1{2\pi}\int\limits_{-\pi}^{\pi}e^{-in\theta}\,d\sigma_{2N}(t)=
+\frac1{2\pi}\sum\limits_{j=0}^{2N-1}e^{-in\theta_j}\Delta\sigma_{2N}(\theta_j)=
+$$
+\begin{equation}\label{eq3.13}
+\frac1{2\pi}\sum\limits^{2N-1}_{j=0}e^{-in\theta_j}\tau_j,\quad
+n=0,\pm1,\ldots
+\end{equation}
+
+Положим $D_{-1,2N}=1$, \begin{equation}\label{eq3.14}D_{n,2N}=\begin{vmatrix} c_0 & c_{-1}&\ldots &c_{-n}\\
+c_1 & c_0&\ldots &c_{-n+1}\\
+\hdotsfor{4}\\
+c_n & c_{n-1} &\ldots &c_0
+\end{vmatrix},\quad G_{n,2N}(w)=\begin{vmatrix} c_0 & c_{-1}&\ldots &c_{-n}\\
+c_1 & c_0&\ldots &c_{-n+1}\\
+\hdotsfor{4}\\
+c_{n-1} & c_{n-2} &\ldots &c_{-1}\\
+1 & w &\ldots &w^n
+\end{vmatrix}. \end{equation}
+
+Тогда нетрудно проверить, что
+\begin{equation}\label{eq3.15}\varphi_{n,2N}(w)=\frac{G_{n,2N}(w)}{\sqrt{D_{n-1,2N}D_{n,2N}}},\quad 0\le n\le
+2N-1. \end{equation}
+
+Отсюда старший коэффициент полинома $\varphi_{n,2N}$ определяется
+равенством
+\begin{equation}\label{eq3.16}
+\kappa_n=\kappa_n^{n,2N}=\sqrt{\frac{D_{n-1,2N}}{D_{n,2N}}}, \quad
+n=1,2,\ldots,2N-1,
+\end{equation}
+из которого, в частности, следует, что $\kappa_n>0$.
+
+Кроме того из равенства \eqref{eq3.10}, справедливого для нечетной функции
+$\psi(\theta)$ следует, что моменты $c_n$, определенные в \eqref{eq3.13},
+представляют собой действительные числа, стало быть, все
+коэффициенты $\kappa_k^n=\kappa_k^{n,2N} (0\leq k \leq n)$ полинома
+\begin{equation}\label{eq3.17}
+\varphi_{n,2N}(w)=\kappa_nw^n+\kappa_{n-1}^nw^{n-1}+\ldots+\kappa_1^nw+\kappa_0^n
+\end{equation}
+являются действительными.
+
+Следуя известному методу Сеге, введем в рассмотрение выражение
+\begin{equation}\label{eq3.18}
+H_n(x)=w^{-n}\varphi_{2n,2N}(w)+w^n\varphi_{2n,2N}\left(\frac1w\right),\quad
+w=e^{i\theta}
+\end{equation}
+и покажем, что оно представляет собой алгебраический полином степени
+$n$. В самом деле, для $w=e^{i\theta}$ имеем из \eqref{eq3.17}
+$$
+e^{-in\theta}\varphi_{2n,2N}(e^{i\theta})+e^{in\theta}\varphi_{2n,2N}(e^{-i\theta})=
+$$
+$$
+e^{-in\theta}\sum\limits_{k=0}^{2n}\kappa_k^{2n}e^{ik\theta}+
+e^{in\theta}\sum\limits_{k=0}^{2n}\kappa_k^{2n}e^{-ik\theta}=
+\sum\limits_{k=0}^{2n}\kappa_k^{2n}[e^{-in\theta+ik\theta}+e^{in\theta-ik\theta}]=
+$$
+$$
+=2\sum\limits_{k=0}^{2n}\kappa_k^{2n}\cos(n-k)\theta=
+2\sum\limits_{k=0}^{n-1}\kappa_k^{2n}\cos(n-k)\theta+
+$$
+$$
+2\kappa_n^{2n}+2\sum\limits_{k=n+1}^{2n}\kappa_k^{2n}\cos(n-k)\theta=
+2\kappa_n^{2n}+2\sum\limits_{k=0}^{n-1}(\kappa_k^{2n}+\kappa_{2n-k}^{2n})T_{n-k}(x),
+$$
+где $T_m(x)=\cos(m\arccos x)$~--- полином Чебышева 1-го рода. Тем
+самым доказано, что $H_n(x)$ является полиномом степени не выше $n$.
+Покажем, что он ортогонален ко всем полиномам младших степеней
+относительно скалярного произведения \eqref{eq3.1}. В самом деле в силу
+\eqref{eq3.6}, \eqref{eq3.8}, \eqref{eq3.9} при $k<n$ имеем
+$$
+\sum\limits_{j=0}^{N-1}H_n(x_j)T_k(x_j)\rho_j=
+$$
+$$\frac1\pi\sum\limits_{j=0}^{N-1}H_n(\cos\theta_{2N-1-j})\cos
+k\theta_{2N-1-j}\tau_{2N-1-j}=
+\frac1{2\pi}\sum\limits_{j=0}^{2N-1}H_n(\cos\theta_j)e^{ik\theta_j}\tau_j=
+$$
+$$
+=\frac1{2\pi}\sum\limits_{j=0}^{2N-1}[e^{-in\theta_j}\varphi_{2n,2N}(e^{i\theta_j})
++e^{in\theta_j}
+\varphi_{2n,2N}(e^{-i\theta_j})]e^{ik\theta_j}\tau_j=
+$$
+$$
+=\frac1{2\pi}\sum_{j=0}^{2N-1}e^{\overline{i(n-k)\theta_j}}\varphi_{2n,2N}(e^{i\theta_j})
+\tau_j+\frac1{2\pi}\sum_{j=0}^{2N-1}e^{i(n+k)\theta_j}\overline{\varphi_{2n,2N}(e^{i\theta_j})}\tau_j=0,
+$$
+так как $n-k<2n,\,n+k<2n$.
+
+Найдем норму полинома $H_n(x)$. Имеем
+$$
+\sum\limits_{j=0}^{N-1}H_n^2(x_j)\rho_j=\frac1\pi\sum\limits_{j=0}^{N-1}
+H_n^2(\cos\theta_{2N-j-1})\tau_{2N-j-1}=
+\frac1{2\pi}\sum\limits_{j=0}^{2N-1}H_n^2(\cos\theta_j)\tau_j=
+$$
+$$
+=\frac1{2\pi}\sum\limits_{j=0}^{2N-1}\left|e^{-in\theta_j}\varphi_{2n,2N}
+(e^{i\theta_j})+e^{in\theta_j}
+\varphi_{2n,2N}(e^{-i\theta_j})\right|^2\tau_j=
+$$
+$$
+=\frac1{2\pi}\sum\limits_{j=0}^{2N-1}
+\left|\varphi_{2n,2N}(e^{i\theta_j})\right|^2\tau_j+
+\frac1{2\pi}\sum\limits_{j=0}^{2N-1}
+\left|\varphi_{2n,2N}(e^{-i\theta_j})\right|^2\tau_j+
+$$
+$$
+\Re\frac1{\pi}\sum\limits_{j=0}^{2N-1}
+e^{-2in\theta_j}\varphi_{2n,2N}(e^{i\theta_j})
+\varphi_{2n,2N}(e^{i\theta_j})\tau_j=
+$$
+\begin{equation}\label{eq3.19}
+=2+2\frac{\varphi_{2n,2N}(0)}{\kappa_{2n}}=d_{n,N}.
+\end{equation}
+
+Из \eqref{eq3.19} следует, что $n$-ый ортонормированный на сетке $\Omega_N$
+с весом $\rho=\rho(x_j)$ полином $P_{n,N}(x)$ допускает
+представление
+\begin{equation}\label{eq3.20}
+P_{n,N}(x)=d_{n,N}^{-\frac12}H_n(x)=d_{n,N}^{-\frac12}\left[w^{-n}\varphi_{2n,2N}(w)+
+w^n\varphi_{2n,2N}\left(\frac1w\right)\right],\quad w=e^{i\theta}.
+\end{equation}
+
+Отсюда, как следствие, мы можем записать
+\begin{equation}\label{eq3.21}
+P_{n,N}(z)=d_{n,N}^{-\frac12}\left[w^{-n}\varphi_{2n,2N}(w)+w^n\varphi_{2n,2N}\left(\frac1w\right)\right],
+\end{equation}
+где $z=\frac12\left(w+\frac1w\right)$.
+
+\section{Об асимптотике полиномов $\varphi_{n,N}(w)$
+ в некоторых отдельных случаях выбора узлов
+$\theta_j$ и весов $\tau_j$}\label{sec4}
+
+Рассмотрим  задачу об асимптотических свойствах полиномов
+$\varphi_{n,N}(w)$, составляющих матрицу \eqref{eq2.7} при
+$n,N\to\infty,\,\,z\in\mathbb{C}$. Подобная задача для случая, когда
+функция $\sigma(\theta)$ имеет бесконечное число точек роста и
+удовлетворяет условию Сеге
+$$
+\frac1{2\pi}\int\limits_{-\pi}^\pi\ln\sigma'(\theta)\,d\theta>-\infty,
+$$
+ исследована достаточно глубоко. По этому поводу мы отсылаем
+ к монографиям [96]- [101] и цитированной там литературе.
+
+Что касается  задачи об асимптотике полиномов $\varphi_{n,N}(z)$,
+составляющих матрицу \eqref{eq2.7}, следует заметить, что на каждой $N$-ой
+строке этой матрицы фигурируют полиномы
+$\varphi_{0,N}(z),\varphi_{1,N}(z),\ldots$, $\varphi_{N-1,N}(z)$,
+образующие ортонормированную систему относительно функции
+$\sigma(\theta)=\sigma_N(\theta)$, для которой не только не
+выполняется Сеге, но также его локальный вариант
+$$\frac1{2\pi}\int\limits_a^b\ln\sigma'(\theta)\,d\theta>-\infty,$$ ни
+при каких $a,b\in [-\pi,\pi]$. Это обстоятельство не позволяет
+использовать при решении поставленной задачи методы и подходы, с
+помощью которых были исследованы асимптотические свойства полиномов
+$\varphi_{n}(z)\,(n=0,1,\ldots)$, образующих ортонормированную
+систему (ОНС) относительно функции $\sigma(\theta)$, подчиняющейся
+условию Сеге.
+
+Рассмотрим задачу об асимптотических свойствах полиномов
+$\varphi_{n,N}(w)$ при $|w|=1$, в случае, когда
+$\sigma(\theta_j)=\frac{\theta_j}{2\pi},\,(0\leq j \leq N)$, где
+$\theta_N=\pi$, а узлы $\theta_0<\theta_1<\ldots<\theta_{N-1}$
+распределены на $[-\pi,\pi]$ произвольно. Следовательно,
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}_{j=0}^{N-1}$~---
+произвольная N-точечная сетка из единичной окружности $|w|=1$.
+Заметим, что в этом случае соотношение ортогональности \eqref{eq2.6}
+принимает вид
+\begin{equation}\label{eq4.1}
+\frac1{2\pi}\sum\limits_{j=0}^{N-1}\varphi_{n,N}(e^{i\theta_j})
+\overline{\varphi_{m,N}(e^{i\theta_j})}\Delta\theta_j=\delta_{nm}.
+\end{equation}
+Нас интересует поведение ортогональных полиномов $\varphi_{n,N}$ на
+окружности $|w|=1$ при $n,N\rightarrow\infty$.
+
+Заметим, что если
+\begin{equation}\label{eq4.2}
+\theta_j=\frac{2\pi j}N \quad (0\leq j<N-1),
+\end{equation}
+то, как нетрудно доказать,
+\begin{equation}\label{eq4.3}
+\varphi_{n,N}(w)=w^n\quad (0\leq n\leq N-1).
+\end{equation}
+
+Поэтому возникает идея сравнивать $\varphi_{n,N}(w)$ с $w^n$ в
+случае, когда в скалярном произведении \eqref{eq4.1} узлы
+$\theta_j\in[-\pi,\pi]\,\,(0\leq j\leq N)$ выбраны произвольно,
+соблюдая лишь свойство их монотонности. Другая причина в пользу
+сравнения полиномов $\varphi_{n,N}(w)$ со степенями $w^n$
+заключается в том, что система $\left\{w^n\right\}_{n=0}^\infty$
+является ортонормированной на единичной окружности относительно
+скалярного произведения
+\begin{equation}\label{eq4.4}
+\frac1{2\pi}\int\limits_{-\pi}^\pi w^n\overline{w^m}\,d\theta,
+\end{equation}
+а \eqref{eq4.1} является квадратурной формулой для интеграла \eqref{eq4.4},
+отвечающей выбору узлов $\left\{\theta_j\right\}_{j=0}^{N-1}$. Эти
+наблюдения приводят к следующей задаче. Пусть нам задана матрица
+полиномов \eqref{eq2.7}, $N$-ая строка которой содержит полиномы
+$\varphi_{0,N}(w),\ldots,\varphi_{N-1,N}(w)$, образующие ОНС на
+сетке $\Omega_N^T=\left\{e^{i\theta_j}\right\}_{j=0}^{N-1}$
+относительно скалярного произведения \eqref{eq4.1}. Требуется найти условие
+на рост степени $n$ полинома $\varphi_{n,N}(w)$, в зависимости от
+$N$, при соблюдении которого равенство
+\begin{equation}\label{eq4.5}
+\varphi_{n,N}(w)=w^n+r_{n,N}(w)
+\end{equation}
+могло бы служить асимптотической формулой для $\varphi_{n,N}(w)$ на
+окружности $|w|=1$. Еще более конкретно: нужно изучить поведение
+остаточного члена $r_{n,N}(w)$ при $n,N\rightarrow\infty$ и получить
+для $|r_{n,N}(w)|$ оценку сверху, зависящую от условий на рост
+параметра $n$, в зависимости от роста $N$. Например, требуется
+оценить $|r_{n,N}(w)|$ при $|w|=1$, $n,N\to\infty$. В настоящем
+пункте предпринимается попытка решить поставленную задачу в том
+случае, когда при $N\rightarrow\infty$ имеет место соотношение
+\begin{equation}\label{eq4.6}
+\lambda_N=\max\limits_{0\leq j\leq N-1}\Delta\theta_j\rightarrow 0.
+\end{equation}
+
+Нам понадобится ряд вспомогательных утверждений.
+
+\begin{lemma}\label{lem4.1}Пусть система полиномов
+$\left\{\varphi_k(w)\right\}_{k=0}^n$ ортонормирована на окружности
+$|w|=1$ относительно меры $\mu$, порожденной функцией
+$\sigma=\sigma(\theta)$ (см. \eqref{eq1.2}). Если $Q_n(w)$~---
+алгебраический полином степени $n$, для которого
+\begin{equation}\label{eq4.7}
+\int\limits_{-\pi}^\pi|Q_n(e^{i\theta})|^2d\sigma(\theta)\leq
+\gamma,
+\end{equation}
+то
+\begin{equation}\label{eq4.8}
+|Q_n(w)|^2\leq\gamma\sum\limits_{k=0}^n|\varphi_n(w)|^2,\quad
+w\in\mathbb{C}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}Мы имеем
+$Q_n(w)=\sum\limits_{k=0}^n\alpha_k\varphi_k(w)$. Отсюда
+\begin{equation}\label{eq4.9}
+|Q_n(w)|^2\leq\sum\limits_{k=0}^n|\alpha_k|^2\sum\limits_{k=0}^n|\varphi_k(w)|^2.
+\end{equation}
+
+С другой стороны, в силу равенства Парсеваля и условия леммы
+\begin{equation}\label{eq4.10}
+\sum\limits_{k=0}^n|\alpha_k|^2=\int\limits_{-\pi}^\pi|Q_n(e^{i\theta})|^2d\sigma(\theta)\le
+\gamma.
+\end{equation}
+
+Сопоставляя \eqref{eq4.9} и \eqref{eq4.10}, приходим к утверждению леммы \ref{lem4.1}.
+\end{proof}
+
+\begin{lemma}\label{lem4.2}Пусть $\left\{\varphi_k(w)\right\}_{k=0}^n$~---
+ОНС полиномов относительно меры $\mu$, порожденной функцией
+$\sigma(\theta)$, $\kappa_n$~--- старший коэффициент полинома
+$\varphi_n(w)$. Тогда ($w=e^{i\theta}$)
+$$
+\inf_{Q_{n-1}}\int\limits_{-\pi}^\pi|w^n+Q_{n-1}(w)|^2d\sigma(\theta)=\frac1{|\kappa_n|^2}
+$$
+где нижняя грань берется по всем алгебраическим полиномам
+$Q_{n-1}(w)$ степени $n-1$.
+\end{lemma}
+
+\begin{proof} Имеем
+$$
+w^n+Q_{n-1}(w)=\frac1{\kappa_n}\varphi_n(w)+\alpha_{n-1}\varphi_{n-1}(w)+\ldots+\alpha_1\varphi_1(w)+\alpha_0\varphi_0(w),
+$$
+где $\alpha_k\,\,(0\leq k\leq n-1)$~--- некоторые числа. Поэтому
+$$\int \limits^\pi_\pi
+\left|w^n+Q_{n-1}(w)\right|^2d\sigma(\theta)=\frac{1}{|\kappa_n|^2}+\sum
+\limits_{k=0}^{n-1}\left|\alpha_k\right|^2.$$ Ясно, что нижняя грань
+правой части этого равенства достигается, если
+$\alpha_0=\alpha_1=\ldots=\alpha_{n-1}=0$. Лемма \ref{lem4.2} доказана.
+\end{proof}
+
+Из доказательства леммы \ref{lem4.2} видно, что экстремальный полином \linebreak
+$w^n+Q_{n-1}(w)=\frac{1}{\kappa_n}\varphi_n(w)$. Это означает, что
+решение экстремальной задачи \begin{equation}\label{eq4.11}\int \limits_{-\pi}^\pi
+\left|w^n+Q_{n-1}(w)\right|^2d\sigma(\theta)\rightarrow \inf \end{equation} реализует полином $\varphi_n(w)/\kappa_n$.
+
+\begin{lemma}\label{lem4.3} Пусть $f(\theta)$ абсолютно непрерывна  на
+$[-\pi,\pi]$,
+$-\pi=\theta_0<\theta_1<\ldots<\theta_{N-2}<\theta_{N-1}<\theta_N=\pi$,
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\theta_j$ . Тогда
+\begin{equation}\label{eq4.12}\int \limits^\pi_{-\pi}
+f(\theta)\,d\theta=\sum\limits_{j=0}^{N-1}f(\theta_j)\Delta\theta_j+r_N(f)
+, \end{equation}где
+\begin{equation}\label{eq4.13}r_N(f)\le\lambda_N\int\limits_{-\pi}^{\pi}\left|f^{'}(\theta)\right|\,d\theta. \end{equation}
+\end{lemma}
+
+
+\begin{proof} Имеем
+\begin{equation}\label{eq4.14}\int\limits_{-\pi}^{\pi}f(\theta)\,d\theta=\sum\limits_{j=0}^{N-1}\int\limits_{\theta_j}^{\theta_{j+1}}f(\theta)\,d\theta. \end{equation}
+
+Далее, воспользовавшись формулой Ньютона-Лейбница, запишем
+\begin{equation}\label{eq4.15}f(\theta)=f(\theta_j)+\int\limits_{\theta_j}^{\theta}f^{'}(\tau)\,d\tau.\end{equation}
+
+Поэтому
+$$\int\limits_{\theta_j}^{\theta_{j+1}}f(\theta)\,d\theta=f(\theta_j)\Delta\theta_j+\int\limits_{\theta_j}^{\theta_{j+1}}d\theta\int\limits_{\theta_j}^{\theta}f^{'}(\tau)\,d\tau=$$
+\begin{equation}\label{eq4.16}f(\theta_j)\Delta\theta_j+\int\limits_{\theta_j}^{\theta_{j+1}}f^{'}(\tau)\,d\tau\int\limits_{\tau}^{\theta_{j+1}}d\theta=f(\theta_j)\Delta\theta_j+\int\limits_{\theta_j}^{\theta_{j+1}}(\theta_{j+1}-\tau)f^{'}(\tau)\,d\tau, \end{equation}где
+\begin{equation}\label{eq4.17}\left|\int\limits_{\theta_j}^{\theta_{j+1}}(\theta_{j+1}-\tau)f^{'}(\tau)\,d\tau\right|\le
+\Delta\theta_j\int\limits_{\theta_j}^{\theta_{j+1}}\left|f^{'}(\tau)\right|\,d\tau.\end{equation}
+
+
+Сопоставляя \eqref{eq4.14} и \eqref{eq4.16}, имеем
+\begin{equation}\label{eq4.18}\int\limits_{-\pi}^{\pi}f(\theta)\,d\theta=\sum\limits_{j=0}^{N-1}f(\theta_j)\Delta\theta_j+r_N(f), \end{equation}где
+\begin{equation}\label{eq4.19}r_N(f)=\sum\limits_{j=0}^{N-1}\int\limits_{\theta_j}^{\theta_{j+1}}(\theta_{j+1}-\tau)f^{'}(\tau)d\tau. \end{equation}
+
+Отсюда, с учетом оценки \eqref{eq4.17} находим
+$$\left|r_N(f)\right|\le\max\limits_{0\le j\le N-1}\Delta
+\theta_j\int\limits_{-\pi}^{\pi}\left|f^{'}(\tau)\right|d\tau.$$
+
+Лемма \ref{lem4.3} доказана.
+\end{proof}
+
+\begin{theorem}\label{th4.1}Пусть $1\le N$~--- натуральное число,
+$-\pi=\theta_0<\theta_1<\ldots<\theta_{N-2}<\theta_{N-1}<\theta_N=\pi$,
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\theta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~--- ортонормированная
+система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.1}. Тогда имеет место следующая
+асимптотическая формула \begin{equation}\label{eq4.20}\varphi_{n,N}(w)=w^n+v_{n,N}(w), \end{equation}в которой при $n<\frac1{\lambda_N}$ для остаточного члена
+$v_{n,N}(w)$ имеет место оценка
+\begin{equation}\label{eq4.21}\left|v_{n,N}(w)\right|\le\sqrt{\frac{n(n+1)\lambda_N}{1-n\lambda_N}},\quad|w|=1. \end{equation}
+\end{theorem}
+
+\begin{proof} Оценим следующий интеграл
+\begin{equation}\label{eq4.22}I=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|w^n-\varphi_{n,N}(w)\right|^2
+d\theta. \end{equation}
+
+Имеем $(w=e^{i\theta})$
+\begin{equation}\label{eq4.23}I=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|w^n\right|^2
+d\theta+\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(w)\right|^2
+d\theta
+-2\Re\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}w^n\overline{\varphi_{n,N}(w)}\,
+d\theta=\end{equation}
+\begin{equation}\label{eq4.24}I_1+I_2-2\Re I_3,  \end{equation}где \begin{equation}\label{eq4.25}I_1=1,\,\,
+I_3=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}w^n\overline{\varphi_{n,N}(w)}\,
+d\theta=\kappa_n^N, \end{equation} $\kappa_n^N$~--- старший
+коэффициент полинома $\varphi_{n,N}(w)$.
+
+В силу леммы \ref{lem4.2} и \eqref{eq4.25} находим
+\begin{equation}\label{eq4.26}I_3^2=(\kappa_n^N)^2=\frac{1}{\frac{1}{2\pi}\sum\limits_{j=0}^{N-1}\left|\frac{\varphi_{n,N}(e^{i\theta_j})}{\kappa_n^N}\right|^2\Delta\theta_j}\ge\frac{1}{\frac{1}{2\pi}\sum\limits_{j=0}^{N-1}\left|e^{i\theta_j}\right|^2\Delta\theta_j}=1.\end{equation}
+
+Займемся интегралом $I_2$. Для этого заметим, что функция
+$\left|\varphi_{n,N}(e^{i\theta})\right|^2=\varphi_{n,N}(e^{i\theta})\overline{\varphi_{n,N}(e^{i\theta})}$
+ по переменной $\theta$ представляет собой тригонометрический полином
+порядка $n$ с действительными коэффициентами, поэтому к ней
+применима лемма \ref{lem4.3}, в силу которой
+\begin{equation}\label{eq4.27}I_2=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta=\frac{1}{2\pi}\sum\limits_{j=0}^{2N-1}\left|\varphi_{n,N}(e^{i\theta_j})\right|^2
+\Delta\theta_j+r_{n,N},\end{equation} где
+\begin{equation}\label{eq4.28}\left|r_{n,N}\right|\le\lambda_N\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\left(\left|\varphi_{n,N}
+(e^{i\theta})\right|^2\right)^{'}\right|\,
+d\theta,\quad\lambda_N=\max\limits_{0\le j\le
+N-1}\Delta\theta_j.\end{equation} Чтобы оценить интеграл в правой
+части, мы применим неравенство \linebreak Бернштейна-Зигмунда об оценке
+интеграла от  производной  тригонометрического полинома
+(см.\cite{39}). Это даст
+\begin{equation}\label{eq4.29}\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\left(\left|
+\varphi_{n,N}(e^{i\theta})\right|^2\right)^{'}\right|\,
+d\theta\le\frac{n}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta.\end{equation}
+
+Сопоставляя \eqref{eq4.27}-\eqref{eq4.29}, имеем
+\begin{equation}\label{eq4.30}I_2=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta=1+r_{n,N},\end{equation}причем \begin{equation}\label{eq4.31}\left|r_{n,N}\right|\le
+n\lambda_N\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta.\end{equation}
+
+Из \eqref{eq4.30} и \eqref{eq4.31},  в свою очередь, находим \begin{equation}\label{eq4.32}I_2=
+\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta\le
+\frac{1}{1-n\lambda_N}=1+\frac{n\lambda_N}{1-n\lambda_N}.\end{equation}
+
+Из \eqref{eq4.22}, \eqref{eq4.26} и \eqref{eq4.32} с учетом того, что $I_1=1$, находим \begin{equation}\label{eq4.33}I=
+\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|w^n-\varphi_{n,N}(w)\right|^2
+d\theta\le\frac{n\lambda_N}{1-n\lambda_N}=\gamma.\end{equation}
+
+Теперь обратимся к лемме \ref{lem4.1}. Тогда из \eqref{eq4.8} получаем
+$(w=e^{i\theta})$
+
+\begin{equation}\label{eq4.34} \left| w^n-\varphi_{n,N}(w)\right|^2
+\le\frac{n\lambda_N}{1-n\lambda_N}\sum\limits_{k=0}^{n}
+\left|w^k\right|^2=\frac{n(n+1)\lambda_N}{1-n\lambda_N}.\end{equation}
+
+Полагая $v_{n,N}(w)=w^n-\varphi_{n,N}(w)$, находим
+\begin{equation}\label{eq4.35}\varphi_{n,N}(w)=w^n+v_{n,N}(w),\end{equation} \begin{equation}\label{eq4.36}\left|v_{n,N}(w)\right|\le
+\sqrt{\frac{n(n+1)\lambda_N}{1-n\lambda_N}}. \end{equation} Теорема
+\ref{th4.1} доказана.
+\end{proof}
+
+ Перейдем к рассмотрению несколько иной ситуации. Пусть
+\begin{equation}\label{eq4.37}-\pi=\eta_0<\eta_1<\cdots<\eta_{N-1}<\eta_N=\pi,\quad \theta_j={\eta_j+\eta_{j+1}\over2}
+\quad(0\le j\le N-1),\end{equation}
+\begin{equation}\label{eq4.38}\tau_j=\Delta\eta_j=\eta_{j+1}-\eta_j\quad(0\le j\le N-1).\end{equation}
+
+ Рассмотрим задачу об асимптотических свойствах полиномов
+$\varphi_{n,N}(w)$($0\le n\le N-1$), образующих ортонормированную
+систему относительно скалярного поведения
+\begin{equation}\label{eq4.39}
+\frac1{2\pi}\sum\limits_{j=0}^{N-1}\varphi_{n,N}(e^{i\theta_j})
+\overline{\varphi_{m,N}(e^{i\theta_j})}\tau_j=\delta_{nm}.
+\end{equation}
+Нас снова интересует поведение ортогональных полиномов
+$\varphi_{n,N}(w)$ на окружности $|w|=1$ при $n,N\rightarrow\infty$.
+Ниже нам понадобится следующая
+
+\begin{lemma}\label{lem4.4} Пусть $f(\theta)$ такова, что $f'(\theta)$
+абсолютно непрерывна на каждом из интервалов $(\eta_j,\eta_{j+1})$
+$(j=0,1,\ldots, N-1 )$, $\lambda_N=\max \limits_{0 \le j \le N-1}
+\Delta\eta_j$ . Тогда
+\begin{equation}\label{eq4.40}\int \limits^\pi_{-\pi}
+f(\theta)\,d\theta=\sum\limits_{j=0}^{N-1}f(\theta_j)\Delta\eta_j+r_N(f)
+, \end{equation}где
+\begin{equation}\label{eq4.41}|r_N(f)|\le{\lambda_N^2\over8}\int\limits_{-\pi}^{\pi}\left|f^{''}(\theta)\right|\,d\theta. \end{equation}
+\end{lemma}
+
+\begin{proof} Имеем
+\begin{equation}\label{eq4.42}
+\int\limits_{-\pi}^{\pi}f(\theta)\,d\theta=\sum\limits_{j=0}^{N-1}
+\int\limits_{\eta_j}^{\eta_{j+1}}f(\theta)\,d\theta.
+\end{equation}
+ Далее, воспользовавшись формулой Тейлора, запишем
+\begin{equation}\label{eq4.43}f(\theta)=f(\theta_j)+f'(\theta_j)(\theta-\theta_j)+\int\limits_{\theta_j}^{\theta}
+(\theta-\tau)f^{''}(\tau)\,d\tau.\end{equation}
+
+Поэтому
+$$\int\limits_{\eta_j}^{\eta_{j+1}}f(\theta)\,d\theta=f(\theta_j)\Delta\eta_j+
+\int\limits_{\eta_j}^{\eta_{j+1}}d\theta\int\limits_{\theta_j}^{\theta}(\theta-\tau)f^{''}(\tau)\,d\tau=$$
+$$f(\theta_j)\Delta\eta_j+\int\limits_{\eta_j}^{\theta_j}
+d\theta\int\limits_{\theta_j}^{\theta}(\theta-\tau)f^{''}(\tau)\,d\tau
++\int\limits_{\theta_j}^{\eta_{j+1}}d\theta\int\limits_{\theta_j}^{\theta}(\theta-\tau)f^{''}(\tau)\,d\tau=$$
+$$f(\theta_j)\Delta\eta_j+\int\limits_{\eta_j}^{\theta_j}d\theta
+\int\limits_{\theta}^{\theta_j}(\tau-\theta)f^{''}(\tau)\,d\tau
++\int\limits_{\theta_j}^{\eta_{j+1}}d\theta\int\limits_{\theta_j}^{\theta}(\theta-\tau)f^{''}(\tau)\,d\tau=
+$$
+$$f(\theta_j)\Delta\eta_j+\int\limits_{\eta_j}^{\theta_j}f^{''}(\tau)d\tau
+\int\limits_{\eta_j}^{\tau}(\tau-\theta)\,d\theta
++\int\limits_{\theta_j}^{\eta_{j+1}}f^{''}(\tau)d\tau\int\limits_{\tau}^{\eta_{j+1}}(\theta-\tau)\,d\theta.
+$$
+Отсюда и из \eqref{eq4.42} вытекает справедливость утверждения леммы \ref{lem4.4}.
+\end{proof}
+
+
+\begin{theorem}\label{th4.2}Пусть $1\le N$~--- натуральное число,
+системы узлов $\{\theta_j\}_{j=0}^{N-1}$ и весов
+$\{\tau_j\}_{j=0}^{N-1}$ определены равенствами \eqref{eq4.37} и \eqref{eq4.38}.
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~-- ортонормированная
+система полиномов на сетке\linebreak
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.39}. Тогда имеет место следующая
+асимптотическая формула \begin{equation}\label{eq4.44}\varphi_{n,N}(w)=w^n+v_{n,N}(w), \end{equation}в которой при $n\lambda_N<1$ для остаточного члена
+$v_{n,N}(w)$ имеет место оценка
+\begin{equation}\label{eq4.45}\left|v_{n,N}(w)\right|\le
+\sqrt{\frac{(n+1)n^2\lambda_N^2}{1-(n\lambda_N)^2}},\quad |w|=1.\end{equation}
+\end{theorem}
+
+\begin{proof} Оценим следующий интеграл
+\begin{equation}\label{eq4.46}J=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|w^n-\varphi_{n,N}(w)\right|^2
+d\theta. \end{equation}
+
+Имеем $(w=e^{i\theta})$
+\begin{equation}\label{eq4.48}J=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|w^n\right|^2
+d\theta+\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(w)\right|^2
+d\theta
+-2\Re\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}w^n\overline{\varphi_{n,N}(w)}\,
+d\theta=\end{equation}
+\begin{equation}\label{eq4.47}J_1+J_2-2\Re J_3,  \end{equation}где \begin{equation}\label{eq4.49}J_1=1,\,\,
+J_3=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}w^n\overline{\varphi_{n,N}(w)}\,
+d\theta=\kappa_n^N, \end{equation} $\kappa_n^N$~--- старший
+коэффициент полинома $\varphi_{n,N}(w)$.
+
+В силу леммы \ref{lem4.2} и \eqref{eq4.49} находим
+\begin{equation}\label{eq4.50}J_3^2=(\kappa_n^N)^2=\frac{1}{\frac{1}{2\pi}
+\sum\limits_{j=0}^{N-1}\left|\frac{\varphi_{n,N}(e^{i\theta_j})}
+{\kappa_n^N}\right|^2\Delta\eta_j}\ge\frac{1}{\frac{1}{2\pi}
+\sum\limits_{j=0}^{N-1}\left|e^{i\theta_j}\right|^2\Delta\eta_j}=1.\end{equation}
+
+Займемся интегралом $J_2$. Для этого заметим, что функция
+$\left|\varphi_{n,N}(e^{i\theta})\right|^2=\varphi_{n,N}(e^{i\theta})\overline{\varphi_{n,N}(e^{i\theta})}$
+ по переменной $\theta$ представляет собой тригонометрический полином
+порядка $n$ с действительными коэффициентами, поэтому к ней
+применима лемма \ref{lem4.4}, в силу которой
+\begin{equation}\label{eq4.51}J_2=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta=\frac{1}{2\pi}\sum\limits_{j=0}^{2N-1}\left|\varphi_{n,N}(e^{i\theta_j})\right|^2
+\Delta\eta_j+r_{n,N},\end{equation} где
+\begin{equation}\label{eq4.52}\left|r_{n,N}\right|\le{\lambda_N^2\over8}\frac{1}{2\pi}
+\int\limits_{-\pi}^{\pi}\left|\left(\left|\varphi_{n,N}
+(e^{i\theta})\right|^2\right)^{''}\right|\,
+d\theta,\quad\lambda_N=\max\limits_{0\le j\le N-1}\Delta\eta_j.\end{equation} Чтобы оценить интеграл в правой части, мы применим
+неравенство\linebreak Бернштейна-Зигмунда. Это даст
+\begin{equation}\label{eq4.53}\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\left(\left|
+\varphi_{n,N}(e^{i\theta})\right|^2\right)^{''}\right|\,
+d\theta\le\frac{n^2}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta.\end{equation}
+
+Сопоставляя \eqref{eq4.51}-\eqref{eq4.53}, имеем
+\begin{equation}\label{eq4.54}J_2=\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta=1+r_{n,N},\end{equation}причем \begin{equation}\label{eq4.55}\left|r_{n,N}\right|\le
+n^2\lambda_N^2\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta.\end{equation}
+
+Из \eqref{eq4.54} и \eqref{eq4.55},  в свою очередь, находим \begin{equation}\label{eq4.56}J_2=
+\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta\le
+\frac{1}{1-(n\lambda_N)^2}=1+\frac{(n\lambda_N)^2}{1-(n\lambda_N)^2}.\end{equation}
+
+Из \eqref{eq4.48}, \eqref{eq4.49} и \eqref{eq4.56}  находим
+\begin{equation}\label{eq4.57}J=
+\frac{1}{2\pi}\int\limits_{-\pi}^{\pi}\left|w^n-\varphi_{n,N}(w)\right|^2
+d\theta\le\frac{(n\lambda_N)^2}{1-(n\lambda_N)^2}=\gamma.\end{equation}
+
+Теперь обратимся к лемме \ref{lem4.1}, согласно которой получаем
+$(w=e^{i\theta})$
+
+\begin{equation}\label{eq4.58} \left| w^n-\varphi_{n,N}(w)\right|^2
+\le\frac{(n\lambda_N)^2}{1-(n\lambda_N)^2}\sum\limits_{k=0}^{n}
+\left|w^k\right|^2=\frac{(n+1)n^2\lambda_N^2}{1-(n\lambda_N)^2}.\end{equation}
+
+Полагая $v_{n,N}(w)=w^n-\varphi_{n,N}(w)$, находим
+$$\varphi_{n,N}(w)=w^n+v_{n,N}(w),$$ $$\left|v_{n,N}(w)\right|\le
+\sqrt{\frac{(n+1)n^2\lambda_N^2}{1-(n\lambda_N)^2}}.$$ Теорема \ref{th4.2}
+доказана.
+\end{proof}
+
+ Перейдем к случаю, когда $|w|<1$. Мы можем сформулировать
+следующий результат.
+
+\begin{theorem}\label{th4.3}Пусть $1\le N$~--- натуральное число,
+системы узлов $\{\theta_j\}_{j=0}^{N-1}$ и весов
+$\{\tau_j\}_{j=0}^{N-1}$ определены равенствами \eqref{eq4.37} и \eqref{eq4.38}.
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~--- ортонормированная
+система полиномов на сетке\linebreak
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.39}. Тогда имеет место следующая
+асимптотическая формула \begin{equation}\label{eq4.59}\varphi_{n,N}(w)=w^n+v_{n,N}(w), \end{equation}в которой при $n\lambda_N<1$ для остаточного члена
+$v_{n,N}(w)$ справедлива оценка
+\begin{equation}\label{eq4.60}\left|v_{n,N}(w)\right|\le {1\over\sqrt{1-|w|}}
+\frac{n\lambda_N}{\sqrt{1-(n\lambda_N)^2}},\quad |w|<1. \end{equation}
+\end{theorem}
+
+{\it Доказательство } этой теоремы получается буквальным повторением
+доказательства теоремы \ref{th4.2} с той лишь разницей, что при применении
+леммы \ref{lem4.1} мы теперь   учитываем оценку
+$$
+|w^n-\varphi_{n,N}(w)|^2\leq\gamma\sum\limits_{k=0}^n|\varphi_k(w)|^2=
+\gamma\sum\limits_{k=0}^n|w^k|^2<
+ {\gamma\over1-|w|},\quad         |w|<1.
+$$
+Отсюда мы приходим к оценке \eqref{eq4.60}.
+
+ Рассмотрим более общий случай полиномов $\varphi_{n,N}(w)$
+($n=0,1,\ldots,N-1$), ортогональных на сетке
+$\Omega_N^T=\{e^{i\theta_j}\}_{j=0}^{N-1}$ относительно скалярного
+произведения
+\begin{equation}\label{eq4.61}
+\frac1{2\pi}\sum\limits_{j=0}^{N-1}\varphi_{n,N}(e^{i\theta_j})
+\overline{\varphi_{m,N}(e^{i\theta_j})}h(\theta_j)\Delta\eta_j=\delta_{nm},
+\end{equation}
+где $h(\theta)$ -- некоторый неотрицательный  тригонометрический
+полином порядка $\nu$. Через $\{\varphi_n(w)\}_{n=0}^\infty$
+обозначим бесконечную последовательность полиномов, образующих на
+единичной окружности $|w|=1$ ортонормированную с весом $h(\theta)$
+систему относительно скалярного произведения \eqref{eq2.3}. Будем
+предполагать, что старшие коэффициенты полиномов $\varphi_{n,N}(w)$,
+$\varphi_n(w)$ положительны.
+
+\begin{theorem}\label{th4.4}Пусть $1\le N$~-- натуральное число,
+система узлов $\{\theta_j\}_{j=0}^{N-1}$  определена в \eqref{eq4.37},
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~--- ортонормированная
+система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.61}, $w\in \mathbb{C}$. Тогда  имеет
+место     асимптотическая формула
+\begin{equation}\label{eq4.62}\varphi_{n,N}(w)=\varphi_n(w)+v_{n,N}(w), \end{equation}в
+которой при $(n+\nu)\lambda_N<1$ для остаточного члена $v_{n,N}(w)$
+справедлива оценка
+\begin{equation}\label{eq4.63}\left|v_{n,N}(w)\right|\le \frac{\sqrt{2}(n+\nu)\lambda_N}
+{\sqrt{8-((n+\nu)\lambda_N)^2}}\sqrt{\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2}.  \end{equation}
+\end{theorem}
+
+\begin{proof} Оценим  интеграл
+\begin{equation}\label{eq4.64}J=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_n(w)-\varphi_{n,N}(w)\right|^2
+d\theta. \end{equation}
+
+Имеем $(w=e^{i\theta})$
+$$J=\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_n(w)|^2
+d\theta+\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_{n,N}(w)|^2
+d\theta
+-2\Re\int\limits_{-\pi}^{\pi}h(\theta)\varphi_n(w)\overline{\varphi_{n,N}(w)}\,
+d\theta=$$
+\begin{equation}\label{eq4.65}J_1+J_2-2 J_3,
+ \end{equation}где \begin{equation}\label{eq4.66}J_1=1,\quad J_2=\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_{n,N}(w)|^2
+d\theta, \end{equation}
+
+\begin{equation}\label{eq4.67}
+J_3=\int\limits_{-\pi}^{\pi}h(\theta)\varphi_n(w)\overline{\varphi_{n,N}(w)}\,
+d\theta={\kappa_n^N\over\kappa_n}, \end{equation}
+$\kappa_n$,$\kappa_n^N$~--- старшие коэффициенты полиномов
+$\varphi_n(w)$ и $\varphi_{n,N}(w)$, соответственно.
+
+В силу леммы \ref{lem4.2} и \eqref{eq4.67} находим
+$$J_3^2=(\kappa_n^N/k_n)^2=\frac{1}{k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\varphi_{n,N}(e^{i\theta_j})}
+{\kappa_n^N}\right|^2\Delta\eta_j}\ge$$\begin{equation}\label{eq4.68} \frac{1}{k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\varphi_n(e^{i\theta_j})}
+{\kappa_n}\right|^2\Delta\eta_j}=\frac{1}{\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j}. \end{equation} Выражение
+$h(\theta)\left|\varphi_n(e^{i\theta}) \right|^2$ представляет собой
+тригонометрический полином порядка $n+\nu$, поэтому к нему можно
+применить лемму \ref{lem4.4} и записать
+\begin{equation}\label{eq4.69}\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=\int\limits_{-\pi}^\pi
+h(\theta)\left|\varphi_n(e^{i\theta})
+\right|^2d\theta+R_N,\end{equation} где
+\begin{equation}\label{eq4.70}|R_N|\le{\lambda_N^2\over8}\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\right)^{''}\right|\,d\theta.\end{equation} Если мы воспользуемся неравенством
+Бернштейна-Зигмунда об оценке интеграла от производной
+тригонометрического полинома, то получим
+\begin{equation}\label{eq4.71}\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\right)^{''}\right|\,d\theta\le
+(n+\nu)^2\int\limits_{-\pi}^{\pi}h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\,d\theta
+=(n+\nu)^2.\end{equation} Сопоставляя \eqref{eq4.69} -- \eqref{eq4.70}, приходим к
+равенству
+\begin{equation}\label{eq4.72}\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=1+R_N,\end{equation} в котором для $R_N$
+справедлива оценка $$|R_N|\le \frac18((n+\nu)\lambda_N)^2.$$ Из
+\eqref{eq4.72} и \eqref{eq4.68}, находим
+$$J_3^2\ge 1-{R_N\over1+R_N}=1+q_N\ge1-|q_n|,$$
+стало бть,
+\begin{equation}\label{eq4.73}J_3\ge\sqrt{1-|q_N|}\ge1-|q_N|,\end{equation}
+ где $$|q_N|\le { ((n+\nu)\lambda_N)^2\over 8-
+((n+\nu)\lambda_N)^2}.
+$$
+
+ Займемся интегралом $J_2$. Для этого
+заметим, что функция\linebreak
+$h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2=
+h(\theta)\varphi_{n,N}(e^{i\theta})\overline{\varphi_{n,N}(e^{i\theta})}$
+ по переменной $\theta$ представляет собой тригонометрический полином
+порядка $n+\nu$ с действительными коэффициентами, поэтому к ней
+применима лемма \ref{lem4.4}, в силу которой из \eqref{eq4.66} имеем
+\begin{equation}\label{eq4.74}J_2=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta=\sum\limits_{j=0}^{N-1}h(\theta)\left|\varphi_{n,N}(e^{i\theta_j})\right|^2
+\Delta\eta_j+r_{n,N},\end{equation} где
+\begin{equation}\label{eq4.75}\left|r_{n,N}\right|\le{\lambda_N^2\over8}\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)\left|\varphi_{n,N}
+(e^{i\theta})\right|^2\right)^{''}\right|\,
+d\theta,\quad\lambda_N=\max\limits_{0\le j\le N-1}\Delta\eta_j.\end{equation} Чтобы оценить интеграл в правой части, мы применим
+неравенство\linebreak Бернштейна-Зигмунда. Это даст
+\begin{equation}\label{eq4.76}\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2\right)^{''}\right|\,
+d\theta\le(n+\nu)^2\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta.\end{equation}
+
+Сопоставляя \eqref{eq4.74}-\eqref{eq4.76}, имеем
+\begin{equation}\label{eq4.77}J_2=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta=1+r_{n,N},\end{equation}причем \begin{equation}\label{eq4.78}\left|r_{n,N}\right|\le
+{((n+\nu)\lambda_N)^2\over8}\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta.\end{equation}
+
+Из \eqref{eq4.77} и \eqref{eq4.78},  в свою очередь, находим \begin{equation}\label{eq4.79}J_2=
+\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta\le
+\frac{8}{8-((n+\nu)\lambda_N)^2}=1+\frac{((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}.\end{equation}
+
+Из \eqref{eq4.66}, \eqref{eq4.67} и \eqref{eq4.79}  находим
+\begin{equation}\label{eq4.80}J=
+\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_n(w)-\varphi_{n,N}(w)\right|^2
+d\theta\le\frac{2((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}=\gamma.\end{equation}
+
+Теперь обратимся к лемме \ref{lem4.1}, согласно которой получаем
+$(w=e^{i\theta})$
+
+$$ \left| \varphi_n(w)-\varphi_{n,N}(w)\right|^2
+\le\frac{2((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2.$$
+
+Полагая $v_{n,N}(w)=\varphi_n(w)-\varphi_{n,N}(w)$, находим
+$$\varphi_{n,N}(w)=\varphi_n(w)+v_{n,N}(w),$$ $$\left|v_{n,N}(w)\right|\le
+\frac{\sqrt{2}(n+\nu)\lambda_N}{\sqrt{8-((n+\nu)\lambda_N)^2}}\sqrt{\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2}.$$ Теорема \ref{th4.4} доказана.
+\end{proof}
+
+\begin{corollary}\label{col4.1}Пусть $h(\theta)$ -- тригонометрический
+полином степени $\nu$, для которого
+$\min\limits_{-\pi\le\theta\le\pi}h(\theta)\ge\delta>0$, $1\le
+N$~--- натуральное число, система узлов $\{\theta_j\}_{j=0}^{N-1}$
+определена в \eqref{eq4.37}, $\lambda_N=\max \limits_{0 \le j \le N-1}
+\Delta\eta_j$, $\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~---
+ортонормированная система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.61}, $w\in \mathbb{C}$. Тогда  имеет
+место    асимптотическая формула
+$$\varphi_{n,N}(w)=\varphi_n(w)+v_{n,N}(w), $$ в
+которой при $(n+\nu)\lambda_N<1$ для остаточного члена $v_{n,N}(w)$
+справедлива оценка
+\begin{equation}\label{eq4.81}\left|v_{n,N}(w)\right|\le \frac{c(\delta)(n+\nu)^{3/2}
+\lambda_N}{\sqrt{8-((n+\nu)\lambda_N)^2}},\quad|w|=1,  \end{equation}
+где $c(\delta)$ -- положительное число, зависящее лишь от $\delta$.
+\end{corollary}
+
+ \begin{proof} Известно(см.\cite{36}), что если достаточно гладкая весовая функция
+ $h(\theta)\ge\delta>0$, то ортонормированная с весом $h(\theta)$
+ система $\{\varphi_n(w)\}_{n=0}^\infty$ ограничена равномерно относительно
+ $\{w:|w|=1\}$. Поэтому, утверждение следствия \ref{col4.1} непосредственно
+ вытекает из теоремы \ref{th4.4}.
+ \end{proof}
+ Теперь мы перейдем к рассмотрению случая, когда весовая функция
+$h(\theta)$ представляет собой положительную непрерывную $2\pi$ -
+периодическую функцию. Нам понадобятся некоторые понятия и
+результаты из теории приближения функций. Через $\mathbb{T}^m $
+обозначим пространство тригонометрических полиномов порядка $m$.
+Пусть
+\begin{equation}\label{eq4.82}E_m(f)=\inf_{t_m\in\mathbb{T}^m}\sup_{x\in \mathbb{R}}|f(x)-t_m(x)|\end{equation}
+- наилучшее  приближение функции $f$ тригонометрическими полиномами в
+равномерной метрике,
+\begin{equation}\label{eq4.83}E_m^-(f)=\inf_{t_m\in\mathbb{T}^m\atop t_m(x)\le f(x),x\in
+\mathbb{R}}\sup_{x\in \mathbb{R}}|f(x)-t_m(x)|\end{equation} -
+наилучшее одностороннее приближение снизу функции $f$
+тригонометрическими полиномами в равномерной метрике. Очевидно, что
+имеют место неравенства \begin{equation}\label{eq4.84}E_m(f)\le E_m^-(f)\le2E_m(f).\end{equation}
+ Далее, пусть $W^r_{2\pi}(M)$ -- класс $r$-раз непрерывно дифференцируемых\linebreak
+$2\pi$-периодических функций, для которых $\sup_{x\in
+\mathbb{R}}|f^{(r)}(x)|\le M$. Хорошо известно, что если $f\in
+W^r_{2\pi}(M)$, то
+$$
+E_m(f)\le M{{\cal K}_r\over m^r}, \quad m=1,2,\ldots,\quad {\cal
+K}_r=\frac4\pi\sum_{\nu=0}^\infty{(-1)^{\nu(r+1)}\over(2\nu+1)^{r+1}}.
+$$
+ Положим еще
+$h_-=\min_{\theta\in[0,2\pi]}h(\theta)$. Теперь мы можем
+сформулировать следующий результат.
+
+
+\begin{theorem}\label{th4.5}Пусть $1\le N$, система узлов
+$\{\theta_j\}_{j=0}^{N-1}$  определена в \eqref{eq4.37}, $\lambda_N=\max
+\limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~--- ортонормированная
+система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.61}, в котором $0<h(\theta)$ --
+непрерывная $2\pi$ -- периодическая функция. Через
+$\{\varphi_n(w)\}_{n=0}^\infty$ обозначим бесконечную
+последовательность полиномов, образующих на единичной окружности
+$|w|=1$ ортонормированную с весом $h(\theta)$ систему относительно
+скалярного произведения \eqref{eq2.3}.   Тогда имеет место асимптотическая
+формула
+\begin{equation}\label{eq4.85}\varphi_{n,N}(w)=\varphi_n(w)+v_{n,N}(w), \end{equation} где для остаточного члена $v_{n,N}(w)$
+справедлива оценка
+$$\left|v_{n,N}(w)\right|^2\le$$
+$$\left({E_m^-(h)/h_-\over 1-E_m^-(h)/h_-}\left(1+
+{((n+m)\lambda_N)^2\over8-((n+m)\lambda_N)^2}\right)+
+{3((n+m)\lambda_N)^2+8E_m^-(h)/ h_-\over 8-
+((n+m)\lambda_N)^2}\right)
+$$
+\begin{equation}\label{eq4.86}
+\sum\limits_{k=0}^{n} \left|\varphi_k(w)\right|^2,
+\end{equation}
+ в
+которой $m$~---произвольное натуральное число, для которого
+$((n+m)\lambda_N)^2<8$, $E_m^-(h)< h_-$, $w$~---произвольное
+комплексное число.
+\end{theorem}
+
+\begin{proof}Оценим  интеграл
+\begin{equation}\label{eq4.87}J=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_n(w)-\varphi_{n,N}(w)\right|^2
+d\theta. \end{equation}
+
+Имеем $(w=e^{i\theta})$
+$$J=\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_n(w)|^2
+d\theta+\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_{n,N}(w)|^2
+d\theta
+-2\Re\int\limits_{-\pi}^{\pi}h(\theta)\varphi_n(w)\overline{\varphi_{n,N}(w)}\,
+d\theta=$$
+\begin{equation}\label{eq4.88}J_1+J_2-2 J_3,  \end{equation}где $J_1=1$,\begin{equation}\label{eq4.89} J_2=\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_{n,N}(w)|^2
+d\theta,\end{equation} \begin{equation}\label{eq4.90}
+J_3=\int\limits_{-\pi}^{\pi}h(\theta)\varphi_n(w)\overline{\varphi_{n,N}(w)}\,
+d\theta={\kappa_n^N\over\kappa_n}, \end{equation}
+$\kappa_n$,$\kappa_n^N$~--- старшие коэффициенты полиномов
+$\varphi_n(w)$ и $\varphi_{n,N}(w)$, соответственно.
+
+В силу леммы \ref{lem4.2} и \eqref{eq4.90} находим
+$$J_3^2=(\kappa_n^N/k_n)^2=\frac{1}{k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\varphi_{n,N}(e^{i\theta_j})}
+{\kappa_n^N}\right|^2\Delta\eta_j}\ge$$\begin{equation}\label{eq4.91} \frac{1}{k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\varphi_n(e^{i\theta_j})}
+{\kappa_n}\right|^2\Delta\eta_j}=\frac{1}{\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j}. \end{equation} Для произвольного
+натурального  $m$ через $h_m(\theta)$  обозначим тригонометрический
+полином порядка $m$ наилучшего одностороннего приближения снизу
+функции $h(\theta)$ в равномерной метрике. Тогда мы можем записать
+$$\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=$$
+\begin{equation}\label{eq4.92}\sum_{j=0}^{N-1}h_m(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j+
+\sum_{j=0}^{N-1}{h(\theta_j)-h_m(\theta_j)\over
+h(\theta_j)}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=\Sigma_1+\Sigma_2,\end{equation} где
+$$\Sigma_2\le {E_m^-(h)\over h_-}\sum_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j.$$ С учетом последнего неравенства из \eqref{eq4.92}
+выводим
+\begin{equation}\label{eq4.93}\left(1-{E_m^-(h)\over h_-}\right)\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j\le\Sigma_1.\end{equation} Теперь займемся
+суммой $\Sigma_1$.  С этой целью обратимся к лемме \ref{lem4.4}, согласно
+которой
+\begin{equation}\label{eq4.94}\Sigma_1=\sum_{j=0}^{N-1}h_m(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=\int\limits_{-\pi}^{\pi}h_m(\theta)|\varphi_n(w)|^2
+d\theta+R_N,\end{equation} причем
+$$|R_N|\le{\lambda_N^2\over8}\int\limits_{-\pi}^{\pi}\left|\left(h_m(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\right)^{''}\right|\,d\theta
+$$
+ Если мы  воспользуемся неравенством
+Бернштейна-Зигмунда об оценке интеграла от производной
+тригонометрического полинома, то получим
+$$\int\limits_{-\pi}^{\pi}\left|\left(h_m(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\right)^{''}\right|\,d\theta\le$$\begin{equation}\label{eq4.95}
+(n+m)^2\int\limits_{-\pi}^{\pi}h_m(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\,d\theta\le(n+m)^2\int\limits_{-\pi}^{\pi}h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\,d\theta
+=(n+m)^2.\end{equation} Сопоставляя \eqref{eq4.94} с \eqref{eq4.95}, приходим к
+неравенству
+\begin{equation}\label{eq4.96}\Sigma_1\le 1+R_N,\end{equation} в котором для $R_N$
+справедлива оценка $$|R_N|\le \frac18((n+m)\lambda_N)^2.$$ Оценки
+\eqref{eq4.93} и \eqref{eq4.96} дают
+\begin{equation}\label{eq4.97}\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j\le {1+R_N\over 1-{E_m^-(h)\over h_-}
+}.\end{equation}
+ Из \eqref{eq4.91}и \eqref{eq4.97}  находим
+$$J_3^2\ge {1-{E_m^-(h)\over h_-}\over1+R_N}=1- {R_N+{E_m^-(h)\over h_-}\over
+1+R_N}= 1-q_N\ge1-|q_N|,$$ стало быть,
+\begin{equation}\label{eq4.98}J_3\ge\sqrt{1-|q_N|}\ge1-|q_N|,\end{equation}
+ где $$|q_N|\le { ((n+m)\lambda_N)^2+8E_m^-(h)/ h_-\over 8-
+((n+m)\lambda_N)^2}.
+$$
+ Займемся интегралом $J_2$. Имеем
+$$J_2=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta)}
+\right|^2d\theta=$$\begin{equation}\label{eq4.99}\int\limits_{-\pi}^{\pi}h_m(\theta)\left|\varphi_{n,N}(e^{i\theta)}
+\right|^2d\theta+\int\limits_{-\pi}^{\pi}{h(\theta)-h_m(\theta)\over
+h(\theta)}h(\theta)\left|\varphi_{n,N}(e^{i\theta)}
+\right|^2d\theta=I_1+I_2 ,\end{equation} где
+$$I_2\le {E_m^-(h)\over h_-}\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta)}
+\right|^2d\theta.$$ С учетом последнего неравенства из \eqref{eq4.99}
+выводим
+\begin{equation}\label{eq4.100}\left(1-{E_m^-(h)\over h_-}\right)J_2\le I_1.\end{equation} Теперь займемся
+суммой $I_1$.  С этой целью обратимся к лемме \ref{lem4.4}, согласно которой
+\begin{equation}\label{eq4.101}I_1=\sum_{j=0}^{N-1}h_m(\theta_j)\left|\varphi_{n,N}(e^{i\theta_j})
+\right|^2\Delta\eta_j+R_N,\end{equation} причем
+$$|R_N|\le{\lambda_N^2\over8}\int\limits_{-\pi}^{\pi}\left|\left(h_m(\theta)
+\left|\varphi_{n,N}(e^{i\theta})\right|^2\right)^{''}\right|\,d\theta
+$$
+ Если мы снова воспользуемся неравенством
+Бернштейна-Зигмунда об оценке интеграла от производной
+тригонометрического полинома, то получим
+\begin{equation}\label{eq4.102}\int\limits_{-\pi}^{\pi}\left|\left(h_m(\theta)
+\left|\varphi_{n,N}(e^{i\theta})\right|^2\right)^{''}\right|\,d\theta\le
+(n+m)^2I_1.\end{equation} Сопоставляя \eqref{eq4.101} с \eqref{eq4.102}, приходим к
+неравенству
+\begin{equation}\label{eq4.103}
+I_1\le {1\over 1-\frac18((n+m)\lambda_N)^2}=1+
+{((n+m)\lambda_N)^2\over8-((n+m)\lambda_N)^2},
+\end{equation}
+Оценки \eqref{eq4.100} и \eqref{eq4.103} дают
+\begin{equation}\label{eq4.104}J_2\le {I\over 1-{E_m^-(h)\over h_-}}\le
+{\left(1+{E_m^-(h)/h_-\over 1-E_m^-(h)/ h_-}\right) \left(1+
+{((n+m)\lambda_N)^2\over8-((n+m)\lambda_N)^2}\right)}.\end{equation}
+Сопоставляя \eqref{eq4.88} с \eqref{eq4.97} и \eqref{eq4.104}, находим
+$$J\le -1+{\left(1+{E_m^-(h)/h_-\over 1-E_m^-(h)/
+h_-}\right)\left(1+{((n+m)\lambda_N)^2\over8-((n+m)\lambda_N)^2}\right)}
++
+$$
+$$
+{2((n+m)\lambda_N)^2+8E_m^-(h)/ h_-\over 8- ((n+m)\lambda_N)^2}=
+$$
+$$
+{E_m^-(h)/h_-\over 1-E_m^-(h)/h_-}\left(1+
+{((n+m)\lambda_N)^2\over8-((n+m)\lambda_N)^2}\right)+
+{3((n+m)\lambda_N)^2+8E_m^-(h)/ h_-\over 8- ((n+m)\lambda_N)^2}.
+$$
+Отсюда и \eqref{eq4.87}, обратившись к лемме \ref{lem4.1}, находим
+$$
+ \left|
+\varphi_n(w)-\varphi_{n,N}(w)\right|^2\le
+$$
+$$
+\left({E_m^-(h)/h_-\over 1-E_m^-(h)/h_-}\left(1+
+{((n+m)\lambda_N)^2\over8-((n+m)\lambda_N)^2}\right)+\right.
+$$
+$$
+\left.{3((n+m)\lambda_N)^2+8E_m^-(h)/ h_-\over 8-
+((n+m)\lambda_N)^2}\right)\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2.
+$$
+ Отсюда, полагая
+$v_{n,N}(w)=\varphi_n(w)-\varphi_{n,N}(w)$, приходим к утверждению
+теоремы \ref{th4.5}.
+
+\end{proof}
+
+\begin{corollary}\label{col4.2}Пусть $1\le N$, система узлов
+$\{\theta_j\}_{j=0}^{N-1}$  определена в \eqref{eq4.37}, $\lambda_N=\max
+\limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~-- ортонормированная
+система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.61}, в котором $0<h(\theta)$ --
+непрерывная $2\pi$ -- периодическая функция, удовлетворяющая при
+$|\theta_1-\theta_2|\le\frac12$, $\gamma>1$ условию
+$|h(\theta_1)-h(\theta_2)|\le c_1
+\left(\ln{1\over|\theta_1-\theta_2|}\right)^{-\gamma}$. Тогда  для
+$|w|=1$ имеет место асимптотическая формула
+$$\varphi_{n,N}(w)=\varphi_n(w)+v_{n,N}(w), $$ в которой для остаточного члена $v_{n,N}(w)$
+справедлива оценка
+$$
+\left|v_{n,N}(w)\right|^2\le
+$$
+$$
+ c_2(n+1)\left({E_m^-(h)/h_-\over 1-E_m^-(h)/h_-}\left(1+
+{((n+m)\lambda_N)^2\over8-((n+m)\lambda_N)^2}\right)+
+\right.
+$$
+$$
+\left.
+{3((n+m)\lambda_N)^2+8E_m^-(h)/ h_-\over 8-
+((n+m)\lambda_N)^2}\right),$$ где $m$~--- произвольное натуральное
+число, для которого $((n+m)\lambda_N)^2<8$, $E_m^-(h)< h_-$,
+$c_k$~--- положительные постоянные.
+\end{corollary}
+
+\begin{proof} Известно(см.\cite{36}, что если весовая функция
+  $h=h(\theta)\ge\delta>0$ при $|\theta_1-\theta_2|\le\frac12$, $\gamma>1$ удовлетворяет условию $|h(\theta_1)-h(\theta_2)|\le
+\left(\ln{1\over|\theta_1-\theta_2|}\right)^{-\gamma}$,  то
+ортонормированная с весом $h(\theta)$
+ система $\{\varphi_n(w)\}_{n=0}^\infty$ ограничена равномерно относительно
+ $\{w:|w|=1\}$. Поэтому, утверждение следствия \ref{col4.2} непосредственно
+ вытекает из теоремы \ref{th4.5}.
+\end{proof}
+
+ Рассмотрим случай,  когда весовая функция $h(\theta)=|t(\theta)|$, где $t(\theta)$   представляет собой
+ произвольный тригонометрический полином ( не обязательно
+ неотрицательный). Такой случай возникает, например, тогда, когда в соответствии с равенством \eqref{eq3.21}
+ осуществляется связь между полиномами $\{P_{n,N}(x)\}_{n=0}^{N-1}$, ортогональными на сетках
+  $\Omega_N^A=\{x_j\}_{j=0}^{N-1}$ из
+отрезка $[-1,1]$ с весом $\rho=\rho(x_j)=\rho_j$ и соответствующими
+полиномами $\{\varphi_{k,2N}(w)\}_{k=0}^{2N-1}$, ортогональными на
+$\Omega_{2N}^T=\{e^{i\theta_j}\}_{j=0}^{2N-1}$ из единичной
+окружности  с весом $\tau=\tau(\theta_j)=\tau_j$. Нам понадобятся
+несколько вспомогательных утверждений.
+
+\begin{lemma}\label{lem4.5}Пусть  $t_n(\theta)$ произвольный
+нетривиальный тригонометрический полином с вещественными
+коэффициентами, $1\le p<\infty$. Тогда имеет место неравенство
+$$\||t_n|'\|_p=\left(\int\limits_0^{2\pi}||t_n(\theta)|'|^pd\theta\right)^{1/p}\le n\|t_n\|_p.$$
+\end{lemma}
+
+\begin{proof} Поскольку, очевидно,
+$$
+|t_n(\theta)|'=\begin{cases}t'_n(\theta),&\text{ если
+$t_n(\theta)>0$},\\-t'_n(\theta)&\text{ если
+$t_n(\theta)<0$,}\end{cases}
+$$
+то утверждение леммы \ref{lem4.5} вытекает из неравенства Бернштейна --
+Зигмунда.
+\end{proof}
+
+
+\begin{lemma}\label{lem4.6}Пусть $(0\le j\le N-1)$
+\begin{equation}\label{eq4.105}-\pi=\eta_0<\eta_1<\cdots<\eta_{N-1}<\eta_N=\pi,\quad \eta_j \le \theta_j<\eta_{j+1}\quad(0\le j\le N-1),\end{equation}
+\begin{equation}\label{eq4.106}\tau_j=\Delta\eta_j=\eta_{j+1}-\eta_j,\end{equation}
+$f(\theta)$ абсолютно непрерывна на $[-\pi,\pi]$, $\lambda_N=\max
+\limits_{0 \le j \le N-1} \Delta\eta_j$ . Тогда
+$$\int \limits^\pi_{-\pi}
+f(\theta)\,d\theta=\sum\limits_{j=0}^{N-1}f(\theta_j)\Delta\eta_j+r_N(f)
+, $$где
+\begin{equation}\label{eq4.107}|r_N(f)|\le\lambda_N\int\limits_{-\pi}^{\pi}\left|f'(\theta)\right|\,d\theta. \end{equation}
+\end{lemma}
+
+\begin{proof}Имеем
+\begin{equation}\label{eq4.108}\int\limits_{-\pi}^{\pi}f(\theta)\,d\theta=\sum\limits_{j=0}^{N-1}\int\limits_{\eta_j}^{\eta_{j+1}}f(\theta)\,d\theta. \end{equation}
+
+Далее, воспользовавшись формулой Ньютона-Лейбница, запишем
+$$f(\theta)=f(\theta_j)+\int\limits_{\theta_j}^{\theta}f'(\tau)\,d\tau,$$
+поэтому
+$$\int\limits_{\eta_j}^{\eta_{j+1}}f(\theta)\,d\theta=f(\theta_j)\Delta\eta_j+
+\int\limits_{\eta_j}^{\eta_{j+1}}d\theta\int\limits_{\theta_j}^{\theta}f'(\tau)\,d\tau=$$
+$$f(\theta_j)\Delta\eta_j+\int\limits_{\eta_j}^{\theta_j}d\theta\int\limits_{\theta_j}^{\theta}f'(\tau)\,d\tau
++\int\limits_{\theta_j}^{\eta_{j+1}}d\theta\int\limits_{\theta_j}^{\theta}f'(\tau)\,d\tau=$$
+$$f(\theta_j)\Delta\eta_j-\int\limits_{\eta_j}^{\theta_j}d\theta\int\limits_{\theta}^{\theta_j}f'(\tau)\,d\tau
++\int\limits_{\theta_j}^{\eta_{j+1}}d\theta\int\limits_{\theta_j}^{\theta}f'(\tau)\,d\tau=$$
+\begin{equation}\label{eq4.109}f(\theta_j)\Delta\eta_j-\int\limits_{\eta_j}^{\theta_j}f'(\tau)d\tau
+\int\limits_{\eta_j}^{\tau}\,d\theta+
+\int\limits_{\theta_j}^{\eta_{j+1}}f'(\tau)d\tau\int\limits_{\tau}^{\eta_{j+1}}\,d\theta.\end{equation} Далее,
+
+$$
+|r_{N,j}|=\left|-\int\limits_{\eta_j}^{\theta_j}f'(\tau)d\tau
+\int\limits_{\eta_j}^{\tau}\,d\theta+
+\int\limits_{\theta_j}^{\eta_{j+1}}f'(\tau)d\tau\int\limits_{\tau}^{\eta_{j+1}}\,d\theta
+\right|\le
+$$
+\begin{equation}\label{eq4.110}
+(\theta_j-\eta_j)\int\limits_{\eta_j}^{\theta_j}|f'(\tau)|d\tau+
+(\eta_{j+1}-\theta_j)\int\limits_{\theta_j}^{\eta_{j+1}}|f'(\tau)|d\tau.
+\end{equation}
+
+Утверждение леммы \ref{lem4.6} вытекает из \eqref{eq4.108}--\eqref{eq4.110}.
+\end{proof}
+
+
+Перейдем к вопросу об асимптотических свойствах полиномов
+$\varphi_{n,N}(w)$ \linebreak($n=0,1,\ldots,N-1$), ортогональных на сетке
+$\Omega_N^T=\{e^{i\theta_j}\}_{j=0}^{N-1}$ относительно скалярного
+произведения \eqref{eq4.61}, в котором  $h(\theta)=|t_\nu(\theta)|$, где
+$t_\nu(\theta)$-- некоторый нетривиальный  тригонометрический
+полином порядка $\nu$. Через $\{\varphi_n(w)\}_{n=0}^\infty$
+обозначим бесконечную последовательность полиномов, образующих на
+единичной окружности $|w|=1$ ортонормированную с весом $h(\theta)$
+систему относительно скалярного произведения \eqref{eq1.3}.
+
+\begin{theorem}\label{th4.6}Пусть $1\le N$~--- натуральное число,
+система узлов $\{\theta_j\}_{j=0}^{N-1}$  определена в \eqref{eq4.105},
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~--- ортонормированная
+система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.61}, в котором
+$h(\theta)=|t_\nu(\theta)|$, где $t_\nu(\theta)$-- некоторый
+нетривиальный  тригонометрический полином порядка $\nu$. Тогда имеет
+место     асимптотическая формула
+\begin{equation}\label{eq4.111}
+\varphi_{n,N}(w)=\varphi_n(w)+v_{n,N}(w),\quad      w\in
+\mathbb{C},
+\end{equation}
+в которой при $(n+\nu)\lambda_N<1$ для остаточного члена
+$v_{n,N}(w)$ справедлива оценка
+\begin{equation}\label{eq4.112}\left|v_{n,N}(w)\right|\le
+\sqrt{\frac{2(n+\nu)\lambda_N}{1-(n+\nu)\lambda_N}\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2}.  \end{equation}
+\end{theorem}
+
+\begin{proof} Следуя  технике, которая применялась при
+доказательстве теоремы \ref{th4.4}, оценим интеграл
+\begin{equation}\label{eq4.113}J=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_n(w)-\varphi_{n,N}(w)\right|^2
+d\theta. \end{equation}
+
+Имеем $(w=e^{i\theta})$
+$$J=\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_n(w)|^2
+d\theta+\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_{n,N}(w)|^2
+d\theta
+-2\Re\int\limits_{-\pi}^{\pi}h(\theta)\varphi_n(w)\overline{\varphi_{n,N}(w)}\,
+d\theta=$$
+\begin{equation}\label{eq4.114}J_1+J_2-2 J_3,  \end{equation}где \begin{equation}\label{eq4.115}J_1=1,\, J_2=\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_{n,N}(w)|^2
+d\theta\,
+J_3=\int\limits_{-\pi}^{\pi}h(\theta)\varphi_n(w)\overline{\varphi_{n,N}(w)}\,
+d\theta={\kappa_n^N\over\kappa_n}, \end{equation}
+$\kappa_n$,$\kappa_n^N$~--- старшие коэффициенты полиномов
+$\varphi_n(w)$ и $\varphi_{n,N}(w)$, соответственно.
+
+В силу леммы \ref{lem4.2} и \eqref{eq4.67} находим
+$$J_3^2=(\kappa_n^N/k_n)^2=\frac{1}{k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\varphi_{n,N}(e^{i\theta_j})}
+{\kappa_n^N}\right|^2\Delta\eta_j}\ge$$\begin{equation}\label{eq4.116} \frac{1}{k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\varphi_n(e^{i\theta_j})}
+{\kappa_n}\right|^2\Delta\eta_j}=\frac{1}{\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j}. \end{equation} Имеем
+$h(\theta)\left|\varphi_n(e^{i\theta})
+\right|^2=\left|t_\nu(\theta)\left|\varphi_n(e^{i\theta})
+\right|^2\right|$, а $t_\nu(\theta)\left|\varphi_n(e^{i\theta})
+\right|^2$  представляет собой тригонометрический полином порядка
+$n+\nu$, поэтому к  функции\linebreak
+$f(\theta)=h(\theta)\left|\varphi_n(e^{i\theta}) \right|^2$ можно
+применить лемму \ref{lem4.6} и записать
+\begin{equation}\label{eq4.117}\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=\int\limits_{-\pi}^\pi
+h(\theta)\left|\varphi_n(e^{i\theta})
+\right|^2d\theta+R_N,\end{equation} где
+\begin{equation}\label{eq4.118}|R_N|\le\lambda_N\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\right)'\right|\,d\theta. \end{equation} Если мы воспользуемся леммой \ref{lem4.5}, то получим
+\begin{equation}\label{eq4.119}\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\right)'\right|\,d\theta\le
+(n+\nu)\int\limits_{-\pi}^{\pi}h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\,d\theta =n+\nu.\end{equation}
+Сопоставляя \eqref{eq4.117} -- \eqref{eq4.119}, приходим к равенству
+\begin{equation}\label{eq4.120}\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=1+R_N,\end{equation} в котором для $R_N$
+справедлива оценка $|R_N|\le (n+\nu)\lambda_N.$ Из \eqref{eq4.116} и
+\eqref{eq4.120}, находим
+$$J_3^2\ge 1-{R_N\over1+R_N}=1+q_N\ge1-|q_n|,$$
+стало бть,
+\begin{equation}\label{eq4.121}J_3\ge\sqrt{1-|q_N|}\ge1-|q_N|,\end{equation}
+ где $$|q_N|\le { (n+\nu)\lambda_N\over 1-
+(n+\nu)\lambda_N}.
+$$
+
+ Займемся интегралом $J_2$. Имеем $h(\theta)\left|\varphi_{n,N}(e^{i\theta})
+\right|^2=\left|t_\nu(\theta)\left|\varphi_{n,N}(e^{i\theta})
+\right|^2\right|$, а $t_\nu(\theta)\left|\varphi_{n,N}(e^{i\theta})
+\right|^2$  представляет собой тригонометрический полином порядка
+$n+\nu$, поэтому к  функции
+$g(\theta)=h(\theta)\left|\varphi_{n,N}(e^{i\theta}) \right|^2$
+можно применить лемму 3.6 и записать
+\begin{equation}\label{eq4.122}J_2=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta=\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_{n,N}(e^{i\theta_j})\right|^2
+\Delta\eta_j+r_{n,N},\end{equation} где
+\begin{equation}\label{eq4.123}\left|r_{n,N}\right|\le\lambda_N\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)\left|\varphi_{n,N}
+(e^{i\theta})\right|^2\right)'\right|\,
+d\theta,\quad\lambda_N=\max\limits_{0\le j\le N-1}\Delta\eta_j.\end{equation}
+
+ Чтобы оценить интеграл в правой части, мы применим
+лемму \ref{lem4.5}. Это даст
+\begin{equation}\label{eq4.124}\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2\right)'\right|\,
+d\theta\le(n+\nu)\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta.\end{equation}
+
+Сопоставляя \eqref{eq4.122}-\eqref{eq4.124}, имеем
+\begin{equation}\label{eq4.125}J_2=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta=1+r_{n,N},\end{equation}причем \begin{equation}\label{eq4.126}\left|r_{n,N}\right|\le
+(n+\nu)\lambda_N\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta.\end{equation}
+
+Из \eqref{eq4.125} и \eqref{eq4.126},  в свою очередь, находим \begin{equation}\label{eq4.127}J_2=
+\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta\le
+\frac{1}{1-(n+\nu)\lambda_N}=1+\frac{(n+\nu)\lambda_N}{1-(n+\nu)\lambda_N}.\end{equation}
+
+Из \eqref{eq4.114}, \eqref{eq4.121} и \eqref{eq4.127}  находим
+$$J=
+\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_n(w)-\varphi_{n,N}(w)\right|^2
+d\theta\le\frac{2(n+\nu)\lambda_N}{1-(n+\nu)\lambda_N}=\gamma.$$
+
+Теперь обратимся к лемме \ref{lem4.1}, согласно которой получаем
+$(w=e^{i\theta})$
+
+$$ \left| \varphi_n(w)-\varphi_{n,N}(w)\right|^2
+\le\frac{2(n+\nu)\lambda_N}{1-(n+\nu)\lambda_N}\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2.$$
+
+Полагая $v_{n,N}(w)=\varphi_n(w)-\varphi_{n,N}(w)$, находим
+$$\varphi_{n,N}(w)=\varphi_n(w)+v_{n,N}(w),$$ $$\left|v_{n,N}(w)\right|\le
+\sqrt{\frac{2(n+\nu)\lambda_N}{1-(n+\nu)\lambda_N}\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2}.$$ Теорема \ref{th4.6} доказана.
+\end{proof}
+
+\begin{theorem}\label{th4.7}Пусть  $1\le N$~--- натуральное число,
+система узлов $\{\theta_j\}_{j=0}^{N-1}$  определена в \eqref{eq4.37},
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~--- ортонормированная
+система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.61},  в котором
+$h(\theta)=|t_\nu(\theta)|$, где $t_\nu(\theta)$-- такой
+нетривиальный тригонометрический полином порядка $\nu$, что каждая
+точка, в которой он меняет свой знак содержится среди  узлов
+$\{\eta_j\}_{j=0}^{N-1}$. Тогда имеет место асимптотическая формула
+$$\varphi_{n,N}(w)=\varphi_n(w)+v_{n,N}(w),\quad w\in \mathbb{C}$$в
+которой при $(n+\nu)\lambda_N<1$ для остаточного члена $v_{n,N}(w)$
+справедлива оценка
+$$\left|v_{n,N}(w)\right|\le \frac{\sqrt{2}(n+\nu)\lambda_N}{\sqrt{8-((n+\nu)\lambda_N)^2}}\sqrt{\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2}.  $$
+\end{theorem}
+
+{\it Доказательство} этой теоремы отличается от доказательства теоремы
+\ref{th4.4} только тем, что вместо неравенства Бернштейна-Зигмунда
+используется лемма \ref{lem4.5}.
+
+
+ Мы теперь изменим скалярное произведение \eqref{eq4.61},
+ полагая
+\begin{equation}\label{eq4.128}
+2\sum\limits_{j=0}^{N-1}\tilde\varphi_{n,N}(e^{i\theta_j})
+\overline{\tilde\varphi_{m,N}(e^{i\theta_j})}h(\theta_j)\sin\frac{\Delta\eta_j}2=\delta_{nm},
+\end{equation}
+где узлы $\theta_j$ $(0\le j\le N-1)$ определены в \eqref{eq4.37}. Тем самым
+мы определили конечную последовательность
+$\{\tilde\varphi_{n,N}(z)\}_{n=0}^{N-1}$ полиномов, образующих
+ортонормированную систему на единичной окружности относительно
+скалярного произведения \eqref{eq4.128}.
+
+\begin{theorem}\label{th4.8}Пусть  $1\le N$~--- натуральное число,
+система узлов $\{\theta_j\}_{j=0}^{N-1}$  определена в \eqref{eq4.37},
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\tilde\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~---
+ортонормированная система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.128},  в котором
+$h(\theta)=|t_\nu(\theta)|$, где $t_\nu(\theta)$-- такой
+нетривиальный тригонометрический полином порядка $\nu$, что каждая
+точка, в которой он меняет свой знак содержится среди  узлов
+$\{\eta_j\}_{j=0}^{N-1}$. Далее, пусть
+$\left\{\varphi_n(w)\right\}_{n=0}^\infty $~---ортонормированная
+система полиномов относительно скалярного произведения \eqref{eq2.3}.
+ Тогда имеет место асимптотическая формула
+$$\tilde\varphi_{n,N}(w)=\varphi_n(w)+\tilde v_{n,N}(w),\quad w\in \mathbb{C}$$в
+которой при $(n+\nu)\lambda_N<1$ для остаточного члена $\tilde
+v_{n,N}(w)$ справедлива оценка
+$$\left|\tilde v_{n,N}(w)\right|\le \lambda_N
+\sqrt{\left(\frac{1}{24-\lambda_N^2}+\frac{2((n+\nu)\lambda_N)^2}
+{8-((n+\nu)\lambda_N)^2}\right)\sum\limits_{k=0}^{n}
+\left|\varphi_k(w)\right|^2}.  $$
+\end{theorem}
+
+\begin{proof} Оценим  интеграл
+$$J=\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_n(w)-\tilde\varphi_{n,N}(w)\right|^2
+d\theta=
+$$
+$$\int\limits_{-\pi}^{\pi}h(\theta)|\varphi_n(w)|^2
+d\theta+\int\limits_{-\pi}^{\pi}h(\theta)|\tilde\varphi_{n,N}(w)|^2
+d\theta
+-2\Re\int\limits_{-\pi}^{\pi}h(\theta)\varphi_n(w)\overline{\tilde\varphi_{n,N}(w)}\,
+d\theta=$$
+\begin{equation}\label{eq4.129}J_1+J_2-2 J_3,  \end{equation}где \begin{equation}\label{eq4.130}J_1=1,\,
+J_2=\int\limits_{-\pi}^{\pi}h(\theta)|\tilde\varphi_{n,N}(w)|^2
+d\theta,\,
+J_3=\int\limits_{-\pi}^{\pi}h(\theta)\varphi_n(w)\overline{\tilde\varphi_{n,N}(w)}\,
+d\theta={\tilde\kappa_n^N\over\kappa_n}, \end{equation}
+$\kappa_n$,$\tilde\kappa_n^N$~--- старшие коэффициенты полиномов
+$\varphi_n(w)$ и $\tilde\varphi_{n,N}(w)$, соответственно. В силу
+леммы \ref{lem4.2} и \eqref{eq4.130} находим
+$$
+J_3^2=(\tilde\kappa_n^N/k_n)^2=\frac{1}{2k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\tilde\varphi_{n,N}(e^{i\theta_j})}
+{\tilde\kappa_n^N}\right|^2\sin\frac{\Delta\eta_j}2}
+$$
+$$
+ \ge\frac{1}{k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\varphi_n(e^{i\theta_j})}
+{\kappa_n}\right|^22\sin\frac{\Delta\eta_j}2}\ge\frac{1}{k_n^2
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\frac{\varphi_n(e^{i\theta_j})}
+{\kappa_n}\right|^2\Delta\eta_j}
+$$
+$$
+=\frac{1}{\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j}.
+$$
+Имеем $h(\theta)\left|\varphi_n(e^{i\theta})
+\right|^2=\left|t_\nu(\theta)\left|\varphi_n(e^{i\theta})
+\right|^2\right|$, а $t_\nu(\theta)\left|\varphi_n(e^{i\theta})
+\right|^2$  представляет собой тригонометрический полином порядка
+$n+\nu$, сохраняющий свой знак на каждом из интервалов
+$(\eta_j,\eta_{j+1})$, поэтому к функции
+$f(\theta)=h(\theta)\left|\varphi_n(e^{i\theta}) \right|^2$ можно
+применить лемму \ref{lem4.4}   и записать
+$$\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=\int\limits_{-\pi}^\pi
+h(\theta)\left|\varphi_n(e^{i\theta}) \right|^2d\theta+R_N,$$ где
+$$|R_N|\le{\lambda_N^2\over8}\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\right)^{''}\right|\,d\theta.
+$$ Если мы воспользуемся леммой \ref{lem4.5}, то получим
+$$\int\limits_{-\pi}^{\pi}\left|\left(h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\right)^{''}\right|\,d\theta\le
+(n+\nu)^2\int\limits_{-\pi}^{\pi}h(\theta)
+\left|\varphi_n(e^{i\theta})\right|^2\,d\theta =(n+\nu)^2.$$
+Сопоставляя эти соотношения, приходим к равенству
+$$\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\varphi_n(e^{i\theta_j})
+\right|^2\Delta\eta_j=1+R_N,$$ в котором для $R_N$ справедлива
+оценка $$|R_N|\le \frac18((n+\nu)\lambda_N)^2.$$ Тем самым, мы
+находим
+$$J_3^2\ge 1-{R_N\over1+R_N}=1+q_N\ge1-|q_n|,$$
+стало бть,
+\begin{equation}\label{eq4.131}J_3\ge\sqrt{1-|q_N|}\ge1-|q_N|,\end{equation}
+ где $$|q_N|\le { ((n+\nu)\lambda_N)^2\over 8-
+((n+\nu)\lambda_N)^2}.
+$$
+Рассмотрим $J_2$. Применяя рассуждения, совершенно аналогичные тем,
+которые привели нас к оценке \eqref{eq4.79}, из \eqref{eq4.130} можно показать, что
+$$
+J_2=
+\int\limits_{-\pi}^{\pi}h(\theta)\left|\tilde\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta\le$$
+\begin{equation}\label{eq4.132}
+\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\tilde\varphi_{n,N}(e^{i\theta_j})\right|^2
+\Delta\eta_j+\frac{((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}.
+\end{equation}
+Далее положим $ \frac{x}{\sin x}=1+c(x) $ и
+ заметим, что при $|x|\le \pi/2$ справедливо неравенство
+$|c(x)|\le \frac{x^2}{6-x^2}$. Поэтому, для
+$\Delta\eta_j\le\lambda_N<\pi$ мы можем записать
+$$
+\Delta\eta_j\le\left(1+\frac{\lambda_N^2}{24-\lambda_N^2}\right)2\sin\frac{\Delta\eta_j}2.
+$$
+С учетом этого неравенства из \eqref{eq4.132} мы выводим
+$$
+J_2 \le
+\left(1+\frac{\lambda_N^2}{24-\lambda_N^2}\right)\sum\limits_{j=0}^{N-1}h(\theta_j)\left|\tilde\varphi_{n,N}(e^{i\theta_j})\right|^2
+2\sin\frac{\Delta\eta_j}2+\frac{((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}=
+$$
+\begin{equation}\label{eq4.133}
+1+\frac{\lambda_N^2}{24-\lambda_N^2}+\frac{((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}
+\end{equation}
+
+Сопоставляя \eqref{eq4.129}--\eqref{eq4.133}, получаем
+$$
+J\le
+\frac{\lambda_N^2}{24-\lambda_N^2}+\frac{2((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}.
+$$
+Нам остается воспользоваться леммой \ref{lem4.1}. Теорема \ref{th4.8} доказана.
+\end{proof}
+
+\section{Об асимптотике полиномов $p_{n,N}(x)$ в
+некоторых специальных  выборах узлов $x_j$ и весов $\rho_j$}\label{sec5}
+
+Разобьем отрезок $[-1,1]$ точками $t_j$ следующим образом
+$-1=t_0<t_1<\ldots<t_{N-1}<t_N=1$  и положим
+\begin{equation}\label{eq5.1}t_j=\cos\eta_{2N-j}\quad(j=0,1,\ldots,N),\end{equation}
+\begin{equation}\label{eq5.2}\eta_j=-\eta_{2N-j}\quad(j=0,1,\ldots,N),\end{equation}
+\begin{equation}\label{eq5.3}\theta_j={\eta_j+\eta_{j+1}\over2}\quad,\tau_j=\Delta\eta_j=\eta_{j+1}-\eta_j\quad(j=0,1,\ldots,2N-1),\end{equation}
+\begin{equation}\label{eq5.4}x_j=\cos\theta_{2N-j-1},\quad \rho_j=\frac{1}{\pi}\tau_{2N-1-j} \quad(j=0,1,\ldots,N-1),\end{equation}
+
+
+Пусть $\{P_{n,N}(x)\}_{n=0}^{N-1}$ -- конечная последовательность
+полиномов, образующих ортонормированную систему на сетке
+$\Omega_N^A=\{x_j\}_{j=0}^{N-1}$ с весом $\rho=\rho(x_j)=\rho_j$, а
+$\{\varphi_{k,2N}(w)\}_{k=0}^{2N-1}$ -- соответствующая
+последовательность полиномов, образующих ортонормированную систему
+на сетке $\Omega_{2N}^T=\{e^{i\theta_j}\}_{j=0}^{2N-1}$  с весом
+$\tau=\tau(\theta_j)=\tau_j$, т.е.
+\begin{equation}\label{eq5.5}
+\frac1{2\pi}\sum\limits_{j=0}^{2N-1}\varphi_{n,2N}(e^{i\theta_j})
+\overline{\varphi_{m,2N}(e^{i\theta_j})}\tau_j=\delta_{nm}.
+\end{equation}
+{\it Рассмотрим пример.} Пусть $N\ge1$,
+$$\eta_j={2\pi(j-N)\over2N}\quad (j=0,1,\ldots, 2N),$$
+$$t_j=\cos\eta_{2N-j}\quad(j=0,1,\ldots,N).$$
+ Тогда
+$$\theta_j={\eta_j+\eta_{j+1}\over2}={(2(j-N)+1)\pi\over2N}\quad
+(j=0,1,\ldots, 2N-1),$$
+\begin{equation}\label{eq5.6}x_j=\cos\theta_{2N-j-1}=\cos{(2(N-j)-1)\pi\over2N}
+\quad(j=0,1,\ldots, N-1).\end{equation} Таким образом, в этом примере
+$x_j$ $(j=0,1,\ldots, N-1)$ -- узлы Чебышева (нули полинома Чебышева
+$T_N(x)=\cos(N\arccos x)$). Кроме того заметим, что
+$\tau_j=\eta_j=\frac\pi{N}$, $\rho_j=\frac1\pi \eta_j=\frac1N$.
+Следовательно, ортонормированную систему на сетке
+$\Omega_N^A=\{x_j\}_{j=0}^{N-1}$ с весом $\rho=\rho(x_j)=\rho_j$
+образуют полиномы Чебышева $1, \sqrt{2}T_1(x),\ldots,
+\sqrt{2}T_{N-1}(x)$. Другими словами, $P_{0,N}(x)=1$,
+$P_{n,N}(x)=\sqrt{2}T_n(x)$ $(n=1,\ldots,N-1)$. Заметим также, что в
+рассматриваемом случае ортонормированную систему на соответствующей
+сетке $\Omega_{2N}^T=\{e^{i\theta_j}\}_{j=0}^{2N-1}$ относительно
+скалярного произведения \eqref{eq5.5} образуют степени
+$\varphi_{n,N}(w)=w^n$ $(n=0,1,\ldots,2N-1)$.
+
+Из соотношений \eqref{eq5.1} -- \eqref{eq5.5} нетрудно заметить, что узлы
+$\{\theta_j\}$ и  веса  $\{\tau_j\}$ удовлетворяют условиям теоремы
+\ref{th4.2}, поэтому имеет место асимптотическая формула
+\begin{equation}\label{eq5.6a}\varphi_{2n,2N}(w)=w^n+v_{2n,2N}(w), \end{equation} в которой для остаточного члена при  $2n\lambda_{2N}<1$
+справедлива оценка
+\begin{equation}\label{eq5.7}\left|v_{2n,2N}(w)\right|\le
+\sqrt{\frac{(2n+1)(2n)^2\lambda_{2N}^2}{1-(2n\lambda_{2N})^2}},\quad
+|w|=1, \end{equation} где $\lambda_{2N}=\max \limits_{0 \le j \le
+2N-1} \Delta\eta_j$. Сопоставляя \eqref{eq5.6a} с \eqref{eq3.21}, имеем
+$$
+P_{n,N}(z)=d_{n,N}^{-\frac12}\left[w^{-n}\varphi_{2n,2N}(w)+
+w^n\varphi_{2n,2N}(w^{-1})\right]=
+$$
+$$d_{n,N}^{-\frac12}\left[w^{-n}(w^{2n}+v_{2n,2N}(w))+w^n\left(w^{-2n}
++v_{2n,2N}(w^{-1})\right)\right]=$$
+\begin{equation}\label{eq5.8}d_{n,N}^{-\frac12}\left[w^{n}+w^{-n}+w^{-n}v_{2n,2N}(w)+
+w^nv_{2n,2N}(w^{-1})\right],\end{equation} где
+\begin{equation}\label{eq5.9}d_{n,N}=2\left(1+\frac{\varphi_{2n,2N}(0)}{\kappa_{2n}}\right),\end{equation}
+$\kappa_{2n}=\kappa_{2n}^{2n,2N}$ -- старший коэффициент полинома
+$\varphi_{2n,2N}(w)$. Полагая в \eqref{eq5.8} $z=x=\cos\theta$,
+$w=e^{i\theta}$,  получаем
+\begin{equation}\label{eq5.10}P_{n,N}(x)=d_{n,N}^{-\frac12}\left[2T_n(x)+w^{-n}v_{2n,2N}(w)+
+w^nv_{2n,2N}(w^{-1})\right],\end{equation} где $T_n(x)=\cos(n\arccos
+x)$ -- полином Чебышева. Рассмотрим отдельно асимптотическое
+поведение  величины $d_{n,N}$, фигурирующей в \eqref{eq5.10} и определенной
+равенством \eqref{eq5.9}. С этой целью обратимся сначала к теореме \ref{th4.3},
+согласно которой \begin{equation}\label{eq5.11}|\varphi_{2n,2N}(0)|=|v_{2n,2N}(0)|\le
+\frac{2n\lambda_{2N}}{\sqrt{1-(2n\lambda_{2N})^2}}.\end{equation} С
+другой стороны, в силу леммы \ref{lem4.2},
+\begin{equation}\label{eq5.12}\frac{1}{\kappa_{2n}}\le\sqrt{\frac{1}{2\pi}\sum_{j=0}^{2N-1}|e^{i\theta_j}|\tau_j}=
+\sqrt{\frac{1}{2\pi}\sum_{j=0}^{2N-1}|e^{i\theta_j}|\Delta\eta_j}=1.\end{equation}
+Сопоставляя \eqref{eq5.11} и \eqref{eq5.12} c \eqref{eq5.9}, мы замечаем, что
+$$d_{n}=d_{n,N}=2(1+y_{2n,2N}),$$
+где  \begin{equation}\label{eq5.13}|y_{2n,2N}|=\frac{|\varphi_{2n,2N}(0)|}{\kappa_{2n}}\le
+\frac{2n\lambda_{2N}}{\sqrt{1-(2n\lambda_{2N})^2}},\end{equation}
+следовательно, если при $N\to\infty$ будет, например,
+$n\lambda_N=o(1)$, то
+\begin{equation}\label{eq5.14}d_{n,N}^{-1/2}=2^{-1/2}(1+y_{2n,2N})^{-1/2}=2^{-1/2}(1+\delta_{n,N}),\quad \delta_{n,N}=O(n\lambda_N).\end{equation}
+Из \eqref{eq5.10} и \eqref{eq5.14} имеем
+\begin{equation}\label{eq5.15}P_{n,N}(x)=\sqrt{2}T_n(x)+ V_{n,N}(x),\end{equation}
+где
+
+$$V_{n,N}(x)=\frac1{\sqrt{2}}\Bigl (w^{-n}v_{2n,2N}(w)+
+w^nv_{2n,2N}(w^{-1})+$$\begin{equation}\label{eq5.16}\delta_{n,N}\left[2T_n(x)+w^{-n}v_{2n,2N}(w)
++w^nv_{2n,2N}(w^{-1})\right]\Bigl )\end{equation}
+
+Величину $V_{n,N}(x)$ при $x=\cos\theta$ ($w=e^{i\theta}$) мы можем
+оценить с помощью неравенства \eqref{eq5.7} и оценки \eqref{eq5.14}, что дает
+{\small
+\begin{equation}\label{eq5.17}|V_{n,N}(x)|\le \sqrt{2}\left(\sqrt{\frac{(2n+1)(2n)^2\lambda_{2N}^2}{1-(2n\lambda_{2N})^2}}+
+\delta_{n,N}\left(1+\sqrt{\frac{(2n+1)(2n)^2\lambda_{2N}^2}{1-(2n\lambda_{2N})^2}}\right)\right).\end{equation}}
+В качестве непосредственного следствия неравенства \eqref{eq5.17} мы можем
+теперь сформулировать следующий результат.
+
+
+
+
+ \begin{theorem}\label{th5.1}
+Пусть $1\le N$ -- натуральное число,
+$-1=t_0<t_1<\ldots<t_{N-1}<t_N=1$. Точки $x_j$ и веса $\rho_j$
+$(j=0,1,\ldots,N-1)$ определены равенствами \eqref{eq5.1} -- \eqref{eq5.4}. Далее,
+пусть $\{P_{n,N}(x)\}_{n=0}^{N-1}$ -- конечная последовательность
+полиномов, образующих ортонормированную систему на сетке
+$\Omega_N^A=\{x_j\}_{j=0}^{N-1}$ с весом $\rho=\rho(x_j)=\rho_j$
+относительно скалярного произведения \eqref{eq3.1}, $0<a_k\to0$ при
+$k\to\infty$. Тогда имеет место асимптотическая формула \eqref{eq5.15}, в
+которой для остаточного члена $V_{n,N}(x)$ равномерно относительно
+$x\in[-1,1]$, $n,N$ таких, что $0\le n^{\frac32}\lambda_N\le a_N $,
+$N=1,2,\ldots$ имеет место оценка $V_{n,N}(x)=O(n^{3/2}\lambda_N$).
+\end{theorem}
+
+ Для дальнейшего нам понадобится следующая
+
+\begin{lemma}\label{lem5.1}Пусть  $1\le N$~--- натуральное число,
+система узлов $\{\theta_j\}_{j=0}^{N-1}$  определена в \eqref{eq4.37},
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~--- ортонормированная
+система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.61},  в котором
+$h(\theta)=|t_\nu(\theta)|$, где $t_\nu(\theta)$-- такой
+нетривиальный тригонометрический полином порядка $\nu$, что каждая
+точка, в которой он меняет свой знак содержится, среди  узлов
+$\{\eta_j\}_{j=0}^{N-1}$. Далее, пусть
+$\left\{\varphi_n(w)\right\}_{n=0}^\infty $~--- бесконечная система
+полиномов, образующих ортонормированную систему на единичной
+окружности относительно скалярного произведения \eqref{eq2.3}. Через
+$\kappa_{n,N}$ и $\kappa_n$ обозначим, как и прежде, старшие
+коэффициенты полиномов $\varphi_{n,N}(w)$ и $\varphi_n(w)$,
+соответственно. Тогда имеет место асимптотическая формула
+$$
+\frac1{\kappa_{n,N}}=\frac1{\kappa_n}+\varepsilon_{n,N},
+$$
+в которой для остаточного члена $\varepsilon_{n,N}$ имеет место
+оценка
+$|\varepsilon_{n,N}|\le\frac1{8\kappa_n}((n+\nu)\lambda_N)^2$.
+\end{lemma}
+
+
+\begin{proof} Имеем (лемма \ref{lem4.2})
+$$
+\frac1{\kappa_{n,N}}=\left(\sum_{j=0}^{N-1}\left(\frac{\varphi_{n,N}(\theta_j)}{\kappa_{n,N}}\right)^2h(\theta_j)\Delta\eta_j\right)^{1/2}\le
+$$
+$$
+\left(\sum_{j=0}^{N-1}\left(\frac{\varphi_n(\theta_j)}{\kappa_n}\right)^2h(\theta_j)\Delta\eta_j\right)^{1/2}=
+$$
+$$
+\frac1{\kappa_n}\left(\sum_{j=0}^{N-1}\left(\varphi_n(\theta_j)\right)^2h(\theta_j)\Delta\eta_j\right)^{1/2}=
+$$
+$$
+\frac1{\kappa_n}\left(\int\limits_{-\pi}^\pi\left(\varphi_n(\theta)\right)^2h(\theta)d\theta+R_{n,N}\right)^{1/2}=
+$$
+\begin{equation}\label{eq5.18}
+\frac1{\kappa_n}(1+R_{n,N})^{\frac12}<\frac1{\kappa_n}(1+|R_{n,N}|)^{\frac12}<\frac1{\kappa_n}(1+|R_{n,N}|),
+\end{equation}
+где для остаточного члена $R_{n,N}$ справедлива оценка
+\begin{equation}\label{eq5.19}
+|R_{n,N}|\le \frac18((n+\nu)\lambda_N)^2.
+\end{equation}
+Далее, аналогично, имеем
+\begin{equation}\label{eq5.20}
+\frac1{\kappa_n}=\frac1{\kappa_n}\left(\int\limits_{-\pi}^\pi\left(\varphi_n(\theta)\right)^2h(\theta)d\theta\right)^{1/2}\le
+\frac1{\kappa_{n,N}}\left(\int\limits_{-\pi}^\pi\left(\varphi_{n,N}(\theta)\right)^2h(\theta)d\theta\right)^{1/2}.
+\end{equation}
+С другой стороны, совершенно аналогично тому, как была получена
+оценка \eqref{eq4.79} (используя вместо неравенства Бернштейна-Зигмунда
+лемму 3.5), мы находим
+\begin{equation}\label{eq5.21}
+\int\limits_{-\pi}^{\pi}h(\theta)\left|\varphi_{n,N}(e^{i\theta})\right|^2
+d\theta\le 1+\frac{((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}.
+\end{equation}
+Из \eqref{eq5.20} и \eqref{eq5.21} имеем
+\begin{equation}\label{eq5.22}
+\frac1{\kappa_n}\le
+\frac1{\kappa_{n,N}}\left(1+\frac{((n+\nu)\lambda_N)^2}{8-((n+\nu)\lambda_N)^2}\right).
+\end{equation}
+Сопоставляя \eqref{eq5.18}, \eqref{eq5.19} с \eqref{eq5.22}, мы можем записать
+$$
+\left(1-\frac18((n+\nu)\lambda_N)^2\right)\frac1{\kappa_n}\le
+\frac1{\kappa_{n,N}}\le
+\left(1+\frac18((n+\nu)\lambda_N)^2\right)\frac1{\kappa_n}.
+$$
+Лемма \ref{lem5.1} доказана.
+\end{proof}
+
+\begin{lemma}\label{lem5.2}Пусть  $1\le N$~--- натуральное число,
+система узлов $\{\theta_j\}_{j=0}^{N-1}$  определена в \eqref{eq4.37},
+$\lambda_N=\max \limits_{0 \le j \le N-1} \Delta\eta_j$,
+$\left\{\varphi_{n,N}(w)\right\}_{n=0}^{N-1} $~--- ортонормированная
+система полиномов на сетке
+$\Omega_N^T=\left\{e^{i\theta_j}\right\}^{N-1}_{j=0}$ относительно
+скалярного произведения \eqref{eq4.61},  в котором
+$h(\theta)=|t_\nu(\theta)|$, где $t_\nu(\theta)$-- такой
+нетривиальный тригонометрический полином порядка $\nu$, что каждая
+точка, в которой он меняет свой знак содержится, среди  узлов
+$\{\eta_j\}_{j=0}^{N-1}$. Далее, пусть
+$\left\{\varphi_n(w)\right\}_{n=0}^\infty $~--- бесконечная система
+полиномов, образующих ортонормированную систему на единичной
+окружности относительно скалярного произведения \eqref{eq2.3}. Тогда имеет
+место асимптотическая формула
+$$
+\frac{|\varphi_{n,N}(0)|}{\kappa_{n,N}}=\frac{|\varphi_n(0)|}{\kappa_n}+\hat\varepsilon_{n,N},
+$$
+в которой для остаточного члена $\hat\varepsilon_{n,N}$ имеет место
+оценка
+$$
+|\hat\varepsilon_{n,N}|\le
+\frac{|\varphi_n(0)|}{8\kappa_n}((n+\nu)\lambda_N)^2+
+\frac{\sqrt{2}(8+((n+\nu)\lambda_N)^2)(n+\nu)\lambda_N}{8\sqrt{8-((n+\nu)\lambda_N)^2}}.
+$$
+\end{lemma}
+
+\begin{proof} Воспользовавшись  обозначениями из леммы \ref{lem5.1}, мы можем записать
+$$
+\frac{|\varphi_{n,N}(0)|}{\kappa_{n,N}}=\left[|\varphi_n(0)|+(|\varphi_{n,N}(0)|-|\varphi_n(0)|)\right]\left(\frac1{\kappa_n}+\varepsilon_{n,N}\right)=
+$$
+\begin{equation}\label{eq5.23}
+\frac{|\varphi_n(0)|}{\kappa_n}+\hat\varepsilon_{n,N},
+\end{equation}
+где
+$$
+ \hat\varepsilon_{n,N}=\varepsilon_{n,N}|\varphi_n(0)|+
+(|\varphi_{n,N}(0)|-|\varphi_n(0)|)\left(\frac1{\kappa_n}+\varepsilon_{n,N}\right).
+$$
+Отсюда  имеем
+$$
+|\hat\varepsilon_{n,N}|\le |\varepsilon_{n,N}||\varphi_n(0)|+
+|\varphi_{n,N}(0)-\varphi_n(0)|\left(\frac1{\kappa_n}+|\varepsilon_{n,N}|\right)=
+$$
+$$
+ |\varepsilon_{n,N}||\varphi_n(0)|+
+|v_{n,N}(0)|\left(\frac1{\kappa_n}+|\varepsilon_{n,N}|\right).
+$$
+ Оценивая $|v_{n,N}(0)|$ с помощью  теоремы  \ref{th4.7}, а $|\varepsilon_{n,N}|$ посредством леммы \ref{lem5.1}, находим
+$$
+|\hat\varepsilon_{n,N}|\le
+\frac1{8\kappa_n}((n+\nu)\lambda_N)^2|\varphi_n(0)|+
+$$
+$$
+\frac{\sqrt{2}(n+\nu)\lambda_N}{\sqrt{8-((n+\nu)\lambda_N)^2}}\sqrt{\sum\limits_{k=0}^{n}
+\left|\varphi_k(0)\right|^2}\left(\frac1{\kappa_n}+\frac1{8\kappa_n}((n+\nu)\lambda_N)^2\right)=
+$$
+$$
+\frac1{8\kappa_n}((n+\nu)\lambda_N)^2|\varphi_n(0)|+
+\frac{\sqrt{2}\left(8+((n+\nu)\lambda_N)^2\right)(n+\nu)
+\lambda_N}{8\kappa_n\sqrt{8-((n+\nu)\lambda_N)^2}}
+\sqrt{\sum\limits_{k=0}^{n} \left|\varphi_k(0)\right|^2}.
+$$
+Если мы теперь воспользуемся свойством полиномов $\varphi_n(z)$,
+аналогичным \eqref{eq2.22} \cite{6} , то можем записать
+$$
+|\hat\varepsilon_{n,N}|\le
+\frac1{8\kappa_n}((n+\nu)\lambda_N)^2|\varphi_n(0)|+
+\frac{\sqrt{2}(8+((n+\nu)\lambda_N)^2)(n+\nu)\lambda_N}
+{8\sqrt{8-((n+\nu)\lambda_N)^2}}.
+$$
+Лемма \ref{lem5.2} доказана.
+\end{proof}
+
+
+Пусть сиcтемы узлов $\{t_j\}_{j=0}^{N-1}$ и $\{\eta_j\}_{j=0}^{2N}$
+определены с помощью равенств \eqref{eq5.1} и \eqref{eq5.2}, т.е.
+$-1=t_0<t_1<\ldots<t_{N-1}<t_N=1$,
+$t_j=\cos\eta_{2N-j}\quad(j=0,1,\ldots,N)$,
+$\eta_j=-\eta_{2N-j}\quad(j=0,1,\ldots,N)$. Далее положим
+$\theta_j={\eta_j+\eta_{j+1}\over2}$ и определим систему точек
+$\{x_j\}_{j=0}^{N-1}\subset(-1,1)$ следующим образом
+\begin{equation}\label{eq5.24}x_j=\cos\theta_{2N-j-1},\quad(j=0,1,\ldots,N-1).\end{equation}
+Пусть $p_\nu(x)$ -- представляет собой неотрицательный на $(-1,1)$
+алгебраический полином степени $\nu$. Рассмотрим  полиномы
+$P_{n,N}(x)$ $(0\le n\le N-1)$, образующие ортонормированную систему
+на сетке $\{x_j\}_{j=0}^{N-1}\subset(-1,1)$ относительно скалярного
+произведения
+\begin{equation}\label{eq5.25}
+\sum\limits_{j=0}^{N-1}P_{n,N}(x_j)P_{m,N}(x_j)p_\nu(x_j)\Delta
+t_j=\delta_{nm},
+\end{equation}
+где $\Delta t_j=t_{j+1}-t_j$. Таким образом здесь
+$\rho_j=\rho(x_j)=p_\nu(x_j)\Delta t_j$. Отсюда для
+$\tau_{2N-1-j}={\pi}\rho_j \quad(j=0,1,\ldots,N-1)$ имеем
+($\tau_j=\tau_{2N-1-j}, \quad 0 \le j \le N-1$)
+$$
+\tau_{2N-j-1}=\pi p_\nu(x_j)\Delta t_j=\pi
+p_\nu(\cos\theta_{2N-j-1})[\cos\eta_{2N-j-1}-\cos\eta_{2N-j}]=
+$$
+$$
+2\pi
+p_\nu(\cos\theta_{2N-j-1})\sin{\eta_{2N-j-1}+\eta_{{2N-j}}\over2}
+\sin{\eta_{2N-j}-\eta_{2N-j-1}\over2}=
+$$
+$$
+2\pi
+p_\nu(\cos\theta_{2N-j-1})\sin\theta_{2N-j-1}\sin\frac{\Delta\eta_{2N-j-1}}{2}.
+$$
+Поэтому
+\begin{equation}\label{eq5.26}
+\tau_j=2\pi p_\nu(\cos\theta_j)
+|\sin\theta_j|\sin\frac{\Delta\eta_j}{2} \quad(0\le j\le
+2N-1).
+\end{equation}
+Для ассоциированных с $P_{n,N}(x)$ $(0\le n\le N-1)$ полиномов
+$\{\tilde\varphi_{k,2N}(w)\}_{k=0}^{2N-1}$, образующих
+ортонормированную систему на сетке
+$\Omega_{2N}^T=\{e^{i\theta_j}\}_{j=0}^{2N-1}$  с весом
+$\tau=\tau(\theta_j)=\tau_j$ соотношение ортогональности \eqref{eq5.5}
+приобретает следующий вид
+\begin{equation}\label{eq5.27}
+2\sum\limits_{j=0}^{2N-1}\tilde\varphi_{n,2N}(e^{i\theta_j})
+\overline{\tilde\varphi_{m,2N}(e^{i\theta_j})}h(\theta_j)
+\sin\frac{\Delta\eta_j}{2}=\delta_{nm},
+\end{equation}
+где $h(\theta)=\frac12p_\nu(\cos\theta)
+|\sin\theta|=\frac12|p_\nu(\cos\theta)\sin\theta|$,
+ а  тригонометрический полином $\frac12p_\nu(\cos\theta)\sin\theta$ меняет
+знак только в узле $\eta_N=0$. Следовательно мы находимся в условиях
+применимости теоремы 3.8. Но сначала обратимся к формуле \eqref{eq3.21} и
+запишем
+\begin{equation}\label{eq5.28}
+P_{n,N}(z)=\tilde
+d_{n,N}^{-\frac12}\left[w^{-n}\tilde\varphi_{2n,2N}(w)+
+w^n\tilde\varphi_{2n,2N}\left(\frac1w\right)\right],\quad
+z=\frac12\left(w+\frac1w\right),
+\end{equation}
+где  $\tilde
+d_{n,N}=2\left(1+\frac{\tilde\varphi_{2n,2N}(0)}{\tilde\kappa_{2n}^{2N}}\right)$,
+$\tilde\kappa_{2n}^{2N}$ -- старший коэффициент полинома
+$\tilde\varphi_{2n,2N}(z)$. В силу теоремы 3.8 мы имеем
+$$
+w^{-n}\tilde\varphi_{2n,2N}(w)=w^{-n}\varphi_{2n}(w)+w^{-n}\tilde
+v_{2n,2N}(w),\quad w\in \mathbb{C},
+$$
+$$
+w^n\tilde\varphi_{2n,2N}(\frac1w)=w^n\varphi_{2n}(\frac1w)+w^n\tilde
+v_{2n,2N}(\frac1w),\quad w\in \mathbb{C},
+$$
+стало быть,
+\begin{equation}\label{eq5.29}
+w^{-n}\tilde\varphi_{2n,2N}(w)+w^n\tilde\varphi_{2n,2N}\left(\frac1w\right)
+=w^{-n}\varphi_{2n}(w)+w^n\varphi_{2n}(\frac1w)+X_{n,N}(w),
+\end{equation}
+где
+\begin{equation}\label{eq5.30}
+X_{n,N}(w)=w^{-n}\tilde v_{2n,2N}(w)+w^n\tilde
+v_{2n,2N}(\frac1w).
+\end{equation}
+Комбинируя \eqref{eq5.28} и \eqref{eq5.29}, имеем
+$$
+P_{n,N}(z)=\frac1{\sqrt{2}}\left(1+\frac{\tilde\varphi_{2n,2N}(0)}
+{\tilde\kappa_{2n}^{2N}}\right)^{-\frac12}
+\left[w^{-n}\varphi_{2n}(w)+w^n\varphi_{2n}(\frac1w)\right]
+$$
+\begin{equation}\label{eq5.31}
++\frac1{\sqrt{2}}\left(1+\frac{\tilde\varphi_{2n,2N}(0)}
+{\tilde\kappa_{2n}^{2N}}\right)^{-\frac12}X_{n,N}(w).
+\end{equation}
+Теперь обратимся к лемме \ref{lem4.2}, тогда \eqref{eq5.31} принимает вид следующей
+асимптотической формулы
+
+
+$$
+P_{n,N}(z)=
+$$
+\begin{equation}\label{eq5.32}
+\frac1{\sqrt{2}}\left(1+\frac{|\varphi_{2n}(0)|}{\kappa_{2n}}+
+\hat\varepsilon_{2n,2N}\right)^{-\frac12}
+\left[w^{-n}\varphi_{2n}(w)+w^n\varphi_{2n}(w^{-1})\right]+Y_{n,N}(w),
+\end{equation}
+в которой $z=\frac12\left(w+\frac1w\right)$,
+$$
+Y_{n,N}(w)=\frac1{\sqrt{2}}\left(1+\frac{|\varphi_{2n}(0)|}{\kappa_{2n}}+
+\hat\varepsilon_{2n,2N}\right)^{-\frac12}X_{n,N}(w)
+$$
+представляет собой остаточный член, а  для $\hat\varepsilon_{2n,2N}$
+справедлива оценка
+\begin{equation}\label{eq5.33}
+|\hat\varepsilon_{2n,2N}|\le
+\frac{|\varphi_{2n}(0)|}{8\kappa_{2n}}((2n+\nu)\lambda_{2N})^2+
+\frac{\sqrt{2}(8+((2n+\nu)\lambda_{2N})^2)(2n+\nu)\lambda_{2N}}
+{8\sqrt{8-((2n+\nu)\lambda_{2N})^2}}.
+\end{equation}
+Кроме того, из теоремы 3.8 и равенства \eqref{eq5.30} для $|X_{n,N}(w)|$
+вытекает оценка
+$$
+|X_{n,N}(w)|\le
+ \lambda_{2N}|w^n|\sqrt{\frac{1}{24-\lambda_{2N}^2}+\frac{2(2n+\nu)^2}
+{8-((2n+\nu)\lambda_{2N})^2}\sum\limits_{k=0}^{2n}
+\left|\varphi_k(w)\right|^2}+
+$$
+$$
+\lambda_{2N}|w^{-n}|\sqrt{\frac{1}{24-\lambda_{2N}^2}+\frac{2(2n+\nu)^2}
+{8-((2n+\nu)\lambda_{2N})^2}\sum\limits_{k=0}^{2n}
+\left|\varphi_k(w^{-1})\right|^2}.
+$$
+
+Отметим, что в асимптотической формуле \eqref{eq5.32} главной частью
+является выражение
+
+$\frac1{\sqrt{2}}\left[w^{-n}\varphi_{2n}(w)+w^n\varphi_{2n}(\frac1w)\right]$,
+в котором фигурируют полиномы $\varphi_k(w)$ $(k=0,1,\ldots)$,
+образующие ортонормированную систему на единичной окружности с весом
+$h(\theta)=\frac12p_\nu(\cos\theta)|\sin\theta|$. Асимптотические
+свойства таких полиномов достаточно хорошо исследованы (см.,
+например, [96], [99]--[101]). В частности, если $p_\nu(x)$
+тождественно совпадает с константой, то выражение
+$$\frac1{\sqrt{2}}\left[w^{-n}\varphi_{2n}(w)+w^n\varphi_{2n}(\frac1w)\right]$$
+с точностью до постоянного множителя представляет собой классический
+полином Лежандра $P_n(z)$.
+
+\section{О некоторых новых приложениях полиномов, ортогональных на
+сетках}\label{sec6}
+
+
+Как уже отмечалось,  полиномы, ортогональные на сетках были введены
+П.Л.Чебышевым в связи задачей обработки наблюдений методом
+наименьших квадратов. В дальнейшем были обнаружены многочисленные
+связи полиномов, ортогональных на сетках с задачами, возникающими в
+самых различных областях таких, как квантовая механика,
+математическая биология, теория кодирования, теория случайных
+матриц, численный анализ, теория автоматического регулирования и
+управления и другие. Мы здесь получим некоторые новые (для нас
+неожиданные ) приложения полиномов, ортогональных на {\it
+неравномерных} сетках единичной окружности и числовой оси.
+
+ Начнем с полиномов, ортогональных на сетках из единичной
+окружности. В приложениях часто встречается уравнение
+ \begin{equation}\label{eq6.1}
+ y_n=\sum_{k=0}^nx_kh_{n-k},\quad
+n=0,1,\ldots,
+\end{equation}
+в котором $x=(x_0,x_1,\ldots)$ и $y=(y_0,y_1,\ldots)$ трактуются,
+соответственно, как входной и выходной сигналы, а
+$h=(h_0,h_1,\ldots)$ -- характеристика рассматриваемой управляемой
+(регулируемой) системы. Требуется по заданному выходному сигналу $y$
+найти соответствующий входной сигнал $x$. При этом характеристика
+системы $h$  также считается известной. Непосредственное нахождение
+входного сигнала $x$ из уравнения \eqref{eq6.1} считается, по разным
+причинам, неэффективным (задача \eqref{eq6.1} некорректна). Кроме того в
+приложениях, как правило, встречается "урезанный"\ вариант уравнения
+\eqref{eq6.1}, когда заданы всего $M+1$ значений
+$y_n=\sum_{k=0}^nx_kh_{n-k},\quad n=0,1,\ldots,M$ и $m+1$ значений
+$h_k $ при $k=0,1,\ldots,m$. Требуется найти $l+1$ значений $x_k $
+при $k=0,1,\ldots,l$, причем $m\le l$, $M=l+m$. Другими словами,
+вместо уравнения \eqref{eq6.1} требуется решить приближенное уравнение
+\begin{equation}\label{eq6.2}y'_n=\sum_{k=0}^nx'_kh'_{n-k},\quad n=0,1,\ldots,\end{equation}
+где $$x'=(x'_0,x'_1,\ldots, x'_l,0,0,\ldots)=(x_0,x_1,\ldots,
+x_l,0,0,\ldots),$$
+$$y'=(y'_0,y'_1,\ldots,y'_M,0,0,\ldots)=(y_0,y_1,\ldots,y_M,0,0,\ldots),$$
+$$h'=(h'_0,h'_1,\ldots,h'_m,0,0,\ldots)=(h_0,h_1,\ldots,h_m,0,0,\ldots),$$
+которое в развернутой записи приобретает следующий вид
+\begin{tabbing}
+ $y_0=h_0x_0$ \\
+ $y_1=h_0x_1+h_1x_0$  \\
+ $\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$\\
+$y_m=h_0x_m +h_1x_{m-1}+ \ldots +h_mx_0$\\
+$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$\\
+$y_l=h_0x_l+h_1x_{l-1}+ \ldots +h_mx_{l-m}$\\
+$y_{l+1}=h_1x_l+\ldots +h_mx_{l-m+1}$\\
+$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$$\ldots$\\
+$y_{l+m-1}=h_{m-1}x_l+h_mx_{l-1}$\\
+$y_{l+m}=h_mx_l$.
+\end{tabbing}
+
+ Число уравнений в этой системе равно $M+1=l+m+1$, а
+число неизвестных $x_j$ $(j=0,1,\ldots l)$ всего $l+1$, поэтому
+система разрешима не для любого вектора левых частей $\tilde
+y=(y_0,y_1,\ldots,y_M)$ и, следовательно,  возникает задача о
+приближенном решении указанной системы. С этой целью обозначим через
+${\cal Y}^{M+1}$ множество левых  частей рассматриваемой системы,
+для которых решение $\hat x\in \mathbb{R}^{l+1}$ существует. Пусть
+$\hat y=(\hat y_0,\hat y_1,\ldots,\hat y_M)\in {\cal Y}^{M+1}$ и
+$\hat x \in \mathbb{R}^{l+1}$ соответствующее решение
+рассматриваемой системы с левой частью $\hat y$. Будем считать
+$\hat x$ приближенным решением рассматриваемой системы, если в левой
+eе части фигурирует $\tilde y\in \mathbb{R}^{M+1}\setminus{\cal
+Y}^{M+1}$. Возникает вопрос о том, какое из приближенных решений
+$\hat x\in \mathbb{R}^{l+1} $ является для заданного $\tilde y$
+наилучшим. Для того, чтобы сформулировать эту задачу более точно,
+требуется ввести в конечномерном пространстве $\mathbb{R}^{M+1}$
+$M+1$--мерных векторов $\tilde y=(y_0,y_1,\ldots,y_M)$ одну из
+эквивалентных норм. С этой целью мы обратимся к методу производящих
+функций (что то же, методу ${\cal Z}$--преобразований), в
+соответствии с которым мы введем полиномы $$ X(z)=\sum_{k=0}^\infty
+x'_kz^k=\sum_{k=0}^l x_kz^k=X_l(z),$$
+$$ Y(z)=\sum_{k=0}^\infty y'_kz^k=\sum_{k=0}^M y_kz^k=Y_M(z),$$
+$$H(z)=\sum_{k=0}^\infty h'_kz^k=\sum_{k=0}^m
+h_kz^k=H_m(z).$$
+
+Хорошо известно, что если сигналы $x'$, $y'$ и  $h'$ связаны
+сверткой
+ \eqref{eq6.2}, то имеет место  равенство
+\begin{equation}\label{eq6.3} Y_M(z)= H_m(z) X_l(z).\end{equation}
+Но, как уже отмечалось, если $(y_0,\ldots,y_M)\notin {\cal Y}^M $,
+то для $y'=(y_0,\ldots,y_M,0,0,\ldots)$ не найдется
+$x=(x_0,\ldots,x_l,0,0,\ldots)$, для которого справедливо равенство
+\eqref{eq6.2}, следовательно, для такого вектора $(y_0,\ldots,y_M)$
+равенство \eqref{eq6.3} также не справедливо. Если же мы возьмем $(\hat y
+ _0,\ldots,\hat y_M)\in {\cal Y}^M$, то по самому определению
+ множества ${\cal Y}^M$ существует такое $\hat x\in
+ \mathbb{R}^{l+1}$, что  $y'=(\hat y_0,\ldots,\hat
+ y_M,0,0,\ldots)$ и $x'=(\hat x_0,\ldots,\hat
+ x_l,0,0,\ldots)$ связаны между собой сверткой \eqref{eq6.2} и, стало быть,
+ имеет место равенство
+\begin{equation}\label{eq6.4} \hat Y_M(z)= H_m(z) \hat X_l(z),\end{equation}
+где
+$$\hat X_l(z)=\sum_{k=0}^l\hat x_kz^k,\quad \hat Y_M(z)=\sum_{k=0}^M \hat y_kz^k.$$
+
+Для заданного вектора  $(y_0,\ldots,y_M)\in \mathbb{R}^{M+1}$ введем
+разность
+\begin{equation}\label{eq6.5}R(z)=Y_M(z)-\hat Y_M(z)=Y_M(z)-H_m(z) \hat X_l(z),\end{equation} которую мы можем трактовать как
+погрешность "приближенного решения"\ $\hat x $ для
+рассматриваемой системы уравнений. Величина нормы этой погрешности
+зависит, очевидно, от того, какую норму $\|\cdot\|$ мы зададим в
+пространстве алгебраических полиномов $Q_M(z)$ степени $M$. Будем
+считать, что решение $\hat x$ тем точнее, чем меньше величина
+выбранной нормы $\|R\|$. Поставленная здесь задача о выборе
+подходящей нормы в пространстве алгебраических полиномов $R(z)$ в
+связи с приближенным решением рассмотренной выше переполненной
+системы уравнений не является новой. В литературе встречается (см.,
+например,\cite{35}  подход, основанный на выборе нормы вида
+$$\|R\|=\left(\frac1{2\pi}\int\limits_0^{2\pi}
+|R(e^{i\theta}|^2d\theta\right)^\frac12=\left(\frac1{2\pi}\int\limits_0^{2\pi}
+|Y_M(e^{i\theta})-H_m(e^{i\theta}) \hat
+X_l(e^{i\theta})|^2d\theta\right)^\frac12=$$
+\begin{equation}\label{eq6.6}
+\left(\frac1{2\pi}\int\limits_0^{2\pi}|H_m(e^{i\theta})|^2
+\left|{Y_M(e^{i\theta})\over H_m(e^{i\theta})}- \hat
+X_l(e^{i\theta})\right|^2d\theta\right)^\frac12 \end{equation} и
+наилучшим считается то приближенное решение $\hat x=(\hat
+x_0,\ldots,\hat x_l)$ рассматриваемой системы, для которого полином
+$\hat X_l(z)=\sum_{k=0}^l\hat x_kz^k$ минимизирует интеграл в правой
+части равенства \eqref{eq6.6}. Его можно представить в виде суммы Фурье
+порядка $n$ функции $f(z)={Y_M(z)\over H_m(z)}$ по полиномам
+$\{\varphi_k(z)\}_{k=0}^l$, образующим ортонормированную систему на
+окружности $|z|=1$ с весом $h(\theta)=|H_m(e^{i\theta})|^2$. А
+именно, имеет место представление
+\begin{equation}\label{eq6.7}\hat X_l(z)=\sum_{k=0}^lc_k\varphi_k(z),\end{equation}
+где
+$$c_k=\frac1{2\pi}\int\limits_0^{2\pi}h(\theta)f(e^{i\theta})
+\overline{\varphi_k(e^{i\theta})}d\theta\quad(k=0,1,\ldots,l)$$ --
+коэффициенты Фурье функции $f$ по ортонормированной системе
+$\{\varphi_k(z)\}_{k=0}^l$.
+ Однако,  фактическоe нахождениe  полинома $\hat X_l(z)$ численными
+методами, исходя из равенства \eqref{eq6.7} связано с преодолением ряда
+трудностей. Одна из этих трудностей связана с численным построением
+самых ортогональных полиномов $\{\varphi_k(z)\}_{k=0}^l$, образующим
+ортонормированную систему на окружности $|z|=1$ с весом
+$h(\theta)=|H_m(e^{i\theta})|^2$. Дело в том, что эта задача
+сопряжена с численным нахождением значений большого числа интегралов
+вида
+$$
+\frac1{2\pi}\int\limits_0^{2\pi}h(\theta)e^{i\theta}
+|\phi_k(e^{i\theta})|^2d\theta,\quad\frac1{2\pi}\int\limits_0^{2\pi}h(\theta)e^{ik\theta}
+\overline{\phi_k^2(e^{i\theta})}d\theta\quad(k=1,\ldots,l),
+$$
+где $\phi_k(z)={\frac1{\kappa_k}}\varphi_k(z)$, $\kappa_k$ --
+старший коэффициент полинома $\varphi_k(z)$. Такие интегралы
+ входят в выражения, определяющие трехчленные рекуррентные формулы для полиномов $\{\varphi_k(z)\}_{k=0}^l$.
+Кроме того, если весовая функция $h(\theta)=|H_m(e^{i\theta})|^2$
+обращается в нуль в одной или нескольких точках $\theta_j\in
+[0,2\pi)$, то рациональная функция $f(z)={Y_M(z)\over H_m(z)}$,  для
+которой мы конструируем суммы Фурье вида \eqref{eq6.7}, имеет на единичной
+окружности столько же полюсов, сколько  нулей  $z_j$ имеет на ней
+полином $H_m(z)$, если только в точках $z_j$ не обращается в нуль
+полином $Y_M(z)$. Это создает дополнительные трудности для численного
+нахождения полинома $\hat X_l(z)$.  В связи с этим возникает идея,
+согласно которой при выборе подходящей нормы $\|\cdot\|$ в
+пространстве алгебраических полиномов, с помощью которого будет
+исследоваться поведение погрешности приближенного решения $\hat
+X_l(z)$ рассматриваемой переполненной системы уравнений, учитывать
+свойства производящей функции (полинома) $H_m(z)$. В частности,
+требуется предварительно исследовать поведение нулей этого полинома.
+Более гибкий способ учета особенностей полинома $H_m(z)$ при выборе
+упомянутой нормы, с нашей точки зрения, состоит в том, чтобы вместо
+интегральной нормы \eqref{eq6.6} ввести дискретную ному
+
+$$\|R\|_N=\left(\frac1{2\pi}\sum_{j=0}^{N-1}
+|R(e^{i\theta_j}|^2\Delta\theta_j\right)^\frac12=
+$$
+$$
+\left(\frac1{2\pi}\sum_{j=0}^{N-1}
+|Y_M(e^{i\theta_j})-H_m(e^{i\theta_j}) \hat
+X_l(e^{i\theta_j})|^2\Delta\theta_j\right)^\frac12=$$
+\begin{equation}\label{eq6.8}
+\left(\frac1{2\pi}\sum_{j=0}^{N-1}|H_m(e^{i\theta_j})|^2
+\left|{Y_M(e^{i\theta_j})\over H_m(e^{i\theta_j})}- \hat
+X_l(e^{i\theta_j})\right|^2\Delta\theta_j\right)^\frac12,\end{equation} в которой углы
+$-\pi\le\theta_0<\theta_1<\cdots<\theta_{N-1}\le\pi$ мы можем
+выбрать по своему усмотрению так, чтобы точки $e^{i\theta_j}$
+$(j=0,\ldots, N-1)$ не совпадали с нулями полинома $H_m(z)$. Теперь
+наилучшим считается то приближенное решение $\hat x=(\hat
+x_0,\ldots,\hat x_l)$ рассматриваемой системы, для которого полином
+$\hat X_n(z)=\sum_{k=0}^n\hat x_kz^k$ минимизирует сумму в правой
+части равенства \eqref{eq6.8}. Его можно представить в виде суммы Фурье
+порядка $n$ функции $f(z)={Y_M(z)\over H_m(z)}$ по полиномам
+$\{\varphi_{k,N}(z)\}_{k=0}^l$, образующим ортонормированную систему
+на сетке $\Omega_N^T=\{e^{i\theta_j}\}_{j=0}^{N-1}$  с весом
+$h=h(\theta_j)=|H_m(e^{i\theta_j})|^2$. А именно, имеет место
+представление
+\begin{equation}\label{eq6.9}\hat X_l(z)=\sum_{k=0}^lc_{k,N}\varphi_{k,N}(z),\end{equation}
+где
+\begin{equation}\label{eq6.10}c_{k,N}=\frac1{2\pi}\sum_{j=0}^{N-1}(\theta_j)f(e^{i\theta_j})
+\overline{\varphi_{k,N}(e^{i\theta_j})}\Delta\theta_j\quad(k=0,1,\ldots,l).\end{equation}
+Но теперь  возникает вопрос об устойчивости вычислений, которых
+нужно осуществить в связи с представлением \eqref{eq6.9} и выражениями
+\eqref{eq6.10}. Этот вопрос тесно связан с асимптотическим поведением
+полиномов $\varphi_{k,N}(z)$ \linebreak$(k=0,1,\ldots,N-1)$ при
+$k,N\to\infty$. {\it Таким образом, конкретная задача, возникающая в
+приложениях непосредственно приводит к вопросу об асимптотических
+свойствах полиномов, ортогональных на дискретных сетках единичной
+окружности.}
+
+С дугой стороны, во многих областях приложений
+  встречаются, как отмечалось выше,  полиномы,
+ортогональные на сетках числовой оси. Указанные приложения, в свою
+очередь,  приводят к вопросу об асимптотических свойствах
+соответствующих полиномов, ортогональных на сетках числовой оси. Как
+было показано, этот вопрос сводится к задаче, об асимптотических
+свойствах полиномов, ортогональных на сетках единичной окружности.
+Тем самым, косвенно обнаруживаем целый ряд приложений полиномов,
+ортогональных на сетках единичной окружности в самых разных
+областях.
+
+Мы рассмотрим здесь некоторые дальнейшие приложения полиномов,
+ортогональных на неравномерных сетках  числовой оси. Эти приложения
+касаются некоторых "пограничных"\ задач численного анализа и теории
+приближения функций. Рассмотрим сначала задачу, связанную с
+численным дифференцированием функции $f(x)$, значения которой заданы
+в узлах равномерной сетки. Для определенности будем считать, что
+функция $f(x)$ определена на $[-1,1]$ и заданы ее  значения
+$y_j=f(x_j)$ в узлах равномерной сетки $x_j=-1+2j/(N-1)$
+($j=0,1,\ldots, N-1$). Ставится задача о приближенном нахождении
+одной или нескольких производных функции  $f(x)$ в точке $x\in
+[-1,1]$, исходя из дискретной информации $y_j=f(x_j)$
+($j=0,1,\ldots, N-1$). При решении этой задачи часто поступают
+следующим образом: используя заданные значения $y_j=f(x_j)$
+($j=0,1,\ldots, N-1$) тем или иным способом конструируют
+приближающую функцию $Q(x)$ и в качестве приближенного значения
+искомой производной $f^{(l)}(x)$ принимают $Q^{(l)}(x)$. В качестве
+приближающей функции, в зависимости от степени гладкости функции
+$f(x)$ полиномиальные сплайны, алгебраические или тригонометрические
+полиномы, а также(особенно в последние годы) вейвлеты. Если функция
+$f(x)$ обладает высокой гладкостью, например, аналитична в некотором
+эллипсе, содержащем отрезок $[-1,1]$, то наиболее естественным
+аппаратом ee приближения являются алгебраические полиномы и мы
+рассмотрим здесь  этот случай. Итак, пусть $Q(x)=Q_n(x)$ --
+алгебраический полином, построенный по значениям $y_j=f(x_j)$
+($j=0,1,\ldots, N-1$), который в каком то смысле хорошо приближает в
+узлах сетки $\Omega_N=\{x_j=-1+2j/(N-1)\}_{j=0}^{N-1}$ не только
+саму функцию $f(x)$ посредством $Q(x)=Q_n(x)$, а также ее конечные
+разности $\Delta_h^lf(x_j)$ с шагом $h=2/(N-1)$ посредством
+$\Delta_h^lQ(x_j)$ при $l=1,2,\ldots, r-1$. Подобные ситуации часто
+возникают при решении дифференциальных уравнений сеточными методами.
+ Спрашивается: будет ли хорошо приближать производная $Q^{(l)}(x)$ производную $f^{(l)}(x)$ при $l=1,\ldots,r-1$ и
+как оценить  погрешность $|f^{(l)}(x)-Q^{(l)}(x)|$, возникающая в
+результате замены искомого значения $f^{(l)}(x)$ приближенным
+зачением $Q^{(l)}(x)$ при $x\in [-1,1]$? Мы покажем ниже, что для
+решения этой задачи могут быть использованы полиномы, ортогональные
+на неравномерных сетках из отрезка $[-1,1]$. Для фиксированного
+$1\le l\le r-1$ рассмотрим разность
+$\Delta_h^lf(x_j)-\Delta_h^lQ(x_j)=\Delta_h^l[f(x_j)-Q(x_j)]$.
+Хорошо известно, что найдется такая точка $t_j$, что
+ $\Delta_h^l[f(x_j)-Q(x_j)]=[f(t_j)-Q(t_j)]^{(l)}$, $x_j<t_j<x_{j+l}$ ($j=0,1,\ldots, N-l-1$). Обозначим через $\Omega_N^l $ новую сетку, состоящую
+  из точек  $t_j$, т.е. $\Omega_N^l =\{t_j\}_{j=0}^{N-l-1}$. Следует сразу отметить, что некоторые из точек $t_j$ и $t_k$ могут оказаться совпавшими и
+  в этом  случае будем включать в $\Omega_N^l =\{t_j\}_{j=0}^{N-l-1}$ только одну из них.
+Для определенности будем считать, что все точки $t_j$
+($j=0,1,\ldots, N-l-1$) различны. Тогда мы можем на сетке
+$\Omega_N^l =\{t_j\}_{j=0}^{N-l-1}$ построить ортонормированную с
+некоторым весом $\rho=\rho(t_j)=\rho_N(t_j)$ систему полиномов
+$\{P_{k,N-l}(x)\}_{k=0}^{N-l-1}$. Для функции $g=g(x)$, значения
+которой нам заданы в узлах $t_j$ ($j=0,1,\ldots, N-l-1$) сетки
+ $\Omega_N^l =\{t_j\}_{j=0}^{N-l-1}$ мы можем составить сумму Фурье $S_n(g,x)$ функции $g(x)$ по системе $\Omega_N^l =\{t_j\}_{j=0}^{N-l-1}$, т.е.
+ \begin{equation}\label{eq6.11}
+S_n(g,x)=\sum_{k=0}^n \hat g_k P_{k,N-l}(x), \quad \hat g_k
+=\sum_{j=0}^{N-l-1}g(t_j)P_{k,N-l}(t_j)\rho(t_j).
+ \end{equation}
+Далее, пусть
+\begin{equation}\label{eq6.12}
+V_{n,N}(g,x)=\frac1{n+1}[S_n(g,x)+S_{n+1}(g,x)+\cdots+S_{2n}(g,x)]
+\end{equation}
+суммы Валле-Пуссена функции $g(x)$ по системе
+$\{P_{k,N-l}(x)\}_{k=0}^{2n}$. Тогда, сопоставляя \eqref{eq6.11} и \eqref{eq6.12},
+мы получаем
+\begin{equation}\label{eq6.13}
+V_{n,N}(g,x)=\sum_{j=0}^{N-l-1}g(t_j)\rho(t_j)\sum_{\nu=n}^{2n}{\cal
+K}_\nu(x,t_j),
+\end{equation}
+где
+\begin{equation}\label{eq6.14}
+{\cal K}_\nu(x,t_j)=\sum_{\mu=0}^\nu P_\mu(x)P_\mu(t_j)
+\end{equation}
+ядро Кристоффеля-Дарбу по системе $\{P_{k,N-l}(x)\}_{k=0}^{\nu}$.
+Оценим теперь разность $|g(x)-Q_n(x)|$.
+ Из \eqref{eq6.11} и \eqref{eq6.12} непосредственно следует, что если $Q_n(x)$ -- произвольный
+алгебраический полином степени $n<N-l$, то $V_{n,N}(Q_n,x)$
+тождественно совпадает с $Q_n(x)$, поэтому
+$$
+ |g(x)-Q_n(x)|\le  |g(x)-V_{n,N}(g,x)|+| V_{n,N}(g,x)-Q_n(x)|=
+ $$
+ \begin{equation}\label{eq6.15}
+ |g(x)-V_{n,N}(g,x)|+|V_{n,N}(g-Q_n,x)|,
+\end{equation}
+где для величины
+$$
+V_{n,N}(g-Q_n,x)=\sum_{j=0}^{N-l-1}(g(t_j)-Q_n(t_j))\rho(t_j)\sum_{\nu=n}^{2n}{\cal
+K}_\nu(x,t_j)
+$$
+ справедливо неравенство
+$$
+|V_{n,N}(g-Q_n,x)|\le
+$$
+\begin{equation}\label{eq6.16}
+\sum_{j=0}^{N-l-1}|g(t_j)-Q_n(t_j)|\rho(t_j)\left|\sum_{\nu=n}^{2n}{\cal
+K}_\nu(x,t_j)\right| \le \varepsilon_{n,N}\|V_{n,N}(x)\|,
+\end{equation}
+в котором
+
+\begin{equation}\label{eq6.17}
+\varepsilon_{n,N}=\max_{0\le j\le
+N-l-1}|g(t_j)-Q_n(t_j)|,
+\end{equation}
+\begin{equation}\label{eq6.18}
+\|V_{n,N}(x)\|=\sum_{j=0}^{N-l-1}\rho(t_j)\left|\sum_{\nu=n}^{2n}{\cal
+K}_\nu(x,t_j)\right|
+\end{equation}
+норма функционала $V_{n,N}(g)=V_{n,N}(g,x)$, определенного
+равенством \eqref{eq6.13}. Величину $\varepsilon_{n,N}$ будем считать
+заданной, тогда, сопоставляя \eqref{eq6.16} и \eqref{eq6.18} с \eqref{eq6.15}, отметим, что
+задача об оценке для $|g(x)-Q_n(x)|$ (в частности, и для разности
+$|f^{(l)}(x)-Q^{(l)}(x)|$, о которой шла речь выше),  сводится к
+задаче об оценке величин $|g(x)-V_{n,N}(g,x)|$ и $ \|V_{n,N}(x)\|$.
+Эта задача непосредственно приводит к вопросу об асимптотических
+свойствах полиномов $P_{k,N-l}(x)$ при $-1\le x\le 1$ и $k,N\to
+\infty$, исследованных нами для некоторых типов весовых функций
+$\rho_N=\rho_N(x)$ выше. Однако, в настоящей работе мы не
+остановимся на рассмотрении вопросов, связанных выводом  оценок для
+величин $|g(x)-V_{n,N}(g,x)|$ и $ \|V_{n,N}(x)\|$.
+
+ Рассмотрим некоторые более общие ситуации, которые приводят к тем же вопросам, что
+ и предыдущая задача.  Обозначим через $C[-1,1]$ обычное пространство непрерывных на $[-1,1]$  функций
+$f=f(x)$. Пусть $\Omega_N=\{x_j\}_{j=0}^{N-1}$ -- произвольная сетка
+из $[-1,1]$.  Положим для $f\in C[-1,1]$
+      $$
+     \|f\|=\max\{|f(x)|:\quad-1\le x\le 1\},\quad  \|f\|_N=\max\{|f(x_j)|:\quad 0\le j\le N-1\},
+     $$
+где $x_j\in\Omega_N$, $(j=0,1,\ldots,N-1)$. Пусть  $f\in C[-1,1]$.
+Приблизим функцию $f$  на сетке $\Omega_N=\{x_j\}_{j=0}^{N-1}$
+алгебраическим многочленом $p_n(x)$. Будем считать величину
+$\|f-p_n\|_N$ известной. Оценим сверху $\|f-p_n\|$ через
+$\|f-p_n\|_N$. Пусть  $p_n^*=p_n^*(x)$ -- алгебраический многочлен
+степени $n$ наилучшего приближения  функции $f$ в $C[-1,1]$. Тогда
+\begin{equation}\label{eq6.19} \|f-p_n\|\le \|f-p_n^*\|+\|p_n^*-p_n\|, \end{equation}
+\begin{equation}\label{eq6.20}
+\|p_n^*-p_n\|_N\le \|f-p_n^*\|+\|f-p_n\|_N.
+ \end{equation}
+  Положим
+   \begin{equation}\label{eq6.21}
+\gamma=\gamma(n,N)=\sup_{q_n\ne0}{\|q_n\|\over \|q_n\|_N},
+ \end{equation}
+  где верхняя грань
+берется по всем алгебраическим многочленам $q_n$ степени $n\le N-1$,
+не равным нулю тождественно. Имеем:
+$$
+ \|f-p_n\|\le\|f-p_n^*\|+\gamma\|p_n^*-p_n\|_N $$ \begin{equation}\label{eq6.22} \le
+(1+\gamma)\|f-p_n^*\|+\gamma\|f-p_n\|_N.
+ \end{equation}
+ Таким образом, мы пришли к задаче об
+исследовании  поведения величины $\gamma=\gamma(n,N)$  при
+$n,N\to\infty$. Воспользуемся системой полиномов
+$\{P_{k,N}(x)\}_{k=0}^{N-1}$, образующих ортонормированную систему
+на множестве $\Omega_N=\{x_j\}_{j=0}^{N-1}$ с  весом $\rho(x_j)$.
+Сумму Фурье  порядка  $n\le  N-1$   функции   $f\in C[-1,1]$ по
+системе $\{P_{k,N}(x)\}$ запишем в виде
+ \begin{equation}\label{eq6.23}
+  S_{n,N}(f)=S_{n,N}(f,x)=\sum_{k=0}^n\hat
+f_kP_{k,N}(x),
+ \end{equation}
+  где
+   \begin{equation}\label{eq6.24}
+    \hat f_k=\sum_{j=0}^{N-1}\rho(x_j)f(x_j)P_{k,N}(x_j).
+     \end{equation}
+      Средние Валле-Пуссена для сумм $S_{m,N}(f),\ldots,S_{m+n,N}(f)$ имеют вид
+\begin{equation}\label{eq6.25}
+ V_{m,n}^N(f)=V_{m,n}^N(f,x)={1\over n+1}
+\left[S_{m,N}(f,x)+\ldots+S_{m+n,N}(f,x)\right],
+ \end{equation}
+где $n+m\le N-1$. Положим
+ \begin{equation}\label{eq6.26}
+I_\nu^N(x,y)=\sum_{l=0}^\nu {\cal K}_{l,N}(x,y).
+\end{equation}
+ Тогда \eqref{eq6.25} может быть переписано в следующем виде:
+ \begin{equation}\label{eq6.27}
+ V_{m,n}^N(f,x)=\sum_{j=0}^{N-1}\rho(x_j)f(x_j)d_{m,n}^N(x,x_j),
+\end{equation}
+ где
+ \begin{equation}\label{eq6.28}
+  d_{n,m}^N(x,y)={1\over n+1}\left[I_{n+m}^N(x,y)-I_{m-1}^N(x,y)\right].
+ \end{equation}
+Из \eqref{eq6.27} имеем:
+ \begin{equation}\label{eq6.29}
+ |V_{m,n}^N(f,x)|\le\|f\|_N\sum_{j=0}^{N-1}\rho(x_j)|d_{m,n}^N(x,x_j)|.
+ \end{equation}
+
+Пусть $p_m=p_m(x)$ произвольный алгебраический многочлен степени
+$m$, $n+m\le N-1$. Тогда $V_{m,n}^N(p_m,x)=p_m(x)$, поэтому
+\begin{equation}\label{eq6.30}
+\|p_m\|\le \|p_m\|_N\|v_{m,n}^N\|,
+\end{equation}
+где
+\begin{equation}\label{eq6.31}
+\|V_{m,n}^N\|=\max_{-1\le x\le1}\sum_{j=0}^{N-1}
+\rho(x_j)|d_{n,m}^N(x,x_j)|.
+\end{equation}
+
+
+ Таким образом мы замечаем, что
+ \begin{equation}\label{eq6.32}
+ 1\le \gamma(n,N)\le \|V_{n,n}^N\|,
+  \end{equation}
+   величина $\|V_{n,n}^N\|$ дает верхнюю оценку для $\gamma(n,N)$ и
+    может   быть  использована  в  неравенстве \eqref{eq6.22}
+вместо $\gamma$. Отсюда приходим к задаче об изучении   поведения
+величины   $\|V_{m,n}^N\|$ при $m,n\to\infty$, которая в частном
+случае для $V_{n,N}(f,x)=V_{n,n}^N$ уже встречалась выше. Эта задача
+снова приводит к вопросу об исследовании асимптотических свойств
+полиномов $P_{k,N}(x)$ при $-1\le x\le 1$ и $k,N\to \infty$
+
+В тех же обозначениях рассмотрим следующую задачу, частный случай
+которой нам уже встречалась выше. Пусть  $f(x)$ дифференцируема на
+$[-1,1]$. Приблизим функцию $f$  на сетке
+$\Omega_N=\{x_j\}_{j=0}^{N-1}$ алгебраическим многочленом $p_n(x)$.
+Если значения $f(x_j)$ и $p(x_j)$ $0\le j\le N-1$ заданы, то мы
+можем найти  $\Delta x_j=x_{j+1}-x_j$, $\Delta
+f(x_j)=f(x_{j+1})-f(x_j)$, $\Delta p_n(x_j)=p_n(x_{j+1})-p_n(x_j)$.
+В силу теоремы Лагранжа
+
+$${\Delta f(x_j)\over\Delta x_j}-{\Delta p_n(x_j)\over\Delta x_j}=
+{\Delta [f(x_j)-p_n(x_j)]\over\Delta x_j}=
+$$
+\begin{equation}\label{eq6.33}
+f'(t_j)-p'_n(t_j) \quad
+(x_j<t_j<x_{j+1},j=0,\ldots,N-2).\end{equation}
+
+Из \eqref{eq6.33} следует, что если $p_n(x_j)$  приближает $f(x_j)$  на
+сетке $\Omega_N=\{x_j\}_{j=0}^{N-1}$ хорошо настолько, что величины
+$${\Delta f(x_j)\over\Delta x_j}-{\Delta p_n(x_j)\over\Delta x_j}$$
+достаточно малы при всех $j=0,\ldots,N-2$, то будут также малы и
+разности $ f'(t_j)-p'_n(t_j)$ при всех $j=0,\ldots,N-2$.
+Спрашивается: будет ли мала разность $ f'(x)-p'_n(x)$ при любом
+$x\in [-1,1]$? Мы пришли к той же  проблеме, которая встречалась
+выше в случае, когда сетка $\Omega_N=\{x_j\}_{j=0}^{N-1}$ являлась
+равномерной. Как и выше, нетрудно показать связь этой проблемы  с
+задачей об асимптотических свойствах полиномов, ортогональных на
+сетке $\hat\Omega_{N-1}=\{t_j\}_{j=0}^{N-2}$.
+
+\end{fulltext}
+
+\begin{thebibliography}{40}
+
+\bibitem{1}Чебышев П.Л. Об интерполировании величин равноотстоящих (1875) // Полн. собр. соч.  Т.3.  М.: Изд. АН  СССР. 1948.  С. 66--87.
+
+
+\bibitem{2}Charlier C.V.L.  Arkiv  for math. astron. o. fysik.
+     1905/06.2. $\cal N.$ 20.
+
+
+\bibitem{3}  Krawtchouk M.F. Sur une generalisation des polynomes d
+     Hermite // Comptes Rendus de 1 Acad. des. Sc.  189. Paris. P. 620-622.
+
+
+\bibitem{4} Meixner J. Orthogonale Polynom systeme mit einer besonderen
+     Gestalt der erzeugenden Function // Journ. of the London
+    Mathematical Sociate 9 (1934). P. 6--13.
+
+
+\bibitem{5} Hahn W.  Uber  orthogonalpolynomsisteme,  die
+q--Differenzengleihungen genugen //  Math.Nachr. 2 (1949). P. 4--34.
+
+\bibitem{6} Weber M., Erdeleyi A. On the finite difference analogue
+     of Rodrigues formula // Amer. Math. Month. 59 (1952). P. 163--168.
+
+\bibitem{7}Karlin S., McGregor J.L. The Hahn polnomials, formulas and
+     an application // Scripta Math.  26:1. P. 33--46.
+
+\bibitem{8}Дельсарт Ф. Алгебраический подход к схемам отношений теории
+               кодирования.  М.: Мир. 1976.
+
+
+\bibitem{9} Dunkl C. A Krawtchouk Polynomials Addition Theorem
+     and Treath Products of Simmetric Grups //
+      Indiana Univ. Math. J. 25 (1976). P. 335--358.
+
+\bibitem{10} Askey R., Wilson J.A. A set  of orthogonal polynomials
+     that generalyze the Racach coofficients or 6j-symbols //
+      SIAM J. Math. Anal. 10 (1979). P. 1008--1016.
+
+
+\bibitem{11}Stanton D. Some q--Krawtchouk Polynomials on
+         Shevalley Grups // Amer. J. Math. 102 (1980). P. 625--662.
+
+\bibitem{12}Koornwinder T.H. Clebsh-Gordan coefficients for SU(2)
+     and Hahn  polynomials // Niew  arch. wisk. 29 (1981). P. 140--155.
+
+\bibitem{13}  Левенштейн В.И. Границы для упаковок
+          метрических пространств  и некоторые их приложения //
+           Проблемы кибернетики. 40 (1983). С. 43--110.
+
+\bibitem{14} Sharapudinov I.I. On the Hahn polynomials
+ application for the optimal tabulation of functions //
+ Constructive theory of functions. Proc. of the Int. conf.
+ on const. theory  of functions. Varna.
+  May 27 -- june 2. 1984. P. 782--787.
+
+\bibitem{15}Никифоров А.Ф., Суслов С.К.,Уваров В.Б.
+Классические ортогональные многочлены дискретной переменной.
+ М. Наука. 1985.
+
+\bibitem{16}Бахвалов Н.С., Кобельков Г.М., Носков Ю.В. О практическом вычислении значений ортогональных многочленов
+  непрерывного и дискретного аргумента //
+   Препринт Отдела выч.мат. АН СССР. Вып. 158. М. 1987.
+
+\bibitem{17}Банаи Э., Ито Т. Алгебраическая комбинаторика.
+Схемы отношений.  М., Мир. 1987.
+
+\bibitem{18}Van Assche W. Asimptotics for orthogonal polynomials //
+ Lect. Notes Math. 1265 (1987). P. 1--201.
+
+
+
+
+\bibitem{19}Sharapudinov I.I. Asimptotic Formula Having no Remainder
+     Term for the Orthogonal Hahn Polynomials of Discrete
+      Variable // Mathematica Bolkanica. New Seris. 2:4 (1988). P. 314--318.
+
+\bibitem{20}Шарапудинов И.И. Асимптотические свойства полиномов
+     Кравчука // Матем.заметки. 44:2 (1988). C. 682--693.
+
+
+\bibitem{21}Шарапудинов И.И. Асимптотические свойства ортогональных
+     многочленов Хана дискретной переменной //
+      Матем.сборник. 180:9 (1989). С. 1259--1277.
+
+
+
+\bibitem{22}Минко А.А., Петунин Ю.И. Сходимость метода наименьших квадратов
+      в равномерной   метрике // Сиб. Мат. Ж. 31:2 (1990). C. 111--122
+
+\bibitem{23}Шарапудинов И.И. Асимптотические свойства и весовые
+     оценки многочленов Чебышева--Хана // Матем.сборник.
+      183:3 (1991). С. 408--420.
+
+\bibitem{24}Шарапудинов И.И. Некоторые вопросы теории ортогональных
+     систем. Докторская диссертация. М.: МИАН им.В.А.Стеклова. 1991.
+
+
+\bibitem{25} Feinsilver P. and Schott R. Krawtchouk polynomials and finite
+probability theory // Probability measures on groups, X
+(Oberwolfach, 1990) Plenum. New York. 1991. P. 129-135.
+
+
+\bibitem{26}Шарапудинов И.И. Об асимптотике многочленов
+     Чебышева, ортогональных на конечной системе точек //
+      Вестник МГУ. Серия 1. 1 (1992). С. 29--35.
+
+\bibitem{27} Шарапудинов И.И. О сходимости метода наименьших
+ квадратов // Матем.заметки. 53:3 (1993). С. 131--143.
+
+\bibitem{28}Krasikov I. and Litsyn S. On integral zeros of Krawtchouk
+polynomials // J. Combin. Theory Ser. A. 74:1 (1996). P. 71--99.
+
+
+\bibitem{29}Шарапудинов И.И. Многочлены, ортогональные на сетках. Махачкала, Изд-во Даг.гос.пед. ун-та. 1997.
+
+
+\bibitem{30}Джамалов А.Ш. Об асимптотике полиномов Мейкснера //
+                Матем.заметки. 62:4 (1997). С. 624--625.
+
+\bibitem{31} H.Ismail M. E., Simeonov P. Strong asymptotics for Krawtchouk polynomials //
+ J. Comput. Appl.Math. 100:2 (1998). P. 121-144.
+
+\bibitem{32} Mukundan R., Ramakrishnan K.R.
+ Moment functions in image analysis: theory and applications.
+  World Scientific Publishing Co.Pte.Ltd. 1998.
+
+
+\bibitem{33} Deift P. Orthogonal polynomials and random matrices: a
+Riemann-Hilbert approach. NYU lectures. AMS. 2000.  261 p.
+
+
+
+\bibitem{34} Г.Сеге.  Ортогональные многочлены. М., Физматгиз. 1962.
+
+
+\bibitem{35} П.К.Суетин, Классические ортогональные многочлены. М.,
+     Наука. 1979.
+
+\bibitem{36}Бейтмен Г., Эрдейи А. Высшие трансцендентные функции. Т.2.
+       М., Наука. 1974.
+
+
+
+\bibitem{37} Геронимус Я.Л. Многочлены, ортогональные на окружности
+и на отрезке. М., Физматгиз. 1958.
+
+\bibitem{38}Simon B.  Orthogonal Polynomials on the unit circle.
+Part 1, Part 2, American Mathematical Society. Colloquium
+publications. Volume 54. 2004.
+
+
+\bibitem{39}Зигмунд А. Тригонометрические ряды. Т. 2. М., Мир. 1965.
+
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

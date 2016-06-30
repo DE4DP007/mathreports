@@ -1,0 +1,841 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts,amssymb,mathrsfs,amscd}
+%для подключения графики используются стандартные команды, но кроме файла *.eps
+%необходимо наличие в текущей директории соответствующего файла *.pdf
+%-------------------------------------------------
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[LE,RO]{\thepage}
+%\fancyhead[CO]{текст-центр-нечетные}
+%\fancyhead[LO]{текст-слева-нечетные}
+%\fancyhead[CE]{текст-центр-четные}
+%\fancyfoot{}
+
+\usepackage[hyper]{msb-a}
+\Volume10
+
+%\JournalName{Дагестанские электронные математические известия}
+\JournalName{Дагестанские Электронные Математические Известия}
+%\JournalName{}
+%Пустой аргумент приводит к исчезновению всех атрибутов журнала "Математический
+%сборник", файл можно представить в любой другой журнал
+%-------------------------------------------------
+\numberwithin{equation}{section}
+%-------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}[section]
+\newtheorem{propos}{Предложение}
+\newtheorem{corollary}{Следствие}
+%-------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{proof}{Доказательство}\def\theproof{}
+\newtheorem{remark}{Замечание}
+%-------------------------------------------------
+\def\Re{\operatorname{Re}}
+\def\Im{\operatorname{Im}}
+\def\const{\operatorname{const}}
+\def\RR{\mathbb R}
+\def\CC{\mathbb C}
+\def\NN{\mathbb N}
+\def\RS{\mathfrak R}
+\def\bz{\mathbf z}
+\def\sH{\mathscr H}
+\def\HH{\mathscr H}
+\def\mro{\widehat\rho}
+\begin{document}
+
+\title{Полиномы, ортогональные по Соболеву, ассоциированные с полиномами Чебышева первого рода}
+
+
+\author[I.\,I.~Sharapudinov]{И.\,И.~Шарапудинов}
+\address{Дагестанский научный центр РАН, Владикавказский научный центр РАН}
+\email{sharapud@mail.ru}
+
+\author[M.\,G.~Magomed-Kasumov]{М.\,Г. Магомед-Касумов}
+\address{Владикавказский научный центр РАН, Дагестанский научный центр РАН}
+\email{rasuldev@gmail.com}
+
+\author[S.\,R.~Magomedov]{С.\,Р. Магомедов}
+\address{Дагестанский научный центр РАН}
+\email{salihne@ya.ru}
+
+\date{7.10.2015}
+\udk{517.538}
+
+\maketitle
+
+\begin{fulltext}
+
+
+\begin{abstract}
+Отправляясь от многочленов  Чебышева $T_n(x)=\cos(n\arccos x)$ $(n=0,1,\ldots)$ и натурального   $r$, построена  новая система полиномов $\left\{T_{r,k}(x)\right\}_{k=0}^\infty$, ортонормированная относительно скалярного произведения типа Соболева следующего вида
+\begin{equation*}
+<f,g>=\sum_{\nu=0}^{r-1}f^{(\nu)}(-1)g^{(\nu)}(-1)+\int_{-1}^{1} f^{(r)}(t)g^{(r)}(t)\kappa(t) dt,
+\end{equation*}
+ где $\kappa(t)=\frac2\pi(1-t^2)^{-\frac12}$.  Исследованы вопросы сходимости ряда Фурье по системе $\left\{T_{r,k}(x)\right\}_{k=0}^\infty$. Рассмотрены важные частные случаи систем типа $\left\{T_{r,k}(x)\right\}_{k=0}^\infty$, для которых получены явные представления, которые могут быть использованы при исследовании асимптотических свойств функций $T_{r,k}(x)$ при $k\to\infty$ и исследовании аппроксимативных свойств сумм Фурье по системе $\left\{T_{r,k}(x)\right\}_{k=0}^\infty$.
+
+Библиография:  16 названий.
+$$ $$
+
+Using Chebyshev polynomials $T_n(x)=\cos(n\arccos x) (n=0,1,\ldots)$, for any natural $r$ a new system of polynomials $\left\{T_{r,k}(x)\right\}_{k=0}^\infty$, orthonormal with respect to the Sobolev type inner product of the following form 
+$$
+<f,g>=\sum_{\nu=0}^{r-1}f^{(\nu)}(-1)g^{(\nu)}(-1)+\int_{-1}^{1} f^{(r)}(t)g^{(r)}(t)\kappa(t) dt,
+$$ 
+where $\kappa(t)=\frac2\pi(1-t^2)^{-\frac12}$ was built. We study the convergence of the Fourier series on the system $\left\{T_{r,k}(x)\right\}_{k=0}^\infty$. We consider the important special cases of systems of type $\left\{T_{r,k}(x)\right\}_{k=0}^\infty$, for which explicit representations are obtained, that can be used in the study of asymptotic properties of functions $T_{r,k}(x)$ when $k\to\infty$ and study the approximation properties of Fourier sums on the system $\left\{T_{r,k}(x)\right\}_{k = 0}^\infty$.
+
+Bibliography: 16 items.
+\end{abstract}
+
+
+\begin{keywords}
+ортогональные полиномы, ортогональные по Соболеву полиномы, полиномы Чебышева первого рода.
+
+{\bf Keywords:} orthogonal polynomials, Sobolev orthogonal polynomials, Che-\linebreak byshev polynomials of the first kind.
+\end{keywords}
+
+\markright{Система полиномов, ортогональных по Соболеву}
+
+\footnotetext[0]{}
+
+
+
+
+
+
+
+
+\section*{Введение}
+
+     В ряде наших работ  \cite{Shar11} -- \cite{Shar18}  были введены, так называемые смешанные ряды по классическим ортогональным полиномам, частичные суммы которых  обладают свойством совпадения их значений в концах области ортогональности  со со значениями исходной функции. Общая идея, которая лежит в основе построения смешанных рядов, заключается в следующем. Предположим, что система функций  $\left\{\varphi_k(x)\right\}$ ортонормирована  на $(a,b)$  c весом   $\rho(x)$, т.е.
+ \begin{equation}\label{1.1}
+\int\limits_a^b\varphi_k(x)\varphi_l(x)\rho(x)dx=\delta_{kl},
+\end{equation}
+где $\delta_{kl}$ -- символ Кронекера. Через $L^p_\rho(a,b)$ обозначим пространство  функций $f(x)$, измеримых  на  $(a,b)$, для которых
+ \begin{equation}\label{1.2}
+\int\limits_a^b|f(x)|^p\rho(x)dx<\infty.
+\end{equation}
+Если $\rho(x)\equiv1$, то будем писать $L^p_\rho(a,b)=L^p(a,b)$ и $L(a,b)=L^1(a,b)$.
+Из \eqref{1.1} следует, что $\varphi_k(x)\in L^2_\rho(a,b)$ $(k=0,1,\ldots)$. Мы добавим к этому условию еще одно, считая, что $\varphi_k(x)\in L(a,b)$ $(k=0,1,\ldots)$. Тогда мы можем определить следующие функции
+ \begin{equation}\label{1.3}
+\varphi_{r,r+k}(x) =\frac{1}{(r-1)!}\int\limits_a^x(x-t)^{r-1}\varphi_{k}(t)dt, \quad k=0,1,\ldots.
+\end{equation}
+ Кроме того определим конечный набор функций
+  \begin{equation}\label{1.4}
+\varphi_{r,k}(x) =\frac{(x-a)^k}{k!}, \quad k=0,1,\ldots, r-1.
+\end{equation}
+ Из \eqref{1.3} и \eqref{1.4} следует, что
+ \begin{equation}\label{1.5}
+(\varphi_{r,k}(x))^{(\nu)} =\begin{cases}\varphi_{r-\nu,k-\nu}(x),&\text{если $0\le\nu\le r-1$, $r\le k$,}\\
+\varphi_{k-r}(x),&\text{если $\nu=r\le k$,}\\
+\varphi_{r-\nu,k-\nu}(x),&\text{если $\nu\le k< r$,}\\
+0,&\text{если $k< \nu\le r$}.
+  \end{cases}
+\end{equation}
+Через $W^r_{L^p_\rho(a,b)}$ обозначим пространство Соболева $W^r_{L^p_\rho(a,b)}$, состоящее из функций $f(x)$, непрерывно дифференцируемых на $[a,b]$ $r-1$ раз, причем $f^{(r-1)}(x)$ абсолютно непрерывна на $[a,b]$  и $f^{(r)}(x)\in L^p_\rho(a,b)$.
+Скалярное произведение в пространстве $W^r_{L^2_\rho(a,b)}$ определим с помощью равенства
+\begin{equation}\label{1.6}
+<f,g>=\sum_{\nu=0}^{r-1}f^{(\nu)}(a)g^{(\nu)}(a)+\int_{a}^{b} f^{(r)}(t)g^{(r)}(t)\rho(t) dt.
+\end{equation}
+Тогда, пользуясь определением функций  $\varphi_{r,k}(x)$ (см. \eqref{1.3} и \eqref{1.4}) и равенством  \eqref{1.5} нетрудно увидеть(см. теорему 2.1),  что система $\{\varphi_{r,k}(x)\}_{k=0}^\infty$ является ортонормированной в пространстве $W^r_{L^2_\rho(a,b)}$.  В цитированных выше   работах  \cite{Shar11} -- \cite{Shar18}, а также в \cite{Shar19}   были рассмотрены некоторые частные случаи ортонормированных систем функций вида $\{\varphi_{r,k}(x)\}_{k=0}^\infty$, порожденных классическими ортонормированными системами Якоби, Лежандра, Чебышева, Лагерра и Хаара. С другой стороны, в последние годы интенсивное развитие получила (см.\cite{IserKoch}--\cite{MarcelXu} и цитированную там литературу) теория полиномов, ортогональных относительно различных скалярных произведений соболевского типа (полиномы, ортогональные по Соболеву). Скалярные произведения соболевского типа характеризуются тем, что они включают в себя слагаемые, которые "контролируют" поведение соответствующих ортогональных полиномов  в нескольких заданных точках числовой оси. Например, в некоторых случаях оказывается так, что полиномы, ортогональные по Соболеву на интервале $(a,b)$, могут иметь нули, совпадающие с одним или с обоими концами этого интервала. Это обстоятельство имеет важное значение для некоторых приложений, в которых требуется, чтобы значения  частичных сумм ряда Фурье функции $f(x)$ по рассматриваемой системе ортогональных полиномов совпали в концах интервала $(a,b)$ со значениями $f(a)$ и $f(b)$.  Заметим, что обычные ортогональные с положительным на  $(a,b)$ весом полиномы этим важным свойством не обладают. Скалярное произведение \eqref{1.6}, рассматриваемое в настоящей работе имеет одну особую точку, а именно, точку $a$, в окрестности которой "контролируется" поведение функций $\varphi_{r,k}(x)$, ортогональных по Соболеву и порожденных исходной ортонормированной системой $\{\varphi_{k}(x)\}_{k=0}^\infty$ посредством равенства \eqref{1.3}.
+
+ Из \eqref{1.3} -- \eqref{1.6} нетрудно увидеть, что ряд Фурье функции $f(x)\in W^r_{L^2_\rho(a,b)}$ по системе  $\{\varphi_{r,k}(x)\}_{k=0}^\infty$ имеет смешанный характер, а, более точно, имеет следующий вид
+  \begin{equation}\label{1.7}
+f(x)\sim \sum_{k=0}^{r-1} f^{(k)}(a)\frac{(x-a)^k}{k!}+ \sum_{k=r}^\infty f_{r,k}\varphi_{r,k}(x),
+\end{equation}
+где
+  \begin{equation}\label{1.8}
+ f_{r,k}=\int\limits_a^b f^{(r)}(t) \varphi_{k-r}(t)\rho(t)dt,
+\end{equation}
+поэтому ряды Фурье вида \eqref{1.7} будем ( следуя \cite{Shar11} -- \cite{Shar18})  называть {\it смешанными рядами} по  системе $\{\varphi_{k}(x)\}_{k=0}^\infty$.   В \cite{Shar11} -- \cite{Shar19}  было показано, что частичные суммы смешанных рядов по классическим ортогональным полиномами, в отличие от сумм Фурье по этим же полиномам, успешно могут быть использованы в задачах, в которых требуется одновременно приближать дифференцируемую функцию и ее несколько производных.  При этом отметим, что в  работах  \cite{Shar11} -- \cite{Shar17} основное внимание уделялось исследованию аппроксимативных свойств смешанных рядов по ультрасферическим полиномам Якоби  $P_n^{\alpha,\alpha}(x)$, тогда как в работе \cite{Shar18} были найдены условия на параметры $\alpha$ и $\beta$, которые обеспечивают равномерную сходимость смешанных рядов по общим полиномам Якоби $P_n^{\alpha,\beta}(x)$.
+В настоящей статье вводятся и исследуются системы функций $\{\varphi_{r,k}(x)\}_{k=0}^\infty$, ортонормированных по Соболеву относительно скалярного произведения \eqref{1.6} и порожденных системой $\{\varphi_{k}(x)\}_{k=0}^\infty$. Особое внимание уделено исследованию свойств системы полиномов $\{\varphi_{r,k}(x)=T_{r,k}(x)\}_{k=0}^\infty$, порожденной многочленами Чебышева $\varphi_{k}(x)=T_k(x)=\cos(k\arccos x)$ на интервале $(-1,1)$.
+Рассмотрена зада о представлении функций $T_{r,k}(x)$, определенных равенством \eqref{1.3} на $(-1,1)$, в виде, более удобном для исследования их асимптотических свойств при $k\to\infty$. Исследованы аппроксимативные свойства сумм Фурье по системе $\{T_{r,k}(x)\}_{k=0}^\infty$.
+
+\section{О сходимости рядов Фурье   по системам функций, ортогональным по Соболеву, порожденными общими ортонормированными системами }
+ Рассмотрим сначала задачу о полноте в $W^r_{L^2_\rho(a,b)}$ системы $\{\varphi_{r,k}(x)\}_{k=0}^\infty$, состоящей из функций, определенных равенствами   \eqref{1.3} и \eqref{1.4}.
+ \begin{theorem} Предположим, что    функции $\varphi_k(x)$ $(k=0,1,\ldots)$ образуют полную в $L^2_\rho(a,b)$ ортонормированную   c весом   $\rho(x)$ систему на отрезке $[a,b]$. Тогда система $\{\varphi_{r,k}(x)\}_{k=0}^\infty$, порожденная системой $\{\varphi_{k}(x)\}_{k=0}^\infty$ посредством равенств \eqref{1.3} и \eqref{1.4}, полна  в $W^r_{L^2_\rho(a,b)}$ и ортонормирована относительно скалярного произведения \eqref{1.6}.
+ \end{theorem}
+\begin{proof}
+Из равенства \eqref{1.3} следует, что если $r\le k$ и $0\le\nu\le r-1$, то  $(\varphi_{r,k}(x))^{(\nu)}_{x=a}=0$, поэтому
+в силу \eqref{1.5}, \eqref{1.6},  имеем
+$$
+<\varphi_{r,k},\varphi_{r,l}>= \int_{a}^b(\varphi_{r,k}(x))^{(r)}(\varphi_{r,l}(x))^{(r)}\rho(x) dx=
+$$
+\begin{equation}\label{2.1}
+    \int_{a}^b\varphi_{k-r}(x)\varphi_{l-r}(x)\rho(x) dx=\delta_{kl},\quad k,l\ge r ,
+  \end{equation}
+  а из \eqref{1.4} и \eqref{1.6} имеем
+\begin{equation}\label{2.2}
+  <\varphi_{r,k},\varphi_{r,l}>=\sum_{\nu=0}^{r-1}(\varphi_{r,k}(x))^{(\nu)}|_{x=a}(\varphi_{r,l}(x))^{(\nu)}|_{x=a}=\delta_{kl},\quad k,l< r.
+  \end{equation}
+  Очевидно также, что
+  \begin{equation}\label{2.3}
+  <\varphi_{r,k},\varphi_{r,l}>=0,\quad \text{если}\quad k< r\le l\quad \text{или} \quad l< r\le k.
+  \end{equation}
+ Это означает, что функции  $\varphi_{r,k}(t)\, (k=0,1,\ldots) $ образуют   в $W^r_{L^2_\rho(a,b)}$ ортонормированную  систему относительно скалярного произведения \eqref{1.6}.  Остается убедиться в ее полноте в $W^r_{L^2_\rho(a,b)}$. С этой целью покажем, что если для некоторой функции $f=f(x)\in W^r_{L^2_\rho(a,b)}$ и для  всех $k=0,1,\ldots$ справедливы равенства $<f,\varphi_k>=0$, то $f(x)\equiv0$. В самом деле, если $k\le r-1$, то  $<f,\varphi_{r,k}>=f^{(k)}(a)$, поэтому с учетом того, что $<f,\varphi_{r,k}>=0$,  для нашей функции  $f(x)$ формула Тейлора приобретает вид
+\begin{equation}\label{2.4}
+f(x)={1\over (r-1)!}\int\limits_{a}^x(x-t)^{r-1} f^{(r)}(t)dt.
+     \end{equation}
+С другой стороны, для всех $k\ge r$ имеем
+$$
+ 0= <f,\varphi_{r,k}>=\int_{a}^bf^{(r)}(x) (\varphi_{r,k}(x))^{(r)}\rho(x) dx=
+  \int_{a}^b f^{(r)}(x)\varphi_{k-r}(x) \rho(x) dx .
+$$
+Отсюда и из того, что $\varphi_m(x)$ ($m=0,1,\ldots$)  образуют в $L^2_{\rho}(a,b)$ полную ортонормированную систему имеем $f^{(r)}(x)=0$ почти всюду на $[a,b]$. Поэтому   $f(x)\equiv0$. Теорема 1 доказана.
+\
+\end{proof}
+
+\begin{theorem} Предположим, что  $ \frac{1}{\rho(x)}\in L(a,b) $, а  функции $\varphi_k(x)$ $(k=0,1,\ldots)$  образуют полную в $L^2_\rho(a,b)$ ортонормированную   c весом   $\rho(x)$ систему на отрезке $[a,b]$, $\{\varphi_{r,k}(x)\}_{k=0}^\infty$ -- система, ортонормированная в $W^r_{L^2_\rho(a,b)}$ относительно скалярного произведения \eqref{1.6},  порожденная системой $\{\varphi_{k}(x)\}_{k=0}^\infty$ посредством равенств \eqref{1.3} и \eqref{1.4}.
+Тогда, если $f(x)\in W^r_{L^2_\rho(a,b)}$, то ряд Фурье (смешанный ряд) \eqref{1.7} сходится к функции $f(x)$ равномерно относительно $x\in[a,b]$.
+ \end{theorem}
+\begin{proof}
+Обозначим через $S_n(f^{(r)})=S_n(f^{(r)},x)$ частичную сумму ряда Фурье функции $f^{(r)}(x)\in L^2_\rho(a,b) $ по системе $\{\varphi_k(x)\}_{k=0}^n$, т.е.
+\begin{equation}\label{2.5}
+S_n(f^{(r)},x)=\sum_{k=0}^n f_{r,k+r}\varphi_k(x),
+     \end{equation}
+где коэффициенты $f_{r,k+r}$ $(k=0,1,\ldots)$ определены равенством \eqref{1.8}.  Из условий теоремы 2 следует, что при $n\to\infty$
+ \begin{equation}\label{2.6}
+\|f^{(r)}-S_n(f^{(r)}\|_{L^2_\rho(a,b)}\to0.
+ \end{equation}
+Далее, обозначим через $ Y_{n+r}(f,x)$ частичную сумму смешанного ряда \eqref{1.7} следующего вида
+ \begin{equation}\label{2.7}
+ Y_{n+r}(f,x)= \sum_{k=0}^{r-1} f^{(k)}(a)\frac{(x-a)^k}{k!}+ \sum_{k=r}^{n+r} f_{r,k}\varphi_{r,k}(x),
+\end{equation}
+и запишем формулу Тейлора
+\begin{equation}\label{2.8}
+ f(x)= \sum_{k=0}^{r-1} f^{(k)}(a)\frac{(x-a)^k}{k!}+ {1\over (r-1)!}\int\limits_{a}^x(x-t)^{r-1} f^{(r)}(t)dt.
+\end{equation}
+Из \eqref{2.7} и \eqref{2.8} имеем
+\begin{equation}\label{2.9}
+ f(x)-Y_{n+r}(f,x)=  {1\over (r-1)!}\int\limits_{a}^x(x-t)^{r-1} f^{(r)}(t)dt-\sum_{k=r}^{n+r} f_{r,k}\varphi_{r,k}(x).
+\end{equation}
+Обратимся к равенству \eqref{1.3}, тогда \eqref{2.9} можно переписать так
+$$
+f(x)-Y_{n+r}(f,x)=
+$$
+$$
+  {1\over (r-1)!}\int\limits_{a}^x(x-t)^{r-1} f^{(r)}(t)dt-{1\over (r-1)!}\int\limits_{a}^x(x-t)^{r-1}\sum_{k=r}^{n+r} f_{r,k}\varphi_{k-r}(t)dt=
+$$
+\begin{equation}\label{2.10}
+ {1\over (r-1)!}\int\limits_{a}^x(x-t)^{r-1}[f^{(r)}(t)-S_n(f^{(r)},t)]dt .
+\end{equation}
+Из \eqref{2.10} и неравенства Гельдера имеем
+$$
+|f(x)-Y_{n+r}(f,x)|\le
+$$
+\begin{equation}\label{2.11}
+ {1\over (r-1)!} \left(\int\limits_{a}^b\frac{|x-t|^{2(r-1)}}{\rho(t)}dt\right)^\frac12\left(\int\limits_{a}^b [f^{(r)}(t)-S_n(f^{(r)},t)]^2\rho(t)dt\right)^\frac12.
+ \end{equation}
+Сопоставляя \eqref{2.6} с \eqref{2.11}, убеждаемся в справедливости теоремы 2.
+
+\end{proof}
+ Как мы уже отмечали выше, основным объектом исследования настоящей работы  является    система  полиномов  $\{T_{r,k}(x)\}_{k=0}^\infty$, ортогональных по Соболеву относительного скалярного произведения вида   \eqref{1.6}, порожденных на $(-1,1)$ полиномами Чебышева первого рода $T_k(x)=\cos(k\arccos x)$. В частности, рассмотрена  задача  о представлении полиномов $T_{r,k}(x)$, в виде, более удобном для исследования их асимптотических свойств при $k\to\infty$. При исследовании этой задачи нам понадобятся некоторые хорошо известные свойства классических полиномов Якоби.
+
+
+
+
+\section{Некоторые сведения о полиномах Якоби}
+ Для произвольных действительных $\alpha$ и $\beta$ полиномы Якоби  $P_n^{\alpha,\beta}(x)$ можно определить \cite{Sege}  с помощью формулы Родрига
+ \begin{equation}\label{eq3.1}
+P_n^{\alpha,\beta}(x) = {(-1)^n\over2^nn!}{1\over\mu(x)}{d^n\over
+dx^n} \left\{\mu(x)\sigma^n(x)\right\},
+\end{equation}
+где $\alpha,\beta$ -- произвольные действительные числа, $\mu(x)=
+\mu(x;\alpha,\beta) =
+(1-x)^\alpha(1+x)^\beta,\,\,\sigma(x)=1-x^2$. Если
+$\alpha,\beta>-1$, то полиномы Якоби образуют ортогональную
+систему с весом $\mu(x)$, т.е.
+\begin{equation}\label{eq3.2}
+\int_{-1}^1P_n^{\alpha,\beta}(x)P_m^{\alpha,\beta}(x)\mu(x)dx =
+h_n^{\alpha,\beta}\delta_{nm},
+\end{equation}
+где
+\begin{equation}\label{eq3.3}
+h_n^{\alpha,\beta} =
+{\Gamma(n+\alpha+1)\Gamma(n+\beta+1)2^{\alpha+\beta+1} \over
+n!\Gamma(n+\alpha+\beta+1)(2n+\alpha+\beta+1)}.
+\end{equation}
+ Нам понадобятся еще следующие свойства полиномов Якоби~\cite{Sege, Gasper}:
+
+{\it связь с полиномами Чебышева $T_n(x)=\cos(n\arccos x)$}
+$$P_n^{-\frac{1}{2},-\frac{1}{2}}(x)=\frac{1\cdot3\cdot\ldots\cdot(2n-1)}
+{2\cdot4\cdot\ldots\cdot2n}T_n(x)=\frac{(2n)!}{2^{2n}{n!}^2}T_n(x)=$$
+\begin{equation}\label{eq3.4} =\frac{1}{\sqrt{\pi
+n}}(1+\sigma_n)T_n(x)\quad\left(\sigma_n=O\left(1/n\right)\right);
+\end{equation}
+{\it производные}
+\begin{equation}\label{eq3.5}
+{d\over dx}P_n^{\alpha,\beta}(x) =
+{1\over2}(n+\alpha+\beta+1)P_{n-1}^{\alpha+1,\beta+1}(x),
+\end{equation}
+\begin{equation}\label{eq3.6}
+{d^\nu\over dx^\nu}P_n^{\alpha,\beta}(x) =
+{(n+\alpha+\beta+1)_\nu\over2^\nu} P_{n-\nu}^{\alpha+\nu,\beta+\nu}(x),
+\end{equation}
+где $(a)_0=1$, $(a)_\nu=a(a+1)\dots(a+\nu-1)$, $a^{[0]}=1$;
+
+{\it равенства}
+\begin{equation}\label{eq3.7}
+P_n^{\alpha,\beta}(t) ={n+\alpha\choose n}
+\sum_{k=0}^n{(-n)_k(n+\alpha+\beta+1)_k\over k!(\alpha+1)_k}
+\left({1-t\over 2}\right)^k,
+\end{equation}
+\begin{equation}\label{eq3.8}
+(1-x)^\alpha(1+x)^\beta P_n^{\alpha,\beta}(x)
+={(-1)^m\over2^mn^{[m]}}{d^m\over dx^m}
+\left\{(1-x)^{m+\alpha}(1+x)^{m+\beta} P_{n-m}^{m+\alpha,m+\beta}(x)
+\right\},
+\end{equation}
+где $k^{[0]}=1$, $k^{[r]}=k(k-1)\dots(k-r+1)$,
+\begin{equation}\label{eq3.9}
+P_n^{\alpha,\beta}(-1)=(-1)^n {n+\beta\choose n},\quad P_n^{\alpha,\beta}(1)= {n+\alpha\choose n},
+\end{equation}
+$$
+{P_n^{a,a}(x)\over P_n^{a,a}(1)}=\sum_{j=0}^{[n/2]}
+   { n!(\alpha+1)_{n-2j}(n+2a+1)_{n-2j}(1/2)_j(a-\alpha)_j
+    \over (n-2j)!(2j)!(a+1)_{n-2j}(n-2j+2\alpha+1)_{n-2j}}
+     $$
+\begin{equation}\label{eq3.10}
+    \times{1\over (n-2j+a+1)_j(n-2j+\alpha+3/2)_j}
+     {P_{n-2j}^{\alpha,\alpha}(x)\over
+P_{n-2j}^{\alpha,\alpha}(1)},
+\end{equation}
+где $[b]$ -- целая часть числа $b$.
+
+
+\begin{lemma} Пусть $\alpha>-1$, $k,r$ -- целые, $r\ge1$,
+     $k\ge r+1$. Тогда
+     $$
+P_{k+r}^{\alpha-r,\alpha-r}(x)=\sum_{j=0}^r\lambda_j^\alpha
+P_{k+r-2j}^{\alpha,\alpha}(x),
+     $$
+где
+     $$
+ \lambda_j^\alpha=\lambda_j^\alpha(r,k)=
+{(-1)^j(k-r+2\alpha+1)_{k+r-2j}(1/2)_jr^{[j]}
+     (\alpha+k)^{[j]}
+\over(k+r-2j+2\alpha+1)_{k+r-2j} (k+r-2j+\alpha+3/2)_j(2j)!}.
+     $$
+\end{lemma}
+\begin{proof}
+Предположим сначала, что
+$\alpha-r>-1$, тогда, полагая
+     $a=\alpha-r$, мы можем воспользоваться формулой \eqref{eq3.10}
+ Поскольку  при $j\ge r+1$
+выполняется равенство $(a-\alpha)_j=(-r)_j=0$, то из \eqref{eq3.10} мы
+имеем
+     $$
+     P_{k+r}^{\alpha-r,\alpha-r}(x)=\sum_{j=0}^r\lambda_j^\alpha
+P_{k+r-2j}^{\alpha,\alpha}(x),
+     $$
+где
+     $$
+\lambda_j^\alpha={P_{k+r}^{\alpha-r,\alpha-r}(1)\over
+     P_{k+r-2j}^{\alpha,\alpha}(1)}
+{(k+r)!(\alpha+1)_{k+r-2j}(k-r+2\alpha+1)_{k+r-2j}\over
+     (k+r-2j)!(2j)!(\alpha-r+1)_{k+r-2j}}\times
+     $$
+     $$
+     {(1/2)_j(-r)_j\over(k+r-2j+2\alpha+1)_{k+r-2j}(k-2j+\alpha+1)_j
+     (k+r-2j+\alpha+3/2)_j}=
+     $$
+     $$
+{(-1)^j(k-r+2\alpha+1)_{k+r-2j}(1/2)_jr^{[j]}(\alpha+k)^{[j]}
+\over(k+r-2j+2\alpha+1)_{k+r-2j}
+(k+r-2j+\alpha+3/2)_j(2j)!}.
+     $$
+     Отсюда следует справедливость утверждения леммы 3.1 в случае
+     $\alpha>r-1$. Но поскольку  $P_{k+r}^{\alpha-r,\alpha-r}(x)$,
+ $\lambda_j^\alpha$ и $P_{k+r-2j}^{\alpha,\alpha}(x)$ представляют
+собой аналитические функции относительно $\alpha$, то утверждение
+леммы 3.1 вытекает из уже доказанного случая.
+\end{proof}
+
+\begin{lemma} Пусть  $k,r$ -- целые, $r\ge1$,
+     $k\ge r+1$. Тогда
+     $$
+P_{k+r}^{-\frac12-r,-\frac12-r}(x)=\sum_{j=0}^r\lambda_j^{-\frac12}(k,r)
+P_{k+r-2j}^{-\frac12,-\frac12}(x),
+     $$
+где
+$$
+ \lambda_j^{-\frac12}(k,r)=
+{(-1)^j(k-r)_{k+r-2j}(1/2)_jr^{[j]}
+     (k-1/2)^{[j]}
+\over(k+r-2j)_{k+r-2j} (k+r-2j+1)_j(2j)!}=
+$$
+\begin{equation}\label{eq3.11}
+(-1)^j{((k+r-2j)!)^22^{2k+2r-4j}\over(2(k+r-2j))!}
+{(2k)!\over(k!)^22^{2k+2r}}{r^{[j]}\over j!}
+{k^{[r+1]}\over(k+r-j)^{[r+1]}}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Чтобы убедиться в справедливости утверждения леммы 3.2 достаточно в лемме 3.1 взять $\alpha=-\frac12$.
+\end{proof}
+\begin{lemma} Пусть  $k,r$ -- целые, $r\ge1$,
+     $k\ge r+1$. Тогда
+$$
+P_{k+r}^{-\frac12-r,-\frac12-r}(x)={(2k)!\over(k!)^22^{2k+2r}}\sum_{j=0}^r{(-1)^j\over j!}
+{r^{[j]}k^{[r+1]}\over(k+r-j)^{[r+1]}}T_{k+r-2j}(x).
+$$
+\end{lemma}
+\begin{proof}
+Утверждение леммы 3.3 непосредственно вытекает из леммы 3.2 и равенств \eqref{eq3.4} и \eqref{eq3.11}.
+\end{proof}
+
+Пусть $\alpha,\beta>-1$,  $p\ge1$. Обозначим через $ L^p_{\alpha,\beta}$ пространство измеримых функций $f=f(x)$,
+определенных на $[-1,1]$, для которых
+     $$
+\|f\|_{L^p_{\alpha,\beta}}= \left(\int\limits_{-1}^1
+\mu(x)|f(x)|^pdx\right)^{1/p}.
+     $$
+Если $f\in  L^p_{\alpha,\beta}$, то мы можем определить коэффициенты
+     Фурье-Якоби
+          $$
+          f^{\alpha,\beta}_k={1\over h_k^{\alpha,\beta}}
+       \int\limits_{-1}^1(1-x)^\alpha(1+x)^\beta
+f(x)P_k^{\alpha,\beta}(x)dx
+          $$
+ и рассмотреть сумму Фурье-Якоби   по полиномам Якоби $P_k^{\alpha,\beta}(x)$:
+$$
+S_n^{\alpha,\beta}(f)=S_n^{\alpha,\beta}(f,x)= \sum_{k=0}^n
+f_k^{\alpha,\beta} P_k^{\alpha,\beta}(x),
+$$
+которая при $\alpha=\beta=-\frac12$ представляет собой  \cite{Sege} сумму Фурье по полиномам Чебышева $T_k(x)=\cos(k\arccos x)$.  В работе \cite{Muckenhoupt} доказана следующая
+\begin{theorem}
+Пусть
+$\alpha,\beta>-1$, $A,B\in\mathbb{R}$,  $p>1$ таковы, что
+$$
+\left|\frac{A+1}{p}-\frac{\alpha+1}{2}\right|<
+\min\left\{\frac{1}{4},\frac{\alpha+1}{2}\right\},
+$$
+$$
+\left|\frac{B+1}{p}-\frac{\beta+1}{2}\right|<\min\left\{\frac{1}{4},\frac{\beta+1}{2}\right\}.
+$$
+Тогда, если $f\in L^p_{A,B}$, то имеет место соотношение
+$$
+\lim_{n\to\infty}\|f-S_n^{\alpha,\beta}(f)\|_{L^p_{A,B}}=0.
+$$
+
+\end{theorem}
+\section{Ортогональные по Соболеву полиномы, порожденные многочленами Чебышева первого рода}
+    Полиномы Чебышева
+\begin{equation}\label{eq4.1}
+\frac{1}{\sqrt{2}},\quad T_k(x)=\cos(k\arccos x), \quad k=1,2,\ldots
+\end{equation}
+образуют ортонормированную  в $L_\kappa^2(-1,1)$ с весом  $\kappa(x)=\frac2\pi(1-x^2)^{-\frac12}$ систему. Как хорошо известно \cite{Sege}, система полиномов Чебышева \eqref{eq4.1} полна в $L_\kappa^2(-1,1)$.   Эта система порождает на $[-1,1]$ систему полиномов $T_{r,k}(x)$ $(k=0,1,\ldots)$, определенных равенствами
+
+  \begin{equation}\label{eq4.2}
+T_{r,k}(x) =\frac{(x+1)^k}{k!}, \quad k=0,1,\ldots, r-1,
+\end{equation}
+
+  \begin{equation}\label{eq4.3}
+ T_{r,r}(x) =\frac{(x+1)^r}{\sqrt{2}r!},\quad T_{r,r+k}(x) =\frac{1}{(r-1)!}\int\limits_{-1}^x(x-t)^{r-1}T_k(t)dt, \, k=1,2\ldots.
+\end{equation}
+Из теоремы 1 непосредственно вытекает
+\begin{corollary}
+Система полиномов $\{T_{r,k}(x)\}_{k=0}^\infty$, порожденная системой ортонормированных полиномов Чебышева \eqref{eq4.1} посредством равенств \eqref{eq4.2} и \eqref{eq4.3}, полна  в $W^r_{L^2_\kappa(-1,1)}$ и ортонормирована относительно скалярного произведения
+\begin{equation}\label{4.4}
+<f,g>=\sum_{\nu=0}^{r-1}f^{(\nu)}(-1)g^{(\nu)}(-1)+\int_{-1}^{1} f^{(r)}(t)g^{(r)}(t)\kappa(t) dt.
+\end{equation}
+\end{corollary}
+
+Ряд Фурье \eqref{1.7} для системы   $\{T_{r,k}(x)\}_{k=0}^\infty$ приобретает вид
+\begin{equation}\label{4.5}
+f(x)\sim \sum_{k=0}^{r-1} f^{(k)}(-1)\frac{(x+1)^k}{k!}+\frac{f_{r,r}}{\sqrt{2}}T_{r,r}(x)+ \sum_{k=r+1}^\infty f_{r,k}T_{r,k}(x),
+\end{equation}
+где
+  \begin{equation}\label{4.6}
+ f_{r,k}=\int_{-1}^1 f^{(r)}(t)T_{k-r}(t)\kappa(t)dt.
+\end{equation}
+
+\begin{corollary}
+Если $f(x)\in W^r_{L^2_\kappa(-1,1)}$, то ряд Фурье (смешанный ряд) \eqref{4.5} сходится к функции $f(x)$ равномерно относительно $x\in[-1,1]$.
+\end{corollary}
+\begin{proof}
+ Так как $\frac{1}{\kappa(x)}\in L(-1,1)$, то утверждение следствия 2 вытекает из теоремы 2 и следствия 1.
+\end{proof}
+
+В дальнейшем будет значительно усилено утверждение следствия 2, распространив его на более широкие, чем $W^r_{L^2_\kappa(-1,1)}$ классы Соболева $W^r_{L^{p(x)}_\kappa(-1,1)}$ с переменным показателем $p(x)$. Но для этого нам нужны дальнейшие свойства полиномов $T_{r,k}(x)$, определенных равенствами \eqref{eq4.2} и \eqref{eq4.3}.
+
+
+Пусть $\lambda=\alpha+\beta$. Тогда если $(k+\lambda)^{[r]}\neq0$,
+то мы можем воспользоваться равенством \eqref{eq3.6} и записать
+\begin{equation}\label{4.7}
+P^{\alpha,\beta}_k(t)={2^r \over (k+\lambda )^{[r]}}\frac{d^r}{dt^r}P_{k+r}^{\alpha-r,\beta-r}(t).
+\end{equation}
+ Если  $k\ge r-\lambda$, то, очевидно, $(k+\lambda)^{[r]}\neq0$ и для таких $k$ мы
+можем  воспользоваться равенством \eqref{4.7}. Итак, пусть $(k+\lambda)^{[r]}\neq0$. Тогда в силу  \eqref{4.7}
+$$
+\frac{1}{(r-1)!}\int\limits^x_{-1}(x-t)^{r-1}P_k^{\alpha,\beta}(t)\,dt=
+$$
+$$
+\frac{2^r}{(k+\lambda)^{[r]}}\frac{1}{(r-1)!}\int\limits^x_{-1}(x-t)^{r-1}
+\frac{d^r}{dt^r}P_{k+r}^{\alpha-r,\beta-r}(t)\,dt=
+$$
+\begin{equation}\label{4.8}
+\frac{2^r}{(k+\lambda)^{[r]}}\left[P_{k+r}^{\alpha-r,\beta-r}(x)-\sum^{r-1}_{\nu=0}
+\frac{(1+x)^\nu}{\nu!}\left\{P_{k+r}^{\alpha-r,\beta-r}(t)
+\right\}_{t=-1}^{(\nu)}\right].
+\end{equation}
+ Далее, в силу \eqref{eq3.6}
+ \begin{equation}\label{4.9}
+\left\{P_{k+r}^{\alpha-r,\beta-r}(t)\right\}^{(\nu)}=\frac{(k+\lambda-r+1)_\nu}{2^\nu}P_{k+r-\nu}^{\alpha+\nu-r,\beta+\nu-r}(t),
+\end{equation}
+а из \eqref{eq3.9} имеем
+$$P_{k+r-\nu}^{\alpha+\nu-r,\beta+\nu-r}(-1)=(-1)^{k+r-\nu}{k+\beta\choose k+r-\nu}=$$
+\begin{equation}\label{4.10}
+\frac{(-1)^{k+r-\nu}\Gamma(k+\beta+1)}{\Gamma(\nu-r+\beta+1)(k+r-\nu)!}.
+\end{equation}
+Из \eqref{4.9}  и \eqref{4.10} находим
+\begin{equation}\label{4.11}
+\left\{P_{k+r}^{\alpha-r,\beta-r}(t)\right\}_{t=-1}^{(\nu)}=
+\frac{(-1)^{k+r-\nu}\Gamma(k+\beta+1)(k+\lambda-r+1)_{\nu}}{\Gamma(\nu-r+\beta+1)(k+r-\nu)!2^\nu}=A_{\nu,k,r}^{\alpha,\beta}.
+\end{equation}
+Сопоставляя \eqref{4.8} и \eqref{4.11} мы можем записать
+$$\frac{1}{(r-1)!}\int\limits^x_{-1}(x-t)^{r-1}P_k^{\alpha,\beta}(t)\,dt=$$
+\begin{equation}\label{4.12}
+\frac{2^r}{(k+\lambda)^{[r]}}\left[P_{k+r}^{\alpha-r,\beta-r}(x)-\sum^{r-1}_{\nu=0}\frac{A_{\nu,k,r}^{\alpha,\beta}}{\nu!}(1+x)^{\nu}\right].
+\end{equation}
+Из  \eqref{4.12},  \eqref{eq3.4} и \eqref{eq4.3} при $\alpha=\beta=-\frac12$ имеем
+$$
+T_{r,r+k}(x)=\frac{1}{(r-1)!}\int\limits^x_{-1}(x-t)^{r-1}T_k(t)\,dt=
+$$
+$$
+\frac{2^{2k}k!^2}{(2k)!(r-1)!}\int\limits^x_{-1}(x-t)^{r-1}P_k^{-\frac12,-\frac12}(t)\,dt=
+$$
+\begin{equation}\label{4.13}
+\frac{k!^2}{(2k)!}
+\frac{2^{r+2k}}{(k-1)^{[r]}}\left[P_{k+r}^{-\frac12-r,-\frac12-r}(x)-\sum^{r-1}_{\nu=0}
+\frac{A_{\nu,k,r}^{-\frac12,-\frac12}}{\nu!}(1+x)^{\nu}\right],
+\end{equation}
+где в силу \eqref{4.11} и равенств
+$$
+\Gamma(z)\Gamma(1-z)=\frac{\pi}{\sin(\pi z)},\quad \Gamma(z+1/2)=\frac{\sqrt{\pi}\Gamma(2z)}{\Gamma(z)2^{2z-1}}
+$$
+ для $k\ge r+1$ находим
+$$
+A_{\nu,k,r}=A_{\nu,k,r}^{-\frac12,-\frac12}=\frac{(-1)^{k+r-\nu}\Gamma(k+1/2)(k-r)_{\nu}}{\Gamma(\nu-r+1/2)(k+r-\nu)!2^\nu}
+$$
+$$
+=\frac{(-1)^{k}\Gamma(k+1/2)(k-r)_{\nu}\Gamma(r-\nu+1/2)}{\pi (k+r-\nu)!2^\nu}=
+$$
+\begin{equation}\label{4.14}
+\frac{(-1)^{k}(2k-1)!(2(r-\nu)-1)!(k-r)_{\nu}}{(k-1)!(r-\nu-1)! (k+r-\nu)!2^{2(k+r-1)-\nu}}.
+\end{equation}
+Таким образом, при $k\ge r+1$ мы получаем следующее представление
+\begin{equation}\label{4.15}
+T_{r,r+k}(x)=\frac{k!^2}{(2k)!}
+\frac{2^{r+2k}}{(k-1)^{[r]}}\left[P_{k+r}^{-\frac12-r,-\frac12-r}(x)-\sum^{r-1}_{\nu=0}\frac{A_{\nu,k,r}}{\nu!}(1+x)^{\nu}\right].
+\end{equation}
+Теперь обратимся к лемме 3.3, из которой выводим
+\begin{equation}\label{4.16}
+\frac{k!^2}{(2k)!}
+\frac{2^{r+2k}}{(k-1)^{[r]}}P_{k+r}^{-\frac12-r,-\frac12-r}(x)=
+\sum_{j=0}^r(-1)^j{r\choose j}
+{kT_{k+r-2j}(x)\over2^r(k+r-j)^{[r+1]}}.
+\end{equation}
+Сопоставляя \eqref{4.15} и  \eqref{4.16}, мы можем записать ($k\ge r+1$)
+\begin{equation}\label{4.17}
+T_{r,r+k}(x)=\sum_{j=0}^r{r\choose j}
+{(-1)^jkT_{k+r-2j}(x)\over2^r(k+r-j)^{[r+1]}}
+-\frac{k!^22^{r+2k}}{(2k)!(k-1)^{[r]}}
+\sum^{r-1}_{\nu=0}\frac{A_{\nu,k,r}}{\nu!}(1+x)^{\nu}.
+\end{equation}
+
+
+Рассмотрим два важных частных случая, соответствующие  значениям   $r=1$  и $r=2$.
+
+
+1) Пусть $r=1$. Тогда из \eqref{4.14} имеем
+\begin{equation}\label{4.18}
+A_{0,k,1}=\frac{(-1)^{k}(2k-1)!}{(k-1)!(k+1)!2^{2k}}, \quad k=2,3,\ldots.
+\end{equation}
+
+Из \eqref{4.17} и \eqref{4.18}  для $k\ge2$ находим
+$$
+T_{1,k+1}(x)=\sum_{j=0}^1(-1)^j
+{kT_{k+1-2j}(x)\over2(k+1-j)^{[2]}}-\frac{k!^2}{(2k)!}
+\frac{2^{2k+1}}{(k-1)}\frac{(-1)^{k}(2k-1)!}{(k-1)!(k+1)!2^{2k}}
+$$
+\begin{equation}\label{4.19}
+=\sum_{j=0}^1(-1)^j
+{kT_{k+1-2j}(x)\over2(k+1-j)^{[2]}}-\frac{(-1)^k}{k^2-1}.
+\end{equation}
+
+Кроме того из \eqref{eq4.2} и \eqref{eq4.3} имеем
+\begin{equation}\label{4.20}
+T_{1,0}(x)=1, \quad T_{1,1}(x)=\frac{1+x}{\sqrt{2}}, \quad T_{1,2}(x)=x^2-1.
+\end{equation}
+
+2) Для $r=2$ и $k\ge3$ из \eqref{4.14} и \eqref{4.17} имеем
+$$
+A_{0,k,2}=\frac{6(-1)^{k}(2k-1)!}{(k-1)! (k+2)!2^{2(k+1)}},\quad A_{1,k,2}=\frac{(-1)^{k}(2k-1)!(k-2)}{(k-1)! (k+1)!2^{2k+1}},
+$$
+$$
+T_{2,k+2}(x)=\sum_{j=0}^2{r\choose j}
+{(-1)^jkT_{k+2-2j}(x)\over2^2(k+2-j)^{[3]}}
+-\frac{k!^2}{(2k)!}
+\frac{2^{2+2k}}{(k-1)^{[2]}}\sum^1_{\nu=0}\frac{A_{\nu,k,2}}{\nu!}(1+x)^{\nu},
+$$
+поэтому при $k\ge3$
+
+\begin{equation}\label{4.21}
+T_{2,k+2}(x)=\sum_{j=0}^2{2\choose j}
+{(-1)^jkT_{k+2-2j}(x)\over4(k+2-j)^{[3]}}
+-(-1)^k\left[\frac{1+x}{k^2-1}+\frac{3}{(k^2-1)(k^2-4)}\right].
+\end{equation}
+
+С другой стороны,  из \eqref{eq4.2} и \eqref{eq4.3} имеем
+\begin{equation}\label{4.22}
+T_{2,0}(x)=1, \quad T_{2,1}(x)=1+x, \quad T_{2,2}(x)=\frac{(1+x)^2}{2\sqrt{2}},
+\end{equation}
+\begin{equation}\label{4.23}
+T_{2,3}(x)=\frac16(x-2)(x+1)^2, \quad T_{2,4}(x)=\frac16x(x-2)(x+1)^2.
+\end{equation}
+
+Возвращаясь к вопросу об условиях равномерной сходимости ряда Фурье (смешанного ряда) \eqref{4.5} можно сформулировать следующую теорему
+
+\begin{theorem}
+ Пусть $ A,B\in\mathbb{R},\,p>1$ таковы, что
+\begin{equation}\label{4.1}
+\left|\frac{A+1}{p}-\frac{1}{4}\right|<\frac{1}{4},\quad
+\left|\frac{B+1}{p}-\frac{1}{4}\right|<\frac{1}{4},
+\end{equation}
+$\rho(x)=(1-x)^A(1+x)^B$. Тогда, если $f\in
+W^r_{L_\rho^p}(-1,1)$, то ряд \eqref{4.5}  равномерно на $[-1,1]$ сходятся к $f(x)$.
+\end{theorem}
+
+
+
+\end{fulltext}
+
+\begin{thebibliography}{20}
+
+
+\bibitem{Shar11}Шарапудинов И.И.Приближение функций с переменной гладкостью суммами Фурье Лежандра // Математический сборник. 2000. Т. 191. Вып. 5. С. 143--160.
+%\RBibitem{Shar11}
+%\by И.\,И. Шарапудинов
+%\paper Приближение функций с переменной гладкостью суммами Фурье Лежандра
+%\inbook Математический сборник
+%\vol 191
+%\issue 5
+%\yr 2000
+%\pages 143--160
+
+
+\bibitem{Shar12} Шарапудинов И.И. Аппроксимативные свойства операторов ${\cal Y}_{n+2r}(f)$ и их дискретных аналогов // Математические заметки. 2000. Т. 72. Вып.5. С. 765–-795.
+
+%\RBibitem{Shar12}
+%\by И.\,И. Шарапудинов
+%\paper Аппроксимативные свойства операторов ${\cal Y}_{n+2r}(f)$ и их дискретных аналогов
+%\inbook Математические заметки
+%\vol 72
+%\issue 5
+%\yr 2002
+%\pages 765–-795
+
+\bibitem{Shar13} Шарапудинов И.И. Смешанные ряды по ортогональным полиномам // Махачкала. Издательство Дагестанского научного центра. 2004. 276 с.
+%\RBibitem{Shar13}
+%\by И.\,И. Шарапудинов
+%\paper Смешанные ряды по ортогональным полиномам
+%\inbook
+%\publ Издательство Дагестанского научного центра
+%\yr 2004
+%\pages 1--176
+%\publaddr Махачкала
+
+
+
+\bibitem{Shar15} Шарапудинов И.И. Аппроксимативные свойства смешанных рядов по полиномам Лежандра на классах $W^r$ // Математический сборник. 2006. Т. 197. Вып. 3. С. 135--154.
+%\RBibitem{Shar15}
+%\by И.\,И. Шарапудинов
+%\paper Аппроксимативные свойства смешанных рядов по полиномам Лежандра на классах $W^r$
+%\inbook Математический сборник
+%\vol 197
+%\issue 3
+%\yr 2006
+%\pages 135–-154
+
+
+\bibitem{Shar16} Шарапудинов И.И. Аппроксимативные свойства средних типа Валле-Пуссена частичных сумм смешанных рядов по полиномам Лежандра // Математические заметки. 2008. Т. 84. Вып. 3. С. 452--471.
+%\RBibitem{Shar16}
+%\by И.\,И. Шарапудинов
+%\paper Аппроксимативные свойства средних типа Валле-Пуссена частичных сумм смешанных рядов по полиномам Лежандра
+%\inbook Математические заметки
+%\vol 84
+%\issue 3
+%\yr 2008
+%\pages 452--471
+
+\bibitem{Shar17} Шарапудинов И.И. Смешанные ряды по ультрасферическим полиномам и их аппроксимативные свойства // Математический сборник. 2003. Т. 194. Вып. 3. С. 115--148.
+%\RBibitem{Shar17}
+%\by И.\,И. Шарапудинов
+%\paper Смешанные ряды по ультрасферическим полиномам и их аппроксимативные свойства
+%\inbook Математический сборник
+%\vol 194
+%\issue 3
+%\yr 2003
+%\pages 115--148
+
+
+
+\bibitem{Shar18} Шарапудинов И.И., Шарапудинов Т.И. Смешанные ряды по полиномам Якоби и Чебышева и их дискретизация // Математические заметки. 2010. Т. 88. Вып. 1. С. 116--147.
+%\RBibitem{Shar18}
+%\by И.\,И. Шарапудинов, Т.\, И. Шарапудинов
+%\paper Смешанные ряды по полиномам Якоби и Чебышева и их дискретизация
+%\inbook Математические заметки
+%\vol 88
+%\issue 1
+%\yr 2010
+%\pages 116--147
+
+\bibitem{Shar19} Шарапудинов И.И., Муратова Г.Н. Некоторые свойства r-кратно интегрированных рядов по системе Хаара // Изв. Сарат. ун-та. Нов. сер. Сер. Математика. Механика. Информатика. 2009. Т. 9. Вып. 1. С. 68--76.
+%\RBibitem{Shar19}
+%\by И.\,И. Шарапудинов,  Г.\, Н. Муратова
+%\paper  Некоторые свойства r-кратно интегрированных рядов по системе Хаара
+%\inbook Изв. Сарат. ун-та. Нов. сер. Сер. Математика. Механика. Информатика
+%\vol 9
+%\issue 1
+%\yr 2009
+%\pages 68--76
+
+
+\bibitem{IserKoch}Iserles A., Koch P.E., Norsett S.P., Sanz-Serna J.M. On polynomials  orthogonal  with respect  to certain Sobolev inner products // J. Approx. Theory. 1991. Vol. 65. Pp. 151--175.
+%\RBibitem{IserKoch}
+%\by A. Iserles, P.E. Koch, S.P. Norsett and J.M. Sanz-Serna
+%\paper On polynomials  orthogonal  with respect  to certain Sobolev inner products
+%\inbook ,  J. Approx. Theory
+%\vol 65
+%\issue
+%\yr 1991
+%\pages 151--175
+
+
+\bibitem{MarcelAlfaroRezola} Marcellan F., Alfaro M., Rezola M.L. Orthogonal polynomials on Sobolev spaces: old and new directions // Journal of Computational and Applied Mathematics. North-Holland. 1993. Vol. 48. Pp. 113--131.
+%\RBibitem{MarcelAlfaroRezola}
+%\by F. Marcellan, M. Alfaro and M.L. Rezola
+%\paper Orthogonal polynomials on Sobolev spaces: old and new directions
+%\inbook Journal of Computational and Applied Mathematics
+%\vol 48
+%\issue
+%\yr 1993
+%\pages 113--131
+%\publaddr North-Holland
+
+
+\bibitem{Meijer} Meijer H.G. Laguerre polynomials generalized to a certain discrete Sobolev inner product space // J. Approx. Theory. 1993. Vol. 73. Pp. 1--16.
+%\RBibitem{Meijer}
+%\by H.\,G. Meijer, Laguerre polynimials generalized to a certain
+%\paper  Laguerre polynimials generalized to a certain discrete Sobolev inner product space
+%\inbook ,  J. Approx. Theory
+%\vol 73
+%\issue
+%\yr 1993
+%\pages 1--16
+
+
+\bibitem{KwonLittl1} Kwon K.H., Littlejohn L.L. The orthogonality of the Laguerre polynomials $\{L_n^{(-k)}(x)\}$ for positive integers $k$ // Ann. Numer. Anal. 1995. Issue. 2. Pp. 289--303.
+%\RBibitem{KwonLittl1}
+%\by K.\,H. Kwon and L.\,L. Littlejohn
+%\paper The orthogonality of the Laguerre polynomials $\{L_n^{(-k)}(x)\}$ for positive integers $k$
+%\inbook Ann. Numer. Anal.
+%\vol
+%\issue 2
+%\yr 1995
+%\pages 289–-303
+
+\bibitem{KwonLittl2} Kwon K.H., Littlejohn L.L. Sobolev orthogonal polynomials and second-order differential equations // Rocky Mountain J. Math. 1998. Vol. 28. Pp. 547–-594.
+%\RBibitem{KwonLittl2}
+%\by K.\,H. Kwon and L.\,L. Littlejohn
+%\paper Sobolev orthogonal polynomials and second-order differential equations
+%\inbook Rocky Mountain J. Math.
+%\vol 28
+%\issue
+%\yr 1998
+%\pages 547–-594
+
+
+\bibitem{MarcelXu}Marcellan F., Yuan Xu. ON SOBOLEV ORTHOGONAL POLYNOMIALS // arXiv: 6249v1 [math.C.A] 25 Mar 2014. Pp 1--40.
+%\RBibitem{MarcelXu}
+%\by F. Marcellan and Yuan Xu
+%\paper ON SOBOLEV ORTHOGONAL POLYNOMIALS
+%\inbook  arXiv: 6249v1 [math.C.A] 25 Mar 2014
+%\vol
+%\issue
+%\yr 2014
+%\pages 1--40
+
+
+\bibitem{Sege}Сеге Г. Ортогональные многочлены. Москва. Физматгиз. 1962.
+%\RBibitem{Sege}
+%\by Г. Сеге
+%\paper
+%\inbook Ортогональные многочлены
+%\publ Физматгиз
+%\yr 1962
+%\pages
+%\publaddr Москва
+
+\bibitem{Gasper}Gasper G. Positiviti and special function // Theory and appl.Spec.Funct. Edited by Richard A.Askey. 1975. Pp. 375--433.
+%\RBibitem{Gasper}
+%\by G. Gasper
+%\paper Positiviti and special function
+%\inbook  Theory and appl.Spec.Funct. Edited by Richard A.Askey.
+%\vol
+%\issue
+%\yr 1975
+%\pages 375--433
+
+\bibitem{Muckenhoupt}Muckenhoupt B. Mean convergence of Jacobi series // Proc.Amer. Math. Soc. 1969. Vol. 23. Issue 2. Pp. 306--310.
+%\RBibitem{Muckenhoupt}
+%\by B. Muckenhoupt
+%\paper  Mean convergence of Jacobi series
+%\inbook  Proc.Amer. Math. Soc.
+%\vol 23
+%\issue 2
+%\yr 1969
+%\pages 306--310
+
+
+\bibitem{KashSaak}Кашин Б.С., Саакян А.А. Ортогональные ряды. Москва. АФЦ. 1999.
+%\RBibitem{KashSaak}
+%\by Б.\,С.~Кашин, А.\,А.~Саакян
+%\book Ортогональные ряды
+%\yr 1999
+%\publ АФЦ
+%\publaddr Москва
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{thebibliography}
+
+
+
+
+\end{document}

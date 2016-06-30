@@ -1,0 +1,1714 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts,amssymb,mathrsfs,amscd}
+\usepackage{cite}
+\sloppy
+%для подключения графики используются стандартные команды, но кроме файла *.eps
+%необходимо наличие в текущей директории соответствующего файла *.pdf
+%-------------------------------------------------
+%\usepackage{cite}
+%\usepackage[plainpages=false,pdfpagelabels=false,colorlinks=false,pdfborder={0 0 0}]{hyperref}
+
+\usepackage[hyper]{msb-a}
+\JournalName{Дагестанские Электронные Математические Известия}
+%Пустой аргумент приводит к исчезновению всех атрибутов журнала "
+%", файл можно представить в любой другой журнал
+%-------------------------------------------------
+\numberwithin{equation}{section}
+%-------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{corollary}{Следствие}[section]
+\newtheorem{lemma}{Лемма}[section]
+\newtheorem{propos}{Предложение}
+%-------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{proof}{Доказательство}\def\theproof{}
+\newtheorem{remark}{Замечание}
+%-------------------------------------------------
+\def\Re{\operatorname{Re}}
+\def\Im{\operatorname{Im}}
+\def\const{\operatorname{const}}
+\def\RR{\mathbb R}
+\def\CC{\mathbb C}
+\def\NN{\mathbb N}
+\def\RS{\mathfrak R}
+\def\bz{\mathbf z}
+\def\sH{\mathscr H}
+\def\HH{\mathscr H}
+\def\mro{\widehat\rho}
+%-------------------------------------------------
+\begin{document}
+
+
+
+
+\title{Об идентификации параметров линейных систем на основе полиномов Чебышева первого рода и полиномов Чебышева, ортогональных
+на равномерной  сетке
+ }
+
+\author[I.\,I.~Sharapudinov]{И.\,И.~Шарапудинов}
+\address{Южный математический институт ВНЦ РАН и РСОА}
+\email{sharapud@mail.ru}
+
+\author[M.\,S.~Sultanakhmedov]{М.\,С.~Султанахмедов}
+\address{Дагестанский научный центр РАН}
+\email{sultanakhmedov@gmail.com}
+
+\author[T.\,N.~Shakh-Emirov]{Т.\,Н.~Шах-Эмиров}
+\address{Южный математический институт ВНЦ РАН и РСОА}
+\email{tadgius@gmail.com}
+
+\author[T.\,I.~Sharapudinov]{Т.\,И.~Шарапудинов}
+\address{Южный математический институт ВНЦ РАН и РСОА}
+\email{sharapudinov@gmail.com}
+
+\author[M.\,G.~Magomed-Kasumov]{М.\,Г.~Магомед-Касумов}
+\address{Южный математический институт ВНЦ РАН и РСОА}
+\email{rasuldev@gmail.com}
+
+\author[G.\,G.~Akniyev]{Г.\,Г.~Акниев}
+\address{Дагестанский научный центр РАН}
+\email{hasan.akniyev@gmail.com}
+
+\author[R.\,M.~Gazhimirzaev]{Р.\,М.~Гаджимирзаев}
+\address{Дагестанский научный центр РАН}
+\email{ramis3004@gmail.com}
+
+
+\date{03.09.2014}
+\udk{517.538}
+
+\maketitle
+
+\begin{fulltext}
+
+\begin{abstract}
+
+В работе исследуется линейная система у которой входной сигнал $y = y(t)$ и выходной сигнал $x = x(t)$ связаны между собой равенством $x^{(r)}(t)=\sum_{\nu=0}^{r-1}a_\nu(t)x^{(\nu)}(t)+\sum_{\mu=0}^s b_\mu(t)y^{(\mu)}(t)$.
+Ставится задача найти неизвестные переменные коэффициенты $a_\nu(t)$ $(\nu=0,\ldots,r-1)$ и $b_\mu(t)$ $(\mu=0,\ldots,s)$.
+Рассматривается случай когда значения сигналов заданы в узлах равномерной сетки $\Omega_N=\{t_j=-1+jh\}_{j=0}^{N-1}$, где $h=\frac2{N-1}$. Предполагается, что значения $x(t)$ и $y(t)$ получены экспериментально в результате наблюдений и зашумлены.
+
+Для предварительной обработки дискретной информации используется ее <<сглаживание>>, основанное на применении полиномов Чебышева, ортогональных на равномерной сетке $\Omega_N$. На следующем шаге от исходного уравнения осуществляется переход к двойственному уравнению путем представления всех фигурирующих в нем функций (включая и производные)в виде рядов по полиномам Чебышева первого рода $C_n(t)=\cos{(\arccos{t})}$. В результате возникает система линейных уравнений относительно коэффициентов Фурье -- Чебышева искомых переменных коэффициентов $a_\nu(t)$ и $b_\nu(t)$.
+Решая эту систему численными методами, получаем переменные коэффициенты исходной системы уравнений, завершая тем самым решение задачи идентификации.
+
+
+Библиография: 16  названий.
+$$ $$
+
+
+Linear system in which the input signal $y = y(t)$ and the output $x = x(t)$ are related by the equation $x^{(r)}(t)=\sum_{\nu=0}^{r-1}a_\nu(t)x^{(\nu)}(t)+\sum_{\mu=0}^s b_\mu(t)y^{(\mu)}(t)$ is considered.
+The goal is to find the unknown variable coefficients $a_\nu(t)$ $(\nu=0,\ldots,r-1)$ and $b_\mu(t)$ $(\mu=0,\ldots,s)$ in case when the signal values are given in the nodes of a uniform grid $\Omega_N=\{t_j=-1+jh\}_{j=0}^{N-1}$, where $h=\frac2{N-1}$. It is assumed that the values of $x(t)$ and $y(t)$ are obtained as a result of experimental observations and are noised.
+
+For pretreatment of discrete information we apply <<anti-aliasing>> based on the use of Chebyshev polynomials orthogonal on a uniform grid $\Omega_N$. 
+On the next step it is carried out the transition from the original equation to the dual equation by representation of all figuring there functions (including derivatives) in the form of series by Chebyshev polynomials of the first kind $C_n(t)=\cos{(\arccos{t})}$.
+The result is a system of linear equations for the Fourier -- Chebyshev coefficients of $a_\nu(t)$ and $b_\nu(t)$.
+Solving this system numerically, we obtain the variable coefficients of the original system of equations, thus completing the solution of the identification problem.
+
+Bibliography: 16 items.
+\end{abstract}
+
+\begin{keywords}
+полиномы Чебышева первого рода; полиномы Чебышева ортогональные на равномерной сетке; линейные системы; обработка сигналов, задача идентификации.
+
+{\bf Keywords:} Chebyshev polynomials of the first kind; Chebyshev polynomials orhtogonal on uniform grid; linear systems; signal processing; identification problem.
+\end{keywords}
+
+
+\markright{Об идентификации параметров линейных  систем}
+
+%\footnotetext[0]{}%Работа выполнена при поддержке РФФИ (грант
+%\No~10-01-00191) }
+
+
+
+
+
+
+
+
+
+
+\section*{Введение}
+
+Рассмотрим линейную систему, у которой выходной сигнал $x=x(t)$ и входной сигнал  $y=y(t)$
+связаны между собой  равенством
+\begin{equation}\label{eq1.1}
+x^{(r)}(t)=\sum_{\nu=0}^{r-1}a_\nu(t)x^{(\nu)}(t)+\sum_{\mu=0}^s b_\mu(t)y^{(\mu)}(t),
+\end{equation}
+  где неизвестные переменные коэффициенты $a_\nu(t)$ $(\nu=0,\ldots,r-1)$ и $b_\mu(t)$ $(\mu=0,\ldots,s)$ представляют собой алгебраические полиномы  заданной степени $m$. Будем  считать, что функции $x=x(t)$ и  $y=y(t)$ заданы на отрезке $[-1,1]$ и непрерывно дифференцируемы там $r$-раз и $s$-раз соответственно. Ставится задача  найти неизвестные переменные коэффициенты
+$a_\nu(t)$ $(\nu=0,\ldots,r-1)$ и $b_\mu(t)$ $(\mu=0,\ldots,s)$ экспериментальным путем. Такую задачу часто называют {\it идентификацией} параметров системы. Методы и подходы к решению этой задачи существенно зависят от того, что именно мы знаем о входном и выходном сигналах  $x=x(t)$ и  $y=y(t)$. В настоящей работе рассматривается часто встречающийся на практике случай, когда заданы значения сигналов $x(t)$ и  $y(t)$ в узлах равномерной сетки $\Omega_N=\{t_j=-1+jh\}_{j=0}^{N-1}$, где $h=\frac2{N-1}$. Будем исходить из предположения, что значения $x(t_j)$ и  $y(t_j)$ получены экспериментально в результате наблюдений и, следовательно, <<зашумлены>>. Другими словами, вместо точных значений сигналов, которые мы обозначим через $\tilde x(t_j)$ и  $\tilde y(t_j)$,   нам заданы их приближения $ x_j=x(t_j)=\tilde x(t_j)+\eta_j$ и  $ y_j=y(t_j)=\tilde y(t_j)+\xi_j $, где $\eta_j$ и $\xi_j$ -- случайные погрешности наблюдений, которые удовлетворяют условиям
+\begin{equation}\label{eq1.2}
+E[\eta_i\eta_j]=\sigma_x^2\delta_{ij},  \quad E[\xi_i\xi_j]=\sigma_y^2\delta_{ij},
+ \end{equation}
+где $E(X)$ -- математическое ожидание случайной величины $X$, $\sigma_x^2$, $\sigma_y^2$ -- положительные числа, $\delta_{ij}$ -- символ Кронекера.
+
+Основной (и наиболее трудный) вопрос, который возникает при решении поставленной задачи, заключается в том, чтобы найти в заданной точке $t\in[-1,1]$ численные значения производных $x^{(\nu)}(t)$ $(\nu=1,\ldots,r)$ и   $y^{(\mu)}(t)$  $(\mu=1,\ldots,s)$, исходя из дискретной информации $ x_j=x(t_j)$,   $ y_j=y(t_j) $,  $0\le j\le N-1$. Дело в том, что из-за присутствия в измерениях $ x_j=x(t_j)=\tilde x(t_j)+\eta_j$ и  $ y_j=y(t_j)=\tilde y(t_j)+\xi_j $ случайных погрешностей $\eta_j$ и $\xi_j$ обычные методы численного дифференцирования, основанные на применении интерполяционных полиномов и сплайн-функций,  могут оказаться непригодными для решения поставленной задачи. Требуется предварительная обработка заданной дискретной информации $ x_j=x(t_j)$,   $ y_j=y(t_j) $,  $0\le j\le N-1$, путем ее <<сглаживания>>. Один из наиболее часто применяемых методов сглаживания дискретных данных, как известно, базируется на использовании полиномиального метода наименьших квадратов, который, в свою очередь, тесно связан с полиномами Чебышева, ортогональными на дискретной сетке $\Omega_N=\{t_j=-1+jh\}_{j=0}^{N-1}$. Остановимся на этом вопросе более подробно. Обозначим через $\hat T_{n,N}(t)$ $(0\le n\le N-1)$ полиномы Чебышева, образующие на сетке $\Omega_N$ ортонормированную систему с весом $2/N$, т.е.
+\begin{equation}\label{eq1.3}
+\frac2N\sum_{j=0}^{N-1}\hat T_{n,N}(t_j)\hat T_{m,N}(t_j)=\delta_{nm}.
+\end{equation}
+Эти полиномы и некоторые их обобщения были введены впервые в работах П.Л.Чебышева \cite{35,36,37} в  связи задачей сглаживания наблюдений и в настоящее время  находят многочисленные приложения как в математической статистике (в связи с методом наименьших квадратов), так и во многих других областях. В задаче сглаживания наблюдений полиномы Чебышева возникают следующим образом. Предположим, что нам заданы измерения
+$x_j=x(t_j)=\tilde x(t_j)+\eta_j$ $(0\le j\le N-1)$  и требуется найти алгебраический полином $S_{n,N}(t)$, который минимизирует величину
+$$
+J(a_0,\ldots,a_n)=\frac2N\sum_{j=0}^{N-1}[x_j-p_n(t_j)]^2
+$$
+среди всех алгебраических полиномов $p_n(t)=a_0+a_1t+\cdots+a_nt^n$ степени $n\le N-1$. П.Л.Чебышев предложил искать такой полином в виде
+$$
+S_{n,N}(t)=\sum_{k=0}^n b_k\hat T_{k,N}(t)
+$$
+и показал, что для искомого оптимального полинома коэффициенты $b_k$ принимают вид
+\begin{equation}\label{eq1.4}
+b_k=\hat x_k=\frac2N\sum_{j=0}^{N-1}x_j\hat T_{n,N}(t_j).
+\end{equation}
+Таким образом, полином
+\begin{equation}\label{eq1.5}
+S_{n,N}(t)=\sum_{k=0}^n \hat x_k\hat T_{k,N}(t),
+\end{equation}
+реализующий метод наименьших квадратов, представляет собой сумму Фурье дискретной функции, принимающей значения $x_j$ в точках $t_j$ $(0\le j\le N-1)$. Одним из способов <<сглаживания>> наблюдений $x_j=x(t_j)$ $(0\le j\le N-1)$ является замена значений $x_j=x(t_j)$ соответствующими приближенными значениями $S_{n,N}(t_j)$. Более того, исходную функцию $x(t)$, заданную на $[-1,1]$, можно заменить (приближенно) суммой Фурье $S_{n,N}(t)$. В работе \cite{mnk}  было показано, что если $n=O(\sqrt{N})$, то  $S_{n,N}(t)=S_{n,N}(x,t)$ имеет достаточно хорошие аппроксимативные свойства в пространстве непрерывных на $[-1,1]$ функций $x=x(t)$.  Другими словами, $S_{n,N}(t)$ приближает функцию $x(t)$
+достаточно хорошо при любом $t\in[-1,1]$. В то же время производные $S^{(\nu)}_{n,N}(t)$ приближают производные $x^{(\nu)}(t)$ значительно хуже, если приближают  вообще. Поэтому частичные суммы  $S_{n,N}(t)$ не могут быть рекомендованы в качестве аппарата одновременного приближения функций $x(t)$  и $y(t)$ и их производных $x^{(\nu)}(t)$ и $y^{(\nu)}(t)$ в рассматриваемой задаче идентификации параметров из \eqref{eq1.1}. Требуется сконструировать альтернативные суммам Фурье $S_{n,N}(t)$ операторы $\sigma_{n,N}(f)=\sigma_{n,N}(f,t)$, которые действуют в пространстве непрерывных на $[-1,1]$ функций $f=f(t)$, используют в качестве исходной информации значения  $f(t_j)$  $(0\le j\le N-1)$ и которые могут быть эффективно использованы для <<сглаживания>> ошибок в наблюдениях $f(t_j)$  $(0\le j\le N-1)$ и для  решения задачи одновременного приближения дифференцируемой функции $f(x)$ и её нескольких  производных. В настоящей работе (\S 3) предпринята попытка сконструировать такие операторы на основе уже упомянутых выше  полиномов Чебышева $\hat T_{k,N}(t)$ и их обобщений, также введенных в работе Чебышева \cite{37}.
+
+Следующий шаг на пути к решению поставленной задачи идентификации, предпринятый в настоящей работе, заключается в том, что от уравнения
+\eqref{eq1.1} мы переходим к двойственному уравнению путем представления всех функций (включая и производные), фигурирующих в \eqref{eq1.1}, в виде рядов по  полиномам  Чебышева первого рода $C_n(t)=\cos(n\arccos t)$.  А именно, пусть
+\begin{equation}\label{eq1.6}
+  x^{(\nu)}(t)=\sum_{k=0}^\infty \hat x_{\nu,k}C_k(t),\quad y^{(\mu)}(t)=\sum_{k=0}^\infty \hat y_{\mu,k}C_k(t),
+\end{equation}
+\begin{equation}\label{eq1.7}
+a_\nu(t)=\sum_{j=0}^m \hat a_{\nu,j}C_j(t),\quad b_\mu(t)=\sum_{j=0}^m \hat b_{\mu,j}C_j(t).
+\end{equation}
+Подставляя эти значения в \eqref{eq1.1}, имеем
+\begin{multline}\label{eq1.8}
+\sum_{k=0}^\infty \hat x_{r,k}C_k(t)=\sum_{\nu=0}^{r-1} \sum_{k=0}^\infty\sum_{j=0}^m \hat a_{\nu,j} \hat x_{\nu,k}C_j(t)C_k(t)+\\
+\sum_{\mu=0}^s \sum_{k=0}^\infty\sum_{j=0}^m \hat b_{\mu,j} \hat y_{\mu,k}C_j(t)C_k(t).
+\end{multline}
+С другой стороны, так как $2C_j(t)C_k(t)=C_{j+k}(t)+C_{|k-j|}$, то равенство \eqref{eq1.8} можно переписать так
+
+\begin{multline}\label{eq1.9}
+\sum_{k=0}^\infty\hat x_{r,k}C_{k}(t)= \sum_{\nu=0}^{r-1} \sum_{k=0}^\infty\sum_{j=0}^m \hat a_{\nu,j} \hat x_{\nu,k}(C_{j+k}(t)+C_{|k-j|}(t))+\\
+\sum_{\mu=0}^s \sum_{k=0}^\infty\sum_{j=0}^m \hat b_{\mu,j} \hat y_{\mu,k}(C_{j+k}(t)+C_{|k-j|}(t)).
+\end{multline}
+
+Далее имеем
+\begin{equation}\label{eq1.10}
+\sum_{k=0}^\infty\sum_{j=0}^m \hat a_{\nu,j} \hat x_{\nu,k}C_{j+k}(t)= \sum_{n=0}^\infty C_n(t)\sum_{j=0}^{\min\{n,m\}}\hat a_{\nu,j} \hat x_{\nu,n-j},
+\end{equation}
+\begin{multline}\label{eq1.11}
+\sum_{k=0}^\infty\sum_{j=0}^m \hat a_{\nu,j} \hat x_{\nu,k}C_{|j-k|}(t)= \sum_{n=0}^\infty C_n(t)\sum_{j=0}^m\hat a_{\nu,j}\hat x_{\nu,n+j}+\\
+\sum_{n=1}^m C_n(t)\sum_{j=n}^m\hat a_{\nu,j}\hat x_{\nu,j-n},
+\end{multline}
+\begin{equation}\label{eq1.12}
+\sum_{k=0}^\infty\sum_{j=0}^m \hat b_{\mu,j} \hat y_{\mu,k}C_{j+k}(t)= \sum_{n=0}^\infty C_n(t)\sum_{j=0}^{\min\{n,m\}}\hat b_{\mu,j} \hat y_{\mu,n-j},
+\end{equation}
+\begin{multline}\label{eq1.13}
+\sum_{k=0}^\infty\sum_{j=0}^m \hat b_{\mu,j} \hat y_{\mu,k}C_{|j-k|}(t)= \sum_{n=0}^\infty C_n(t)\sum_{j=0}^m\hat b_{\mu,j}\hat y_{\mu,n+j}+\\
+\sum_{n=1}^m C_n(t)\sum_{j=n}^m\hat b_{\mu,j}\hat y_{\mu,j-n}.
+\end{multline}
+
+Сопоставляя равенства \eqref{eq1.9} -- \eqref{eq1.13} между собой, нетрудно записать алгоритм для получения элементов матрицы $U=\{u_{il}\}_{1\le i\le \infty,1\le l\le L}$ с числом столбцов, равным $L=(r+s+1)(m+1)$  и бесконечным числом строк, с помощью которой можно записать бесконечную систему линейных уравнений относительно неизвестных коэффициентов $\hat{a}_{i,j}$ и $\hat{b}_{k,l}$:
+\begin{equation}\label{eq1.14}
+U\cdot V=X_r,
+\end{equation}
+где $V$ -- вектор-столбец, для которого транспонированный вектор $V'$ имеет вид
+\begin{equation}\label{eq1.15}
+V'= (\hat a_{0,0},\ldots,\hat a_{0,m},\ldots, \hat a_{r-1,0},\ldots,\hat a_{r-1,m},\hat b_{0,0},\ldots,\hat b_{0,m},\ldots, \hat b_{s,0},\ldots,\hat b_{s,m} ),
+\end{equation}
+$X_r$ -- последовательность-столбец коэффициентов Фурье -- Чебышева функции $x^{(r)}(t)$.
+
+Обозначим через $U_{N,L}$ подматрицу матрицы $U$ вида $U_{N,L}=\{u_{il}\}_{1\le i\le N,1\le l\le L}$, причем будем считать, что $N\ge L$.
+Вместо бесконечной системы  \eqref{eq1.14} будем рассматривать её конечную подсистему
+\begin{equation}\label{eq1.16}
+U_{N,L}\cdot V=X_{r,N},
+\end{equation}
+ где $X_{r,N}$ -- вектор-столбец, составленный из коэффициентов $\hat x_{r,k}$ $(0\le k\le N-1)$. Поскольку, как было отмечено выше, мы предполагаем $N\ge L$, то вполне может случиться так, что система \eqref{eq1.16} не разрешима. Поэтому ставится задача о нахождении квази-решения
+ системы \eqref{eq1.16}. Если под квази-решением понимать вектор $V$, при котором левая часть уравнения \eqref{eq1.16} наименее отклоняется от ее правой части в евклидовой метрике $R_2$, то можно показать, что такое решение имеет вид
+ \begin{equation}\label{eq1.17}
+ V=(U'_{N,L}U_{N,L})^{-1}U'_{N,L}X_{r,N}.
+ \end{equation}
+ Если таким способом нам удастся найти численные значения элементов вектора $V$, то тогда будут найдены приближенно и искомые переменные коэффициенты  $a_\nu(t)$, $b_\mu(t)$ посредством равенств \eqref{eq1.7}. Другими словами, будет решена задача идентификации рассматриваемой временно неинвариантной линейной системы.
+
+Как уже отмечалось выше, одна из основных проблем, возникающих при решении поставленной задачи, состоит в конструировании упомянутых выше операторов $\sigma_{n,N}(f)=\sigma_{n,N}(f,t)$. При решении этой проблемы нам понадобится ряд свойств полиномов Чебышева, ортогональных на равномерной сетке.
+
+\section{ Некоторые сведения о полиномах Чебышева,\\ ортогональных на равномерной  сетке}
+
+ Пусть $N$ -- натуральное, $\alpha$, $\beta$ -- произвольные  числа. Положим
+\begin{equation}\label{eq2.1}
+\rho(x)=\rho(x;\alpha,\beta,N)={\Gamma(x+\beta+1)
+\Gamma(N-x+\alpha)\over \Gamma(x+1)\Gamma(N-x)},
+\end{equation}
+\begin{equation}\label{eq2.2}
+T_n^{\alpha,\beta}(x,N)={(-1)^n\over n!(N-1)^{[n]}\rho(x)}\Delta^n
+\left\{\rho(x)(x-N-\alpha)^{[n]}x^{[n]}\right\},
+\end{equation}
+ где $\Delta^nf(x)$ -- конечная разность $n$-го порядка функции
+     $f(x)$ в точке $x$, т.е. $\Delta^0f(x)=f(x)$,
+$\Delta^1f(x)=\Delta f(x)=f(x+1)-f(x)$, $\Delta^nf(x)=\Delta
+\Delta^{n-1}f(x)$ $(n\ge1)$, $a^{[0]}=1$,
+$a^{[k]}=a(a-1)\cdots(a-k+1)$ при $k\ge1$. Для каждого $0\le n\le
+N-1$ равенство \eqref{eq2.2} определяет \cite{35,36,37,38} алгебраический полином степени $n$,
+     для которого
+$$
+T_n^{\alpha,\beta}(N-1,N)={n+\alpha\choose n},\qquad
+T_n^{\alpha,\beta}(0,N)=(-1)^n{n+\beta\choose n}.
+$$
+Полиномы допускают  следующее явное представление
+\begin{equation}\label{eq2.3}
+T_n^{\alpha,\beta}(x,N)=(-1)^n{\Gamma(n+\beta+1)\over
+n!}\sum_{k=0}^n(-1)^k {n^{[k]}(n+\alpha+\beta+1)_kx^{[k]}\over
+\Gamma(k+\beta+1) k!(N-1)^{[k]}}.
+\end{equation}
+Если $\alpha$,
+$\beta>-1$, то полиномы $T_n^{\alpha,\beta}(x,N)\quad (0\le n\le
+N-1)$ образуют ортогональную  с весом $\rho(x)$ (см.\eqref{eq2.1}) систему  на множестве
+$\Omega_N=\{0,1,\ldots,N-1\}$, точнее
+\begin{equation}\label{eq2.4}
+\sum_{x\in\Omega_N}\mu(x)T_n^{\alpha,\beta}(x,N)T_m^{\alpha,\beta}(x,N)
+=h_{n,N}^{\alpha,\beta}\delta_{nm},
+\end{equation}
+где  $\delta_{nm}$ -- символ Кронекера,
+\begin{multline}\label{eq2.5}
+\mu(x)=\mu(x;\alpha,\beta,N)={\Gamma(N)2^{\alpha+\beta+1} \over
+\Gamma(N+\alpha+\beta+1)}\rho(x)=\\
+{\Gamma(N)2^{\alpha+\beta+1}\over \Gamma(N+\alpha+\beta+1)}
+{\Gamma(x+\beta+1)\Gamma(N-x+\alpha)\over \Gamma(x+1)\Gamma(N-x)}.
+\end{multline}
+ \begin{equation}\label{eq2.6}
+h_{n,N}^{\alpha,\beta}={(N+n+\alpha+\beta)^{[n]}\over
+(N-1)^{[n]}}{\Gamma(n+\alpha+1)\Gamma(n+\beta+1)
+2^{\alpha+\beta+1}\over
+n!\Gamma(n+\alpha+\beta+1)(2n+\alpha+\beta+1)}.
+\end{equation}
+ При $n=0$  произведение $(\alpha+\beta+1)\Gamma(\alpha+ \beta+1)$
+следует заменить на $\Gamma(\alpha+\beta+2)$. Для $0\le n\le N-1$
+положим
+ \begin{equation}\label{eq2.7}
+  \tau_n^{\alpha,\beta}(x)=\tau_n^{\alpha,\beta}(x,N)=
+\left\{h_{n,N}^{\alpha,\beta}\right\}^{-1/2}
+T_n^{\alpha,\beta}(x,N).
+\end{equation}
+ Очевидно, если $0\le n,m\le
+N-1$, то
+\begin{equation}\label{eq2.8} \sum_{x=0}^{N-1}\mu(x)\tau_n^{\alpha,\beta}(x,N)
+\tau_m^{\alpha,\beta}(x,N)=\delta_{nm}.
+\end{equation}
+Другими словами, многочлены $\tau_n^{\alpha,\beta}(x,N)$ $(0\le n\le N-1)$
+образуют ортонормированную с весом $\mu(x)$ систему на
+$\Omega_N$.
+
+Формула Кристоффеля--Дарбу  для многочленов Чебышева
+$T_n^{\alpha,\beta}(x)=T_n^{\alpha,\beta}(x,N)$ имеет следующий вид:
+$$
+{\cal K}_{n,N}^{\alpha,\beta}(x,y)=\sum_{k=0}^n\tau_k^{\alpha,\beta}(x)\tau_k^{\alpha,\beta}(y)=
+\sum_{k=0}^n{T_k^{\alpha,\beta}(x)T_k^{\alpha,\beta}(y)\over
+h_{k,N}^{\alpha,\beta}} $$ $$ ={(N-1)^{[n+1]}\over
+(N+n+\alpha+\beta)^{[n]}} {2^{-\alpha-\beta-1}\over
+2n+\alpha+\beta+2} {\Gamma(n+2)\Gamma(n+\alpha+\beta+2)\over
+\Gamma(n+\alpha+1)\Gamma(n+\beta+1)}\times
+$$
+\begin{equation}\label{eq2.9}
+{T_{n+1}^{\alpha,\beta}(x)T_n^{\alpha,\beta}(y)-
+T_n^{\alpha,\beta}(x)T_{n+1}^{\alpha,\beta}(y)\over x-y}.
+\end{equation}
+Поскольку $\Delta a^{[k]}=ka^{[k-1]}$, то из \eqref{eq2.3} находим
+ \begin{multline}\label{eq2.10}
+(n+1)T_{n+1}^{\alpha,\beta}(x,N)+(n+\beta+1)T_n^{\alpha, \beta}(x,N)=\\
+{2n+\alpha+\beta+2\over N-1}xT_n^{\alpha,\beta+1}(x-1,N-1).
+ \end{multline}
+ Из равенства $\mu(N-1-x;\beta,\alpha,N)=\mu(x;\alpha,\beta,N)$, непосредственно
+вытекающего из  соотношения ортогональности \eqref{eq2.4}, следует,
+что при $\alpha,\beta>-1$
+ \begin{equation}\label{eq2.11}
+T_n^{\alpha,\beta}(x,N)=(-1)^nT_n^{\beta,\alpha}(N-1-x,N).
+ \end{equation}
+  Поскольку обе части этого равенства аналитичны
+относительно $\alpha$ и $\beta$, то оно справедливо для произвольных
+$\alpha$ и $\beta$. Из \eqref{eq1.10} и \eqref{eq1.11} имеем также следующее
+     равенство
+\begin{multline}\label{eq2.12}
+(n+\alpha+1)T_n^{\alpha,\beta}(x,N)-(n+1)T_{n+1}^{\alpha,\beta}(x,N)=\\
+{2n+\alpha+\beta+2\over   N-1}(N-1-x)T_n^{\alpha+1,
+\beta}(x,N-1).
+\end{multline}
+ Полагая в \eqref{eq2.9} $y=N-1$, имеем:
+  $$
+{\cal K}_{n,N}^{\alpha,\beta}(x,N-1)=
+{T_n^{\alpha,\beta}(x)-{n+1\over n+\alpha+1}
+T_{n+1}^{\alpha,\beta}(x)\over N-1-x}
+     $$
+     $$
+\times {(N-1)^{[n+1]}\over (N+n+\alpha+\beta)^{[n]}}
+{2^{-\alpha-\beta-1}\over 2n+\alpha+\beta+2}
+{(n+\alpha+1)\Gamma(n+\alpha+\beta+2)\over
+\Gamma(\alpha+1)\Gamma(n+\beta+1)} $$
+\begin{equation}\label{eq2.13}
+={(N-2)^{[n]}\Gamma(n+\alpha+\beta+2)2^{-\alpha-\beta-1}\over
+(N+n+\alpha+\beta)^{[n]}\Gamma(\alpha+1)\Gamma(n+\beta+1)}
+T_n^{\alpha+1,\beta}(x,N-1).
+\end{equation}
+ Последнее выражение
+является следствием равенства \eqref{eq2.12}. Аналогично, полагая в \eqref{eq2.9}
+$y=0$ и учитывая \eqref{eq2.11}, получаем:
+\begin{equation}\label{eq2.14} {\cal
+K}_{n,N}^{\alpha,\beta}(x,0)=(-1)^n
+{(N-2)^{[n]}\Gamma(n+\alpha+\beta+2)2^{-\alpha-\beta-1}\over
+(N+n+\alpha+\beta)^{[n]}\Gamma(\beta+1)\Gamma(n+\alpha+1)}
+T_n^{\alpha,\beta+1}(x-1,N-1).
+\end{equation}
+  Непосредственно из явной формулы \eqref{eq2.3} мы можем вывести следующее
+     полезное равенство
+\begin{equation}\label{eq2.15}
+\Delta^m T_n^{\alpha,\beta}(x,N)={(n+\alpha+\beta+1)_m\over
+(N-1)^{[m]}} T_{n-m}^{\alpha+m,\beta+m}(x,N-m),
+\end{equation}
+где $(a)_0=1$, $(a)_k=a(a+1)\cdots(a+k-1)$ при $k\ge1$. Если $\beta$
+такое целое число, что $-n\le\beta\le-1$, то из \eqref{eq2.15} выводим также
+\begin{equation}\label{eq2.16}
+T_n^{\alpha,\beta}(x,N)={(n+\beta)!\over n!}
+{(n+\alpha)^{[-\beta]}x^{[-\beta]}\over (N-1)^{[-\beta]}}
+T_{n+\beta}^{\alpha,-\beta}(x+\beta,N+\beta),
+ \end{equation}
+ а если $\alpha$ и $\beta$ -- целые, $-n\le\beta\le-1$, $-(n+\beta)\le\alpha\le-1$,
+$N\ge2$, то \begin{equation}\label{eq2.17} T_n^{\alpha,\beta}(x,N)={(-1)^\alpha
+x^{[-\beta]}(N-x-1)^{[-\alpha]}\over
+(N-1)^{[-\beta]}(N-1+\beta)^{[-\alpha]}}
+T_{n+\alpha+\beta}^{-\alpha,-\beta}(x+\beta,N+\alpha+\beta). \end{equation}
+Разностная формула Родрига \eqref{eq2.1} допускает следующее
+обобщение
+     $$
+\rho(x+m;\alpha,\beta,N+m)T_n^{\alpha,\beta}(x+m,N+m)= $$
+\begin{equation}\label{eq2.18}
+{(-1)^m\over n^{[m]}(N)_m}\Delta^m
+\left\{\rho(x;\alpha+m,\beta+m,N)T_{n-m}^{\alpha+m,\beta+m}(x,N)\right\},
+ \end{equation}
+ которое, впрочем, непосредственно вытекает из \eqref{eq2.1}.
+Заменяя здесь  $m$ на $\nu$,  $\alpha$ и $\beta$  на $m-\nu$, $n$ на
+$k+\nu-m$, мы можем также записать
+$$\Delta^\nu\{(x+1)_m(N-x)_mT_{k-m}^{m,m}(x,N)\}=
+$$\begin{equation}\label{eq2.19}(-1)^\nu(k+\nu-m)^{[\nu]}(N+\nu-1)^{[\nu]}(x+1+\nu)_{m-\nu}(N-x)_{m-\nu}T_{k+\nu-m}^{m-\nu,m-\nu}(x+\nu,N+\nu).\end{equation}
+ Если в равенстве \eqref{eq2.18}  мы заменим $\alpha$, $\beta$ и $n$,
+     соответственно, на   $\alpha-m$, $\beta-m$ и $k+m$, то придем
+     к формуле
+\begin{equation}\label{eq2.20}
+\Delta^m T_{k+m}^{\alpha-m,\beta-m}(x,N)={(k+\alpha+\beta)^{[m]}
+\over (N-1)^{[m]}}T_k^{\alpha,\beta}(x,N-m).
+\end{equation}
+
+
+
+
+
+
+
+
+     Пусть $a,\alpha>-1$, $0\le n\le N-1$. Тогда \cite{39}
+     $$
+     {T_n^{a,a}(x,N)\over T_n^{a,a}(N-1,N)}=\sum_{j=0}^{[n/2]}
+     {n!(\alpha+1)_{n-2j}(n+2a+1)_{n-2j}(1/2)_j(a-\alpha)_j
+     \over (n-2j)!(2j)!(a+1)_{n-2j}(n-2j+2\alpha+1)_{n-2j}}$$
+   \begin{equation}\label{eq2.21}
+     \times{1\over (n-2j+a+1)_j(n-2j+\alpha+3/2)_j}
+      {T_{n-2j}^{\alpha,\alpha}(x,N)\over
+T_{n-2j}^{\alpha,\alpha}(N-1,N)},
+    \end{equation}
+  где $[n/2]$--целая часть числа $n/2$.
+
+
+Мы введем здесь двух-индексные полиномы Чебышева
+$T_{k,M}^{\alpha,\beta}(x)$ и $\hat T_{k,M}^{\alpha,\beta}(x)$  с
+помощью следующих равенств $(0\le k\le M-1)$:
+\begin{equation}\label{eq2.22}
+T_{k,M}^{\alpha,\beta}(x)=T_k^{\alpha,\beta}\left({M-1\over2}(1+x),M\right),
+\hat T_{k,M}^{\alpha,\beta}(x)=\tau_k^{\alpha,\beta}\left({M-1\over2}(1+x),M\right).
+\end{equation}
+ В случае целых $\alpha$ и $\beta$ в \cite{asympPropsAndWeightEst, asympProps, asympCheb} установлен
+следующий результат. Пусть $P_n^{\alpha,\beta}(x)$-- полином Якоби,
+для которого $P_n^{\alpha,\beta}(1)={n+\alpha\choose n }$,
+  $a>0$. Тогда имеет место асимптотическая формула
+\begin{equation}\label{eq2.23}
+ T_{n,N}^{\alpha,\beta}(t)= P_n^{\alpha,\beta}(t)+ v_{n,N}^{\alpha,\beta}(t),
+\end{equation}
+ для остаточного члена $v_{n,N}^{\alpha,\beta}(t)$
+ которой при $1\le n\le aN^{1/2}$, $\delta>0$ справедлива оценка
+\begin{equation}\label{eq2.24} |v_{n,N}^{\alpha,\beta}(t)|  \le c \sqrt{n\over N} \left[|1-t|^{1/2}+{1\over
+n}\right]^{-\alpha-{1\over2}} \left[|1+t|^{{1\over2}}+{1\over
+n}\right]^{-\beta-{1\over2}},
+\end{equation}
+где
+$c=c(\alpha,\beta,a,\delta)$, $-1-\delta/ n^2\le t\le 1+\delta/
+n^2$.
+
+  Далее, пусть $j_1,j_2$ -- фиксированные целые
+числа, $\alpha,\beta$ -- неотрицательные целые числа, $1\le n\le
+aN^{{1\over2}}$ $(a>0)$, $\delta\ge0$, $|\tau|\le\delta$, $-1\le t
+\le1$.  Тогда из \eqref{eq2.23} и \eqref{eq2.24} с учетом известных весовых оценок
+для полиномов Якоби $P_n^{\alpha,\beta}(x)$ непосредственно
+выводится следующая оценка:
+\begin{multline}\label{eq2.25}
+\left|T_n^{\alpha,\beta}\left[{N+j_1\over2}(1+t)+\tau,
+N+j_2\right]\right|  \le \\
+cn^{-{1\over2}}\left[(1-t)^{{1\over2}}+{1\over
+n}\right]^{-\alpha-{1\over2}} \left[(1+t)^{1\over2}+{1\over
+n}\right]^{-\beta-{1\over2}},
+\end{multline}
+ где $c=c(a,\alpha,\beta,j_1,j_2,\delta)$.
+
+Имеет место  рекуррентная формула:
+$T_0^{\alpha,\beta}(x,N)=1$, $ T_1^{\alpha,\beta}(x,N)= x(\alpha+\beta+2)/(N-1)-\beta-1$,
+ \begin{equation}\label{eq2.26}
+T_n^{\alpha,\beta}(x)=
+(\kappa_nx-\sigma_n)T_{n-1}^{\alpha,\beta}(x)-\delta_nT_{n-2}^{\alpha,\beta}(x),
+\end{equation}
+где
+
+$$\begin{array}{crl}\kappa_n&=&{(2n+\alpha+\beta-1)(2n+\alpha+\beta)\over
+n(n+\alpha+\beta)(N-n)},\\\\\sigma_n&=&
+\kappa_n\left(\frac{(\beta^2-\alpha^2)(\alpha+\beta+2N)}{4(2n+\alpha+\beta-2)
+(2n+\alpha+\beta)}+\frac{\alpha-\beta+2N-2}4\right),\\\\\delta_n&=&{(n+\alpha-1)(n+\beta-1)(2n+\alpha+\beta)(N+n+\alpha+\beta-1)\over
+n(n+\alpha+\beta)(2n+\alpha+\beta-2)(N-n)}.\end{array}
+$$
+
+Для полиномов $\tau_n^{\alpha,\beta}(x,N)$ (см.\eqref{eq2.7}) справедлива следующая
+рекуррентная формула
+$$
+\tau_0^{\alpha,\beta}(x,N)=\left[\frac{\Gamma(\alpha+\beta+2)}{2^{\alpha+\beta+1}\Gamma(\alpha+1)\Gamma(\beta+1)}\right]^\frac12,
+$$
+$$
+\tau_1^{\alpha,\beta}(x,N)=\left\{\frac{(N-1)\Gamma(\alpha+\beta+2)(\alpha+\beta+3)}{(N+\alpha+\beta+1)
+\Gamma(\alpha+2)\Gamma(\beta+2)2^{\alpha+\beta+1}}\right\}^\frac12\times$$
+$$
+\times\left[x\frac{\alpha+\beta+2}{N-1}-\beta-1\right],
+$$
+\begin{equation}\label{eq2.27}
+\tau_n^{\alpha,\beta}(x)=
+(\hat\kappa_nx-\hat\sigma_n)\tau_{n-1}^{\alpha,\beta}(x)-\hat\gamma_n\tau_{n-2}^{\alpha,\beta}(x),
+\end{equation}
+где
+$$
+\hat\kappa_n=(2n+\alpha+\beta)\left[\frac{(2n+\alpha+\beta-1)(2n+\alpha+\beta+1)}{(N+n+\alpha+\beta)
+(N-n)n(n+\alpha)(n+\beta)(n+\alpha+\beta)}\right]^\frac12,
+$$
+$$
+\hat\sigma_n=\hat\kappa_n\left(\frac{(\beta^2-\alpha^2)(\alpha+\beta+2N)}{4(2n+\alpha+\beta-2)
+(2n+\alpha+\beta)}+\frac{\alpha-\beta+2N-2}4\right),
+$$
+$$
+\hat\gamma_n=\frac{2n+\alpha+\beta}{2n+\alpha+\beta-2}\left[\frac{N+n+\alpha+\beta-1}{N+n+\alpha+\beta}
+\,\frac{N-n+1}{N-n}\,\frac{n-1}n\,\frac{n+\alpha-1}{n+\alpha}\,\frac{n+\beta-1}
+{n+\beta}\right.\times
+$$
+$$
+\times\left.\frac{n+\alpha+\beta-1}{n+\alpha+\beta}\,\frac{2n+\alpha+\beta+1}{2n+\alpha+\beta-3}\right]^\frac12.
+$$
+
+
+
+
+
+ Введем полиномы $(n=0,1,\ldots,N-1)$
+\begin{multline}\label{eq2.28}
+ \tilde T_n^{\alpha,\beta}(t)=\tilde
+T_{n,N}^{\alpha,\beta}(t)=\\
+{2^n(N-1)!\over(2N+\alpha+\beta)^n(N-n-1)!}
+T_n^{\alpha,\beta}\left[{2N+\alpha+\beta\over4}(1+t)-{\beta+1\over 2},N\right],
+\end{multline}
+
+для которых рекуррентная формула принимает следующий вид: $\tilde T_0^{\alpha,\beta}(t)=1$,
+
+ $\tilde T_1^{\alpha,\beta}(t)=\frac12(\alpha+\beta+2)t+\frac12(\alpha-\beta)$,
+\begin{equation}\label{eq2.29}
+\tilde
+T_n^{\alpha,\beta}(t)= (\alpha_nt-\beta_n)\tilde
+T_{n-1}^{\alpha,\beta}(t)-\gamma_n\left[1-\left({2n+\alpha+
+\beta-2\over2N+\alpha+\beta}\right)^2\right]\tilde T_{n-2}^{\alpha,\beta}(t),
+\end{equation}
+где
+ $$
+ \begin{array}{crl}\alpha_n&=&{(2n+\alpha+\beta-1)(2n+\alpha+\beta)\over
+2n(n+\alpha+\beta)},\\\\\beta_n&=&\alpha_n\frac{\beta^2-\alpha^2}{(2n+\alpha+\beta-2)
+(2n+\alpha+\beta)},\\\\\gamma_n&=&
+\alpha_n{2(n+\alpha-1)(n+\beta-1)\over(2n+\alpha+\beta-2)(2n+\alpha+\beta-1)}.\end{array}
+$$
+
+\section{О преобразовании Фурье--Чебышева на равномерной сетке}
+
+
+ Пусть $\Omega=\{0,1,\cdots,N-1\}$, $\mu(x)=\mu(x;\alpha,\beta,N)$ -- весовая
+функция, определенная равенством \eqref{eq2.5}, $f=f(x)$ -- дискретная функция, заданная на $\Omega$. В приложениях полиномов Чебышева $\tau_n^{\alpha,\beta}(x,N)$, в том числе и тех, о которых шла речь выше,
+приходится переходить от функции $f$ к ее дискретному преобразованию Фурье -- Чебышева $\hat f(n)=\hat f_n=\hat f_n(\alpha,\beta)$ $(n\in\Omega)$ по формуле
+     \begin{equation}\label{eq3.1}
+\hat f_n=\sum_{t\in\Omega}f(t)\tau_n^{\alpha,\beta}(t,N)\mu(t).
+    \end{equation}
+Обратное дискретное преобразование Фурье -- Чебышева дает:
+    \begin{equation}\label{eq3.2}
+f(x)=\sum_{n=0}^{N-1}\hat f_n\tau_n^{\alpha,\beta}(x,N)\quad (\alpha,\beta>-1).
+    \end{equation}
+Основная проблема, возникающая при численной реализации преобразований \eqref{eq3.1} и \eqref{eq3.2},
+заключается в необходимости достаточно быстрого и устойчивого вычисления значения многочленов
+$\tau_n^{\alpha,\beta}(x,N)$. Мы здесь остановимся на двух случаях: 1) $\alpha=\beta=0$; 2)
+ $\alpha=\beta=-1/2$.
+
+Начнем со случая $\alpha=\beta=0$. Для сокращения записи, положим $\tau_n^0(x)=\tau_n^{0,0}(x,N)$.
+Тогда из рекуррентной формулы \eqref{eq2.27} для  $\alpha=\beta=0$ имеем:
+$$
+\tau_0^0(x)=2^{-1/2},\quad\tau_1^0(x)=\left({3\over 2(N^2-1)}\right)^{1/2} (2x-N+1),
+     $$
+     \begin{equation}\label{eq3.3}
+\tau_n^0(x)=X_n(2x-N+1)\tau_{n-1}^0(x)-Y_n\tau_{n-2}^0(x), \,\,\,\,\,n\ge2,
+ \end{equation}
+ где
+ $$
+X_n={1\over n}\left({(2n-1)(2n+1)\over N^2-n^2}\right)^{1/2},\quad
+     Y_n={n-1\over n}\left({(2n+1)(N^2-(n-1)^2)\over (2n-3)(N^2-n^2)} \right)^{1/2}.
+ $$
+Кроме того напомним, что
+\begin{equation}\label{eq3.4}
+ \tau_n^0(N-1-x)=(-1)^n\tau_n^0(x).
+ \end{equation}
+  Если $n$ существенно меньше $N$, то формулы
+\eqref{eq3.3} и \eqref{eq3.4} дают устойчивый метод для вычисления значений полиномов $\tau_n^0(x)$ при
+$x\in[0,N-1]$. Достаточно, например, считать, что $n\le \min\{N-1,\quad 5N^{1/2}\}$. Однако, если
+$n$ близко к $N$, то использование этих формул при больших $N$ (например, если $n>70$ и $N=100$)
+дает катастрофический рост погрешности вычислений при стремлении  $x$ к нулю или к $N-1$.  Эту
+трудность можно  избежать различными приемами. Более подробно этот вопрос мы рассмотрим позже.
+
+     Переходя к случаю $\alpha=\beta=-1/2$, заметим, что для
+$v_j=\mu(j;-1/2,-1/2,N)$ из \eqref{eq2.5} имеем:
+    \begin{equation}\label{eq3.5}
+v_j={\Gamma(j+1/2)\Gamma(N-j-1/2)\over\Gamma(j+1) \Gamma(N-j)}.
+    \end{equation}
+Так как $\Gamma(z+1)=\Gamma(z)z$, то
+    \begin{equation}\label{eq3.6}
+v_{j+1}=v_j{(j+0.5)(N-1-j)\over (N-j-3/2)(j+1)}\quad (0\le j\le N-2).
+   \end{equation}
+Кроме того, пользуясь для целого $m\ge1$ формулой
+   $$
+{\Gamma(m+1/2)\over \Gamma(m+1)}=\pi^{1/2}\prod_{k=1}^m
+                                  \left(1-{0.5\over k}\right),
+   $$
+из \eqref{eq3.5} при $j=\left[{N-1\over2}\right]$ имеем:
+\begin{equation}\label{eq3.7}
+v_j=\pi\begin{cases}\prod\limits_{k=1}^j\left(1-{0.5\over k}\right)^2, \text{если $N-1$
+четно,}\\ {0.5+j\over j+1}\prod\limits_{k=1}^j\left(1-{0.5\over k}\right)^2, \text{если
+$N-1$ нечетно}.\end{cases}
+\end{equation}
+ Для многочленов $\tau_n^{-1/2}(x)=\tau_n^{-1/2,-1/2}(x,N)$ находим:
+$$
+\tau_0^{-1/2}(x)=\pi^{-1/2},\tau_1^{-1/2}(x)=\left({2\over \pi(N-1)N}\right)^{1/2}(2x-N+1),
+$$
+\begin{equation}\label{eq3.8}
+\tau_n^{-1/2}(x)=\tilde X_n(2x-N+1)\tau_{n-1}^{-1/2}(x)- \tilde Y_n\tau_{n-2}^{-1/2}(x),
+\end{equation}
+где
+$$ \tilde X_n={2\over ((N+n-1)(N-n))^{1/2}},
+ \quad \tilde Y_n=\left({(N+n-2)(N-n+1)\over
+(N-n)(N+n-1)}\right)^{1/2}2^{\varphi(n)},
+$$
+а $\varphi(2)=1/2$, $\varphi(n)=0$ при $n\ge3$.
+
+
+Через $S_{n,N}(f,x)=S_{n,N}^{\alpha,\beta}(f,x)$ обозначим частичную сумму конечного ряда Фурье -- Чебышева \eqref{eq3.2} вида
+ \begin{equation}\label{eq3.7}
+S_{n,N}(f,x)=\sum_{k=0}^{n}\hat f_k\tau_k^{\alpha,\beta}(x,N)\quad (\alpha,\beta>-1).
+    \end{equation}
+Как хорошо известно из теории евклидовых пространств, $S_{n,N}(f,x)$ доставляет минимум величине
+$$
+J=\sum_{j=0}^{N-1}[f(j)-p_n(j)]^2\mu(j;\alpha,\beta,N)
+$$
+среды   всех алгебраических полиномов $p_n(x)$ степени $n$.  При этом
+\begin{equation}\label{eq3.8}
+\sum_{j=0}^{N-1}[f(j)-S_{n,N}(f,j)]^2\mu(j;\alpha,\beta,N)=\sum_{k=n+1}^{N-1}\hat f_k^2.
+\end{equation}
+
+\section{Некоторые специальные ряды по полиномам Чебышева,\\
+ ортогональным на равномерной сетке }
+
+
+     Пусть $r$ и $N$ -- натуральные числа. Рассмотрим дискретную
+     функцию $d(x)$, заданную на сетке $\bar \Omega_{N+2r}=
+\{-r,-r+1,\ldots,-1,0,1,\ldots,N-1,N,\ldots,N-1+r\}$.
+     Положим
+   \begin{equation}\label{eq4.1}
+F(x)=d(x-r),\qquad x\in \Omega_{N+2r},
+ \end{equation}
+     \begin{equation}\label{eq4.2}
+     b(x)=b(x;r,N)=\Delta^rF(x).
+     \end{equation}
+Дискретная функция  $b(x)$ определена на сетке $\Omega_{N+r}$ и,
+     следовательно, ее можно разложить в конечный ряд Фурье
+по ортогональной системе полиномов Чебышева
+$\{T_k^{0,0}(x,N+r)\}_{k=0}^{N-1+r}$:
+     \begin{equation}\label{eq4.3}
+ b(x)=\sum_{k=0}^{N-1+r}d_{r,k}T_k^{0,0}(x,N+r),
+     \end{equation}
+  где
+
+  \begin{equation}\label{eq4.4}
+ d_{r,k}    =d_{r,k}(N+r)={2\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{t\in\Omega_{N+r}}b(t)T_k^{0,0}(t,N+r).
+    \end{equation}
+
+{\it Смешанный ряд} функции $d=d(x)$ по полиномам  Чебышева
+$\{T_k^{\alpha,\beta}(x,N+r)\}_{k=0}^{N-1+r}$ при $\alpha=\beta=0$
+имеет вид (см. \cite{approxYn, approxByCheb, greenBook})
+\begin{equation}\label{eq4.5}
+ d(x)= {\cal D}_{2r-1,N}(d,x)+{\cal T}_{r,N}(d,x),
+\end{equation}
+ где
+  $${\cal D}_{2r-1,N}(x)={\cal D}_{2r-1,N}(d,x)=
+$$
+\begin{equation}\label{eq4.6}
+\sum_{i=1}^r(-1)^{i-1}{(x+1)_r(N-x)_r\over
+(i-1)!(r-i)!(N+i)_r}\left[{d(-i)\over x+i}+{d(N-1+i)\over
+N-1+i-x}\right],
+\end{equation}
+ \begin{equation}\label{eq4.7}
+ {\cal T}_{r,N}(d,x)= {(-1)^r
+(x+1)_r(N-x)_r\over (N-1+r)^{[r]}} \sum_{k=r}^{N-1+r} {d_{r,k}\over
+k^{[r]}}T_{k-r}^{r,r}(x,N),
+\end{equation}
+$x\in\bar\Omega_{N+2r}=\{-r,\ldots,-1,0,1,\ldots,N-1,N,\ldots,N-1+r\}$.
+
+Рассмотрим некоторые разностные свойства ряда \eqref{eq4.5}, которые нам
+понадобятся в дальнейшем. Применим равенства \eqref{eq4.5} -- \eqref{eq4.7} к функции
+$\partial(x)=\Delta^\nu d(x-\nu)$, заданной на $\bar\Omega_{N+\nu+2(r-\nu)}=
+\{-r+\nu,\ldots,-1,0,1,\ldots,N-1,N,\ldots,N-1+r\}$. Это дает
+\begin{equation}\label{eq4.8}
+\partial(x)=\Delta^\nu d(x-\nu)= {\cal D}_{2(r-\nu)-1,N+\nu}(\partial,x)+{\cal
+T}_{r-\nu,N+\nu}(\partial,x),
+\end{equation}
+где
+$$
+{\cal
+D}_{2(r-\nu)-1,N+\nu}(\partial,x)=
+$$
+\begin{equation}\label{eq4.9}
+\sum_{i=1}^{r-\nu}(-1)^{i-1}{(x+1)_{r-\nu}(N+\nu-x)_{r-\nu}\over
+(i-1)!(r-\nu-i)!(N+\nu+i)_{r-\nu}}\left[{\partial(-i)\over
+x+i}+{\partial(N+\nu-1+i)\over N+\nu-1+i-x}\right],
+\end{equation}
+\begin{multline}\label{eq4.10}
+{\cal T}_{r-\nu,N+\nu}(\partial,x)=\\
+{(-1)^{r-\nu}
+(x+1)_{r-\nu}(N+\nu-x)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{N-1+r} {\partial_{r-\nu,k}\over  k^{[r-\nu]} }
+T_{k-r+\nu}^{r-\nu,r-\nu}(x,N+\nu),
+\end{multline}
+С другой стороны, заметим, что
+$$
+\partial_{r-\nu,k}=
+{2\over (N+r)h_{k,N+r}^{0,0}}\sum_{t=0}^{N+r-1}\Delta^{r-\nu}\partial(t-r+\nu)T^{0,0}_k(t,N+r)=
+$$
+\begin{equation}\label{eq4.11}
+{2\over (N+r)h_{k,N+r}^{0,0}}\sum_{t=0}^{N+r-1}\Delta^rd(t-r)T^{0,0}_k(t,N+r)=d_{r,k},
+\end{equation}
+поэтому \eqref{eq4.9}  можно переписать еще так
+ $${\cal T}_{r-\nu,N+\nu}(\partial,x)= {(-1)^{r-\nu}
+(x+1)_{r-\nu}(N+\nu-x)_{r-\nu}\over (N-1+r)^{[r-\nu]}}\times$$
+$$\times\sum_{k=r-\nu}^{N-1+r} {d_{r,k}\over k^{[r-\nu]}}
+T_{k-r+\nu}^{r-\nu,r-\nu}(x,N+\nu).
+     $$
+Равенство \eqref{eq4.8} в развернутом виде принимает теперь следующий вид
+
+$$\partial(x)=\Delta^\nu d(x-\nu)= {\cal D}_{2(r-\nu)-1,N+\nu}(\partial,x)+
+$$
+$$
+(-1)^{r-\nu}
+{(x+1)_{r-\nu}(N+\nu-x)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{N-1+r} {\partial_{r-\nu,k}\over
+k^{[r-\nu]}}T_{k-r+\nu}^{r-\nu,r-\nu}(x,N+\nu)=
+$$
+$$
+{\cal D}_{2(r-\nu)-1,N+\nu}(\partial,x)+
+$$
+\begin{equation}\label{eq4.12}
+(-1)^{r-\nu}
+{(x+1)_{r-\nu}(N+\nu-x)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{N-1+r} {d_{r,k}\over k^{[r-\nu]}}
+T_{k-r+\nu}^{r-\nu,r-\nu}(x,N+\nu).
+\end{equation}
+     Далее, взяв конечные разности  порядка $\nu$ от обеих частей равенства \eqref{eq4.5} и
+     учитывая \eqref{eq2.19}, имеем
+     %fixed
+$$
+\partial(x)=\Delta^\nu d(x-\nu)=\Delta^\nu{\cal D}_{2r-1,N}(d,x-\nu)+
+$$
+\begin{equation}\label{eq4.13}
+{(-1)^{r-\nu}
+(x+1)_{r-\nu}(N+\nu-x)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r}^{N-1+r} {d_{r,k}\over
+k^{[r-\nu]}}T_{k-r+\nu}^{r-\nu,r-\nu}(x,N+\nu).
+\end{equation}
+Сопоставляя \eqref{eq4.12} с \eqref{eq4.13}, мы замечаем, что
+$$
+\Delta^\nu{\cal D}_{2r-1,N}(d,x-\nu)={\cal
+D}_{2(r-\nu)-1,N+\nu}(\partial,x)+
+$$
+\begin{equation}\label{eq4.14}
+{(-1)^{r-\nu}
+(x+1)_{r-\nu}(N+\nu-x)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{r-1} {d_{r,k}\over k^{[r-\nu]}}
+T_{k-r+\nu}^{r-\nu,r-\nu}(x,N+\nu).
+\end{equation}
+
+
+
+
+
+
+
+
+
+\section{Операторы ${\cal Y}_{n+2r,N}(d)={\cal Y}_{n+2r,N}(d,x)$}
+
+
+
+Рассмотрим частичную сумму ряда \eqref{eq4.5} следующего вида
+\begin{equation}\label{eq5.1}
+{\cal
+Y}_{n+2r,N}(d,x)={\cal D}_{2r-1,N}(x)+{(-1)^r (x+1)_r(N-x)_r\over
+(N-1+r)^{[r]}} \sum_{k=r}^{n+r} {d_{r,k}\over
+ k^{[r]}} T_{k-r}^{r,r}(x,N),
+\end{equation}
+представляющую собой алгебраический полином степени $n+2r$.  Отметим
+некоторые важные свойства оператора ${\cal Y}_{n+2r,N}(d)$. Если
+$p_m=p_m(x)$ -- алгебраический полином степени $m\le n+2r$, то
+$\Delta^rp_{m}(x)$ имеет степень $m-r\le n+r$, поэтому из \eqref{eq4.4}
+вытекает, что   $(p_m)_{r,k}=0$ при $k>n+r$. Отсюда  и из равенств
+\eqref{eq4.5} -- \eqref{eq4.7}, \eqref{eq5.1} следует, что
+ \begin{equation}\label{eq5.2}
+ {\cal Y}_{n+2r,N}(p_m,x) \equiv p_m(x)\quad(m\le n+2r).
+\end{equation}
+
+
+С другой стороны, из равенств \eqref{eq5.1}, \eqref{eq4.5} -- \eqref{eq4.7} непосредственно
+вытекает, что полином ${\cal Y}_{n+2r,N}(d,x)$ интерполирует функцию
+$d(x)$  в узлах множества $A=\{-r,-r+1,\ldots,
+-1\}\bigcup\{N,N+1,\ldots, N-1+r\}$, т.е.  мы  имеем
+\begin{equation}\label{eq5.3}
+{\cal Y}_{n+2r,N}(d,x)=d(x) \quad (x\in A ) .
+\end{equation}
+ Далее мы имеем
+$(x\in \bar\Omega_{N+2r})$
+\begin{multline}\label{eq5.4}
+d(x)-{\cal Y}_{n+2r,N}(d,x)=\\
+{(-1)^r
+(x+1)_r(N-x)_r\over (N-1+r)^{[r]}} \sum_{k=n+r+1}^{N-1+r}
+{d_{r,k}\over  k^{[r]}} T_{k-r}^{r,r}(x,N)={\cal R}_{n,N}^r(d,x).
+\end{multline}
+
+Пусть $0\le\nu\le r$, $-r\le t\le N-1+r-\nu$ (t -- целое). Тогда
+     мы можем взять конечные разности порядка $\nu$ от обеих
+     частей равенства \eqref{eq5.4}, что дает
+
+$$
+    \Delta^\nu d(t)- \Delta^\nu{\cal Y}_{n+2r,N}(d,t)=
+\Delta^\nu{\cal R}_{n,N}^r(t)=
+$$
+\begin{equation}\label{eq5.5}
+{(-1)^r\over(N-1+r)^{[r]}} \sum_{k=n+r+1}^{N-1+r}{d_{r,k}\over k^{[r]}}\Delta^\nu
+\{(t+1)_r(N-t)_rT_{k-r}^{r,r}(t,N)\}.
+\end{equation}
+
+
+
+
+Если теперь воспользуемся равенством \eqref{eq2.19}, то из \eqref{eq5.5}  приходим к следующему утверждению.
+\vskip 0.5cm
+\begin{theorem}\label{th4.1} Пусть $0\le\nu\le r$, $-r\le t\le N-1+r-\nu$ (t -- целое). Тогда имеет место равенство
+
+    $$
+     \Delta^\nu d(t)- \Delta^\nu{\cal Y}_{n+2r,N}(d,t)=
+     $$
+    \begin{equation}\label{eq5.6}
+{(-1)^{r-\nu}(t+1+\nu)_{r-\nu}(N-t)_{r-\nu} \over(N-1+r)^{[r-\nu]}}
+\sum_{k=n+r+1}^{N-1+r}{d_{r,k}\over k^{[r-\nu]}} T_{k+\nu-r}^{r-\nu,r-\nu}(t+\nu,N+\nu).
+  \end{equation}
+
+\end{theorem}
+
+
+Отметим еще следующее полезное равенство
+\begin{multline}\label{eq5.7}
+\Delta^\nu{\cal Y}_{n+2r,N}(d,t-\nu)={\cal D}_{2(r-\nu)-1,N+\nu}(\partial ,t)+\\
+{(-1)^{r-\nu}(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{n+r} {(\partial)_{r-\nu,k}\over k^{[r-\nu]}}
+T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu)=\\
+{\cal Y}_{n+2r-\nu,N+\nu}(\partial,t),
+\end{multline}
+которое вытекает из \eqref{eq5.1}, \eqref{eq4.14}, \eqref{eq4.11} и \eqref{eq2.19}.
+
+Пусть $p_m(t)$ -- произвольный алгебраический полином степени $m\le n+2r-\nu$. Тогда в силу свойства \eqref{eq5.2}
+$$
+ {\cal Y}_{n+2r-\nu,N+\nu}(p_m,t)\equiv p_m(t),
+$$
+поэтому мы можем записать
+$$
+p_m(t)- {\cal Y}_{n+2r-\nu,N+\nu}(\partial,t)={\cal Y}_{n+2r-\nu,N+\nu}(p_m-\partial,t).
+$$
+С учетом этого факта из \eqref{eq5.7}  имеем
+$$
+\Delta^\nu d(t-\nu)-\Delta^\nu{\cal Y}_{n+2r,N}(d,t-\nu)=\partial(t)-{\cal Y}_{n+2r-\nu,N+\nu}(\partial,t)
+$$
+
+\begin{equation}\label{eq5.8}
+=\partial(t)- p_m(t)+{\cal Y}_{n+2r-\nu,N+\nu}(p_m-\partial,t).
+\end{equation}
+Для натуральных  $N$,  $m$  и $r$  положим
+$$
+v=v(t)=v_{r,m,N}(t)=\frac1{N+r}\sqrt{(t+r)(N+r-1-t)}+\frac1m.
+$$
+Через $C_v(\bar \Omega_{N+2(r-\nu)})$ обозначим нормированное пространство дискретных  функций $b(t)$, заданных на $\bar \Omega_{N+2(r-\nu)}$,  для которых норма определяется равенством
+ $$
+ \|b\|_v=\max_{t\in \bar\Omega_{N+2(r-\nu)}} {|b(t)|\over v^{r-\nu}(t)},
+ $$
+   где $0\le \nu\le r$. Обозначим через $p_{n+2r-\nu}(\partial)=p_{n+2r-\nu}(\partial)(t)$ алгебраический полином степени $n+2r-\nu$, который совпадает с функцией  $\partial(t)$ в точках множества $A=\{-r+\nu,-r+\nu+1,\ldots,-1, N+\nu, N+\nu+1, \ldots, N+r-1\}$ и среди таких полиномов осуществляет наилучшее приближение к  $\partial(t)$ в нормированном  пространстве  $C_v(\bar \Omega_{N+2(r-\nu)})$. Положим $E_{n+2r-\nu}^v(\partial)=\|\partial- p_{n+2r-\nu}(\partial)\|_v$. Тогда
+из \eqref{eq5.8} имеем
+ $$
+|\Delta^\nu d(t-\nu) -\Delta^\nu{\cal Y}_{n+2r,N}(d,t-\nu)|=|\partial(t)-{\cal Y}_{n+2r-\nu,N+\nu}(\partial,t)| \le
+$$
+$$
+|\partial(t)-   p_{n+2r-\nu}(\partial)(t)|+|{\cal Y}_{n+2r-\nu,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)|\le
+$$
+\begin{equation}\label{eq5.9}
+v^{r-\nu}(t)E_{n+2r-\nu}^v(\partial)+|{\cal Y}_{n+2r-\nu,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)|.
+\end{equation}
+С другой стороны, в силу \eqref{eq5.1}
+$$
+{\cal Y}_{n+2r-\nu,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)={\cal D}_{2(r-\nu)-1,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)+
+$$
+$$
+{(-1)^{r-\nu}(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{n+r} {(p_{n+2r-\nu}(\partial)-\partial)_{r-\nu,k}\over k^{[r-\nu]}}
+T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu).
+$$
+Поскольку, очевидно, что ${\cal D}_{2(r-\nu)-1,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)\equiv 0$, то это равенство можно переписать так
+$$
+{\cal Y}_{n+2r-\nu,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)=
+$$
+\begin{equation}\label{eq5.10}
+{(-1)^{r-\nu}(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{n+r} {(p_{n+2r-\nu}(\partial)-\partial)_{r-\nu,k}\over k^{[r-\nu]}}
+T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu).
+\end{equation}
+
+  Далее имеем
+  $$
+(p_{n+2r-\nu}(\partial)-\partial)_{r-\nu,k}=
+$$
+$$
+{2\over (N+r)h_{k,N+r}^{0,0}}\sum_{t=0}^{N+r-1}\Delta^{r-\nu}[p_{n+2r-\nu}(\partial)(j-r+\nu)-\partial(j-r+\nu)]T^{0,0}_k(j,N+r).
+$$
+Применим к правой части этого равенства преобразование Абеля $r-\nu$ раз. Тогда с учетом того, что разность  $p_{n+2r-\nu}(\partial)(j)-\partial(j)$
+обращается в нуль во всех точках множества $A=\{-r+\nu,-r+\nu+1,\ldots,-1, N+\nu, N+\nu+1, \ldots, N+r-1\}$, мы находим
+ $$
+(p_{n+2r-\nu}(\partial)-\partial)_{r-\nu,k}=
+$$
+$$
+{(-1)^{r-\nu}2\over (N+r)h_{k,N+r}^{0,0}}\sum_{j=0}^{N+r-1}[p_{n+2r-\nu}(\partial)(j)-\partial(j)]\Delta^{r-\nu}T^{0,0}_k(j,N+r).
+$$
+Обратимся теперь к формуле \eqref{eq2.15}, из которой находим
+$$
+\Delta^{r-\nu}T^{0,0}_k(j,N+r)= {(k+1)_{r-\nu}T_{k-r+\nu}^{r-\nu,r-\nu}(j,N+\nu)\over (N+r-1)^{[r-\nu]}}.
+$$
+Подставляя это выражение в правую часть предыдущего равенства, получим
+$$
+(p_{n+2r-\nu}(\partial)-\partial)_{r-\nu,k}=
+$$
+\begin{equation}\label{eq5.11}
+{(-1)^{r-\nu}2\over (N+r)h_{k,N+r}^{0,0}}\sum_{j=0}^{N+r-1}[p_{n+2r-\nu}(\partial)(j)-\partial(j)]{(k+1)_{r-\nu}T_{k-r+\nu}^{r-\nu,r-\nu}(j,N+\nu)\over (N+r-1)^{[r-\nu]}}.
+\end{equation}
+Из \eqref{eq5.10} и \eqref{eq5.11} находим
+$$
+{\cal Y}_{n+2r-\nu,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)=
+$$
+$$
+{(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{n+r} {2T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu)\over k^{[r-\nu]}
+ (N+r)h_{k,N+r}^{0,0}}\times
+ $$
+ $$
+ \sum_{t=0}^{N+r-1}[p_{n+2r-\nu}(\partial)(j)-\partial(j)]{(k+1)_{r-\nu}T_{k-r+\nu}^{r-\nu,r-\nu}(j,N+\nu)\over (N+r-1)^{[r-\nu]}}=
+$$
+$$
+{(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}{2\over N+r}\sum_{j=0}^{N+r-1}[p_{n+2r-\nu}(\partial)(j)-\partial(j)]\times
+$$
+$$
+\sum_{k=r-\nu}^{n+r} {(k+1)_{r-\nu}T_{k-r+\nu}^{r-\nu,r-\nu}(j,N+\nu)T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu)\over k^{[r-\nu]}.
+ (N+r)h_{k,N+r}^{0,0}}
+$$
+Отсюда имеем
+
+$$
+|{\cal Y}_{n+2r-\nu,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)|\le
+$$
+$$
+{2(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}\sum_{j=0}^{N+r-1}{|p_{n+2r-\nu}(\partial)(j)-\partial(j)|\over v^{r-\nu}(j)}\times
+$$
+\begin{equation}\label{eq5.12}
+v^{\nu-r}(j)\left|\sum_{k=r-\nu}^{n+r} {(k+1)_{r-\nu}T_{k-r+\nu}^{r-\nu,r-\nu}(j,N+\nu)T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu)\over k^{[r-\nu]}.
+ (N+r)h_{k,N+r}^{0,0}}\right|.
+\end{equation}
+Положим
+$$
+\lambda_{n,N,r,\nu}(t)={(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}\times
+$$
+\begin{equation}\label{eq5.13}
+{2\over N+r}\sum_{j=0}^{N+r-1}v^{\nu-r}(j)
+\left|\sum_{k=r-\nu}^{n+r} {(k+1)_{r-\nu}T_{k-r+\nu}^{r-\nu,r-\nu}(j,N+\nu)T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu)\over k^{[r-\nu]}.
+ h_{k,N+r}^{0,0}}\right|.
+\end{equation}
+Тогда неравенство \eqref{eq5.12} принимает следующий  вид
+\begin{equation}\label{eq5.14}
+|{\cal Y}_{n+2r-\nu,N+\nu}(p_{n+2r-\nu}(\partial)-\partial,t)|\le E_{n+2r-\nu}^v(\partial)\lambda_{n,N,r,\nu}(t),
+\end{equation}
+Из \eqref{eq5.9} и \eqref{eq5.14} выводим следующий результат.
+
+\begin{theorem}\label{th4.2} {\it Пусть $0\le\nu\le r$, $-r+\nu\le t\le N-1+r$ (t -- целое). Тогда имеет место неравенство}
+
+\begin{equation}\label{eq5.15}
+{|\Delta^\nu d(t-\nu) -\Delta^\nu{\cal Y}_{n+2r,N}(d,t-\nu)|\over v^{r-\nu}(t)} \le E_{n+2r-\nu}^v(\partial)\left(1+{\lambda_{n,N,r,\nu}(t)\over v^{r-\nu}(t)}\right).
+\end{equation}
+\end{theorem}
+В связи с неравенством  \eqref{eq5.15} возникает важная задача о оценке величины $\lambda_{n,N,r,\nu}(t)$  при $n,N\to\infty$.
+
+
+Перейдем к исследованию более тонких аппроксимативных свойств операторов   ${\cal Y}_{n+2r,N}(d)={\cal Y}_{n+2r,N}(d,t)$ на классах дискретных функций и их модифицированных аналогов на классах функций, непрерывных на отрезке $[-1,1]$.
+
+
+
+\section{Операторы ${\cal  X}_{n+2r,N}(f)={\cal  X}_{n+2r,N}(f,x)$}
+
+Пусть функция $f=f(x)$ определена в узлах сетки
+     $H_\Lambda=\{x_j=-1+{2j\over\Lambda-1}\}_{j=0}^{\Lambda-1}$,
+     где $\Lambda=N+2r$. С помощью равенства
+     \begin{equation}\label{eq6.1}
+     d(j-r)=f(x_j)\quad(j=0,1,\ldots,N+2r-1)
+\end{equation}
+ мы можем  на сетке
+$\bar \Omega_\Lambda =  \{-r,-r+1,\ldots,-1,0,1,\ldots,N-1,N,\ldots,N-1+r\}$ определить дискретную функцию
+$d=d(t)$ и для нее построить оператор ${\cal Y}_{n+2r,N}(d)={\cal
+Y}_{n+2r,N}(d,t)$. Тогда
+  \begin{equation}\label{eq6.2}
+           {\cal  X}_{n+2r,N}(f,x)=  {\cal Y}_{n+2r,N}
+     \left(d,{\Lambda-1\over2}(1+x)-r\right)
+  \end{equation}
+представляет собой алгебраический полином степени $n+2r$, для которого
+         \begin{equation}\label{eq6.3}
+           {\cal X}_{n+2r,N}(f,x_j)=f(x_j), \quad 0\le j\le r-1,\quad
+          N+r\le j\le N-1+2r.
+          \end{equation}
+В частности, если $p_m(x)$ представляет собой алгебраический полином
+степени  $m\le n+2r$, то из \eqref{eq6.3} следует, что
+\begin{equation}\label{eq6.4}
+{\cal
+X}_{n+2r,N}(p_m,x)=p_m(x)
+\end{equation}
+тождественно. Далее, полагая $t={\Lambda-1\over2}(1+x)-r$ и сопоставляя \eqref{eq5.1} с \eqref{eq6.2}, мы
+можем записать
+\begin{equation}\label{eq6.5}
+         {\cal  X}_{n+2r,N}(f,x)={\cal
+D}_{2r-1,N}(d,t)+{(-1)^r (t+1)_r(N-t)_r\over (N-1+r)^{[r]}}
+\sum_{k=r}^{n+r} {f_{r,k}\over k^{[r]}} T_{k-r}^{r,r}(t,N),
+ \end{equation}
+где $f_{r,k}=d_{r,k}$,
+\begin{equation}\label{eq6.6}
+{\cal D}_{2r-1,N}(d,t)=
+\sum_{i=1}^r(-1)^{i-1}{(t+1)_r(N-t)_r\over
+(i-1)!(r-i)!(N+i)_r}\left[{f(x_{r-i})\over t+i}+{f(x_{N-1+r+i})\over
+N-1+i-t}\right].
+\end{equation}
+
+Из  \eqref{eq6.2} и теоремы \ref{th4.1} непосредственно вытекает справедливость следующего утверждения.
+
+\begin{theorem}\label{th5.1} Пусть $t={\Lambda-1\over2}(1+x)-r$, $h={2\over \Lambda-1}$, $0\le\nu\le r$, $-r\le t\le N-1+r-\nu$ (t -- целое). Тогда имеет место равенство
+
+    $$
+     \Delta^\nu_h f(x)- \Delta^\nu_h{\cal X}_{n+2r,N}(f,x)=
+     $$
+    $$
+{(-1)^{r-\nu}(t+1+\nu)_{r-\nu}(N-t)_{r-\nu} \over(N-1+r)^{[r-\nu]}}
+\sum_{k=n+r+1}^{N-1+r}{f_{r,k}\over k^{[r-\nu]}} T_{k+\nu-r}^{r-\nu,r-\nu}(t+\nu,N+\nu),
+    $$
+где $\Delta^\nu_h g(x)$ есть $\nu$ -- тая степень оператора  конечной разности $\Delta_h g(x)=g(x+h)-g(x)$  с шагом $h$.
+\end{theorem}
+
+Через $C[-1,1]$ обозначим, как обычно, пространство непрерывных
+функций, определенных на $[-1,1]$. Мы можем рассмотреть  ${\cal
+X}_{n+2r,N}(f)={\cal  X}_{n+2r,N}(f,x)$ как линейный оператор,
+действующий в $C[-1,1]$ :$f\to {\cal  X}_{n+2r,N}(f)$. Нашей целью
+является изучение аппроксимативных свойств этих операторов, другими
+словами, требуется исследовать поведение разности $|f(x)-{\cal
+X}_{n+2r,N}(f,x)|$ при определенных условиях на гладкость функции
+$f(x)$.
+
+Нам понадобятся некоторые обозначения. Среди алгебраических
+полиномов $p_m(x)$ степени $m$, удовлетворяющих условию
+\begin{equation}\label{eq6.7}
+f(x_j)=p_m(x_j),\quad j\in
+\{0,1,\ldots,r-1\}\bigcup\{N+r,\ldots,N+2r-1\},
+\end{equation}
+ через $p_m^r(f)=p_{m,N}^r(f,x)$ и $q_m^r(f)=q_{m,N}^r(f,x)$ обозначим,
+соответственно, полиномы,  для которых
+\begin{equation}\label{eq6.8}
+E_m^r(f,N)=\inf_{p_m}\max_{x\in H_\lambda}{|f(x)-p_m(x)|\over(\sqrt{1-x^2}+1/m)^r}=\max_{x\in
+H_\lambda}{|f(x)-p_m^r(f,x)|\over(\sqrt{1-x^2}+1/m)^r},
+\end{equation}
+\begin{equation}\label{eq6.9}
+{\cal E}_m^r(f,N)=\inf_{p_m}\max_{-1\le
+x\le1}{|f(x)-p_m(x)|\over(\sqrt{1-x^2}+1/m)^r}=\max_{-1\le
+x\le1}{|f(x)-q_m^r(f,x)|\over(\sqrt{1-x^2}+1/m)^r}.
+\end{equation}
+Учитывая \eqref{eq6.4}, мы имеем
+\begin{equation}\label{eq6.10}
+f(x)-{\cal X}_{n+2r,N}(f,x)=f(x)-p_{n+2r}^r(f,x)+{\cal
+X}_{n+2r,N}(p_{n+2r}^r(f)-f,x),
+\end{equation}
+\begin{equation}\label{eq6.11}
+ f(x)-{\cal
+X}_{n+2r,N}(f,x)=f(x)-q_{n+2r}^r(f,x)+{\cal
+X}_{n+2r,N}(q_{n+2r}^r(f)-f,x).
+\end{equation}
+ Сопоставляя \eqref{eq6.10} и \eqref{eq6.11} с \eqref{eq6.3}, \eqref{eq6.5}  и \eqref{eq6.6}, мы замечаем, что
+ \begin{equation}\label{eq6.12}
+  {\cal X}_{n+2r,N}(p_{n+2r}^r(f)-f,x)={(-1)^r (t+1)_r(N-t)_r\over
+(N-1+r)^{[r]}} \sum_{k=r}^{n+r} (p_{n+2r}^r(f)-f)_{r,k}
+{T_{k-r}^{r,r}(t,N)\over k^{[r]}},
+\end{equation}
+ где (конечная разность $\Delta^r$ берется по переменной $j$ )
+$$(p_{n+2r}^r(f)-f)_{r,k}= {2\over (N+r)h_{k,N+r}^{0,0}}
+\sum_{j\in\Omega_{N+r}}T_k^{0,0}(j,N+r)\Delta^r(p_{n+2r}^r(f,x_j)-f(x_j))=
+$$
+$$ {2\over (N+r)h_{k,N+r}^{0,0}}
+\sum_{j=0}^{N+r-1}T_k^{0,0}(j,N+r)\Delta^r(p_{n+2r}^r(f,x_j)-f(x_j)).
+$$
+ Отсюда, после $r$-кратного преобразования Абеля, учитывая равенства \eqref{eq6.7},  находим
+ $$
+ (p_{n+2r}^r(f)-f)_{r,k}=
+{(-1)^r2\over (N+r)h_{k,N+r}^{0,0}}
+\sum_{j=0}^{N-1}\Delta^rT_k^{0,0}(j,N+r)(p_{n+2r}^r(f,x_{j+r})-f(x_{j+r})),
+$$
+ Воспользуемся  теперь формулой \eqref{eq2.15}. Тогда последнее  равенство приобретет следующий вид
+$$
+(p_{n+2r}^r(f)-f)_{r,k}= {(-1)^r2\over (N+r)h_{k,N+r}^{0,0}}\times$$
+$$
+\times\sum_{j=0}^{N-1}{(k+1)_rT_{k-r}^{r,r}(j,N)\over (N+r-1)^{[r]}}
+(p_{n+2r}^r(f,x_{j+r})-f(x_{j+r})).
+ $$
+ Подставляя это выражение в \eqref{eq6.12}, мы получаем
+  $$
+  {\cal X}_{n+2r,N}(p_{n+2r}^r(f)-f,x)= {
+(t+1)_r(N-t)_r\over (N-1+r)^{[r]}}{2\over N+r}\times
+$$
+$$
+\sum_{j=0}^{N-1}(p_{n+2r}^r(f,x_{j+r})-f(x_{j+r}))\sum_{k=0}^n
+{(k+r+1)_rT_k^{r,r}(j,N)T_k^{r,r}(t,N)\over
+(k+r)^{[r]}(N+r-1)^{[r]}h_{k+r,N+r}^{0,0}}
+$$
+С другой стороны, учитывая \eqref{eq2.6}, заметим,что
+$$
+(N+r)(N+r-1)^{[r]}h_{k+r,N+r}^{0,0}{(N+r-1)^{[r]}(k+r)^{[r]}\over(k+r+1)_r}=
+$$
+$$
+(N+r)(N+r-1)^{[r]}{(N+k+2r)^{[k+r]}\over
+(N+r-1)^{[k+r]}}{2\over 2k+2r+1}{(N+r-1)^{[r]}(k+r)^{[r]}\over(k+r+1)_r}=
+$$
+$$
+N{(N+2r)^{[2r]}\over2^{2r}}h_{k,N}^{r,r},
+$$
+поэтому, принимая во внимание \eqref{eq2.15}, предыдущее выражение принимает
+окончательно следующий вид
+$$
+{\cal X}_{n+2r,N}(p_{n+2r}^r(f)-f,x)=
+$$
+$$ { (t+1)_r(N-t)_r2^{2r}\over (N+2r)^{[2r]}}{2\over
+N} \sum_{j=0}^{N-1}(p_{n+2r}^r(f,x_{j+r})-f(x_{j+r}))\sum_{k=0}^n
+{T_k^{r,r}(j,N)T_k^{r,r}(t,N)\over h_{k,N}^{r,r}}=
+$$
+ \begin{equation}\label{eq6.13}
+ {(t+1)_r(N-t)_r2^{2r}\over (N+2r)^{[2r]}}{2\over N}
+\sum_{j=0}^{N-1}(p_{n+2r}^r(f,x_{j+r})-f(x_{j+r}))D_{n,N}^{r,r}(j,t).
+\end{equation}
+ Совершенно аналогично мы выводим
+ $$
+ {\cal X}_{n+2r,N}(q_{n+2r}^r(f)-f,x)=
+ $$
+ \begin{equation}\label{eq6.14}
+ {(t+1)_r(N-t)_r2^{2r}\over(N+2r)^{[2r]}}{2\over N}
+\sum_{j=0}^{N-1}(q_{n+2r}^r(f,x_{j+r})-f(x_{j+r}))D_{n,N}^{r,r}(j,t).
+\end{equation}
+ Если мы примем во внимание \eqref{eq6.8} и \eqref{eq6.9}, то из \eqref{eq6.13} и \eqref{eq6.14} можем вывести следующие оценки:
+ $$
+ |{\cal X}_{n+2r,N}(p_{n+2r}^r(f)-f,x)|\le
+E_{n+2r}^r(f,N)\times
+$$
+\begin{equation}\label{eq6.15}
+ {|(t+1)_r(N-t)_r|2^{2r}\over(N+2r)^{[2r]}}{2\over N}
+\sum_{j=0}^{N-1}\left(\sqrt{1-x_{j+r}^2}+{1\over
+n+2r}\right)^r\left|D_{n,N}^{r,r}(j,t)\right|,
+\end{equation}
+$$|{\cal X}_{n+2r,N}(q_{n+2r}^r(f)-f,x)|\le {\cal
+E}_{n+2r}^r(f,N)\times
+$$
+\begin{equation}\label{eq6.16}
+{|(t+1)_r(N-t)_r|2^{2r}\over (N+2r)^{[2r]}}{2\over N}
+\sum_{j=0}^{N-1}\left(\sqrt{1-x_{j+r}^2}+{1\over
+n+2r}\right)^r\left|D_{n,N}^{r,r}(j,t)\right|.
+\end{equation}
+Из \eqref{eq6.10}, \eqref{eq6.11}, \eqref{eq6.15} и \eqref{eq6.16} мы получаем следующие оценки
+$$
+{|f(x)-{\cal X}_{n+2r,N}(f,x)|\over(\sqrt{1-x^2}+{1\over
+n+2r})^{r-1/2}}\le {|f(x)-p_{n+2r}^r(f,x)|\over(\sqrt{1-x^2}+{1\over
+n+2r})^{r-1/2}}+
+$$
+$$
+E_{n+2r}^r(f,N)
+{|(t+1)_r(N-t)_r|2^{2r}\over(\sqrt{1-x^2}+{1\over n+2r})^{r-1/2}
+(N+2r)^{[2r]}}\times
+$$
+$$
+{2\over N}\sum_{j=0}^{N-1}\left(\sqrt{1-x_{j+r}^2}+{1\over
+n+2r}\right)^r\left|D_{n,N}^{r,r}(j,t)\right|,
+$$
+ $$
+ {|f(x)-{\cal X}_{n+2r,N}(f,x)|\over(\sqrt{1-x^2}+{1\over n+2r})^{r-1/2}}\le
+{|f(x)-q_{n+2r}^r(f,x)|\over(\sqrt{1-x^2}+{1\over n+2r})^{r-1/2}}+
+$$
+$${\cal E}_{n+2r}^r(f,N)
+{|(t+1)_r(N-t)_r|2^{2r}\over(\sqrt{1-x^2}+{1\over n+2r})^{r-1/2}
+(N+2r)^{[2r]}}\times
+$$
+\begin{equation}\label{eq6.18}
+{2\over N}
+\sum_{j=0}^{N-1}\left(\sqrt{1-x_{j+r}^2}+{1\over
+n+2r}\right)^r\left|D_{n,N}^{r,r}(j,t)\right|,
+\end{equation}
+Отсюда, с учетом \eqref{eq6.8} и \eqref{eq6.9} имеем
+$$
+{|f(x)-{\cal
+X}_{n+2r,N}(f,x)|\over(\sqrt{1-x^2}+{1\over n+2r})^{r}}\le
+$$
+\begin{equation}\label{eq6.19}
+E_{n+2r}^r(f,N)\left(1
++{I_{n,N}^r(x)|(t+1)_r(N-t)_r|2^{2r}\over(\sqrt{1-x^2}+{1\over
+n+2r})^r (N+2r)^{[2r]}}\right)\quad (x\in H_\Lambda),
+\end{equation}
+$$
+{|f(x)-{\cal X}_{n+2r,N}(f,x)|\over(\sqrt{1-x^2}+{1\over
+n+2r})^{r}}\le
+ $$
+\begin{equation}\label{eq6.20}
+{\cal E}_{n+2r}^r(f,N)\left(1
++{I_{n,N}^r(x)|(t+1)_r(N-t)_r|2^{2r}\over(\sqrt{1-x^2}+{1\over
+n+2r})^r (N+2r)^{[2r]}}\right) \quad (x\in [-1,1]),
+\end{equation}
+ где ($t={\Lambda-1\over2}(1+x)-r$, $\Lambda=N+2r$ )
+ \begin{equation}\label{eq6.21}
+ I_{n,N}^r(x)=
+{2\over N} \sum_{j=0}^{N-1}\left(\sqrt{1-x_{j+r}^2}+{1\over
+n+2r}\right)^r\left|D_{n,N}^{r,r}(j,t)\right|.
+\end{equation}
+Неравенства \eqref{eq6.19} и \eqref{eq6.20} сводят задачу об оценке разности
+$|f(x)-{\cal X}_{n+2r,N}(f,x)|$ к исследованию поведения величины
+$I_{n,N}^r(x)$ при $n,N\to \infty$, аналогично тому,  как задача об
+оценке отклонения частичных сумм Фурье от исходной функции сводится
+к исследованию  поведения их функции Лебега. В работе \cite{99} установлен  следующий результат.
+
+\begin{theorem}\label{th5.2} Пусть $r\ge 1$, $a>0$, $1\le n\le a\sqrt{N}
+$, $-1\le x \le1$. Тогда имеет место оценка
+$$
+I_{n,N}^r(x)\le
+c(r,a)\left(\sqrt{1-x^2}+{1\over
+n}\right)^{-r}\left(\left(\sqrt{1-x^2}+\frac1n\right)^{-1/2}+\ln(n\sqrt{1-x^2}+1)\right).
+$$
+\end{theorem}
+Из теоремы \ref{th5.2} и неравенств \eqref{eq6.19} и \eqref{eq6.20} вытекает
+
+\begin{corollary}\label{cor1} Пусть $r\ge 1$, $a>0$, $1\le n\le
+a\sqrt{N} $, $-1\le x \le1$. Тогда
+$${|f(x)-{\cal X}_{n+2r,N}(f,x)|\over(\sqrt{1-x^2}+{1\over n+2r})^{r-1/2}}\le
+$$
+\begin{equation}\label{eq6.22}
+ c(r,a)E_{n+2r}^r(f,N)\left(1 + \left(\sqrt{1-x^2}+{1\over
+n}\right)^{1/2}\ln(n\sqrt{1-x^2}+1)\right) \quad (x\in
+H_\Lambda),
+\end{equation}
+ $$
+ {|f(x)-{\cal
+X}_{n+2r,N}(f,x)|\over(\sqrt{1-x^2}+{1\over n+2r})^{r-1/2}}\le
+$$
+\begin{equation}\label{eq6.23}
+c(r,a){\cal
+E}_{n+2r}^r(f,N)\left(1 + \left(\sqrt{1-x^2}+{1\over
+n}\right)^{1/2}\ln(n\sqrt{1-x^2}+1)\right) \quad (x\in [-1,1]). \end{equation}
+\end{corollary}
+
+Пусть, по-прежнему,  $d(j)=f(x_{j+r})$ $(j\in \bar \Omega_\Lambda)$.  Для $t\in \{-r+\nu,\ldots,-1,0,\ldots,N-1,N,\ldots,N+r-1\}$ положим $d_\nu=d_\nu(t)=d(t)=f(x_{t+r})$ и введем оператор ${\cal X}^\nu_{n+2r-\nu,N+\nu}(f)={\cal X}^\nu_{n+2r-\nu,N+\nu}(f,x)$, полагая для
+ $ t={\Lambda-1\over2}(1+x)-r$
+$$
+{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(f,x)={\cal Y}_{n+\nu+2(r-\nu),N+\nu}(d_\nu,t)=
+{\cal D}_{2(r-\nu)-1,N+\nu}(d_\nu,t)+
+$$
+\begin{equation}\label{eq6.24}
+{(-1)^{r-\nu}(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{n+r} {(d_\nu)_{r-\nu,k}\over k^{[r-\nu]}}
+T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu),
+\end{equation}
+где в силу \eqref{eq4.4}
+$$
+ (d_\nu)_{r-\nu,k}    ={2\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{t\in\Omega_{N+r}}\Delta^{r-\nu}d_\nu(t-r+\nu)T_k^{0,0}(t,N+r)=
+    $$
+     \begin{equation}\label{eq6.25}
+     {2\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{t\in\Omega_{N+r}}\Delta^{r-\nu}_hf(x_{t+\nu})T_k^{0,0}(t,N+r)=f^\nu_{r-\nu,k},
+    \end{equation}
+
+$$
+{\cal D}_{2(r-1)-1,N+\nu}(d_\nu,t)=
+$$
+\begin{equation}\label{eq6.26}
+\sum_{i=1}^{r-\nu}(-1)^{i-1}{(t+1)_{r-\nu}(N-t)_{r-\nu}\over
+(i-1)!(r-\nu-i)!(N+\nu+i)_{r-\nu}}\left[{f(x_{r-i})\over t+i}+{f(x_{N+\nu-1+r+i})\over
+N+\nu-1+i-t}\right].
+\end{equation}
+
+
+
+Из определения \eqref{eq6.24} следует, что оператор
+$$
+{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(f)={\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(f,x)
+$$
+является проектором на пространство алгебраических полиномов $p_m(x)$ степени $m\le n+2r-\nu$, т.е.
+\begin{equation}\label{eq6.27}
+{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(p_m,x)\equiv p_m(x)\quad ( m\le n+2r-\nu).
+\end{equation}
+Кроме того, имеют место следующие равенства
+\begin{equation}\label{eq6.27}
+{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(f,x_j)=f(x_j), \nu\le j\le r-1, N+r+\nu\le j\le N+2r-1.
+\end{equation}
+
+
+
+Положим $\psi(x)=\Delta^\nu_hf(x-\nu h)$ и рассмотрим функцию  $\partial(t)=\Delta^\nu d(t-\nu)=\Delta^\nu_hf(x_{t-\nu+r})=\psi(x_{t+r})$, для которой  в силу \eqref{eq5.8} мы можем записать
+$$
+\Delta_h^\nu f(x_{j-\nu+r})-\Delta_h^\nu{\cal X}_{n+2r,N}(f,x_{j-\nu+r})=
+$$
+$$
+\Delta^\nu d(j-\nu)-\Delta^\nu{\cal Y}_{n+2r,N}(d,j-\nu)=\partial(j)-{\cal Y}_{n+\nu+2(r-\nu),N+\nu}(\partial,j)=
+$$
+$$
+\psi(x_{j+r})-{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(\psi,x_{j+r})
+$$
+или, что то же,
+\begin{equation}\label{eq6.28}
+\Delta_h^\nu f(x_{j-\nu})-\Delta_h^\nu{\cal X}_{n+2r,N}(f,x_{j-\nu})=
+\psi(x_{j})-{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(\psi,x_{j}).
+\end{equation}
+
+
+Через ${\cal P}_m^{r,\nu}$ обозначим пространство алгебраических полиномов  $p_m(x)$ степени $m$, удовлетворяющих условию
+\begin{equation}\label{eq6.29}
+\psi(x_j)=p_m(x_j),\quad j\in
+\{\nu,\ldots,r-1\}\bigcup\{N+r+\nu,\ldots,N+2r-1\},
+\end{equation}
+а через  $q_m^{r,\nu}(\psi)=q_{m,N}^{r,\nu}(\psi,x)$ обозначим полином из ${\cal P}_m^{r,\nu}$,
+ для которого
+
+\begin{multline}\label{eq6.30}
+ E_m^{r,\nu}(\psi,N)=\inf_{p_m\in{\cal P}_m^{r,\nu}}\max_{j\in \Omega_\Lambda}{|\psi(x_j)-p_m(x_j)|\over\left(\sqrt{1-x_j^2}+\frac1m\right)^{r-\nu}}=\\
+ \max_{j\in \Omega_\Lambda}{|\psi(x_j)-q_m^{r,\nu}(\psi,x_j)|\over\left(\sqrt{1-x_j^2}+\frac1m\right)^{r-\nu}}.
+\end{multline}
+
+Тогда, учитывая \eqref{eq6.26}, мы имеем
+\begin{multline}\label{eq6.31}
+\psi(x)-{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(\psi,x)=\\
+\psi(x)-q_{m,N}^{r,\nu}(\psi,x)+{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(q_{m,N}^{r,\nu}(\psi)-\psi,x).
+\end{multline}
+Далее заметим, что если в равенстве  \eqref{eq6.26} функцию $f(x)$ заменить функцией $q_{m,N}^{r,\nu}(\psi,x)-\psi(x)$,  то в силу
+ \eqref{eq6.29} будем  иметь ${\cal D}_{2(r-1)-1,N+\nu}(d_\nu,t)\equiv0$, поэтому из \eqref{eq6.24} находим
+$$
+{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(q_{m,N}^{r,\nu}(\psi)-\psi,x)=
+$$
+\begin{equation}\label{eq6.32}
+{(-1)^{r-\nu}(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{n+r} {(q_{m,N}^{r,\nu}(\psi)-\psi)_{r-\nu,k}^\nu\over k^{[r-\nu]}}
+T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu),
+\end{equation}
+где в силу \eqref{eq6.25}
+$$
+ (q_{m,N}^{r,\nu}(\psi)-\psi)_{r-\nu,k}^\nu=
+ $$
+ \begin{equation}\label{eq6.33}
+    {2\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{j=0}^{N+r-1}T_k^{0,0}(j,N+r)\Delta^{r-\nu}(q_{m,N}^{r,\nu}(\psi,x_{j+\nu})-\psi(x_{j+\nu})),
+ \end{equation}
+причем конечная разность $\Delta^{r-\nu}$ берется по переменной $t$. Применим к правой части равенства \eqref{eq6.33}
+преобразование Абеля $r-\nu$-раз, тогда в силу равенств \eqref{eq6.29}, которым удовлетворяет полином $p_m(x)=q_{m,N}^{r,\nu}(\psi,x)$, получим
+  $$
+ (q_{m,N}^{r,\nu}(\psi)-\psi)_{r-\nu,k}^\nu=
+ $$
+ \begin{equation}\label{eq6.34}
+    {2(-1)^{r-\nu}\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{j=0}^{N+r-1}(q_{m,N}^{r,\nu}(\psi,x_{j+r})-\psi(x_{j+r}))\Delta^{r-\nu}T_k^{0,0}(j,N+r).
+ \end{equation}
+ Отсюда с учетом равенства \eqref{eq2.15} находим
+$$
+ (q_{m,N}^{r,\nu}(\psi)-\psi)_{r-\nu,k}^\nu=
+ $$
+ \begin{equation}\label{eq6.35}
+    {2(-1)^{r-\nu}\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{j=0}^{N+\nu-1}{(k+1)_{r-\nu}T_{k-r+\nu}^{r-\nu,r-\nu}(j,N+\nu)\over (N+r-1)^{[r-\nu]}}(q_{m,N}^{r,\nu}(\psi,x_{j+r})-\psi(x_{j+r})).
+ \end{equation}
+Подставляя это выражение в \eqref{eq6.32}, мы получаем
+$$
+{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(q_{m,N}^{r,\nu}(\psi)-\psi,x)=
+$$
+$${(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N-1+r)^{[r-\nu]}}
+\sum_{k=r-\nu}^{n+r} {2\over (N+r)k^{[r-\nu]}h_{k,N+r}^{0,0}}\times
+$$
+$$
+        \sum_{j=0}^{N+\nu-1}{(k+1)_{r-\nu}T_{k-r+\nu}^{r-\nu,r-\nu}(j,N+\nu)\over (N+r-1)^{[r-\nu]}}\times$$
+
+$$\times(q_{m,N}^{r,\nu}(\psi,x_{j+r})-\psi(x_{j+r}))
+T_{k-r+\nu}^{r-\nu,r-\nu}(t,N+\nu)=
+$$
+$$
+{2(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over(N+r) (N-1+r)^{[r-\nu]}}\sum_{j=0}^{N+\nu-1}(q_{m,N}^{r,\nu}(\psi,x_{j+r})-\psi(x_{j+r}))\times
+$$
+\begin{equation}\label{eq6.36}
+\sum_{k=0}^{n+\nu} {(k+r-\nu+1)_{r-\nu}T_{k}^{r-\nu,r-\nu}(j,N+\nu)T_{k}^{r-\nu,r-\nu}(t,N+\nu)\over (k+r-\nu)^{[r-\nu]}h_{k+r-\nu,N+r}^{0,0}(N+r-1)^{[r-\nu]}}.
+\end{equation}
+С другой стороны, учитывая \eqref{eq2.6}, заметим,что
+$$
+(N+r)(N+r-1)^{[r-\nu]}h_{k+r-\nu,N+r}^{0,0}{(N+r-1)^{[r-\nu]}(k+r-\nu)^{[r-\nu]}\over(k+r-\nu+1)_{r-\nu}}=
+$$
+$$
+(N+r)(N+r-1)^{[r-\nu]}{(N+\nu+k+2(r-\nu))^{[k+r-\nu]}\over
+(N+r-1)^{[k+r-\nu]}}\times
+$$
+$$
+{2\over 2k+2(r-\nu)+1}{(N+r-1)^{[r-\nu]}(k+r-\nu)^{[r-\nu]}\over(k+r-\nu+1)_{r-\nu}}=
+$$
+$$
+(N+\nu){(N+\nu+2(r-\nu))^{[2(r-\nu)]}\over2^{2(r-\nu)}}h_{k,N+\nu}^{r-\nu,r-\nu},
+$$
+поэтому, принимая во внимание \eqref{eq2.6}, предыдущее выражение принимает
+окончательно следующий вид
+$$
+{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(q_{m,N}^{r,\nu}(\psi)-\psi,x)=
+$$
+$$
+{2^{2(r-\nu)}(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N+\nu+2(r-\nu))^{2[r-\nu]}}\sum_{j=0}^{N+\nu-1}(q_{m,N}^{r,\nu}(\psi,x_{j+r})-\psi(x_{j+r}))\times
+$$
+$$
+\sum_{k=0}^{n+\nu} {T_{k}^{r-\nu,r-\nu}(j,N+\nu)T_{k}^{r-\nu,r-\nu}(t,N+\nu)\over h_{k,N+\nu}^{r-\nu,r-\nu}}=
+$$
+\begin{equation}\label{eq6.37}
+{2^{2(r-\nu)}(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}\over (N+\nu+2(r-\nu))^{2[r-\nu]}}\sum_{j=0}^{N+\nu-1}(q_{m,N}^{r,\nu}(\psi,x_{j+r})-\psi(x_{j+r}))D_{n+\nu,N+\nu}^{r-\nu,r-\nu}(j,t).
+\end{equation}
+ Если мы примем во внимание \eqref{eq6.30}, то для $m\le n+2r-\nu $ из \eqref{eq6.37} можем вывести следующую  оценку:
+\begin{multline}\label{eq6.38}
+ |{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(q_{m,N}^{r,\nu}(\psi)-\psi,x)|\le \\
+ E_m^{r,\nu}(\psi,N){|(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}|2^{2(r-\nu)+1}\over(N+\nu+2(r-\nu)^{[2(r-\nu)]}(N+\nu)} \times \\
+\times\sum_{j=0}^{N+\nu
+-1}\left(\sqrt{1-x_{j+r}^2}+{1\over m}\right)^{r-\nu}\left|D_{n+\nu,N+\nu}^{r-\nu,r-\nu}(j,t)\right|.
+\end{multline}
+Положим $m=n+2r-\nu$, тогда из  \eqref{eq6.31} и \eqref{eq6.38} находим
+$$
+|\psi(x)-{\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(x)|\le
+$$
+\begin{equation}\label{eq6.39}
+|\psi(x)-q_{m,N}^{r,\nu}(\psi,x)| +{|(t+1)_{r-\nu}(N+\nu-t)_{r-\nu}|2^{2(r-\nu)}\over(N+\nu+2(r-\nu)^{[2(r-\nu)]}}E_m^{r,\nu}(\psi,N)I_{n,N}^{r,\nu}(x),
+\end{equation}
+где $t=\frac{\Lambda-1}{2}(1+x)-r$,
+\begin{equation}\label{eq6.40}
+ I_{n,N}^{r,\nu}(x)=\frac{2}{N+\nu}
+\sum_{j=0}^{N+\nu-1}\left(\sqrt{1-x_{j+r}^2}+{1\over m}\right)^{r-\nu}\left|D_{n+\nu,N+\nu}^{r-\nu,r-\nu}(j,t)\right|.
+\end{equation}
+Неравенство \eqref{eq6.39} сводит задачу об оценке отклонения полинома \linebreak ${\cal X}^\nu_{n+\nu+2(r-\nu),N+\nu}(x)$ от функции $\psi(x)$
+ к вопросу об оценке величины $I_{n,N}^{r,\nu}(x)$. Но этот вопрос, по сути,  был уже рассмотрен в теореме \ref{th5.2} и мы  можем здесь отметить следующий результат.
+
+
+\begin{theorem}\label{th5.2A} Пусть $r\ge 1$, $0\le \nu\le r-1$, $a>0$, $1\le n\le a\sqrt{N}
+$, $-1\le x \le1$. Тогда имеет место оценка
+$$
+I_{n,N}^{r,\nu}(x)\le
+c(r,a)\left(\sqrt{1-x^2}+{1\over
+n}\right)^{-r+\nu}\times$$
+$$\times\left(\left(\sqrt{1-x^2}+\frac1n\right)^{-1/2}+\ln(n\sqrt{1-x^2}+1)\right).
+$$
+\end{theorem}
+
+Из теоремы \ref{th5.2A} с учетом равенства \eqref{eq6.28} и неравенства \eqref{eq6.39} мы выводим
+
+\begin{corollary}\label{cor2} Пусть $r\ge 1$, $0\le \nu\le r-1$, $a>0$, $1\le n\le a\sqrt{N}
+$. Тогда имеет место оценка
+$$
+{|\Delta_h^\nu f(x_{j-\nu})-\Delta_h^\nu{\cal X}_{n+2r,N}(f,x_{j-\nu})|\over\left(\sqrt{1-x_{j-\nu}^2}+{1\over
+n}\right)^{r-\nu-\frac12}}\le
+$$
+\begin{equation}\label{eq6.41}
+c(r,a)E_m^{r,\nu}(\psi,N)\left(1+\left(\sqrt{1-x_{j-\nu}^2}+\frac1n\right)^{1/2}\ln\left(n\sqrt{1-x_{j-\nu}^2}+1\right)\right).
+\end{equation}
+\end{corollary}
+
+\section{Численное дифференцирование\\ посредством операторов ${\cal X}_{n+2r,N}(f)$ }
+Пусть $1\le r$, $2\le N$ -- натуральные числа, функция $f=f(x)$ -- дифференцируема на $[-1,1]$ $r$-раз. Далее, пусть заданы значения $f(x_j)$  в узлах сетки  $H_\Lambda=\{x_j=-1+{2j\over\Lambda-1}\}_{j=0}^{\Lambda-1}$,  где $\Lambda=N+2r$. Ставится задача найти приближенные значения производных $f^{(\nu)}(x_j)$ при $\nu=1,\ldots, r$ посредством операторов  ${\cal X}_{n+2r,N}(f)$ . Идея применения операторов
+${\cal X}_{n+2r,N}(f)$  в задаче численного дифференцирования функций возникает в связи с результатами, отмеченными выше, в частности, с     оценкой \eqref{eq6.41}. Дело в том, что оценке \eqref{eq6.41} можно придать несколько иной вид, поделив ее правую и левую  части на $h^\nu=(\frac{2}{\Lambda-1})^\nu$, а именно
+$$
+{|\frac1{h^{\nu}}\Delta_h^\nu\left[ f(x_{j-\nu})-{\cal X}_{n+2r,N}(f,x_{j-\nu})\right]|\over\left(\sqrt{1-x_{j-\nu}^2}+{1\over
+n}\right)^{r-\nu-\frac12}}\le
+$$
+\begin{equation}\label{eq7.1}
+c(r,a)E_m^{r,\nu}(\frac1{h^\nu}\psi,N)\left(1+\left(\sqrt{1-x_{j-\nu}^2}+\frac1n\right)^{1/2}\ln\left(n\sqrt{1-x_{j-\nu}^2}+1\right)\right).
+\end{equation}
+Теперь воспользуемся известным свойством конечной разности, согласно которому в интервале $(x_{j-\nu},x_j)$ найдется такая точка $y_j=x_{j-\nu}+ \theta_j \nu h$ ($0<\theta<1$), для которой $\frac1{h^\nu}\Delta_h^\nu g(x_{j-\nu})= g^{(\nu)}(y_j)$. Применяя это равенство к функции $f(x_{j-\nu})-{\cal X}_{n+2r,N}(f,x_{j-\nu})$, из \eqref{eq7.1}  получим
+$$
+{| f^{(\nu)}(y_j)-{\cal X}^{(\nu)}_{n+2r,N}(f,y_j)|\over\left(\sqrt{1-x_{j-\nu}^2}+{1\over
+n}\right)^{r-\nu-\frac12}}\le
+$$
+
+\begin{equation}\label{eq7.2}
+c(r,a)E_m^{r,\nu}(\frac1{h^\nu}\psi,N)\left(1+\left(\sqrt{1-x_{j-\nu}^2}+\frac1n\right)^{1/2}\ln\left(n\sqrt{1-x_{j-\nu}^2}+1\right)\right),
+\end{equation}
+где $y_j=x_{j-\nu}+ \theta_j \nu h$ ($0<\theta<1$) для всех $j$ таких, что $\nu\le j \le N+2r-1$. Нетрудно заметить, что если мы в оценке \eqref{eq7.2} заменим точки  $x_j$ на $y_j=x_{j-\nu}+ \theta_j \nu h$, то она останется справедливой (возможно с другой константой $c(r,a)$) и примет следующий вид
+$$
+{| f^{(\nu)}(y_j)-{\cal X}^{(\nu)}_{n+2r,N}(f,y_j)|\over\left(\sqrt{1-y_j^2}+{1\over n}\right)^{r-\nu-\frac12}}\le
+$$
+\begin{equation}\label{eq7.3}
+c(r,a)E_m^{r,\nu}(\frac1{h^\nu}\psi,N)\left(1+\left(\sqrt{1-y_j^2}+\frac1n\right)^{1/2}\ln\left(n\sqrt{1-y_j^2}+1 \right)\right),
+\end{equation}
+где $r\ge 1$, $0\le \nu\le r-1$, $a>0$, $1\le n\le a\sqrt{N}$. Кроме того, заметим, что $\frac1{h^\nu}\psi(x_{j})=\frac1{h^\nu}\Delta^\nu f(x_{j-\nu})=f^{(\nu)}(z_j)$, где $z_j=x_{j-\nu}+\eta_j\nu h$ ($0<\eta_j<1$).
+
+Оценка \eqref{eq7.3} показывает, что операторы ${\cal X}_{n+2r,N}(f)$ успешно могут быть использованы в задаче одновременного приближения функций и их нескольких производных. Для приложений важно то, что конструкция операторов ${\cal X}_{n+2r,N}(f)$ базируется на массиве  значений функции $f(x)$ в узлах равномерной сетки   $H_\Lambda=\{x_j=-1+\frac{2j}{\Lambda-1}\}$. С другой стороны, с точки зрения численной реализации ${\cal X}_{n+2r,N}(f,x)$, когда   $x$ пробегает некоторую достаточно густую сетку $Q\subset[-1,1]$, возникает неудобство, заключающееся в том, что не удается непосредственно использовать алгоритм быстрого дискретного преобразования Фурье для одновременного вычисления всех значений
+${\cal X}_{n+2r,N}(f,x)$ для $x\in Q$. Мы рассмотрим эту задачу более подробно в случае, когда конечное множество $Q$ состоит из всех нулей
+полинома Чебышева $C_M(x)=\cos(M\arccos x)$, т.е. $Q=Q_M=\{t_i=\cos\frac{(2i+1)\pi}{2M}\}_{i=0}^{M-1}$. Для этого представим полином ${\cal X}_{n+2r,N}(f,x)$ в следующем виде
+\begin{equation}\label{eq7.4}
+{\cal X}_{n+2r,N}(f,x)=\frac{a_0}{2}+\sum_{k=1}^{n+2r}a_kC_k(x),
+\end{equation}
+где
+\begin{equation}\label{eq7.5}
+a_k =\frac{2}{n+2r+1}\sum_{j=0}^{n+2r}{\cal X}_{n+2r,N}(f,\cos\tau_j)\cos k\tau_j,
+\end{equation}
+ $\tau_j= \frac{(2j+1)\pi}{2(n+2r+1)}$. Справедливость равенства \eqref{eq7.4} вытекает из следующего соотношения ортогональности для полиномов Чебышева $C_k(x)$ $(0\le k\le n+2r)$:
+\begin{equation}\label{eq7.6}
+\frac{2}{n+2r+1}\sum_{j=0}^{n+2r}C_k(\cos\tau_j)C_l(\cos\tau_j)=\begin{cases} 0, \text{если $k\ne l$,}\\
+2, \text{если $k=l=0$,}\\1,\text{если $k=l>0$}.\end{cases}
+\end{equation}
+Заметим, что для численного нахождения значений ${\cal X}_{n+2r,N}(f,\cos\tau_j)$, фигурирующих в формуле \eqref{eq7.5}, мы можем воспользоваться равенством \eqref{eq6.5}, которое слегка преобразуем следующим образом. Используя ортогональность при $k\ge r$  полинома $T_k^{0,0}(j,N+r)$ к полиному ${\cal D}_{2r-1,N}(d,j-r)$, из \eqref{eq4.1} -- \eqref{eq4.4} имеем
+  $$
+ f_{r,k}=d_{r,k}   ={2\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{j\in\Omega_{N+r}}T_k^{0,0}(j,N+r)\Delta^rd(j-r)=
+     $$
+     $$
+     {2\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{j\in\Omega_{N+r}}T_k^{0,0}(j,N+r)\Delta^r[d(j-r)-{\cal D}_{2r-1,N}(d,j-r)].
+    $$
+ Отсюда, воспользовавшись преобразованием Абеля $r$-раз и учитывая равенство \eqref{eq2.15}, находим
+  $$
+f_{r,k}={(-1)^r2\over (N+r)h_{k,N+r}^{0,0}}
+     \sum_{j\in\Omega_N}[d(j)-{\cal D}_{2r-1,N}(d,j)]\Delta^rT_k^{0,0}(j,N+r)=
+$$
+$$
+{(-1)^r2\over (N+r)h_{k,N+r}^{0,0}}{(k+1)_r\over (N+r-1)^{[r]}}
+     \sum_{j\in\Omega_N}[d(j)-{\cal D}_{2r-1,N}(d,j)] T_{k-r}^{r,r}(j,N).
+$$
+откуда, полагая
+$$
+\bar f_{r,k}=
+{2\over (N+r)}\sum_{j\in\Omega_N}[d(j)-{\cal D}_{2r-1,N}(d,j)] T_k^{r,r}(j,N),
+$$
+получаем
+$$
+{f_{r,k+r}\over (k+r)^{[r]}} ={(-1)^r\bar f_{r,k}\over h^{0,0}_{k+r,N+r}}{(k+r+1)_r\over (k+r)^{[r]} (N+r-1)^{[r]}}=
+$$
+$$
+{(-1)^r\bar f_{r,k}(N+r-1)^{[k+r]}\over(N+2r+k)^{[k+r]}}{(k+r+1)_r\over (k+r)^{[r]} (N+r-1)^{[r]}}{2k+2r+1\over2}=
+$$
+$$
+{(-1)^r\bar f_{r,k}(N+r-1)^{[r]}\over(N+2r)^{[r]}}{(N-1)^{[k]}\over(N+2r+k)^{[k]}}{2^{2r}\over(N+r-1)^{[r]}}
+   {k!(k+2r)!\over (k+r)!^2}{2k+2r+1\over2^{2r+1}}=
+$$
+$$
+\bar f_{r,k}{(-1)^r2^{2r}\over(N+2r)^{[r]}}{1\over h^{r,r}_{k,N}}.
+$$
+С учетом этого равенства из  \eqref{eq6.5} мы выводим
+$$
+         {\cal  X}_{n+2r,N}(f,x)={\cal
+D}_{2r-1,N}(d,t)+{2^{2r}(t+1)_r(N-t)_r\over (N-1+r)^{[r]}(N+2r)^{[r]}}
+\sum_{k=0}^n \bar f_{r,k}{T_k^{r,r}(t,N)\over h^{r,r}_{k,N}}.
+ $$
+Далее, если мы введем обозначение
+\begin{equation}\label{eq7.7}
+\hat f_{r,k}={\bar f_{r,k}\over( h^{r,r}_{k,N})^\frac12}=\sum_{j\in\Omega_N}[d(j)-{\cal D}_{2r-1,N}(d,j)] \tau_k^{r,r}(j,N),
+\end{equation}
+то окончательно получим следующее представление $(t=\frac{N+2r-1}{2}(1+x)-r)$
+$$
+         {\cal  X}_{n+2r,N}(f,x)={\cal
+D}_{2r-1,N}(d,t)+{2^{2r+1}(t+1)_r(N-t)_r\over N(N+r)^{[r]}(N+2r)^{[r]}}
+\sum_{k=0}^n \hat f_{r,k}\tau_k^{r,r}(t,N)=
+ $$
+\begin{equation}\label{eq7.8}
+{\cal
+D}_{2r-1,N}(d,t)+\mu(t;r,r,N)\sum_{k=0}^n \hat f_{r,k}\tau_k^{r,r}(t,N),
+\end{equation}
+где $\mu(t;r,r,N)$ -- весовая функция, определенная равенством \eqref{eq2.5}. Для численного нахождения значений полинома ${\cal  X}_{n+2r,N}(f,x)$ с помощью равенства \eqref{eq7.8} можно использовать рекуррентное соотношение
+\eqref{eq2.27}, которое в случае целых $\alpha=\beta=r$ принимает следующий вид
+$$
+\tau_0^{r,r}(t,N)=\left[\frac{(2r+1)!}{2^{2r+1}r!^2}\right]^\frac12,
+$$
+$$
+\tau_1^{r,r}(t,N)=\left\{\frac{(N-1)(2r+1)!(2r+3)}{(N+2r+1)r!^22^{2r+1}}\right\}^\frac12\left[\frac{2t}{N-1}-1\right],
+$$
+
+\begin{equation}\label{eq7.9}
+\tau_n^{r,r}(t)=
+\hat\kappa_n(t-\frac{N-1}{2})\tau_{n-1}^{r,r}(t)-\hat\gamma_n\tau_{n-2}^{r,r}(t),
+\end{equation}
+где
+$$
+\hat\kappa_n=2\left[\frac{(2n+2r-1)(2n+2r+1)}{(N+n+2r)
+(N-n)n(n+2r)}\right]^\frac12,
+$$
+
+$$
+\hat\gamma_n=\left[\frac{N+n+2r-1}{N+n+2r}
+\frac{N-n+1}{N-n}\frac{n-1}n\frac{n+2r-1}{n+2r}\frac{2n+2r+1}{2n+2r-3}\right]^\frac12.
+$$
+
+
+
+Если элементы массива $\{X_j={\cal X}_{n+2r,N}(f,\cos\tau_j)\}_{j=0}^{n+2r}$ уже найдены, то мы можем найти массив  коэффициентов $a_k$ $(0\le k\le n+2r)$ из равенств
+$$
+{\cal X}_{n+2r,N}(f,\cos\tau_j)=\frac{a_0}{2}+\sum_{k=1}^{n+2r}a_k\cos k\tau_j \quad(0\le j\le n+2r),
+$$
+получающихся из \eqref{eq7.4} путем подстановки  $\cos\tau_j$ вместо $x$. Для этого достаточно к массиву $\{X_j\}_{j=0}^{n+2r}$ применить прямое быстрое дискретное косинус-преобразование Фурье.
+
+
+
+
+
+Вернемся теперь к вопросу о  вычислении значений полинома ${\cal X}_{n+2r,N}(f,x)$ в узлах сетки $Q_M=\{t_i=\cos\frac{(2i+1)\pi}{2M}\}_{i=0}^{M-1}$ при  $M\ge n+2r$. Полагая для $n+2r+1\le k\le M-1$  $a_k=0$, в силу \eqref{eq7.4} мы можем записать
+\begin{equation}\label{eq7.10}
+{\cal X}_{n+2r,N}(f,t_i)=\frac{a_0}{2}+\sum_{k=0}^{M-1}a_kC_k(t_i)=\frac{a_0}{2}+\sum_{k=0}^{M-1}a_k\cos \frac{k(2i+1)\pi}{2M}.
+\end{equation}
+Поэтому для получения массива значений полинома  ${\cal X}_{n+2r,N}(f,x)$ в узлах сетки $Q_M=\{t_i=\cos\frac{(2i+1)\pi}{2M}\}_{i=0}^{M-1}$
+достаточно применить к массиву коэффициентов $\{a_k\}_{k=0}^{M-1}$ обратное быстрое дискретное косинус--преобразование Фурье.
+
+Перейдем к вопросу о вычислении на сетке $Q_M=\{t_i=\cos\frac{(2i+1)\pi}{2M}\}_{i=0}^{M-1}$ производных от полинома ${\cal X}_{n+2r,N}(f,x)$.
+Представим  ${\cal X}^{(\nu)}_{n+2r,N}(f,x)$  в следующем виде
+
+\begin{equation}\label{eq7.11}
+{\cal X}^{(\nu)}_{n+2r,N}(f,x)=\frac{a^\nu_0}{2}+\sum_{k=1}^{n+2r-\nu}a^\nu_kC_k(x),
+\end{equation}
+где
+\begin{equation}\label{eq7.12}
+a^\nu_k =\frac{2}{n+2r+1}\sum_{j=0}^{n+2r}{\cal X}^{(\nu)}_{n+2r,N}(f,\cos\tau_j)\cos k\tau_j,
+\end{equation}
+Чтобы найти значения ${\cal X}^{(\nu)}_{n+2r,N}(f,\cos\tau_j)$ мы  вновь обратимся к равенству \eqref{eq7.4} и запишем
+\begin{equation}\label{eq7.13}
+{\cal X}^{(\nu)}_{n+2r,N}(f,x)=\sum_{k=\nu}^{n+2r}a_kC^{(\nu)}_k(x),
+\end{equation}
+где $C_k^{(\nu)}(x)$ -- $\nu$-- тая производная полинома Чебышева $C_k(x)$. В связи с \eqref{eq7.11} возникает задача о выводе рекуррентных соотношений между $C_{k-2}^{(\nu)}(x)$,  $C_{k-1}^{(\nu)}(x)$ и $C_k^{(\nu)}(x)$.
+ С этой целью воспользуемся рекуррентной формулой для
+ультрасферических полиномов Якоби \cite{9}:
+    \begin{equation}\label{eq7.14}
+     P_k^{\alpha,\alpha}(x)=
+     {(2k+2\alpha-1)(k+\alpha)\over(k+2\alpha)k}
+     xP_{k-1}^{\alpha,\alpha}(x)-
+{(k+\alpha-1)(k+\alpha)\over(k+2\alpha)k}
+P_{k-2}^{\alpha,\alpha}(x)
+     \end{equation}
+   и  равенством
+         \begin{equation}\label{eq7.15}
+     \left(C_{k+\nu}(x)\right)^{(\nu)}=
+     {(2^{k+\nu}(k+\nu)!)^2(k+\nu)_\nu\over (2(k+\nu))!2^\nu}
+     P_k^{\nu-1/2,\nu-1/2}(x).
+          \end{equation}
+Сопоставляя \eqref{eq7.11} с \eqref{eq7.12}, мы приходим к следующим
+соотношениям: для $k<\nu$ $\left(C_k(x)\right)^{(\nu)}=0$; кроме
+того, для $\nu\ge1$ $\left(C_\nu(x)\right)^{(\nu)}=2^{\nu-1}\nu!$,
+$\left(C_{\nu+1}(x)\right)^{(\nu)}=2^\nu(\nu+1)!x$ и
+ \begin{equation}\label{eq7.16}
+\left(C_k(x)\right)^{(\nu)}={k\over k-\nu}2x
+\left(C_{k-1}(x)\right)^{(\nu)}-{k(k+\nu-2)\over
+(k-\nu)(k-2)}\left(C_{k-2}(x)\right)^{(\nu)}\quad (k>\nu+1).
+ \end{equation}
+Если элементы массива $\{X^\nu_j={\cal X}^{(\nu)}_{n+2r,N}(f,\cos\tau_j)\}_{j=0}^{n+2r}$ уже найдены, то мы можем найти массив  коэффициентов $a^\nu_k$ $(0\le k\le n+2r-\nu)$ из равенств
+$$
+X^\nu_j=\frac{a^\nu_0}{2}+\sum_{k=1}^{n+2r-\nu}a^\nu_k\cos k\tau_j \quad(0\le j\le n+2r),
+$$
+получающихся из \eqref{eq7.8} путем подстановки  $\cos\tau_j$ вместо $x$. Для этого достаточно к массиву $\{X^\nu_j\}_{j=0}^{n+2r}$ применить прямое быстрое дискретное косинус-преобразование Фурье.
+
+
+
+ Рассмотрим теперь вопрос о вычислении значений полинома ${\cal X}^{(\nu)}_{n+2r,N}(f,x)$ в узлах сетки $Q_M=\{t_i=\cos\frac{(2i+1)\pi}{2M}\}_{i=0}^{M-1}$ при  $M\ge n+2r-\nu$. Из \eqref{eq7.8}, полагая для $n+2r-\nu+1\le k\le M-1$  $a^\nu_k=0$,  мы можем вывести
+\begin{equation}\label{eq7.17}
+{\cal X}^{(\nu)}_{n+2r,N}(f,t_i)=\frac{a^\nu_0}{2}+\sum_{k=1}^{M-1}a^\nu_k\cos \frac{k(2i+1)\pi}{2M},
+\end{equation}
+поэтому для получения массива значений полинома  ${\cal X}^{(\nu)}_{n+2r,N}(f,x)$ в узлах сетки \\ $Q_M=\{t_i=\cos\frac{(2i+1)\pi}{2M}\}_{i=0}^{M-1}$ достаточно применить к массиву коэффициентов  $\{a^\nu_k\}_{k=0}^{M-1}$ обратное быстрое дискретное косинус-- преобразование Фурье.
+
+
+
+
+\begin{thebibliography}{20}
+
+\bibitem{35} Чебышев П.Л. О непрерывных дробях (1855) // Полн.собр.соч.
+     Т.2. М.: Изд.АН СССР. 1947. С. 103--126.
+
+\bibitem{36} Чебышев П.Л. Об одном новом ряде.  //  Полн.собр.соч.
+Т.2.  М.: Изд.АН
+         СССР. 1947.  С. 236--238.
+
+\bibitem{37} Чебышев П.Л. Об интерполировании по способу наименьших
+     квадратов (1859) //   Полн.собр.соч.  Т.2.  М.: Изд.АН
+                          СССР. 1947.  С. 314--334.
+
+\bibitem{38} Чебышев П.Л. Об интерполировании (1864) //
+Полн.собр.соч.  Т.2.  М.: Изд.АН СССР. 1947.  С. 357--374.
+
+\bibitem{39} Чебышев П.Л.  Об интерполировании величин  равноотстоящих
+(1875) //   Полн.собр.соч.  Т.3.  М.: Изд.АН  СССР. 1948.  С.
+66--87.
+
+\bibitem{76}  Шарапудинов И.И. Многочлены, ортогональные на
+дискретных      сетках. -- Махачкала. Изд -- во Даг.гос.пед.
+ун--та. 1997 г.
+
+
+\bibitem{98}Gasper G. Positiviti and special function // Theory and
+appl.Spec.Funct. Edited by Richard A.Askey. 1975. P. 375--433.
+
+\bibitem{99} Шарапудинов Т.И. Аппроксимативные свойства смешанных рядов по полиномам Чебышева, ортогональным на равномерной сетке //
+Вестник Дагестанского научного центра РАН.  Вып. 29. С. 12--23. Махачкала. 2007 г.
+
+\bibitem{9} Сеге Г. Ортогональные многочлены. -- Москва: Государственное издательство физико-математической литературы. 1962. С. 500.
+
+\bibitem{mnk} Шарапудинов И.И. О сходимости метода наименьших квадратов // Матем. заметки. 53:3 1993. С. 131–-143.
+
+\bibitem{asympPropsAndWeightEst} Шарапудинов И.И. Асимптотические свойства и весовые оценки для ортогональных многочленов Чебышева–Хана // Матем. сб. 182:3. 1991 г. С. 408–420.
+
+\bibitem{asympProps} Шарапудинов И.И. Асимптотические свойства ортогональных многочленов Хана дискретной переменной // Матем. сб. 180:9. 1989. С. 1259--1277.
+
+\bibitem{asympCheb} Шарапудинов И.И. Об асимптотике многочленов Чебышева, ортогональных на конечной системе точек // Вестник МГУ. Серия 1. 1992 г. Вып. 1. С. 29--35.
+
+
+
+
+
+\bibitem{approxYn} Шарапудинов И.И. 	Аппроксимативные свойства операторов Yn+2r(f) и их дискретных аналогов // Матем. заметки. 72:5. 2002 г.  С. 765--795.
+
+\bibitem{approxByCheb} Шарапудинов И.И. Приближение дискретных функций и многочлены Чебышева, ортогональные на равномерной сетке // Матем. заметки. 67:3. 2000 г. С. 460--470.
+
+\bibitem{greenBook} Шарапудинов И.И. Смешанные ряды по ортогональным полиномам. Теория и приложения. --- Махачкала: ДНЦ РАН. 2004. С. 276.
+
+\end{thebibliography}
+
+\end{fulltext}
+
+
+
+
+\end{document}
