@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+﻿<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?IncludeTemplateLangFile(__FILE__);
 $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/bootstrap.css");
 $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/bootstrap.min.css");
@@ -20,6 +20,11 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");?>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
