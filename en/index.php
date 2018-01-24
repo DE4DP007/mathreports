@@ -1,6 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("DEMR");
+$APPLICATION->SetPageProperty("keywords", "Daghestan, Electronic Journal, Math, Informatics");
+$APPLICATION->SetPageProperty("description", "Daghestan Electronic Mathematical Reports - Scientific Journal");
+$APPLICATION->SetTitle("Daghestan Electronic Mathematical Reports");
 ?><h1 class="journhead text-right">About the journal</h1>
 <hr>
 <br>

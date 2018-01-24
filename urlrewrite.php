@@ -75,6 +75,10 @@ $arUrlRewrite = array(
 		"PATH" => "/en/vypuski.php",
 	),
 	array(
+		"CONDITION" => "#^/vypuski/#",
+		"PATH" => "/vypuski.php",
+	),
+	array(
 		"CONDITION" => "#^/en/work/#",
 		"PATH" => "/work/index.php",
 	),

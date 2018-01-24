@@ -1,4 +1,4 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+﻿<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
 
 <? global $arrFilter;
 $arrFilter = Array('PROPERTY_JOURNAL' => 74);?>
@@ -9,7 +9,7 @@ $arrFilter = Array('PROPERTY_JOURNAL' => 74);?>
 
 <?CModule::IncludeModule("iblock");
 $arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL");
-$arFilter = Array("IBLOCK_ID"=>15);
+$arFilter = Array("IBLOCK_ID"=>15, "ACTIVE"=>"Y");
 $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPageSize"=>10), $arSelect);?>
 
 <div class="col-md-7 col-sm-12 lefttexter">
