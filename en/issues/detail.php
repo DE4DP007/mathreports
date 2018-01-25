@@ -98,8 +98,8 @@ $APPLICATION->SetTitle("Издания детально");
                     }?>
                 </div>
 
-                <div class="col-md-2 text-right">
-                    <b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;<?=$arProp['END_PAGE']["VALUE"]?></b>
+                <div class="col-md-2 text-right text-xs-left xs-no-left-pads">
+                    <b class="visible-xs-inline">Pages:&nbsp;</b><b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;<?=$arProp['END_PAGE']["VALUE"]?></b>
                 </div>
                 <div class="clearfix"></div><hr>
             <?}
@@ -112,7 +112,7 @@ $APPLICATION->SetTitle("Издания детально");
 <div class="clearfix"></div>
 <br><br><br>
 
-<p class="text-left">
+<p class="text-left text-xs-center">
     <a href="<?=SITE_DIR?>vypuski/" class="btn btn-lg btn-primary">
         <span class="glyphicon glyphicon-arrow-left"></span> To issues
     </a>
