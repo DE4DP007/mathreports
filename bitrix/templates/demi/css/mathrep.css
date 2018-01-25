@@ -135,6 +135,9 @@ p {
     #mmenu .navbar-inverse ul {
         background: #dfeefd;
     }
+    .text-xs-center {
+        text-align: center;
+    }
 }
 
 /*===============================*/
@@ -231,4 +234,37 @@ h3.journhead {
 .pageholder {
     box-shadow:0 0 17px -6px #000000;
     padding:0;
+}
+
+
+/*Custom xs classes*/
+@media screen and (max-width: 768px) {
+
+    /*Text classes*/
+    .text-xs-center {
+        text-align: center;
+    }
+    .text-xs-left {
+        text-align: left;
+    }
+    .text-xs-right {
+        text-align: right;
+    }
+
+    /*Paddings*/
+    .xs-no-pads {
+        padding: 0px;
+    }
+    .xs-no-left-pads {
+        padding-left: 0px;
+    }
+    .xs-no-right-pads {
+        padding-right: 0px;
+    }
+    .xs-no-top-pads {
+        padding-top: 0px;
+    }
+    .xs-no-bottom-pads {
+        padding-bottom: 0px;
+    }
 }
