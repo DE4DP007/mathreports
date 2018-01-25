@@ -12,8 +12,8 @@ $arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL");
 $arFilter = Array("IBLOCK_ID"=>16, "ACTIVE"=>"Y");
 $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPageSize"=>10), $arSelect);?>
 
-<div class="col-md-7 col-sm-12 lefttexter">
-    <h2 class="text-left ">Выпуски</h2><br>
+<div class="col-md-7 col-sm-12 lefttexter xs-no-pads">
+    <h2 class="text-left text-xs-center">Выпуски</h2><br>
 
     <?while ($ob = $res->GetNextElement()) {?>
         <?$arFields = $ob->GetFields();?>
@@ -32,8 +32,8 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
         </p>
     <?}?>
 </div>
-<div class="col-md-5 col-sm-12 no-right-pads">
-	<h2 class="text-right">Наши авторы</h2>
+<div class="col-md-5 col-sm-12 no-right-pads xs-no-pads">
+	<h2 class="text-right text-xs-center">Наши авторы</h2>
  <br>
 	 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
