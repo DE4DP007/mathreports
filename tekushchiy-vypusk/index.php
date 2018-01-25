@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Текущий выпуск ДЭМИ");?>
 
 <?CModule::IncludeModule("iblock");
 $arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL");
-$arFilter = Array("IBLOCK_ID"=>16);
+$arFilter = Array("IBLOCK_ID"=>16, "ACTIVE"=>"Y");
 $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPageSize"=>1), $arSelect);?>
 <?  $ob = $res->GetNextElement(); $arFields = $ob->GetFields();?>
 
@@ -13,12 +13,12 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
 </h1><hr>
 
 
-<h4 class="col-md-6 text-left arttitle">
-    <?$arFilterI = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => $arFields['ID']);
+<h3 class="col-md-6 journhead text-left text-xs-center">
+    <?$arFilterI = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => $arFields['ID'], "ACTIVE"=>"Y");
     $resI = CIBlockElement::GetList(Array(), $arFilterI, false, Array("nPageSize"=>10));?>
     Количество статей: <?=getSize(17, "PROPERTY_JOURNAL", $arFields['ID'])?>
-</h4>
-<h4 class="col-md-6 text-right">
+</h3>
+<h3 class="col-md-6 journhead text-right text-xs-center">
     <?$resI = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilterI, false, Array("nPageSize"=>1), $arSelect);
     if(getSize(17, "PROPERTY_JOURNAL", $arFields['ID']) > 0) {
         $obI = $resI->GetNextElement();
@@ -26,7 +26,7 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
         Всего страниц: <?=$arPropI['END_PAGE']["VALUE"]?>
         <br>
     <?}?>
-</h4>
+</h3>
 
 
 
@@ -79,7 +79,8 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
                         $ji++;
                     }?>
                 </div>
-                <div class="col-md-2 text-right">
+                <div class="col-md-2 text-right text-xs-left xs-no-left-pads">
+                    <b class="visible-xs-inline">Страницы:</b>&nbsp;
                     <b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;
                         <?=$arProp['END_PAGE']["VALUE"]?></b>
                 </div>
@@ -94,7 +95,7 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
 <div class="clearfix"></div>
 <br><br><br>
 
-<p class="text-left">
+<p class="text-left text-xs-center">
     <a href="<?=SITE_DIR?>vypuski/" class="btn btn-lg btn-primary">
         <span class="glyphicon glyphicon-arrow-left"></span> В список выпусков
     </a>
