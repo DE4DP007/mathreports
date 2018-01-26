@@ -8,7 +8,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand visible-xs" href="#">Навигация по сайту</a>
+		<a class="navbar-brand visible-xs" href="#"><?=GetMessage("NAV_TITLE")?></a>
 	</div>
 	<ul class="nav nav-justified collapse navbar-collapse"  id="myNavbar">
 <?foreach($arResult as $arItem):?>
