@@ -34,23 +34,22 @@ p {
 }
 
 #mmenu .navbar-inverse {
-    background: #375b8d;
-    background: -moz-linear-gradient(top, #375b8d 0%, #5f8fbf 5%, #4a688a 100%);
-    background: -webkit-linear-gradient(top, #375b8d 0%,#5f8fbf 5%,#4a688a 100%);
-    background: linear-gradient(to bottom, #375b8d 0%,#5f8fbf 5%,#4a688a 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#375b8d', endColorstr='#4a688a',GradientType=0 );
-    border: 0px;    border-radius: 0px;
+    background: #658db1;
+    background: -moz-linear-gradient(top, #658db1 0%, #5d80a8 10%, #5d91c1 90%, #3c638e 100%);
+    background: -webkit-linear-gradient(top, #658db1 0%,#5d80a8 10%,#5d91c1 90%,#3c638e 100%);
+    background: linear-gradient(to bottom, #658db1 0%,#5d80a8 10%,#5d91c1 90%,#3c638e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#658db1', endColorstr='#3c638e',GradientType=0 );
     /*margin-bottom:4px;*/
 }
 
 #mmenu .navbar { min-height: 30px; }
 
 #mmenu .navbar-inverse ul {
-    background: #375b8d;
-    background: -moz-linear-gradient(top, #375b8d 0%, #5f8fbf 5%, #4a688a 100%);
-    background: -webkit-linear-gradient(top, #375b8d 0%,#5f8fbf 5%,#4a688a 100%);
-    background: linear-gradient(to bottom, #375b8d 0%,#5f8fbf 5%,#4a688a 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#375b8d', endColorstr='#4a688a',GradientType=0 );
+    background: #658db1;
+    background: -moz-linear-gradient(top, #658db1 0%, #5d80a8 10%, #5d91c1 90%, #3c638e 100%);
+    background: -webkit-linear-gradient(top, #658db1 0%,#5d80a8 10%,#5d91c1 90%,#3c638e 100%);
+    background: linear-gradient(to bottom, #658db1 0%,#5d80a8 10%,#5d91c1 90%,#3c638e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#658db1', endColorstr='#3c638e',GradientType=0 );
 }
 
 #mmenu .navbar-inverse li a {
