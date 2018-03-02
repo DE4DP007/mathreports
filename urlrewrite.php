@@ -1,12 +1,6 @@
 <?
 $arUrlRewrite = array(
 	array(
-		"CONDITION" => "#^/en/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
-		"RULE" => "ELEMENT_CODE=\$1",
-		"ID" => "bitrix:news.detail",
-		"PATH" => "/authors/detail.php",
-	),
-	array(
 		"CONDITION" => "#^/en/issues/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
@@ -34,7 +28,7 @@ $arUrlRewrite = array(
 		"CONDITION" => "#^/en/authors/([a-zA-Z0-9\\.\\-_]+)/?.*#",
 		"RULE" => "ELEMENT_CODE=\$1",
 		"ID" => "bitrix:news.detail",
-		"PATH" => "/authors/detail.php",
+		"PATH" => "/en/authors/detail.php",
 	),
 	array(
 		"CONDITION" => "#^/en/work/([a-zA-Z0-9\\.\\-_]+)/?.*#",
@@ -84,7 +78,7 @@ $arUrlRewrite = array(
 	),
 	array(
 		"CONDITION" => "#^/en/authors/#",
-		"PATH" => "/authors/index.php",
+		"PATH" => "/en/authors/index.php",
 	),
 );
 
