@@ -27,3 +27,5 @@ bitrix/site_checker*.log
 Journal/
 
 bitrix/modules/main/admin/define\.php
+
+example/
