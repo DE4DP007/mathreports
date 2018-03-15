@@ -34,7 +34,7 @@ $this->setFrameMode(true);?>
             <?endif;?>
             
             <?$arSel = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL");
-            $arFilt = Array("IBLOCK_ID"=>17, "PROPERTY_AUTHORS" => $arItem["ID"]);
+            $arFilt = Array("IBLOCK_ID"=>17, "PROPERTY_AUTHORS" => $arItem["ID"], "ACTIVE" => "Y");
             $rs = CIBlockElement::GetList(Array(), $arFilt, false, Array("nPageSize"=>5), $arSel);?>
             <small><?=GetMessage("ART_COUNT")?>: <b><?=count($rs->arResult)?></b></small><br/>
     	</p>

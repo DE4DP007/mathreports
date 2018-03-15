@@ -16,7 +16,7 @@ $APPLICATION->SetTitle("How to submit a paper");?><h1 class="journhead text-righ
 		 a) translation of summary (abstract) and keywords both into the Russian and English languages, the name of the article in Russian and English.
 	</p>
 	<p>
-		 b) the original LaTeX-file prepared using the style file on the proposed <a href="http://mathreports.ru/content/uploads/example.zip"><b>template</b></a>.
+		 b) the original LaTeX-file prepared using the style file on the proposed <a href="/example/DEMI_ExampleArticle.zip"><b>template</b></a>.
 	</p>
 	<p>
 		 In this file it is not allowed the use of complex LaTeX-determinations and determinations from other files, as well as other packages, in addition to a package of support for Cyrillic and AMS-standard characters. Failure to do so, and untidiness in the design of the article can serve as a reason for its rejection. Using complex graphics in article, not provided by the standard LaTeX source, can be discussed individually.
@@ -24,7 +24,7 @@ $APPLICATION->SetTitle("How to submit a paper");?><h1 class="journhead text-righ
  <br>
  <br>
 	<p class="text-center">
- <a class="btn btn-success btn-large" href="http://mathreports.ru/content/uploads/example.zip"> <span class="glyphicon glyphicon-book"></span> Download article template </a>
+ <a class="btn btn-success btn-large" href="/example/DEMI_ExampleArticle.zip"> <span class="glyphicon glyphicon-book"></span> Download article template </a>
 	</p>
 </div>
 <div class="clearfix">

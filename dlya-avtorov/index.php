@@ -16,7 +16,7 @@ $APPLICATION->SetTitle("Для авторов");?><h1 class="journhead text-righ
 		 а) перевод аннотации и ключевых слов на русском и английском языках, название статьи на русском и английском языке.
 	</p>
 	<p>
-		 б) исходный LaTeX-файл, подготовленный с помощью стилевого файла журнала по следующему&nbsp;<a href="http://mathreports.ru/content/uploads/example.zip"><b>шаблону</b></a>.
+		 б) исходный LaTeX-файл, подготовленный с помощью стилевого файла журнала по следующему&nbsp;<a href="/example/DEMI_ExampleArticle.zip"><b>шаблону</b></a>.
 	</p>
 	<p>
 		 В этом файле не разрешается использование сложных LaTeX-определений и определений из других файлов, а также других пакетов, кроме пакетов поддержки кириллицы и стандартных AMS-символов. Несоблюдение этого требования, а также неаккуратность в оформлении статьи могут послужить причиной ее отклонения. Использование в статье сложной графики, не предусмотренной стандартным LaTeX, обсуждается в индивидуальном порядке.
@@ -24,7 +24,7 @@ $APPLICATION->SetTitle("Для авторов");?><h1 class="journhead text-righ
  <br>
  <br>
 	<p class="text-center">
- <a class="btn btn-success btn-large" href="http://mathreports.ru/content/uploads/example.zip"> <span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Образец файла статьи </a>
+ <a class="btn btn-success btn-large" href="/example/DEMI_ExampleArticle.zip"> <span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Образец файла статьи </a>
 	</p>
 </div>
 <div class="clearfix">
