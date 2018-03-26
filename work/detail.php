@@ -1,6 +1,5 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("");
-(SITE_ID == "s1" ? $APPLICATION->SetTitle("Место работы") : $APPLICATION->SetTitle("Workplace"))?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+<?$APPLICATION->SetTitle("Место работы");?>
 
 <h3 class="journhead margtop15 text-right">
     <?=(SITE_ID == "s1" ? "Организация" : "Organization")?>
@@ -48,7 +47,7 @@ $APPLICATION->SetTitle("");
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
 		"PROPERTY_CODE" => array(
-			0 =>  (SITE_ID == "s1" ? "TITLE" : "TITLE_EN"),
+			0 =>  "TITLE",
 			1 => "",
 		),
 		"SET_BROWSER_TITLE" => "Y",
@@ -57,7 +56,7 @@ $APPLICATION->SetTitle("");
 		"SET_META_DESCRIPTION" => "Y",
 		"SET_META_KEYWORDS" => "Y",
 		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "Y",
+		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
 		"USE_PERMISSIONS" => "N",
 		"USE_SHARE" => "N"

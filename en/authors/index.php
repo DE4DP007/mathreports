@@ -1,17 +1,7 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Авторы ДЭМИ");?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+<?$APPLICATION->SetTitle("DEMI: Authors");?>
 
-
-<?if (SITE_ID == "s1") {
-	$work = "TITLE";
-	echo "<h3 class='journhead margtop15 text-right'>Наши авторы</h3><hr>";
-	$APPLICATION->SetTitle("ДЭМИ: Наши авторы");
-} else {
-	$work = "TITLE_EN";
-	echo "<h3 class='journhead margtop15 text-right'>Out Authors</h3><hr>";
-	$APPLICATION->SetTitle("DEMI: Authors");
-}?>
-
+<h3 class="journhead margtop15 text-right">Our Authors</h3><hr/>
 
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", "demiAuthors",
@@ -53,7 +43,7 @@ $APPLICATION->SetTitle("Авторы ДЭМИ");?>
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Новости",
+		"PAGER_TITLE" => "Authors",
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
@@ -75,7 +65,7 @@ $APPLICATION->SetTitle("Авторы ДЭМИ");?>
 		"SET_META_DESCRIPTION" => "Y",
 		"SET_META_KEYWORDS" => "Y",
 		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "Y",
+		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
