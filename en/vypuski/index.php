@@ -75,7 +75,7 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC"
+		"SORT_ORDER2" => "DESC"
 	),
 	false
 );?>
