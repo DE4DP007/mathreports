@@ -12,38 +12,30 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
 
+<?$APPLICATION->SetTitle($arResult['PROPERTIES'][GetMessage("TITLE")]['VALUE']);?>
 
 
 <div class="col-md-12">
     <h1 class="journhead text-center">
-        <?=(SITE_ID == "s1" ? $arResult['PROPERTIES']['TITLE']['VALUE'] : $arResult['PROPERTIES']['TITLE_EN']['VALUE'])?>
+        <?=$arResult['PROPERTIES'][GetMessage("TITLE")]['VALUE']?>
     </h1>
 </div>
 <div class="clearfix"></div><br>
 
 
 <div class="col-md-12">
-    <?if (isset($arResult["DETAIL_PICTURE"])) {?>
-    <p class="col-md-4">
-        <img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
-             title="<?=(SITE_ID == "s1" ? $arResult['PROPERTIES']['TITLE']['VALUE'] : $arResult['PROPERTIES']['TITLE_EN']['VALUE'])?>"
-             alt="<?=(SITE_ID == "s1" ? $arResult['PROPERTIES']['TITLE']['VALUE'] : $arResult['PROPERTIES']['TITLE_EN']['VALUE'])?>"
-             class="img-responsive img-thumbnail">
-    </p>
-    <p class="col-md-8">
-    <?} else {?>
-    <p class="col-md-12">
-    <?}?>
-        <?if (SITE_ID == "s1") {
-            if (isset($arResult["PREVIEW_TEXT"]) && ($arResult["PREVIEW_TEXT"] != "")) {
-                echo $arResult["PREVIEW_TEXT"];
-            } else
-            { }
-        } else {
-            if (isset($arResult["DETAIL_TEXT"]) && ($arResult["DETAIL_TEXT"] != "")) {
-                echo $arResult["DETAIL_TEXT"];
-            }
-        }?>
+    <?if(isset($arResult["DETAIL_PICTURE"])):?>
+        <p class="col-md-4">
+            <img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
+                 title="<?=$arResult['PROPERTIES'][GetMessage("TITLE")]['VALUE']?>"
+                 alt="<?=$arResult['PROPERTIES'][GetMessage("TITLE")]['VALUE']?>"
+                 class="img-responsive img-thumbnail">
+        </p>
+        <p class="col-md-8">
+    <?else:?>
+        <p class="col-md-12">
+    <?endif;?>
+        <?=$arResult[GetMessage("TEXT")]?>
     </p>
 </div>
 <div class="clearfix"></div>
@@ -56,35 +48,36 @@ $arFilter = Array("IBLOCK_ID"=>21, "PROPERTY_WORK" => getCurrentID(22, $_REQUEST
 $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>5), $arSelect);?>
 
 <h3 class="col-md-12 text-center">
-    <?echo (SITE_ID == "s1" ? "Авторы организации" : "Authors of Organization")?>
-</h3><div class="clearfix"></div><br>
-<?while ($ob = $res->GetNext()) {?>
+    <?=GetMessage("AUTHORS_TITLE")?>
+</h3>
+<div class="clearfix"></div><br/>
+<?while($ob = $res->GetNext()):?>
     <p class="col-md-6 text-center">
         <a class="greeners" href="<?=$ob["DETAIL_PAGE_URL"]?>" >
-            <?echo (SITE_ID == "s1" ? $ob["PROPERTY_FNAME_VALUE"] : $ob["PROPERTY_FNAME_EN_VALUE"])?>
+            <?=$ob[GetMessage("FNAME")]?>
         </a>
     </p>
     <?//thats for articles list!
-    $authsID[] = $ob["ID"];
-}?>
+    $authsID[] = $ob["ID"];?>
+<?endwhile;?>
 <div class="clearfix"></div>
-<br><br>
+<br/><br/>
 
 
 <?// ARTICLES?>
 <h3 class="col-md-12 text-center">
-    <?echo (SITE_ID == "s1" ? "Статьи организации" : "Articles of Organization")?>
-</h3><div class="clearfix"></div><br>
-<?(SITE_ID == "s1" ? getArticles($authsID, 17) : getArticles($authsID, 14));?>
+    <?=GetMessage("ARTICLE_TITLE")?>
+</h3><div class="clearfix"></div><br/>
+<?=getArticles($authsID, GetMessage("ARTICLE_ID"))?>
 
-<div class="clearfix"></div><br>
+<div class="clearfix"></div><br/>
 
 
-<br><br>
+<br/><br/>
 <p class="text-left">
     <a href="/work/" class="btn btn-lg btn-primary">
         <span class="glyphicon glyphicon-arrow-left"></span>
-        <?=(SITE_ID == "s1" ? "В список организаций" : "To organizations list")?>
+        <?=GetMessage("BUTTON_TEXT")?>
     </a>
 </p>
 

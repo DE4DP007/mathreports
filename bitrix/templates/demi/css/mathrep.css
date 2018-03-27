@@ -29,16 +29,28 @@ p {
 }
 
 #mmenu{
-    background: url("../images/dm_10.jpg") repeat-x;
+    /*background: url("../images/dm_10.jpg") repeat-x;*/
+    padding: 0px;
 }
 
 #mmenu .navbar-inverse {
-    background: transparent;
-    border: 0px;    border-radius: 0px;
-    margin-bottom:4px;
+    background: #658db1;
+    background: -moz-linear-gradient(top, #658db1 0%, #5d80a8 10%, #5d91c1 90%, #3c638e 100%);
+    background: -webkit-linear-gradient(top, #658db1 0%,#5d80a8 10%,#5d91c1 90%,#3c638e 100%);
+    background: linear-gradient(to bottom, #658db1 0%,#5d80a8 10%,#5d91c1 90%,#3c638e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#658db1', endColorstr='#3c638e',GradientType=0 );
+    /*margin-bottom:4px;*/
 }
 
 #mmenu .navbar { min-height: 30px; }
+
+#mmenu .navbar-inverse ul {
+    background: #658db1;
+    background: -moz-linear-gradient(top, #658db1 0%, #5d80a8 10%, #5d91c1 90%, #3c638e 100%);
+    background: -webkit-linear-gradient(top, #658db1 0%,#5d80a8 10%,#5d91c1 90%,#3c638e 100%);
+    background: linear-gradient(to bottom, #658db1 0%,#5d80a8 10%,#5d91c1 90%,#3c638e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#658db1', endColorstr='#3c638e',GradientType=0 );
+}
 
 #mmenu .navbar-inverse li a {
     padding: 5px 15px;
@@ -74,10 +86,10 @@ p {
 #book{margin:5px 15px 0px -15px;}
 #booker {margin-top: 15px; color:#fff;}
 
-.navbar-inverse a.navbar-brand {color: #fff; padding: 7px;}
+.navbar-inverse a.navbar-brand {color: #fff; padding: 7px; margin-left: 8px; height: auto;}
 .navbar-inverse a.navbar-brand:hover
 {color: #e9f8ff;}
-.navbar-inverse .navbar-toggle {border: 1px solid #71a1ba !important; margin-top: 1px;}
+.navbar-inverse .navbar-toggle {border: 1px solid #71a1ba !important; margin-top: 1px; margin-bottom: 1px;}
 .navbar-inverse .navbar-toggle:hover
 { background-color: #6cb7d7; }
 
@@ -118,6 +130,22 @@ p {
 	margin-bottom: -5px;
 }
 
+@media screen and (max-width: 768px) {
+    .logotext-1, .logotext-3 {
+        font-size: 1.357em;
+        letter-spacing: 1px;
+    }
+    .logotext-2 {
+        font-size: 1.5em;
+        letter-spacing: 2px;
+    }
+    #mmenu .navbar-inverse ul {
+        background: #dfeefd;
+    }
+    .text-xs-center {
+        text-align: center;
+    }
+}
 
 /*===============================*/
 /*======= Inner  Pages===========*/
@@ -213,4 +241,37 @@ h3.journhead {
 .pageholder {
     box-shadow:0 0 17px -6px #000000;
     padding:0;
+}
+
+
+/*Custom xs classes*/
+@media screen and (max-width: 768px) {
+
+    /*Text classes*/
+    .text-xs-center {
+        text-align: center;
+    }
+    .text-xs-left {
+        text-align: left;
+    }
+    .text-xs-right {
+        text-align: right;
+    }
+
+    /*Paddings*/
+    .xs-no-pads {
+        padding: 0px;
+    }
+    .xs-no-left-pads {
+        padding-left: 0px;
+    }
+    .xs-no-right-pads {
+        padding-right: 0px;
+    }
+    .xs-no-top-pads {
+        padding-top: 0px;
+    }
+    .xs-no-bottom-pads {
+        padding-bottom: 0px;
+    }
 }

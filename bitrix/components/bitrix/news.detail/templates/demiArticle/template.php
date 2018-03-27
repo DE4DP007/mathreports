@@ -13,7 +13,7 @@
 $this->setFrameMode(true);?>
 
 <div class="col-md-6">
-    <h3 class="journhead text-left">
+    <h3 class="journhead text-left text-xs-center">
         <?$arFilterT = Array("IBLOCK_ID"=>20, "ID"=>$arResult["PROPERTIES"]['SECTION']["VALUE"]);
         $resT = CIBlockElement::GetList(Array(), $arFilterT, false, Array("nPageSize"=>10));
         if(count($resT) > 0){
@@ -25,7 +25,7 @@ $this->setFrameMode(true);?>
 </div>
 
 <div class="col-md-6">
-    <h3 class="journhead text-right">
+    <h3 class="journhead text-right text-xs-center">
         <?$arFilterR = Array("IBLOCK_ID"=>GetMessage("ID"), "ID"=>$arResult["PROPERTIES"]['JOURNAL']['VALUE']);
         $resR = CIBlockElement::GetList(Array(), $arFilterR, false, Array("nPageSize"=>10));
         if(count($resR) > 0){
@@ -62,7 +62,7 @@ $this->setFrameMode(true);?>
 
 
 <div class="col-md-6">
-    <h3 class="journhead text-left">
+    <h3 class="journhead text-left text-xs-center">
         <?if (isset($arResult["PROPERTIES"]["UDK"]) && ($arResult["PROPERTIES"]["UDK"]["VALUE"] != "")) {
             echo GetMessage("UDK"), ": ".$arResult["PROPERTIES"]["UDK"]["VALUE"];
         }?>
@@ -70,8 +70,8 @@ $this->setFrameMode(true);?>
 </div>
 
 <div class="col-md-6">
-    <h3 class="journhead text-right">
-        <?echo GetMessage("PAGES_STR");?> <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> -<?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
+    <h3 class="journhead text-right text-xs-center">
+        <?echo GetMessage("PAGES_STR");?>: <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> - <?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
     </h3>
 </div>
 <div class="clearfix"></div><br/>
@@ -94,7 +94,7 @@ $this->setFrameMode(true);?>
 
 
 
-<p class="col-md-6 col-xs-12 text-right">
+<p class="col-md-6 col-xs-12 text-right text-xs-center">
     <?$issuesBlock = (SITE_ID == "s1" ? 16 : 15)?>
     <?$arFiltJ = Array("IBLOCK_ID"=>$issuesBlock, "ID"=>$arResult['PROPERTIES']['JOURNAL']['VALUE']);
     $rsJ = CIBlockElement::GetList(Array(), $arFiltJ, false, Array("nPageSize"=>10));
@@ -107,7 +107,7 @@ $this->setFrameMode(true);?>
 </p>
 
 
-<p class="col-md-6 col-xs-12 text-left">
+<p class="col-md-6 col-xs-12 text-left text-xs-center">
     <?if (isset($arResult["PROPERTIES"]["FULL_TEXT"]) && ($arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"] != "")) {?>
         <a href="<?=$arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"]?>" class="btn btn-success btn-lg">
             <?echo GetMessage("DOWNLOAD")?>

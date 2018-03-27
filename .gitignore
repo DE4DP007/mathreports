@@ -24,3 +24,8 @@ bitrix/.settings.php
 bitrix/coupon_activation.php
 bitrix/license_key.php
 bitrix/site_checker*.log
+Journal/
+
+bitrix/modules/main/admin/define\.php
+
+example/

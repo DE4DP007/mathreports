@@ -66,53 +66,80 @@ $APPLICATION->SetTitle("Издания детально");
 
     <h2 class="text-center">List of articles</h2>
 
-    <?$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
-    $arFilter = Array("IBLOCK_ID"=>14, "PROPERTY_JOURNAL" => getCurrentID(15, $_REQUEST["ELEMENT_CODE"]));
-    $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);
-        if(getSize(14, "PROPERTY_JOURNAL", getCurrentID(15, $_REQUEST["ELEMENT_CODE"])) > 0){ ?>
-            <?echo $res->NavPrint("Статьи"), "<br>";
-            while($ob = $res->GetNextElement()) {
-                $arFields = $ob->GetFields();
-                $arProp = $ob->GetProperties();?>
-                <div class="col-md-10 leftside">
-                    <h3 class="arttitle">
-                        <a href="<?=$arFields['DETAIL_PAGE_URL']?>"><?=$arFields['NAME']?></a>
-                    </h3>
+<?$arFilter1 = Array("PROPERTY_JOURNAL" => getCurrentID(15, $_REQUEST["ELEMENT_CODE"]));?>
 
-                    <?$count = count($arProp['AUTHORS']["VALUE"]);
-                    if ($count == 1) {
-                        echo "<b>Author:</b> ";
-                    } else {
-                        echo "<b>Authors:</b> ";
-                    }
-                    $ii = 1;
-                    foreach($arProp['AUTHORS']["VALUE"] as $value){
-                        $arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
-                        $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
-                        while($obA = $resA->GetNextElement()) {
-                            $arPropA = $obA->GetProperties();
-                            $arFieldsA = $obA->GetFields();
-                            echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA["FNAME_EN"]["VALUE"].'</a>'.($ii < $count ? ", " : "");
-                            $ii++;
-                        }
-                    }?>
-                </div>
-
-                <div class="col-md-2 text-right">
-                    <b><?=$arProp['START_PAGE']["VALUE"]?>&nbsp;-&nbsp;<?=$arProp['END_PAGE']["VALUE"]?></b>
-                </div>
-                <div class="clearfix"></div><hr>
-            <?}
-            echo $res->NavPrint("Articles");
-            $res->NavStart(10);
-        }
-    ?>
+    <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"issue_articles", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "issue_articles",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "arFilter1",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "14",
+		"IBLOCK_TYPE" => "issues_en",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "START_PAGE",
+			1 => "END_PAGE",
+			2 => "AUTHORS",
+			3 => "",
+		),
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC"
+	),
+	false
+);?>
 
 </div>
 <div class="clearfix"></div>
 <br><br><br>
 
-<p class="text-left">
+<p class="text-left text-xs-center">
     <a href="<?=SITE_DIR?>vypuski/" class="btn btn-lg btn-primary">
         <span class="glyphicon glyphicon-arrow-left"></span> To issues
     </a>

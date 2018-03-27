@@ -1,6 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("DEMR");
+$APPLICATION->SetPageProperty("keywords", "Daghestan, Electronic Journal, Math, Informatics");
+$APPLICATION->SetPageProperty("description", "Daghestan Electronic Mathematical Reports - Scientific Journal");
+$APPLICATION->SetTitle("Daghestan Electronic Mathematical Reports");
 ?><h1 class="journhead text-right">About the journal</h1>
 <hr>
 <br>
@@ -25,6 +27,24 @@ $APPLICATION->SetTitle("DEMR");
  <br>
 	<p>
 		 All articles are in the process of reviewing. Publication language - Russian, English. Articles are published on the Internet immediately after the decision on publication by editorial board and technical edition. We produce two volumes per year.
+	</p>
+	<p>
+		<b>Journal title:</b> scientific journal online edition "Dagestan Electronic Mathematical Reports"
+	</p>
+	<p>
+		<b>Founder:</b> FGBUN Dagestan Scientific Center of the Russian Academy of Sciences.
+	</p>
+	<p>
+		<b>Chief Editor:</b> Sharapudinov Idris Idrisovich, Dr., professor, head of Department of Mathematics and Computer Science Daghestan Scientific Center of Russian Academy of Science (DMCS DSC RAS),  head of department of mathematical analysis of Daghestan State Pedagogical University (DSPU).
+	</p>
+	<p>
+ 		<b>Email:</b> <a class="greeners" href="mailto:dagmathreports@gmail.com"><b>dagmathreports@gmail.com</b></a>,
+	</p>
+	<p>
+		<b>Phone number:</b> 8 (8722) 68-22-11
+	</p>
+	<p>
+		<b>Registration number:</b> Эл № ФС77-52776, <b>registered by:</b> the Federal Service for Supervision of Communications, Information Technology, and Mass Media
 	</p>
 </div>
 <div class="clearfix">
