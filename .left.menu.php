@@ -23,7 +23,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Выпуски", 
-		"/vypuski/", 
+		"/issues/", 
 		Array(), 
 		Array(), 
 		"" 

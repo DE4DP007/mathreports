@@ -23,7 +23,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Issues", 
-		"/en/vypuski/", 
+		"/en/issues/", 
 		Array(), 
 		Array(), 
 		"" 

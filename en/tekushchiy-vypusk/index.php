@@ -117,7 +117,7 @@ $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPa
 <br><br><br>
 
 <p class="text-left text-xs-center">
-    <a href="<?=SITE_DIR?>vypuski/" class="btn btn-lg btn-primary">
+    <a href="<?=SITE_DIR?>issues/" class="btn btn-lg btn-primary">
         <span class="glyphicon glyphicon-arrow-left"></span> To issues
     </a>
 </p>
