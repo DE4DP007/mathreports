@@ -79,7 +79,7 @@
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Authors",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"SEF_FOLDER" => "\\en/authors/",
+		"SEF_FOLDER" => "/en/authors/",
 		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",

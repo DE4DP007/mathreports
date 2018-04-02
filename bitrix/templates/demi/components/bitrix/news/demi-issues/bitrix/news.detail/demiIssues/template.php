@@ -36,12 +36,12 @@ $this->setFrameMode(true);?>
 
 <?//Определение количества статей и страниц в тестовом режиме
 $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
-$arFilter = Array("IBLOCK_ID"=>GetMessage("ID"), "PROPERTY_JOURNAL" => getCurrentID(GetMessage("PROP_ID"), $_REQUEST["ELEMENT_CODE"]));
-$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>10), $arSelect);?>
-    <h3 class="journhead text-left col-md-6 text-xs-center"><?echo GetMessage("ARTICLES_STR")?>: <?=getSize(GetMessage("ID"), "PROPERTY_JOURNAL", getCurrentID(GetMessage("PROP_ID"), $_REQUEST["ELEMENT_CODE"]))?></h3>
+$arFilter = array("IBLOCK_ID" => GetMessage("ID"), "PROPERTY_JOURNAL" => $arResult["ID"]);
+$count = CIBlockElement::GetList(Array(), $arFilter, array(), false, array());?>
+    <h3 class="journhead text-left col-md-6 text-xs-center"><?echo GetMessage("ARTICLES_STR")?>: <?=$count?></h3>
 
 <?$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);
-if(getSize(GetMessage("ID"), "PROPERTY_JOURNAL", getCurrentID(GetMessage("PROP_ID"), $_REQUEST["ELEMENT_CODE"])) > 0) {
+if($count > 0) {
     $ob = $res->GetNextElement();
     $arProp = $ob->GetProperties();?>
     <h3 class="journhead text-right col-md-6 text-xs-center"><?echo GetMessage("PAGES_STR")?>: <?=$arProp['END_PAGE']["VALUE"]?></h3>
