@@ -12,9 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
 
-<?$APPLICATION->SetTitle($arResult["NAME"]);?>
-
-
 <?/*if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])) {?>
 	<img
 		class="detail_picture"

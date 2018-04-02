@@ -71,6 +71,10 @@ $arUrlRewrite = array(
 		"PATH" => "/en/articles/index.php",
 	),
 	array(
+		"CONDITION" => "#^/en/vypuski/#",
+		"PATH" => "/en/vypuski.php",
+	),
+	array(
 		"CONDITION" => "#^/en/authors/#",
 		"PATH" => "/en/authors/index.php",
 	),
@@ -79,10 +83,6 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/en/authors/index.php",
-	),
-	array(
-		"CONDITION" => "#^/en/vypuski/#",
-		"PATH" => "/en/vypuski.php",
 	),
 	array(
 		"CONDITION" => "#^/en/issues/#",
@@ -103,14 +103,14 @@ $arUrlRewrite = array(
 		"PATH" => "/en/work/index.php",
 	),
 	array(
+		"CONDITION" => "#^/vypuski/#",
+		"PATH" => "/vypuski.php",
+	),
+	array(
 		"CONDITION" => "#^/authors/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/authors/index.php",
-	),
-	array(
-		"CONDITION" => "#^/vypuski/#",
-		"PATH" => "/vypuski.php",
 	),
 	array(
 		"CONDITION" => "#^/en/work/#",

@@ -14,8 +14,6 @@ $this->setFrameMode(true);
 //test_dump($arResult["PROPERTIES"]);
 ?>
 
-<?=$APPLICATION->SetTitle($arResult["PROPERTIES"][GetMessage("FNAME")]["VALUE"])?>
-
 <h1 class="text-center">
     <?=$arResult["PROPERTIES"][GetMessage("FNAME")]["VALUE"]?>
 

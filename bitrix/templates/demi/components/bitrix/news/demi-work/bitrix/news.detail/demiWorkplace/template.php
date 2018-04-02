@@ -12,9 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
 
-<?$APPLICATION->SetTitle($arResult['PROPERTIES'][GetMessage("TITLE")]['VALUE']);?>
-
-
 <div class="col-md-12">
     <h1 class="journhead text-center">
         <?=$arResult['PROPERTIES'][GetMessage("TITLE")]['VALUE']?>

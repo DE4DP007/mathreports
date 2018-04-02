@@ -12,8 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
 
-<?$APPLICATION->SetTitle($arResult["NAME"]);?>
-
 <div class="col-md-6">
     <h3 class="journhead text-left text-xs-center">
         <?$arFilterT = Array("IBLOCK_ID"=>20, "ID"=>$arResult["PROPERTIES"]['SECTION']["VALUE"]);
