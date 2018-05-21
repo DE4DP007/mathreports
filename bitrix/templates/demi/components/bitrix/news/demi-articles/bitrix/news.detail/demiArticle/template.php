@@ -74,6 +74,15 @@ $this->setFrameMode(true);?>
         <?echo GetMessage("PAGES_STR");?>: <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> - <?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
     </h3>
 </div>
+
+<div class="col-md-6">
+    <h3 class="journhead text-left text-xs-center">
+        <?if (isset($arResult["PROPERTIES"]["DOI"]) && ($arResult["PROPERTIES"]["DOI"]["VALUE"] != "")) :?>
+            DOI: <a href="http://doi.org/<?=$arResult["PROPERTIES"]["DOI"]["VALUE"]?>"><?=$arResult["PROPERTIES"]["DOI"]["VALUE"]?></a>
+        <?endif;?>
+    </h3>
+</div>
+
 <div class="clearfix"></div><br/>
 
 <div class="col-md-12 annot text-justify">
