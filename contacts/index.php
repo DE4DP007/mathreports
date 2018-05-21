@@ -27,27 +27,27 @@ $APPLICATION->SetTitle("Контакты");
     <!-- Map Column -->
     <div class="col-md-8">
         <?$APPLICATION->IncludeComponent(
-            "bitrix:map.google.view",
-            "omimap",
-            array(
-                "KEY" => "ABQIAAAAOSNukcWVjXaGbDo6npRDcxS1yLxjXbTnpHav15fICwCqFS-qhhSby0EyD6rK_qL4vuBSKpeCz5cOjw",
-                "INIT_MAP_TYPE" => "HYBRID",
-                "MAP_DATA" => "a:4:{s:10:\"google_lat\";d:42.98733922913284;s:10:\"google_lon\";d:47.48997715911778;s:12:\"google_scale\";i:15;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:4:\"TEXT\";s:128:\"Отдел Математики и Информатики###RN###Дагестанского научного центра РАН\";s:3:\"LON\";d:47.489647865295;s:3:\"LAT\";d:42.987823042568;}}}",
-                "MAP_WIDTH" => "600",
-                "MAP_HEIGHT" => "500",
-                "CONTROLS" => array(
-                    0 => "SCALELINE",
-                ),
-                "OPTIONS" => array(
-                    0 => "ENABLE_SCROLL_ZOOM",
-                    1 => "ENABLE_DBLCLICK_ZOOM",
-                    2 => "ENABLE_DRAGGING",
-                ),
-                "MAP_ID" => "",
-                "COMPONENT_TEMPLATE" => "omimap"
-            ),
-            false
-        );?>
+	"bitrix:map.google.view", 
+	".default", 
+	array(
+		"KEY" => "ABQIAAAAOSNukcWVjXaGbDo6npRDcxS1yLxjXbTnpHav15fICwCqFS-qhhSby0EyD6rK_qL4vuBSKpeCz5cOjw",
+		"INIT_MAP_TYPE" => "ROADMAP",
+		"MAP_DATA" => "a:4:{s:10:\"google_lat\";d:42.98733922913284;s:10:\"google_lon\";d:47.48997715911778;s:12:\"google_scale\";i:15;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:4:\"TEXT\";s:128:\"Отдел Математики и Информатики###RN###Дагестанского научного центра РАН\";s:3:\"LON\";d:47.489647865295;s:3:\"LAT\";d:42.987823042568;}}}",
+		"MAP_WIDTH" => "600",
+		"MAP_HEIGHT" => "500",
+		"CONTROLS" => array(
+			0 => "SCALELINE",
+		),
+		"OPTIONS" => array(
+			0 => "ENABLE_SCROLL_ZOOM",
+			1 => "ENABLE_DBLCLICK_ZOOM",
+			2 => "ENABLE_DRAGGING",
+		),
+		"MAP_ID" => "",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
         <!-- Embedded Google Map
         <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
         -->
