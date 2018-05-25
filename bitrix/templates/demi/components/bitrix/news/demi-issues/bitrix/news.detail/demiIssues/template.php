@@ -38,12 +38,12 @@ $this->setFrameMode(true);?>
 $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
 $arFilter = array("IBLOCK_ID" => GetMessage("ID"), "PROPERTY_JOURNAL" => $arResult["ID"]);
 $count = CIBlockElement::GetList(Array(), $arFilter, array(), false, array());?>
-    <h3 class="journhead text-left col-md-6 text-xs-center"><?echo GetMessage("ARTICLES_STR")?>: <?=$count?></h3>
+<h3 class="journhead text-left col-md-6 text-xs-center"><?=GetMessage("ARTICLES_STR")?>: <?=$count?></h3>
 
-<?$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);
-if($count > 0) {
-    $ob = $res->GetNextElement();
+<?$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);?>
+<?if($count > 0):?>
+    <?$ob = $res->GetNextElement();
     $arProp = $ob->GetProperties();?>
     <h3 class="journhead text-right col-md-6 text-xs-center"><?echo GetMessage("PAGES_STR")?>: <?=$arProp['END_PAGE']["VALUE"]?></h3>
-<?}?>
+<?endif;?>
 <div class="clearfix"></div>

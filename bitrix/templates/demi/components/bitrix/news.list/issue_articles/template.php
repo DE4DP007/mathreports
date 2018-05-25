@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 ?>
 <div class="news-list">
 <?if($arParams["DISPLAY_TOP_PAGER"]):?>
-	<?=$arResult["NAV_STRING"]?><br />
+	<?=$arResult["NAV_STRING"]?><br/>
 <?endif;?>
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
@@ -26,23 +26,23 @@ $this->setFrameMode(true);
             <h3 class="arttitle">
                 <a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem['NAME']?></a>
             </h3>
-            <?$count = count($arItem['PROPERTIES']['AUTHORS']["VALUE"]);
-            if ($count == 1) {?>
+            <?$count = count($arItem['PROPERTIES']['AUTHORS']["VALUE"]);?>
+            <?if($count == 1):?>
                 <b><?=GetMessage("AUTHOR_TEXT")?>:</b>
-            <?} else {?>
+            <?else:?>
                 <b><?=GetMessage("AUTHORS_TEXT")?>:</b>
-            <?}
-            $ii = 1;
-            foreach($arItem['PROPERTIES']['AUTHORS']["VALUE"] as $value){
-                $arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
-                $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
-                while($obA = $resA->GetNextElement()) {
-                    $arPropA = $obA->GetProperties();
+            <?endif;?>
+            <?$ii = 1;?>
+            <?foreach($arItem['PROPERTIES']['AUTHORS']["VALUE"] as $value):?>
+                <?$arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
+                $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));?>
+                <?while($obA = $resA->GetNextElement()):?>
+                    <?$arPropA = $obA->GetProperties();
                     $arFieldsA = $obA->GetFields();?>
-                    <a class="greeners" href="<?=$arFieldsA["DETAIL_PAGE_URL"]?>"><?=$arPropA[GetMessage("AUTHOR_NAME")]["VALUE"]?></a><?($ii < $count ? ", " : "");?>
-                    <?$ii++;
-                }
-            }?>
+                    <a class="greeners" href="<?=$arFieldsA["DETAIL_PAGE_URL"]?>"><?=$arPropA[GetMessage("AUTHOR_NAME")]["VALUE"]?></a><?=($ii < $count ? ", " : "")?>
+                    <?$ii++;?>
+                <?endwhile;?>
+            <?endforeach;?>
         </div>
 
         <div class="col-md-2 text-right text-xs-left xs-no-left-pads">

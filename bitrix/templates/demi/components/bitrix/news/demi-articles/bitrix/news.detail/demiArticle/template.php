@@ -15,24 +15,24 @@ $this->setFrameMode(true);?>
 <div class="col-md-6">
     <h3 class="journhead text-left text-xs-center">
         <?$arFilterT = Array("IBLOCK_ID"=>20, "ID"=>$arResult["PROPERTIES"]['SECTION']["VALUE"]);
-        $resT = CIBlockElement::GetList(Array(), $arFilterT, false, Array("nPageSize"=>10));
-        if(count($resT) > 0){
-            $obT = $resT->GetNextElement();
-            $arPropT = $obT->GetProperties();
-            echo $arPropT[GetMessage("TITLE")]["VALUE"];
-        }?>
+        $resT = CIBlockElement::GetList(Array(), $arFilterT, false, Array("nPageSize"=>10));?>
+        <?if(count($resT) > 0):?>
+            <?$obT = $resT->GetNextElement();
+            $arPropT = $obT->GetProperties();?>
+            <?=$arPropT[GetMessage("TITLE")]["VALUE"]?>
+        <?endif;?>
     </h3>
 </div>
 
 <div class="col-md-6">
     <h3 class="journhead text-right text-xs-center">
         <?$arFilterR = Array("IBLOCK_ID"=>GetMessage("ID"), "ID"=>$arResult["PROPERTIES"]['JOURNAL']['VALUE']);
-        $resR = CIBlockElement::GetList(Array(), $arFilterR, false, Array("nPageSize"=>10));
-        if(count($resR) > 0){
-            $obR = $resR->GetNextElement();
-            $arPropR = $obR->GetProperties();
-            echo $arPropR['TITLE']['VALUE'];
-        }?>
+        $resR = CIBlockElement::GetList(Array(), $arFilterR, false, Array("nPageSize"=>10));?>
+        <?if(count($resR) > 0):?>
+            <?$obR = $resR->GetNextElement();
+            $arPropR = $obR->GetProperties();?>
+            <?=$arPropR['TITLE']['VALUE'];?>
+        <?endif;?>
     </h3>
 </div>
 <div class="clearfix"></div><hr>
@@ -45,17 +45,17 @@ $this->setFrameMode(true);?>
 
 <div class="col-md-2 hidden-sm spacer"></div>
 <div class="col-md-8 col-sm-12 text-center authholder">
-    <? $iii = 1;
-    $ccount = count($arResult['PROPERTIES']['AUTHORS']['VALUE']);
-    foreach($arResult['PROPERTIES']['AUTHORS']['VALUE'] as $value) {
-        $arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
+    <?$iii = 1;
+    $ccount = count($arResult['PROPERTIES']['AUTHORS']['VALUE']);?>
+    <?foreach($arResult['PROPERTIES']['AUTHORS']['VALUE'] as $value):?>
+        <?$arFilterA = Array("IBLOCK_ID"=>21, "ID"=>$value);
         $resA = CIBlockElement::GetList(Array(), $arFilterA, false, Array("nPageSize"=>10));
         $obA = $resA->GetNextElement();
         $arPropA = $obA->GetProperties();
-        $arFieldsA = $obA->GetFields();
-        echo '<a class="greeners" href="'.$arFieldsA["DETAIL_PAGE_URL"].'">'.$arPropA[GetMessage("FNAME")]["VALUE"].'</a>'.($iii < $ccount ? ", " : "");
-        $iii++;
-    }?>
+        $arFieldsA = $obA->GetFields();?>
+        <a class="greeners" href="<?=$arFieldsA["DETAIL_PAGE_URL"]?>"><?=$arPropA[GetMessage("FNAME")]["VALUE"]?></a><?=($iii < $ccount ? ", " : "")?>
+        <?$iii++;?>
+    <?endforeach;?>
 </div>
 <div class="col-md-2 hidden-sm spacer"></div>
 <div class="clearfix"></div>
@@ -63,21 +63,21 @@ $this->setFrameMode(true);?>
 
 <div class="col-md-6">
     <h3 class="journhead text-left text-xs-center">
-        <?if (isset($arResult["PROPERTIES"]["UDK"]) && ($arResult["PROPERTIES"]["UDK"]["VALUE"] != "")) {
-            echo GetMessage("UDK"), ": ".$arResult["PROPERTIES"]["UDK"]["VALUE"];
-        }?>
+        <?if (isset($arResult["PROPERTIES"]["UDK"]) && ($arResult["PROPERTIES"]["UDK"]["VALUE"] != "")):?>
+            <?=GetMessage("UDK")?>: <?=$arResult["PROPERTIES"]["UDK"]["VALUE"]?>
+        <?endif;?>
     </h3>
 </div>
 
 <div class="col-md-6">
     <h3 class="journhead text-right text-xs-center">
-        <?echo GetMessage("PAGES_STR");?>: <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> - <?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
+        <?=GetMessage("PAGES_STR")?>: <?=$arResult["PROPERTIES"]["START_PAGE"]["VALUE"]?> - <?=$arResult["PROPERTIES"]["END_PAGE"]["VALUE"]?>
     </h3>
 </div>
 
 <div class="col-md-6">
     <h3 class="journhead text-left text-xs-center">
-        <?if (isset($arResult["PROPERTIES"]["DOI"]) && ($arResult["PROPERTIES"]["DOI"]["VALUE"] != "")) :?>
+        <?if (isset($arResult["PROPERTIES"]["DOI"]) && ($arResult["PROPERTIES"]["DOI"]["VALUE"] != "")):?>
             DOI: <a href="http://doi.org/<?=$arResult["PROPERTIES"]["DOI"]["VALUE"]?>"><?=$arResult["PROPERTIES"]["DOI"]["VALUE"]?></a>
         <?endif;?>
     </h3>
@@ -86,50 +86,48 @@ $this->setFrameMode(true);?>
 <div class="clearfix"></div><br/>
 
 <div class="col-md-12 annot text-justify">
-    <?= latexTohtml($arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]);?>
+    <?=latexTohtml($arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]);?>
 </div>
 <div class="clearfix"></div><br><br>
 
-<?if (isset($arResult["PROPERTIES"]["KEYWORDS"]["VALUE"]) && ($arResult["PROPERTIES"]["KEYWORDS"]["VALUE"] != "")) {?>
+<?if (isset($arResult["PROPERTIES"]["KEYWORDS"]["VALUE"]) && ($arResult["PROPERTIES"]["KEYWORDS"]["VALUE"] != "")):?>
     <div class="col-md-12 keywords">
         <p class="text-justify">
-            <b><?echo (SITE_ID == "s1" ? "Ключевые слова: " : "Keywords: ");?></b>
+            <b><?=GetMessage("KEYWORDS")?>: </b>
             <?=$arResult["PROPERTIES"]["KEYWORDS"]["VALUE"]?>.
         </p>
     </div>
     <div class="clearfix"></div><br><br>
-<?}?>
+<?endif;?>
 <br>
 
 
 
 <p class="col-md-6 col-xs-12 text-right text-xs-center">
-    <?$issuesBlock = (SITE_ID == "s1" ? 16 : 15)?>
+    <?$issuesBlock = GetMessage("ID");?>
     <?$arFiltJ = Array("IBLOCK_ID"=>$issuesBlock, "ID"=>$arResult['PROPERTIES']['JOURNAL']['VALUE']);
     $rsJ = CIBlockElement::GetList(Array(), $arFiltJ, false, Array("nPageSize"=>10));
     $aJ = $rsJ->GetNext();?>
     <a href="<?= $aJ["DETAIL_PAGE_URL"];?>"
        class="btn btn-lg btn-primary">
             <span class="glyphicon glyphicon-arrow-left"></span>
-            <?echo (SITE_ID == "s1" ? "В содержание выпуска" : "To issue content")?>
+            <?=GetMessage("TO_ISSUE")?>
     </a>
 </p>
 
 
 <p class="col-md-6 col-xs-12 text-left text-xs-center">
-    <?if (isset($arResult["PROPERTIES"]["FULL_TEXT"]) && ($arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"] != "")) {?>
+    <?if (isset($arResult["PROPERTIES"]["FULL_TEXT"]) && ($arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"] != "")):?>
         <a href="<?=$arResult["PROPERTIES"]["FULL_TEXT"]["VALUE"]?>" class="btn btn-success btn-lg">
-            <?echo GetMessage("DOWNLOAD")?>
+            <?=GetMessage("DOWNLOAD")?>
             <span class="glyphicon glyphicon-book"></span>
         </a>
-    <?} else {?>
+    <?else:?>
         <a href="#" class="btn btn-warning btn-lg">
-            <?echo GetMessage("NO_FILE")?>
+            <?=GetMessage("NO_FILE")?>
             <span class="glyphicon glyphicon-remove"></span>
         </a>
-    <?}?>
+    <?endif;?>
 </p>
-
-<br><br>
 
 
