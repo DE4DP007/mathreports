@@ -26,7 +26,7 @@ $APPLICATION->SetTitle("Daghestan Electronic Mathematical Reports");
 	</ul>
  <br>
 	<p>
-		 All articles are in the process of reviewing. Publication language - Russian, English. Articles are published on the Internet immediately after the decision on publication by editorial board and technical edition. We produce two volumes per year.
+		 All articles are in the process of reviewing. Publication language - Russian, English. Articles are published on the Internet immediately after the decision on publication by editorial board and technical edition. We produce two electronic issues per year.
 	</p>
 	<p>
 		<b>Journal title:</b> scientific journal online edition "Dagestan Electronic Mathematical Reports"

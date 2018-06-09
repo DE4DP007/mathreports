@@ -18,7 +18,6 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/en/issues/index.php",
-		"SORT" => "100",
 	),
 	array(
 		"CONDITION" => "#^/articles/#",
@@ -28,17 +27,17 @@ $arUrlRewrite = array(
 		"SORT" => "100",
 	),
 	array(
-		"CONDITION" => "#^/authors/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/authors/index.php",
-		"SORT" => "100",
-	),
-	array(
 		"CONDITION" => "#^/en/work/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/en/work/index.php",
+		"SORT" => "100",
+	),
+	array(
+		"CONDITION" => "#^/authors/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/authors/index.php",
 		"SORT" => "100",
 	),
 	array(
