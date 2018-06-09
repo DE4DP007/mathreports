@@ -77,7 +77,7 @@ $APPLICATION->SetTitle("Выпуски");?>
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
+		"SORT_ORDER2" => "DESC",
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "N",
 		"USE_PERMISSIONS" => "N",
