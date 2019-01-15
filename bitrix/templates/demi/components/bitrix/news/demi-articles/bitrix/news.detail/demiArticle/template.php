@@ -86,7 +86,7 @@ $this->setFrameMode(true);?>
 <div class="clearfix"></div><br/>
 
 <div class="col-md-12 annot text-justify">
-    <?=latexTohtml($arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]);?>
+    <?=$arResult["PROPERTIES"]["ANNOTATION"]["VALUE"]?>
 </div>
 <div class="clearfix"></div><br><br>
 
