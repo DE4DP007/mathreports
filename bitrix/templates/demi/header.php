@@ -50,6 +50,11 @@ $APPLICATION->SetAdditionalCSS("/bitrix/templates/demi/css/mathrep.css");?>
     <!-- MathJax -->
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
+            showMathMenu: false,
+            processEscapes: true,
+            CommonHTML: {
+                linebreaks: { automatic: true }
+            },
             tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
         });
     </script>
