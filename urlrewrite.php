@@ -5,7 +5,6 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/en/articles/index.php",
-		"SORT" => "100",
 	),
 	array(
 		"CONDITION" => "#^/en/authors/#",

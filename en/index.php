@@ -32,10 +32,10 @@ $APPLICATION->SetTitle("Daghestan Electronic Mathematical Reports");
 		<b>Journal title:</b> scientific journal online edition "Dagestan Electronic Mathematical Reports"
 	</p>
 	<p>
-		<b>Founder:</b> FGBUN Dagestan Scientific Center of the Russian Academy of Sciences.
+		<b>Founder:</b> Dagestan Federal Research Center of the Russian Academy of Sciences.
 	</p>
 	<p>
-		<b>Chief Editor:</b> Sharapudinov Idris Idrisovich, Dr., professor, head of Department of Mathematics and Computer Science Daghestan Scientific Center of Russian Academy of Science (DMCS DSC RAS),  head of department of mathematical analysis of Daghestan State Pedagogical University (DSPU).
+		<b>Chief Editor:</b> Ramazanov Abdul-Rashid Kehrimanovich, Dr., professor, Chief Researcher, Department of Mathematics and Computer Science Daghestan Federal Research Center Center of Russian Academy of Science (DMCS DFRC RAS).
 	</p>
 	<p>
  		<b>Email:</b> <a class="greeners" href="mailto:dagmathreports@gmail.com"><b>dagmathreports@gmail.com</b></a>,
