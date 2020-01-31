@@ -1,6 +1,6 @@
 <?
 $sSectionName = "Статьи(EN)";
-$arDirProperties = Array(
+$arDirProperties = array(
 
 );
 ?>
