@@ -6,8 +6,9 @@ IncludeTemplateLangFile(__FILE__);?>
 
 
 <div class="container" id="footer">
-    <div class="col-sm-6 col-xs-12" id="booker">
+    <div class="col-sm-12" id="booker">
         <img src="/bitrix/templates/demi/images/b00k.png" alt="Дагестанские электронные математические известия" class="img-responsive pull-left" id="book">
+        <img src="/bitrix/templates/demi/images/0+rating.png" class="img-responsive pull-right" style="inline-size: 53px; margin: 5px -15px 0px 15px;">
         <p>
             <?echo GetMessage("FOOTER_DESCRIPTION")?>
         </p>
