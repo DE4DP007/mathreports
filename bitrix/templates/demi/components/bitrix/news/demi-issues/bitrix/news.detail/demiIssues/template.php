@@ -39,7 +39,7 @@ $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY
 $arFilter = array("IBLOCK_ID" => GetMessage("ID"), "PROPERTY_JOURNAL" => $arResult["ID"]);
 $count = CIBlockElement::GetList(Array(), $arFilter, array(), false, array());?>
 <h3 class="journhead text-left col-md-4 text-xs-center"><?=GetMessage("ARTICLES_STR")?>: <?=$count?></h3>
-<h3 class="journhead text-center col-md-4 text-xs-center">Дата выпуска: <?=preg_replace('/^([\d.]+).*$/', '${1}', $arResult['ACTIVE_FROM'])?></h3>
+<h3 class="journhead text-center col-md-4 text-xs-center"><?=GetMessage('DATE')?>: <?=preg_replace('/^([\d.]+).*$/', '${1}', $arResult['ACTIVE_FROM'])?></h3>
 
 <?$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);?>
 <?if($count > 0):?>
