@@ -3,4 +3,5 @@ $MESS["CT_BNL_ELEMENT_DELETE_CONFIRM"] = "All the information linked to this rec
 $MESS["BLOCK_ID_NUM"] = 14;
 $MESS["NUMBER_OF_ARTICLE"] = "Number of articles";
 $MESS["TOTAL_PAGES"] = "Total pages";
+$MESS['DATE'] = "Date of issue";
 ?>
