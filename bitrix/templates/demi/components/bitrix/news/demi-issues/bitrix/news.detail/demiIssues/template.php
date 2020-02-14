@@ -43,7 +43,7 @@ $colWidth = $hasActiveFrom ? 'col-md-4' : 'col-md-6';?>
 <h3 class="journhead text-left <?=$colWidth?> text-xs-center"><?=GetMessage("ARTICLES_STR")?>: <?=$count?></h3>
 
 <?if($hasActiveFrom):?>
-	<h3 class="journhead text-center <?=$colWidth?> text-xs-center"><?=GetMessage('DATE')?>: <?=preg_replace('/^([\d.]+).*$/', '${1}', $arResult['ACTIVE_FROM'])?></h3>
+	<h3 class="journhead text-center <?=$colWidth?> text-xs-center"><?=GetMessage('DATE')?>: <?=$arResult["ACTIVE_FROM"]?></h3>
 <?endif;?>
 
 <?$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);?>
