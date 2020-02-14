@@ -37,13 +37,19 @@ $this->setFrameMode(true);?>
 <?//Определение количества статей и страниц в тестовом режиме
 $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "DETAIL_PAGE_URL", "PROPERTY_START_PAGE", "PROPERTY_END_PAGE");
 $arFilter = array("IBLOCK_ID" => GetMessage("ID"), "PROPERTY_JOURNAL" => $arResult["ID"]);
-$count = CIBlockElement::GetList(Array(), $arFilter, array(), false, array());?>
-<h3 class="journhead text-left col-md-6 text-xs-center"><?=GetMessage("ARTICLES_STR")?>: <?=$count?></h3>
+$count = CIBlockElement::GetList(Array(), $arFilter, array(), false, array());
+$hasActiveFrom = $arParams["DISPLAY_DATE"]!="N" && $arResult["ACTIVE_FROM"];
+$colWidth = $hasActiveFrom ? 'col-md-4' : 'col-md-6';?>
+<h3 class="journhead text-left <?=$colWidth?> text-xs-center"><?=GetMessage("ARTICLES_STR")?>: <?=$count?></h3>
+
+<?if($hasActiveFrom):?>
+	<h3 class="journhead text-center <?=$colWidth?> text-xs-center"><?=GetMessage('DATE')?>: <?=$arResult["ACTIVE_FROM"]?></h3>
+<?endif;?>
 
 <?$res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, Array("nPageSize"=>1), $arSelect);?>
 <?if($count > 0):?>
     <?$ob = $res->GetNextElement();
     $arProp = $ob->GetProperties();?>
-    <h3 class="journhead text-right col-md-6 text-xs-center"><?echo GetMessage("PAGES_STR")?>: <?=$arProp['END_PAGE']["VALUE"]?></h3>
+    <h3 class="journhead text-right <?=$colWidth?> text-xs-center"><?echo GetMessage("PAGES_STR")?>: <?=$arProp['END_PAGE']["VALUE"]?></h3>
 <?endif;?>
 <div class="clearfix"></div>
