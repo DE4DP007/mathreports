@@ -3,22 +3,29 @@ $APPLICATION->SetTitle("Текущий выпуск ДЭМИ");?>
 
 
 <?CModule::IncludeModule("iblock");
-$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL");
+$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL", "DATE_ACTIVE_FROM");
 $arFilter = Array("IBLOCK_ID"=>16, "ACTIVE"=>"Y");
 $res = CIBlockElement::GetList(Array('ID'=>"DESC"), $arFilter, false, Array("nPageSize"=>1), $arSelect);?>
-<?  $ob = $res->GetNextElement(); $arFields = $ob->GetFields();?>
+<?
+$ob = $res->GetNextElement(); 
+$arFields = $ob->GetFields(); 
+$dateActiveFrom = $arFields['DATE_ACTIVE_FROM'];
+?>
 
 <h1 class="journhead text-right">
      Текущий выпуск: <?=$arFields['NAME']?>
 </h1><hr>
 
-
-<h3 class="col-md-6 journhead text-left text-xs-center">
+<?$colWidth = $dateActiveFrom ? 'col-md-4' : 'col-md-6';?>
+<h3 class="<?=$colWidth?> journhead text-left text-xs-center">
     <?$arFilterI = Array("IBLOCK_ID"=>17, "PROPERTY_JOURNAL" => $arFields['ID'], "ACTIVE"=>"Y");
     $resI = CIBlockElement::GetList(Array(), $arFilterI, false, Array("nPageSize"=>10));?>
     Количество статей: <?=getSize(17, "PROPERTY_JOURNAL", $arFields['ID'])?>
 </h3>
-<h3 class="col-md-6 journhead text-right text-xs-center">
+<?if($dateActiveFrom):?>
+	<h3 class="journhead text-center <?=$colWidth?> text-xs-center">Дата публикации: <?=$dateActiveFrom?></h3>
+<?endif;?>
+<h3 class="<?=$colWidth?> journhead text-right text-xs-center">
     <?$resI = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilterI, false, Array("nPageSize"=>1), $arSelect);?>
     <?if(getSize(17, "PROPERTY_JOURNAL", $arFields['ID']) > 0):?>
         <?$obI = $resI->GetNextElement();
