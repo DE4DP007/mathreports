@@ -70,7 +70,16 @@ $APPLICATION->SetTitle("Issues");?><?$APPLICATION->IncludeComponent(
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N"
 	)
-);?>
-<?function getSize($block, $property, $id) {
+);?> <?function getSize($block, $property, $id) {
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
-}?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+}?><br>
+ <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE_SHOW" => "page",
+		"AREA_FILE_SUFFIX" => "inc",
+		"COMPONENT_TEMPLATE" => ".default",
+		"EDIT_TEMPLATE" => ""
+	)
+);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

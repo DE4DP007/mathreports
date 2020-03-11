@@ -5,11 +5,12 @@ $APPLICATION->SetPageProperty("description", "Daghestan Electronic Mathematical 
 $APPLICATION->SetTitle("Daghestan Electronic Mathematical Reports");
 ?><h1 class="journhead text-right">About the journal</h1>
 <hr>
-<br>
+ <br>
 <div class="textpage col-md-12">
 	<p>
-		 The Journal was founded in 2013 by the Department of Mathematics and Computer Science of the Dagestan Scientific Center of the Russian Academy of Sciences. Registered as online edition in the Federal Service for Supervision of Communications, Information Technology and Communications on February 8, 2013 (certificate number: Эл № ФС77-52776). The Journal is registered with ISSN: 2500-3240.
+		 The Journal was founded in 2013 by the Department of Mathematics and Computer Science of the Dagestan Scientific Center of the Russian Academy of Sciences.&nbsp;In 2019, in accordance with the order of the Ministry of Science and Higher Education of the Russian Federation No. 1138, the Dagestan Scientific Center of the Russian Academy of Sciences was reorganized into the Dagestan Federal Research Center of the Russian Academy of Sciences.
 	</p>
+	 The Journal is registered as online edition in the Federal Service for Supervision of Communications, Information Technology and Communications on February 8, 2013 (certificate number: Эл № ФС77-52776). The Journal is registered with ISSN: 2500-3240.
 	<p>
 		 The Journal is aimed at the rapid electronic publication of research papers in the following areas of mathematics and computer science:
 	</p>
@@ -26,26 +27,33 @@ $APPLICATION->SetTitle("Daghestan Electronic Mathematical Reports");
 	</ul>
  <br>
 	<p>
-		 All articles are in the process of reviewing. Publication language - Russian, English. Articles are published on the Internet immediately after the decision on publication by editorial board and technical edition. We produce two electronic issues per year.
+		 All articles are in the process of reviewing. Publication language - Russian, English. Articles are published on the Internet after the decision on publication by editorial board and technical edition. We produce two electronic issues per year.
 	</p>
 	<p>
-		<b>Journal title:</b> scientific journal online edition "Dagestan Electronic Mathematical Reports"
+		 The journal is included in the <i>Russian Science Citation Index </i>(<b>RSCI</b>) database, as well as in the&nbsp;database of the All-Russian mathematical portal <b>MathNet.Ru</b>.&nbsp;
 	</p>
 	<p>
-		<b>Founder:</b> Dagestan Federal Research Center of the Russian Academy of Sciences.
+		 Each article is provided with <b>DOI digital identifier</b>.<br>
 	</p>
 	<p>
-		<b>Chief Editor:</b> Ramazanov Abdul-Rashid Kehrimanovich, Dr., professor, Chief Researcher, Department of Mathematics and Computer Science Daghestan Federal Research Center Center of Russian Academy of Science (DMCS DFRC RAS).
+ <b>Journal title:</b> scientific journal online edition "Dagestan Electronic Mathematical Reports"
 	</p>
 	<p>
- 		<b>Email:</b> <a class="greeners" href="mailto:dagmathreports@gmail.com"><b>dagmathreports@gmail.com</b></a>,
+ <b>Founder:</b> Dagestan Federal Research Center of the Russian Academy of Sciences.
 	</p>
 	<p>
-		<b>Phone number:</b> 8 (8722) 68-22-11
+ <b>Chief Editor:</b> Ramazanov Abdul-Rashid Kehrimanovich, Dr., professor, Chief Researcher, Department of Mathematics and Computer Science Daghestan Federal Research Center Center of Russian Academy of Science (DMCS DFRC RAS).
 	</p>
 	<p>
-		<b>Registration number:</b> Эл № ФС77-52776, <b>registered by:</b> the Federal Service for Supervision of Communications, Information Technology, and Mass Media
+ <b>Email:</b> <a class="greeners" href="mailto:dagmathreports@gmail.com"><b>dagmathreports@gmail.com</b></a>
+	</p>
+	<p>
+ <b>Phone number:</b> 8 (8722) 68-22-11
+	</p>
+	<p>
+ <b>Registration number:</b> Эл № ФС77-52776, <b>registered by:</b> the Federal Service for Supervision of Communications, Information Technology, and Mass Media.
 	</p>
 </div>
 <div class="clearfix">
-</div><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+</div>
+ <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
