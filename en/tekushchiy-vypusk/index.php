@@ -23,7 +23,7 @@ $dateActiveFrom = $arFields['DATE_ACTIVE_FROM'];
     Articles count: <?=getSize(14, "PROPERTY_JOURNAL", $arFields['ID'])?>
 </h3>
 <?if($dateActiveFrom):?>
-	<h3 class="journhead text-center <?=$colWidth?> text-xs-center">Date of Issue: <?=$dateActiveFrom?></h3>
+	<h3 class="journhead text-center <?=$colWidth?> text-xs-center">Publication date: <?=$dateActiveFrom?></h3>
 <?endif;?>
 <h3 class="<?=$colWidth?> journhead text-right text-xs-center">
     <?$resI = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilterI, false, Array("nPageSize"=>1), $arSelect);?>

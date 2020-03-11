@@ -3,5 +3,5 @@ $MESS["CT_BNL_ELEMENT_DELETE_CONFIRM"] = "Будет удалена вся ин�
 $MESS["BLOCK_ID_NUM"] = 17;
 $MESS["NUMBER_OF_ARTICLE"] = "Количество статей";
 $MESS["TOTAL_PAGES"] = "Всего страниц";
-$MESS['DATE'] = 'Дата выхода';
+$MESS['DATE'] = 'Дата публикации';
 ?>
