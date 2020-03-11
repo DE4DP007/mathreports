@@ -85,7 +85,8 @@ $this->setFrameMode(true);
             <?=GetMessage("TOTAL_PAGES")?>: <?=$arPropI['END_PAGE']["VALUE"]?>
         <?endif;?>
 		<?if($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_FROM"]):?>
-			<br><?=GetMessage('DATE')?>: <?=$arItem["DISPLAY_ACTIVE_FROM"]?>
+			<br>
+<b><?=GetMessage('DATE')?>:</b>  <?=$arItem["DISPLAY_ACTIVE_FROM"]?>
 		<?endif;?>
 		<hr>
 	</p>

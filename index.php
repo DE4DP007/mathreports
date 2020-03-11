@@ -38,7 +38,7 @@ $APPLICATION->SetTitle("Дагестанские электронные мате
  <b>Главный редактор:</b>&nbsp;&nbsp;Рамазанов Абдул-Рашид Кехриманович, д.ф.-м.н., профессор, главный научный сотрудник Отдела математики и информатики (ОМИ) ДФИЦ РАН.
 	</p>
 	<p>
- <b>Email:</b> <a class="greeners" href="mailto:dagmathreports@gmail.com"><b>dagmathreports@gmail.com</b></a>,
+ <b>Email:</b> <a class="greeners" href="mailto:dagmathreports@gmail.com"><b>dagmathreports@gmail.com</b></a>
 	</p>
 	<p>
  <b>Номер телефона:</b> 8 (8722) 68-22-11.
