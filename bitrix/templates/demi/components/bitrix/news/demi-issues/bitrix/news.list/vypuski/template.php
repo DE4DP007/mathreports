@@ -86,7 +86,7 @@ $this->setFrameMode(true);
         <?endif;?>
 		<?if($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_FROM"]):?>
 			<br>
-<b><?=GetMessage('DATE')?>:</b>  <?=$arItem["DISPLAY_ACTIVE_FROM"]?>
+<b><?=GetMessage('DATE')?>:</b>  <?=$arItem["ACTIVE_FROM"]?>
 		<?endif;?>
 		<hr>
 	</p>

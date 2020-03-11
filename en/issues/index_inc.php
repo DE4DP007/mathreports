@@ -9,7 +9,7 @@ The editorial board is currently preparing for the first issue publication in 20
 The rules for authors can be found in the <a href="http://mathreports.ru/en/dlya-avtorov/">following section </a>.
 	</p>
 	<p class="news-item">
- <b>Publication date:</b> 30.09.2013
+ <b>Publication date:</b> 09/30/2013
 	</p>
  <br>
 	<hr>
@@ -23,7 +23,7 @@ The journal is aimed at the rapid electronic publication of original research pa
 The Journal is registered as online edition in the Federal Service for Supervision of Communications, Information Technology and Communications on February 8, 2013 (certificate number: Эл № ФС77-52776). 
 	</p>
 	<p class="news-item">
- <b>Publication date:</b> 10.02.2013
+ <b>Publication date:</b> 02/10/2013
 	</p>
  <br>
 </div>
