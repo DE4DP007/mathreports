@@ -73,13 +73,15 @@ $APPLICATION->SetTitle("Выпуски");?><?$APPLICATION->IncludeComponent(
 );?> <?function getSize($block, $property, $id) {
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
 }?> <br>
+<?if($APPLICATION->GetCurPage() == "/issues/index.php"):?>
  <?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	Array(
+	"bitrix:main.include", 
+	".default", 
+	array(
 		"AREA_FILE_SHOW" => "page",
 		"AREA_FILE_SUFFIX" => "issues_inc",
 		"COMPONENT_TEMPLATE" => ".default",
 		"EDIT_TEMPLATE" => ""
-	)
-);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+	),
+	false
+);?><?endif;?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

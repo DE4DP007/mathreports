@@ -73,6 +73,7 @@ $APPLICATION->SetTitle("Issues");?><?$APPLICATION->IncludeComponent(
 );?> <?function getSize($block, $property, $id) {
 	return CIBlockElement::GetList(array(), array('IBLOCK_ID' => $block, $property => $id), array(), false, array('ID', 'NAME'));
 }?><br>
+<?if($APPLICATION->GetCurPage() == "/en/issues/index.php"):?>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
@@ -82,4 +83,4 @@ $APPLICATION->SetTitle("Issues");?><?$APPLICATION->IncludeComponent(
 		"COMPONENT_TEMPLATE" => ".default",
 		"EDIT_TEMPLATE" => ""
 	)
-);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+	);?><?endif;?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
